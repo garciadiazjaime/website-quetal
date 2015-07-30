@@ -1,0 +1,10 @@
+@import "general/*.png"
+@include all-general-sprites
+$general-icons: sprite-map("general/*.png", $layout: smart)
+
+@import "general2x/*.png"
+@include all-general2x-sprites
+$general2x-icons: sprite-map("general2x/*.png", $layout: smart)
+
+.icon-holder
+	position: relative
