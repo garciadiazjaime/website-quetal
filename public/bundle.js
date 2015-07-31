@@ -14319,7 +14319,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                     React.createElement("p", {className: "bigPhrase"}, 
                                         React.createElement("span", null, "Ahorra"), " desde un 20% en tu Seguro de Auto"
                                     ), 
-                                    React.createElement("p", {class: "restrictions"}, "*En comparación con otros portales de venta" + ' ' +
+                                    React.createElement("p", {className: "restrictions"}, "*En comparación con otros portales de venta" + ' ' +
 "de seguros por internet."), 
                                     React.createElement("a", {href: "#", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
                                     React.createElement("span", {className: "general-logo"}, "General de seguros")
@@ -14389,7 +14389,7 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
                                         "Autos Fronterizos o Legalizados", 
                             
                                         React.createElement("a", {href: "cotiza", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza"), 
-                                        React.createElement("span", {id: "borderCartIcon"})
+                                        React.createElement("span", {id: "borderCarIcon"})
                                     ), 
                                     React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
                                       "Ver detalles"

@@ -30,7 +30,7 @@ var HomeOtherServicesPanel = React.createClass({
                                         Autos Fronterizos o Legalizados
                             
                                         <a href="cotiza" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
-                                        <span id="borderCartIcon"></span>
+                                        <span id="borderCarIcon"></span>
                                     </p>
                                     <Button bsStyle='primary' onClick={this.open} className="arrowLink">
                                       Ver detalles

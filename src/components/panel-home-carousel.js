@@ -48,7 +48,7 @@ var HomeCarouselPanel = React.createClass({
                                     <p className="bigPhrase">
                                         <span>Ahorra</span> desde un 20% en tu Seguro de Auto
                                     </p>
-                                    <p class="restrictions">*En comparación con otros portales de venta
+                                    <p className="restrictions">*En comparación con otros portales de venta
 de seguros por internet.</p>
                                     <a href="#" title="Ver Coberturas" className="yellowButton">Ver Coberturas</a>
                                     <span className="general-logo">General de seguros</span>
