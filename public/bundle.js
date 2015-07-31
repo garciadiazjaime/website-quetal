@@ -14062,22 +14062,48 @@ var FooterSection = React.createClass({displayName: "FooterSection",
   render: function() {
     return (
         React.createElement("div", {className: "container"}, 
-            React.createElement("nav", {id: "footerNavigation"}, 
-                React.createElement("ul", null, 
-                    React.createElement("li", {className: "active"}, React.createElement("a", {href: "inicio", title: ""}, "Inicio")), 
-                    React.createElement("li", null, React.createElement("a", {href: "nosotros", title: "Nosotros"}, "Nosotros")), 
-                    React.createElement("li", null, React.createElement("a", {href: "cortes", title: "Cortes"}, "Cortes")), 
-                    React.createElement("li", null, React.createElement("a", {href: "color", title: "Color"}, "Color")), 
-                    React.createElement("li", null, React.createElement("a", {href: "peinados", title: "Peinados"}, "Peinados")), 
-                    React.createElement("li", null, React.createElement("a", {href: "maquillaje", title: "Maquillaje"}, "Maquillaje")), 
-                    React.createElement("li", null, React.createElement("a", {href: "novias", title: "Novias"}, "Novias")), 
-                    React.createElement("li", null, React.createElement("a", {href: "boutique", title: "Boutique"}, "Boutique")), 
-                    React.createElement("li", null, React.createElement("a", {href: "contacto", title: "Contacto"}, "Contacto"))
+            React.createElement(Row, null, 
+                React.createElement(Col, {xs: 12, sm: 7}, 
+                    React.createElement("nav", {id: "footerNavigation"}, 
+                        React.createElement("ul", null, 
+                            React.createElement("li", null, 
+                                React.createElement("h5", null, React.createElement("a", {href: "coberturas", title: "Coberturas"}, "Coberturas")), 
+                                React.createElement("ul", null, 
+                                    React.createElement("li", null, React.createElement("a", {href: "coberturas/basica", title: "Básica"}, "Básica")), 
+                                    React.createElement("li", null, React.createElement("a", {href: "coberturas/limitada", title: "Limitada"}, "Limitada")), 
+                                    React.createElement("li", null, React.createElement("a", {href: "coberturas/amplia", title: "Amplia"}, "Amplia")), 
+                                    React.createElement("li", null, React.createElement("a", {href: "coberturas/prestigio", title: "Prestigio"}, "Prestigio")), 
+                                    React.createElement("li", null, React.createElement("a", {href: "coberturas/autos-fronterizos", title: "Autos Fronterizos"}, "Autos Fronterizos")), 
+                                    React.createElement("li", null, React.createElement("a", {href: "coberturas/rc-obligatoria", title: "RC Obligatoria"}, "RC Obligatoria"))
+                                )
+                            ), React.createElement("li", null, 
+                                React.createElement("h5", null, React.createElement("a", {href: "nosotros", title: "Nosotros"}, "Nosotros")), 
+                                React.createElement("ul", null, 
+                                    React.createElement("li", null, React.createElement("a", {href: "nosotros/por-que-nosotros", title: "Por qué Nosotros"}, "Por qué Nosotros")), 
+                                    React.createElement("li", null, React.createElement("a", {href: "nosotros/quienes-somos", title: "Quiénes somos"}, "Quiénes somos"))
+                                )
+                            ), React.createElement("li", null, 
+                                React.createElement("h5", null, React.createElement("a", {href: "contacto", title: "Contacto"}, "Contacto")), 
+                                React.createElement("ul", null, 
+
+                                    React.createElement("li", null, React.createElement("a", {href: "contacto/siniestro", title: "En caso de Siniestro"}, "En caso de Siniestro")), 
+                                    React.createElement("li", null, React.createElement("a", {href: "contacto", title: "Contáctanos"}, "Contáctanos"))
+                                )
+                            ), React.createElement("li", null, 
+                                React.createElement("h5", null, React.createElement("a", {href: "cotiza", title: "Cotiza"}, "Cotiza"))
+                            )
+                        )
+                    )
+                ), 
+                React.createElement(Col, {xs: 12, sm: 5}, 
+                    React.createElement("span", {id: "brand-footer"}, "Quetal - Mi seguro de auto"), 
+                    React.createElement("p", null, "Con el respaldo de:"), 
+                    React.createElement("span", {id: "general-logo"}, "General de seguros")
                 )
             ), 
             React.createElement(Row, null, 
                 React.createElement(Col, {xs: 12, sm: 5}, 
-                    React.createElement("p", null, "Todos los derechos reservados Branding Pool 2015 ")
+                    React.createElement("p", null, "Todos los derechos reservados Quetal Seguro de auto   2015 ")
                 ), 
                 React.createElement(Col, {xs: 12, sm: 4}, 
                     React.createElement("p", {id: "credit"}, React.createElement("span", null, "Un proyecto de: ", React.createElement("a", {href: "http://somospool.com/", title: "Visita Branding POOL", target: "_blank"}, "POOL")), "Código por: ", React.createElement("a", {href: "http://mintitmedia.com/", title: "Mint IT Media - Diseño y desarrollo web", target: "_blank"}, "MINT"))
