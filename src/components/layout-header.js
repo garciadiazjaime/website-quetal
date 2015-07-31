@@ -7,6 +7,7 @@ var rb = require('react-bootstrap');
 var Nav = rb.Nav;
 var Navbar = rb.Navbar;
 var NavItem = rb.NavItem;
+var Button = rb.Button;
 var DropdownButton = rb.DropdownButton;
 var CollapsibleNav = rb.CollapsibleNav;
 
@@ -35,7 +36,7 @@ var HeaderSection = React.createClass({
 
     render: function() {
         return (
-            <Navbar brand='Volver a inicio de Gio Salon' toggleNavKey={0}  className="navbar-static-top">
+            <Navbar brand='Volver a inicio de Quetal' toggleNavKey={0}  className="navbar-static-top">
                 <CollapsibleNav eventKey={0}> {/* This is the eventKey referenced */}
                   <Nav navbar>
                     <NavItem eventKey={1} href='inicio'>Inicio</NavItem>
@@ -44,8 +45,10 @@ var HeaderSection = React.createClass({
                     <NavItem eventKey={4} href='contacto'>Contacto</NavItem>
                   </Nav>
                 </CollapsibleNav>
+                <Button bsStyle='primary' bsSize='large' onClick={this.open}>
+                  Cotiza
+                </Button>
                 <SocialElement />
-                
             </Navbar>
         );
     }

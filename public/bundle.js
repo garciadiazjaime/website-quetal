@@ -14128,6 +14128,7 @@ var rb = require('react-bootstrap');
 var Nav = rb.Nav;
 var Navbar = rb.Navbar;
 var NavItem = rb.NavItem;
+var Button = rb.Button;
 var DropdownButton = rb.DropdownButton;
 var CollapsibleNav = rb.CollapsibleNav;
 
@@ -14156,7 +14157,7 @@ var HeaderSection = React.createClass({displayName: "HeaderSection",
 
     render: function() {
         return (
-            React.createElement(Navbar, {brand: "Volver a inicio de Gio Salon", toggleNavKey: 0, className: "navbar-static-top"}, 
+            React.createElement(Navbar, {brand: "Volver a inicio de Quetal", toggleNavKey: 0, className: "navbar-static-top"}, 
                 React.createElement(CollapsibleNav, {eventKey: 0}, " ", /* This is the eventKey referenced */
                   React.createElement(Nav, {navbar: true}, 
                     React.createElement(NavItem, {eventKey: 1, href: "inicio"}, "Inicio"), 
@@ -14165,8 +14166,10 @@ var HeaderSection = React.createClass({displayName: "HeaderSection",
                     React.createElement(NavItem, {eventKey: 4, href: "contacto"}, "Contacto")
                   )
                 ), 
+                React.createElement(Button, {bsStyle: "primary", bsSize: "large", onClick: this.open}, 
+                  "Cotiza"
+                ), 
                 React.createElement(SocialElement, null)
-                
             )
         );
     }

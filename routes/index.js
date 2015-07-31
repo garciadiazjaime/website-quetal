@@ -23,7 +23,7 @@ function getHTML(data) {
 	return '<!doctype html>' +
         '<html>' + 
         '<head>' +
-        '<title>Gio Salon</title>' +
+        '<title>Quetal | Mi seguro de auto</title>' +
         '<meta charset="utf-8">' +
         '<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">' +
         '<meta name="author" content="http://mintitmedia.com">' +
