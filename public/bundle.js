@@ -14294,7 +14294,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
 
         return (
             React.createElement("section", {id: "homeIntro"}, 
-                React.createElement(Carousel, {id: "aboutusCarousel", interval: "3000"}, 
+                React.createElement(Carousel, {id: "homeCarousel", interval: "3000"}, 
                     React.createElement(CarouselItem, null, 
                         React.createElement("div", {className: "container"}, 
                             React.createElement(Row, null, 

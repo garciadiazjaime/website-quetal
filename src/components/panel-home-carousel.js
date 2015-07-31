@@ -23,7 +23,7 @@ var HomeCarouselPanel = React.createClass({
 
         return (
             <section id="homeIntro">
-                <Carousel id="aboutusCarousel" interval="3000">
+                <Carousel id="homeCarousel" interval="3000">
                     <CarouselItem>
                         <div className="container">
                             <Row>
