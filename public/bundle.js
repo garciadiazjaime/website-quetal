@@ -14098,7 +14098,7 @@ var FooterSection = React.createClass({displayName: "FooterSection",
                 React.createElement(Col, {xs: 12, sm: 5}, 
                     React.createElement("span", {id: "brand-footer"}, "Quetal - Mi seguro de auto"), 
                     React.createElement("p", null, "Con el respaldo de:"), 
-                    React.createElement("span", {id: "general-logo"}, "General de seguros")
+                    React.createElement("span", {className: "general-logo"}, "General de seguros")
                 )
             ), 
             React.createElement(Row, null, 
@@ -14145,13 +14145,8 @@ var HeaderSection = React.createClass({displayName: "HeaderSection",
     handleClick: function(){
         console.log('handleClick');
         this.transitionTo('inicio');
+        this.transitionTo('coberturas');
         this.transitionTo('nosotros');
-        this.transitionTo('cortes');
-        this.transitionTo('color');
-        this.transitionTo('peinados');
-        this.transitionTo('maquillaje');
-        this.transitionTo('novias');
-        this.transitionTo('boutique');
         this.transitionTo('contacto');
     },
 
@@ -14162,12 +14157,10 @@ var HeaderSection = React.createClass({displayName: "HeaderSection",
                   React.createElement(Nav, {navbar: true}, 
                     React.createElement(NavItem, {eventKey: 1, href: "inicio"}, "Inicio"), 
                     React.createElement(NavItem, {eventKey: 2, href: "coberturas"}, "Coberturas"), 
-                    React.createElement(NavItem, {eventKey: 2, href: "nosotros"}, "Nosotros"), 
-                    React.createElement(NavItem, {eventKey: 4, href: "contacto"}, "Contacto")
+                    React.createElement(NavItem, {eventKey: 3, href: "nosotros"}, "Nosotros"), 
+                    React.createElement(NavItem, {eventKey: 4, href: "contacto"}, "Contacto"), 
+                    React.createElement(NavItem, {eventKey: 5, href: "cotiza", target: "_blank", className: "external"}, "Cotiza")
                   )
-                ), 
-                React.createElement(Button, {bsStyle: "primary", bsSize: "large", onClick: this.open}, 
-                  "Cotiza"
                 ), 
                 React.createElement(SocialElement, null)
             )
@@ -14240,6 +14233,334 @@ module.exports = Layout;
 var React = window.React;
 var ReactRouter = require('react-router');
 var rb = require('react-bootstrap');
+
+var Row = rb.Row;
+var Col = rb.Col;
+var Button = rb.Button;
+
+var HomeCallToActionPanel = React.createClass({displayName: "HomeCallToActionPanel",
+
+    mixins : [ReactRouter.Navigation],
+    
+    handleClick: function(){
+        console.log('handleClick');
+        // this.transitionTo('home');
+    },
+
+    render: function() {
+
+        return ( 
+            React.createElement("section", {id: "callToAction"}, 
+                React.createElement("div", {className: "smallContainer"}, 
+                    React.createElement(Row, null, 
+                        React.createElement(Col, {xs: 12, sm: 6}, 
+                            React.createElement("p", null, "¿Qué hacer en caso de Siniestro?")
+                        ), 
+                        React.createElement(Col, {xs: 12, sm: 6}, 
+                            React.createElement("a", {href: "contacto/siniestro", title: "Contáctanos", className: "greenButton"}, "Contáctanos")
+                        )
+                    )
+                )
+            )
+        );
+    }
+});
+
+module.exports = HomeCallToActionPanel;
+
+},{"react-bootstrap":70,"react-router":160}],185:[function(require,module,exports){
+'use strict';
+
+var React = window.React;
+var ReactRouter = require('react-router');
+var rb = require('react-bootstrap');
+
+var Row = rb.Row;
+var Col = rb.Col;
+var Button = rb.Button;
+var Carousel = rb.Carousel;
+var CarouselItem = rb.CarouselItem;
+
+var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
+
+    mixins : [ReactRouter.Navigation],
+    
+    handleClick: function(){
+        console.log('handleClick');
+        // this.transitionTo('home');
+    },
+
+    render: function() {
+
+        return (
+            React.createElement("section", {id: "homeIntro"}, 
+                React.createElement(Carousel, {id: "aboutusCarousel", interval: "3000"}, 
+                    React.createElement(CarouselItem, null, 
+                        React.createElement("div", {className: "container"}, 
+                            React.createElement(Row, null, 
+                                React.createElement(Col, {xs: 12, sm: 6}, 
+                                    React.createElement("p", {className: "bigPhrase"}, 
+                                        React.createElement("span", null, "Hola, Quetal"), " un Seguro de auto a tu alcance"
+                                    ), 
+                                    React.createElement("a", {href: "#", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
+                                    React.createElement("span", {className: "general-logo"}, "General de seguros")
+                                ), 
+                                React.createElement(Col, {xs: 12, sm: 6}, 
+                                    React.createElement("blockquote", null, "Justo lo que necesito, y al precio más barato")
+                                )
+                            ), 
+                            React.createElement("span", {className: "manImage"})
+                        )
+                    ), 
+                    React.createElement(CarouselItem, null, 
+                        React.createElement("div", {className: "container"}, 
+                            React.createElement(Row, null, 
+                                React.createElement(Col, {xs: 12, sm: 7}, 
+                                    React.createElement("p", {className: "bigPhrase"}, 
+                                        React.createElement("span", null, "Ahorra"), " desde un 20% en tu Seguro de Auto"
+                                    ), 
+                                    React.createElement("p", {class: "restrictions"}, "*En comparación con otros portales de venta" + ' ' +
+"de seguros por internet."), 
+                                    React.createElement("a", {href: "#", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
+                                    React.createElement("span", {className: "general-logo"}, "General de seguros")
+                                ), 
+                                React.createElement(Col, {xs: 12, sm: 5}
+                                )
+                            ), 
+                            React.createElement("span", {className: "womanImage"})
+                        )
+                    ), 
+                    React.createElement(CarouselItem, null, 
+                        React.createElement("div", {className: "container"}, 
+                            React.createElement(Row, null, 
+                                React.createElement(Col, {xs: 12, sm: 6}, 
+                                    React.createElement("p", {className: "bigPhrase"}, 
+                                        React.createElement("span", {className: "inline"}, "¿Quetal"), " si choco?"
+                                    ), 
+                                    React.createElement("p", null, "Conoce nuestras Coberturas contra Daños a Terceros y Daños a tu Automóvil."), 
+                                    React.createElement("a", {href: "#", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
+                                    React.createElement("span", {className: "general-logo"}, "General de seguros")
+                                ), 
+                                React.createElement(Col, {xs: 12, sm: 6}, 
+                                    React.createElement("blockquote", null, "Mejor lo aseguro rápido y fácil con una compañía de confianza")
+                                )
+                            ), 
+                            React.createElement("span", {className: "manImage"})
+                        )
+                    )
+                )
+            )
+        );
+    }
+});
+
+module.exports = HomeCarouselPanel;
+
+},{"react-bootstrap":70,"react-router":160}],186:[function(require,module,exports){
+'use strict';
+
+var React = window.React;
+var ReactRouter = require('react-router');
+var rb = require('react-bootstrap');
+
+var Row = rb.Row;
+var Col = rb.Col;
+var Button = rb.Button;
+
+var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesPanel",
+
+    mixins : [ReactRouter.Navigation],
+    
+    handleClick: function(){
+        console.log('handleClick');
+        // this.transitionTo('home');
+    },
+
+    render: function() {
+
+        return ( 
+            React.createElement("section", {id: "otherServices"}, 
+                React.createElement("div", {className: "container"}, 
+                    React.createElement(Row, null, 
+                        React.createElement(Col, {xs: 12, sm: 6}, 
+                            React.createElement("div", {className: "otherServices-block"}, 
+                                React.createElement("div", null, 
+                                    React.createElement("p", null, 
+                                        "Autos Fronterizos o Legalizados", 
+                            
+                                        React.createElement("a", {href: "cotiza", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza"), 
+                                        React.createElement("span", {id: "borderCartIcon"})
+                                    ), 
+                                    React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                                      "Ver detalles"
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Col, {xs: 12, sm: 6}, 
+                            React.createElement("div", {className: "otherServices-block"}, 
+                                React.createElement("div", null, 
+                                    React.createElement("p", null, 
+                                        "RC Obligatoria Federal / Estatal", 
+                            
+                                        React.createElement("a", {href: "cotiza", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza"), 
+                                        React.createElement("span", {id: "civilResponsibilityIcon"})
+                                    ), 
+                                    React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                                      "Ver detalles"
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ), 
+                React.createElement("div", {className: "smallContainer"}, 
+                    React.createElement(Row, null, 
+                        React.createElement(Col, {xs: 12, sm: 5}, 
+                            React.createElement("p", {id: "substituteCar"}, "Automóvil Sustituto")
+                        ), 
+                        React.createElement(Col, {xs: 12, sm: 7}, 
+                            React.createElement("p", null, "General de Seguros te ofrece un auto sustituto mientras reparamos tu auto por colisión o te pagamos tu automóvil por perdida total o robo total. "), 
+                            React.createElement("p", null, "Al contratar tu Seguro:"), 
+                            React.createElement(Row, {id: "substituteCar-ParticipantInsurance"}, 
+                                React.createElement(Col, {xs: 12, sm: 4}, 
+                                    React.createElement("p", null, React.createElement("span", null, "GS Autos "), " Amplia")
+                                ), 
+                                React.createElement(Col, {xs: 12, sm: 2}, 
+                                    React.createElement("p", null, "o")
+                                ), 
+                                React.createElement(Col, {xs: 12, sm: 4}, 
+                                    React.createElement("p", null, React.createElement("span", null, "GS Autos "), " Prestigio")
+                                )
+                            )
+                        )
+                    )
+                )
+            )
+        );
+    }
+});
+
+module.exports = HomeOtherServicesPanel;
+
+},{"react-bootstrap":70,"react-router":160}],187:[function(require,module,exports){
+'use strict';
+
+var React = window.React;
+var ReactRouter = require('react-router');
+var rb = require('react-bootstrap');
+
+var Row = rb.Row;
+var Col = rb.Col;
+var Button = rb.Button;
+
+var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
+
+    mixins : [ReactRouter.Navigation],
+    
+    handleClick: function(){
+        console.log('handleClick');
+        // this.transitionTo('home');
+    },
+
+    render: function() {
+
+        return (
+            React.createElement("section", {id: "homeServices"}, 
+                React.createElement("div", {className: "smallContainer"}, 
+                    React.createElement("h1", null, "Contrata el paquete que necesitas"), 
+                    React.createElement(Row, null, 
+                        React.createElement(Col, {xs: 12, sm: 7}, 
+                            React.createElement("p", null, "En todas nuestras Coberturas cuentas con Seguro de Gastos Médicos para ocupantes del vehículo en caso de accidente." + ' ' +
+"Además, dispones de los servicios de Asistencia Legal y Asistencia en el Camino.")
+                        ), 
+                        React.createElement(Col, {xs: 12, sm: 5}
+                        )
+                    )
+                ), 
+                React.createElement("div", {className: "container"}, 
+                    React.createElement(Row, {id: "servicesList"}, 
+                        React.createElement(Col, {xs: 12, sm: 3}, 
+                            React.createElement("div", {className: "servicesList-wrap"}, 
+                                React.createElement("h3", null, "¿Qué tal si tienes un auto del año*? ", React.createElement("span", {id: "prestigeIcon"})), 
+                                React.createElement("div", {className: "servicesList-details"}, 
+                                    React.createElement("h2", null, "Cobertura Prestigio"), 
+                                    React.createElement("ul", {className: "checklist"}, 
+                                        React.createElement("li", null, "Protección extendida"), 
+                                        React.createElement("li", null, "Daños a tu vehículo"), 
+                                        React.createElement("li", null, "Robo"), 
+                                        React.createElement("li", null, "Daños a terceros")
+                                    )
+                                ), 
+                                React.createElement("a", {href: "#", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza")
+                            ), 
+                            React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                              "Ver detalles"
+                            )
+                        ), 
+                        React.createElement(Col, {xs: 12, sm: 3}, 
+                            React.createElement("div", {className: "servicesList-wrap featured"}, 
+                                React.createElement("h3", null, "¿Qué tal si te cuidamos bien? ", React.createElement("span", {id: "comfortIcon"})), 
+                                React.createElement("div", {className: "servicesList-details"}, 
+                                    React.createElement("h2", null, "Cobertura Confort Amplia"), 
+                                    React.createElement("ul", {className: "checklist"}, 
+                                        React.createElement("li", null, "Daños a tu vehículo"), 
+                                        React.createElement("li", null, "Robo"), 
+                                        React.createElement("li", null, "Daños a terceros")
+                                    )
+                                ), 
+                                React.createElement("a", {href: "#", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza")
+                            ), 
+                            React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                              "Ver detalles"
+                            )
+                        ), 
+                        React.createElement(Col, {xs: 12, sm: 3}, 
+                            React.createElement("div", {className: "servicesList-wrap"}, 
+                                React.createElement("h3", null, "¿Qué tal si tú pones los límites? ", React.createElement("span", {id: "limitedComfortIcon"})), 
+                                React.createElement("div", {className: "servicesList-details"}, 
+                                    React.createElement("h2", null, "Cobertura Confort Limitada"), 
+                                    React.createElement("ul", {className: "checklist"}, 
+                                        React.createElement("li", null, "Robo"), 
+                                        React.createElement("li", null, "Daños a terceros")
+                                    )
+                                ), 
+                                React.createElement("a", {href: "#", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza")
+                            ), 
+                            React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                              "Ver detalles"
+                            )
+                        ), 
+                        React.createElement(Col, {xs: 12, sm: 3}, 
+                            React.createElement("div", {className: "servicesList-wrap"}, 
+                                React.createElement("h3", null, "¿Qué tal si quieres un Seguro como tú lo necesitas?", React.createElement("span", {id: "basicComfortIcon"})), 
+                                React.createElement("div", {className: "servicesList-details"}, 
+                                    React.createElement("h2", null, "Cobertura Confort Básica"), 
+                                    React.createElement("ul", {className: "checklist"}, 
+                                        React.createElement("li", null, "Daños a terceros")
+                                    )
+                                ), 
+                                React.createElement("a", {href: "#", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza")
+                            ), 
+                            React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                              "Ver detalles"
+                            )
+                        )
+                    )
+                )
+            )
+        );
+    }
+});
+
+module.exports = HomeServicesPanel;
+
+},{"react-bootstrap":70,"react-router":160}],188:[function(require,module,exports){
+'use strict';
+
+var React = window.React;
+var ReactRouter = require('react-router');
+var rb = require('react-bootstrap');
 var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
@@ -14267,7 +14588,7 @@ var AboutusPanel = React.createClass({displayName: "AboutusPanel",
 
 module.exports = AboutusPanel;
 
-},{"react-bootstrap":70,"react-router":160}],185:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],189:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14381,7 +14702,7 @@ var ContactPanel = React.createClass({displayName: "ContactPanel",
 
 module.exports = ContactPanel;
 
-},{"react-bootstrap":70,"react-router":160}],186:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],190:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14417,17 +14738,22 @@ var CoveragePanel = React.createClass({displayName: "CoveragePanel",
 
 module.exports = CoveragePanel;
 
-},{"react-bootstrap":70,"react-router":160}],187:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],191:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
 var ReactRouter = require('react-router');
+var CarouselPanel = require('./panel-home-carousel');
+var ServicesPanel = require('./panel-home-services');
+var OtherServicesPanel = require('./panel-home-otherservices');
+var CallToActionPanel = require('./panel-home-calltoaction');
+
 var rb = require('react-bootstrap');
 var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
 
-var HomePanel = React.createClass({displayName: "HomePanel",
+var HomeSection = React.createClass({displayName: "HomeSection",
 
     mixins : [ReactRouter.Navigation],
     
@@ -14445,15 +14771,18 @@ var HomePanel = React.createClass({displayName: "HomePanel",
 
         return (
             React.createElement("div", {id: "mainContent"}, 
-                "home"
+                React.createElement(CarouselPanel, null), 
+                React.createElement(ServicesPanel, null), 
+                React.createElement(OtherServicesPanel, null), 
+                React.createElement(CallToActionPanel, null)
             )
         );
     }
 });
 
-module.exports = HomePanel;
+module.exports = HomeSection;
 
-},{"react-bootstrap":70,"react-router":160}],188:[function(require,module,exports){
+},{"./panel-home-calltoaction":184,"./panel-home-carousel":185,"./panel-home-otherservices":186,"./panel-home-services":187,"react-bootstrap":70,"react-router":160}],192:[function(require,module,exports){
 var React = window.React;
 var ReactRouter = require('react-router');
 var Route = ReactRouter.Route;
@@ -14476,7 +14805,7 @@ var routes = (
 );
 
 module.exports = routes;
-},{"./components/layout":183,"./components/section-aboutus":184,"./components/section-contactus":185,"./components/section-coverage":186,"./components/section-home":187,"react-router":160}],"myApp":[function(require,module,exports){
+},{"./components/layout":183,"./components/section-aboutus":188,"./components/section-contactus":189,"./components/section-coverage":190,"./components/section-home":191,"react-router":160}],"myApp":[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14487,4 +14816,4 @@ ReactRouter.run(routes, ReactRouter.HistoryLocation, function (Root) {
 	React.render(React.createElement(Root, null), document.getElementById('app'));
 });
 
-},{"./routes":188,"react-router":160}]},{},[]);
+},{"./routes":192,"react-router":160}]},{},[]);

@@ -24,13 +24,8 @@ var HeaderSection = React.createClass({
     handleClick: function(){
         console.log('handleClick');
         this.transitionTo('inicio');
+        this.transitionTo('coberturas');
         this.transitionTo('nosotros');
-        this.transitionTo('cortes');
-        this.transitionTo('color');
-        this.transitionTo('peinados');
-        this.transitionTo('maquillaje');
-        this.transitionTo('novias');
-        this.transitionTo('boutique');
         this.transitionTo('contacto');
     },
 
@@ -41,13 +36,11 @@ var HeaderSection = React.createClass({
                   <Nav navbar>
                     <NavItem eventKey={1} href='inicio'>Inicio</NavItem>
                     <NavItem eventKey={2} href='coberturas'>Coberturas</NavItem>
-                    <NavItem eventKey={2} href='nosotros'>Nosotros</NavItem>
+                    <NavItem eventKey={3} href='nosotros'>Nosotros</NavItem>
                     <NavItem eventKey={4} href='contacto'>Contacto</NavItem>
+                    <NavItem eventKey={5} href='cotiza' target="_blank" className="external">Cotiza</NavItem>
                   </Nav>
                 </CollapsibleNav>
-                <Button bsStyle='primary' bsSize='large' onClick={this.open}>
-                  Cotiza
-                </Button>
                 <SocialElement />
             </Navbar>
         );

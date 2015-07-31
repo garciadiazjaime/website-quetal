@@ -22,30 +22,62 @@ var HomeCarouselPanel = React.createClass({
     render: function() {
 
         return (
-            <section id="nosotros">
-                <div className="container">
-                    <Row>
-                        <Col xs={12} sm={6}>
-                            <h2>Nosotros</h2>
-                            <p>En <em>giO</em> salón proponemos un servicio vanguardista, exclusivo, de calidad y creativo para que cada corte, tinte, peinado y maquillaje sea único, sobresaliente y llene de seguridad a quien lo porte.</p>
-                            <p>Contamos con más de 15 años de experiencia, ofreciendo a nuestros clientes un servicio personalizado,  estando siempre a la vanguardia en estilos y tendencias, dándole acceso a nuestros clientes a servicios y productos de primer nivel. </p>
-
-                            <Carousel id="aboutusCarousel" interval="3000">
-                                <CarouselItem id="aboutus-cutSlide" >
-                                    <p>Seleccionamos el mejor corte para tí</p>
-                                </CarouselItem>
-                                <CarouselItem id="aboutus-cutSlide">
-                                    <p>Seleccionamos el mejor corte para tí</p>
-                                </CarouselItem>
-                            </Carousel>
-                        </Col>
-                        <Col xs={12} sm={6}>
-                            <span id="professionaToolsImage">Imagen de herramientas de estilizado profesionales</span>
-
-                            <span id="hairWashImage">Imagen de herramientas de estilizado profesionales</span>
-                        </Col>
-                    </Row>   
-                </div>
+            <section id="homeIntro">
+                <Carousel id="aboutusCarousel" interval="3000">
+                    <CarouselItem>
+                        <div className="container">
+                            <Row>
+                                <Col xs={12} sm={6}>
+                                    <p className="bigPhrase">
+                                        <span>Hola, Quetal</span> un Seguro de auto a tu alcance
+                                    </p> 
+                                    <a href="#" title="Ver Coberturas" className="yellowButton">Ver Coberturas</a>
+                                    <span className="general-logo">General de seguros</span>
+                                </Col>
+                                <Col xs={12} sm={6}>
+                                    <blockquote>Justo lo que necesito, y al precio más barato</blockquote>
+                                </Col>
+                            </Row>
+                            <span className="manImage"></span>  
+                        </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                        <div className="container">
+                            <Row>
+                                <Col xs={12} sm={7}>
+                                    <p className="bigPhrase">
+                                        <span>Ahorra</span> desde un 20% en tu Seguro de Auto
+                                    </p>
+                                    <p class="restrictions">*En comparación con otros portales de venta
+de seguros por internet.</p>
+                                    <a href="#" title="Ver Coberturas" className="yellowButton">Ver Coberturas</a>
+                                    <span className="general-logo">General de seguros</span>
+                                </Col>
+                                <Col xs={12} sm={5}>
+                                </Col>
+                            </Row>
+                            <span className="womanImage"></span>  
+                        </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                        <div className="container">
+                            <Row>
+                                <Col xs={12} sm={6}>
+                                    <p className="bigPhrase">
+                                        <span className="inline">¿Quetal</span> si choco?
+                                    </p> 
+                                    <p>Conoce nuestras Coberturas contra Daños a Terceros y Daños a tu Automóvil.</p>
+                                    <a href="#" title="Ver Coberturas" className="yellowButton">Ver Coberturas</a>
+                                    <span className="general-logo">General de seguros</span>
+                                </Col>
+                                <Col xs={12} sm={6}>
+                                    <blockquote>Mejor lo aseguro rápido y fácil con una compañía de confianza</blockquote>
+                                </Col>
+                            </Row>
+                            <span className="manImage"></span>  
+                        </div>
+                    </CarouselItem>
+                </Carousel>
             </section>
         );
     }
