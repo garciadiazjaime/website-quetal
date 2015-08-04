@@ -2,12 +2,17 @@
 
 var React = require('react');
 var ReactRouter = require('react-router');
+var CarouselPanel = require('./panel-home-carousel');
+var ServicesPanel = require('./panel-home-services');
+var OtherServicesPanel = require('./panel-home-otherservices');
+var CallToActionPanel = require('./panel-home-calltoaction');
+
 var rb = require('react-bootstrap');
 var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
 
-var HomePanel = React.createClass({
+var HomeSection = React.createClass({
 
     mixins : [ReactRouter.Navigation],
     
@@ -25,10 +30,13 @@ var HomePanel = React.createClass({
 
         return (
             <div id="mainContent">
-                home
+                <CarouselPanel />
+                <ServicesPanel />
+                <OtherServicesPanel />
+                <CallToActionPanel />
             </div>
         );
     }
 });
 
-module.exports = HomePanel;
+module.exports = HomeSection;

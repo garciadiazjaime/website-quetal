@@ -46,7 +46,7 @@ var FooterSection = React.createClass({
                 <Col xs={12} sm={5}>
                     <span id="brand-footer">Quetal - Mi seguro de auto</span>
                     <p>Con el respaldo de:</p>
-                    <span id="general-logo">General de seguros</span>
+                    <span className="general-logo">General de seguros</span>
                 </Col>
             </Row>
             <Row>
