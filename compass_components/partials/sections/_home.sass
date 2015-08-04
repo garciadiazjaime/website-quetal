@@ -1,8 +1,44 @@
 /* ****************** HOME ************** */
 #homeCarousel
+	@extend .hasColorBackground
 	background: #00b48c
 	@include background-image(linear-gradient(to right, #00b48c, #7ccf59))
+	@extend %roboto-bold
+	font-size: 16px
 	height: 580px
+
+	.item
+		padding: 55px 0 0
+
+		&:last-child
+			.yellowButton
+				margin-top: 30px
+
+	.container
+		position: relative
+
+	.restrictions
+		@extend %roboto
+		font-size: 10px
+
+	.yellowButton
+		margin-top: 55px
+
+	p
+		max-width: 350px
+
+	p.bigPhrase
+		max-width: 100%
+	
+	.bigPhrase.narrow
+		max-width: 494px
+
+
+	.general-logo	
+		@extend .img
+		background: sprite($home-icons, big-insurancelogo)
+		@include sprite-dimensions($home-icons, big-insurancelogo)
+		@include sprite-at2x($home-icons, $home2x-icons)
 
 .bigPhrase
 	color: white
@@ -18,5 +54,18 @@
 	span.inline
 		display: inline-block
 
-.bigPhrase.narrow
-	max-width: 494px
+blockquote
+	border: none
+	color: $yellow
+	display: inline-block
+	@extend %roboto-bold
+	font-size: 28px
+	line-height: 1em
+	position: relative
+	
+	span
+		background: $blue
+		clear: right
+		display: inline-block
+		float: left
+		padding: 10px

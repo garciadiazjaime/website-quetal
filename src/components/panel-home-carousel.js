@@ -35,7 +35,7 @@ var HomeCarouselPanel = React.createClass({
                                     <span className="general-logo">General de seguros</span>
                                 </Col>
                                 <Col xs={12} sm={6}>
-                                    <blockquote>Justo lo que necesito, y al precio más barato</blockquote>
+                                    <blockquote><span>Justo lo que necesito,</span> <span>y al precio</span> <span>más barato</span></blockquote>
                                 </Col>
                             </Row>
                             <span className="manImage"></span>  
@@ -71,7 +71,7 @@ de seguros por internet.</p>
                                     <span className="general-logo">General de seguros</span>
                                 </Col>
                                 <Col xs={12} sm={6}>
-                                    <blockquote>Mejor lo aseguro rápido y fácil con una compañía de confianza</blockquote>
+                                    <blockquote><span>Mejor lo aseguro</span> <span>rápido y fácil con</span> <span>una compañía</span> <span>de confianza</span></blockquote>
                                 </Col>
                             </Row>
                             <span className="manImage"></span>  
