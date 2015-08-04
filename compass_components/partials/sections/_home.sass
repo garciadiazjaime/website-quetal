@@ -2,4 +2,21 @@
 #homeCarousel
 	background: #00b48c
 	@include background-image(linear-gradient(to right, #00b48c, #7ccf59))
+	height: 580px
 
+.bigPhrase
+	color: white
+	@extend %roboto-black
+	font-size: 63px
+	line-height: 1em
+
+	span:first-child
+		color: $yellow
+		display: block
+		@extend %roboto-bold
+
+	span.inline
+		display: inline-block
+
+.bigPhrase.narrow
+	max-width: 494px

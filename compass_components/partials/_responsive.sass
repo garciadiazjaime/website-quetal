@@ -1,7 +1,53 @@
 /* *************** GENERAL *************** */
 
 /* *************** HEADER *************** */
+@media screen and (max-width: 991px)
+	.navbar-nav
+		li
+			margin: 0 0 0 25px
+
 @media screen and (max-width: 767px)
+
+	header, #header
+		.container
+			padding: 0
+
+	.navbar-toggle
+		margin: 2px 70px 25px 0
+
+	.navbar-nav
+		margin: 0
+		padding: 0
+
+		li
+			display: block
+			margin: 0
+
+		a
+			background: white
+			display: block
+
+			&:hover, &:focus, &:active
+				background: $yellow
+				color: white
+
+		li:last-child //quote button
+			a
+				@include border-radius(0)
+
+	.navbar-default
+		.navbar-collapse
+			padding: 0
+
+	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus
+		background: $yellow
+
+	.navbar-default .navbar-nav > li:last-child > a:hover, .navbar-default .navbar-nav > li:last-child > a:focus
+		background: lighten($blue, 10)
+		@include background-image(linear-gradient(to right, lighten(#006df6, 10), lighten(#009ae2, 10)))
+		
+	.navbar-nav > li > a, .navbar-nav > li:last-child > a
+		padding: 18px 0
 
 
 /* -------- NAVIGATION --------- */

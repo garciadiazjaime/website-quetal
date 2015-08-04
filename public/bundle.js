@@ -14316,7 +14316,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                         React.createElement("div", {className: "container"}, 
                             React.createElement(Row, null, 
                                 React.createElement(Col, {xs: 12, sm: 7}, 
-                                    React.createElement("p", {className: "bigPhrase"}, 
+                                    React.createElement("p", {className: "bigPhrase narrow"}, 
                                         React.createElement("span", null, "Ahorra"), " desde un 20% en tu Seguro de Auto"
                                     ), 
                                     React.createElement("p", {className: "restrictions"}, "*En comparación con otros portales de venta" + ' ' +

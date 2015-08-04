@@ -7,25 +7,28 @@ html, body
 	background: white
 
 body
-	color: $black
+	color: $light-gray
+	@extend %roboto
 	font-size: 14px 
 	letter-spacing: 0.07em
 	line-height: 1.4em
 	padding: 0
 
 a
-	color: $black
+	color: $dark-gray
 	font-weight: normal
 
 	&:hover, &:focus, &:active
-		color: lighten($black, 20)
+		color: lighten($dark-gray, 20)
 		text-decoration: none
 
 em
 	font-style: normal
 
 /* ****************** LAYOUT ************** */
-
+#mainContent
+	padding: 110px 0 0
+	
 section
 	max-width: 100%
 	overflow: hidden
@@ -109,6 +112,8 @@ select
 	overflow: hidden
 	width: 100%
 
+.hasColorBackground
+	color: white
 
 /* ****************** HEADER ************** */	
 header, #header
@@ -116,11 +121,13 @@ header, #header
 	font-size: 13px
 	left: 0
 	letter-spacing: 0.07em
+	min-height: 110px
 	overflow: hidden
-	padding: 30px 0 40px
+	padding: 35px 0 25px
 	position: absolute
 	top: 0
 	width: 100%
+	z-index: 50
 
 	.container
 		position: relative
@@ -129,8 +136,61 @@ header, #header
 	.social
 		position: absolute
 		right: 15px
-		top: 19px
+		top: 6px
 		z-index: 5
+
+.navbar-brand	
+	background: sprite($general-icons, logo)
+	@include sprite-dimensions($general-icons, logo)
+	@include sprite-at2x($general-icons, $general2x-icons)
+	display: block
+	left: 15px
+	line-height: 5000em
+	overflow: hidden
+	position: absolute
+	top: 0
+	z-index: 5
+
+.navbar-nav > li
+	float: none
+
+.navbar-nav > li > a
+	padding: 10px 0 13px
+
+.navbar-nav
+	padding: 0 40px 0 205px
+	text-align: center
+	width: 100%
+
+	a
+		@extend %roboto-bold
+		color: $light-gray
+		display: block
+		text-align: center
+
+		&:hover, &:focus, &:active
+			color: $green
+
+	li
+		display: inline-block
+		margin: 0 0 0 60px
+
+	li:first-child
+		margin-left: 0
+
+	li:last-child //quote button
+		a
+			background: $blue
+			@include background-image(linear-gradient(to right, #006df6, #009ae2))	
+			@include border-radius(5px)
+			color: white
+			min-width: 77px
+			padding: 10px 12px 12px
+
+			&:hover, &:focus, &:active
+				background: lighten($blue, 10)
+				@include background-image(linear-gradient(to right, lighten(#006df6, 10), lighten(#009ae2, 10)))
+				color: white
 
 /* ****************** FOOTER ************** */
 footer, #footer
