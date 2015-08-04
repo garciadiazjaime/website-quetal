@@ -1,0 +1,155 @@
+@import "partials/_setup"
+@import "partials/_reset"
+
+/* ****************** GENERAL ************** */
+
+html, body
+	background: white
+
+body
+	color: $black
+	font-size: 14px 
+	letter-spacing: 0.07em
+	line-height: 1.4em
+	padding: 0
+
+a
+	color: $black
+	font-weight: normal
+
+	&:hover, &:focus, &:active
+		color: lighten($black, 20)
+		text-decoration: none
+
+em
+	font-style: normal
+
+/* ****************** LAYOUT ************** */
+
+section
+	max-width: 100%
+	overflow: hidden
+
+.container
+	max-width: 980px
+
+select
+	background: transparent
+	border: none
+	font-size: 16px
+	height: 100%
+	padding: 5px 15px 5px 0
+	position: relative
+	-webkit-appearance: none
+	width: 110%
+	z-index: 5
+
+	&:hover
+		cursor: pointer
+
+.btn
+	background: $gray
+	border: none
+	@include border-radius(0)
+	color: $black
+	display: inline-block
+	font-size: 13px
+	letter-spacing: 0.06em
+	margin: 30px 0 10px
+	padding: 17px 20px
+	text-align: center
+	width: 100%
+
+	&:hover, &:focus, &:active
+		background: darken($gray, 5)
+		color: $black
+
+.btn-default:active:hover, .btn-default:active:focus
+	background: darken($gray, 5)
+	color: $black
+
+.social
+	list-style-type: none
+	margin: 0
+	padding: 0
+
+	li
+		display: inline-block
+		margin: 0 0 0 15px
+
+	li:first-child
+		margin-left: 0
+
+	a
+		background: #0074c8
+		@include border-radius(50px)
+		display: block
+		height: 24px
+		overflow: hidden
+		position: relative
+		@include transition(.4s)
+		width: 24px
+
+		&:hover, &:focus, &:active
+			background: darken(#0074c8, 10)
+			@include transition(.4s)
+
+	span
+		background: sprite($general-icons, facebook)
+		@include sprite-dimensions($general-icons, facebook)
+		@include sprite-at2x($general-icons, $general2x-icons)
+		display: block
+		margin: 7px auto 0
+		line-height: 5000em
+		overflow: hidden
+
+.img
+	display: block
+	line-height: 5000em
+	overflow: hidden
+	width: 100%
+
+
+/* ****************** HEADER ************** */	
+header, #header
+	background: transparent
+	font-size: 13px
+	left: 0
+	letter-spacing: 0.07em
+	overflow: hidden
+	padding: 30px 0 40px
+	position: absolute
+	top: 0
+	width: 100%
+
+	.container
+		position: relative
+		text-align: right
+
+	.social
+		position: absolute
+		right: 15px
+		top: 19px
+		z-index: 5
+
+/* ****************** FOOTER ************** */
+footer, #footer
+	background: $black
+	color: white
+	font-size: 10px
+	padding: 60px 0 20px
+	text-align: center
+
+	a
+		color: white
+		display: inline-block
+		padding: 0 5px
+
+		&:hover, &:focus, &:active
+			color: $pink
+
+/* ****************** SECTIONS ************** */
+
+@import "partials/sections/_home"
+
+@import "partials/_responsive"

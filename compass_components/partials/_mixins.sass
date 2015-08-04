@@ -1,0 +1,14 @@
+// Mixins ---------------------------------------------------------------
+
+// Retina support for sprites
+// A modification of retina.sass' helper mixin. 
+// It changes the background-image of a normal sprite-map to a retina version
+// and it adds a the normal sprite-map's dimension to the retina background for proper display
+
+// Original code by Nathan Crank (nathancrank.com), modified by Vagui
+// mintitmedia.com
+
+@mixin sprite-at2x($original, $retina)
+	@media all and (-webkit-min-device-pixel-ratio : 1.5), all and (-o-min-device-pixel-ratio: 3/2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5)
+		background-image: sprite-url($retina)
+		background-size: image-width(sprite-path($original)) image-height(sprite-path($original))
