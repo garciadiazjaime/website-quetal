@@ -8,11 +8,18 @@
 	height: 580px
 
 	.item
+		min-height: 580px
 		padding: 55px 0 0
 
 		&:last-child
 			.yellowButton
 				margin-top: 30px
+
+			blockquote
+				margin: 85px 0 30px -90px
+
+	blockquote
+		margin: 200px 0 30px -100px
 
 	.container
 		position: relative
@@ -40,6 +47,37 @@
 		@include sprite-dimensions($home-icons, big-insurancelogo)
 		@include sprite-at2x($home-icons, $home2x-icons)
 
+	.row
+		position: relative
+		z-index: 5
+
+	.carousel-indicators
+		left: 50%
+		margin: 0 0 0 -45%
+		max-width: 980px
+		text-align: right
+		top: 40px
+		width: 90%
+
+		li
+			background: $yellow
+			border: none
+			display: block
+			height: 14px
+			margin: 0 0 10px auto
+			width: 14px
+
+			&:hover, &:focus, &:active
+				background: $blue
+
+		li.active
+			background: $blue
+			border: none
+			margin: 0 0 10px auto
+
+	.carousel-control
+		display: none
+
 .bigPhrase
 	color: white
 	@extend %roboto-black
@@ -60,12 +98,53 @@ blockquote
 	display: inline-block
 	@extend %roboto-bold
 	font-size: 28px
-	line-height: 1em
+	line-height: 0.6em
+	margin: 30px 0
 	position: relative
 	
 	span
 		background: $blue
-		clear: right
+		clear: both
 		display: inline-block
 		float: left
-		padding: 10px
+		padding: 10px 15px
+
+	&:before
+		content: "\201C"
+		display: inline-block
+		@extend %roboto-bold
+		font-size: 115px
+		left: -10px
+		line-height: 0
+		position: absolute
+		top: 35px
+
+.carousel-control
+	z-index: 10
+
+.carouselImage
+	position: absolute
+	right: -60px
+	top: -55px
+	z-index: 1
+
+#manImage
+	@extend .img
+	@extend .carouselImage
+	background: sprite($home-icons, carousel-man)
+	@include sprite-dimensions($home-icons, carousel-man)
+	@include sprite-at2x($home-icons, $home2x-icons)
+
+#womanImage
+	@extend .img
+	@extend .carouselImage
+	background: sprite($home-icons, carousel-woman)
+	@include sprite-dimensions($home-icons, carousel-woman)
+	@include sprite-at2x($home-icons, $home2x-icons)
+
+#carImage
+	@extend .img
+	@extend .carouselImage
+	background: sprite($home-icons, carousel-car)
+	@include sprite-dimensions($home-icons, carousel-car)
+	@include sprite-at2x($home-icons, $home2x-icons)

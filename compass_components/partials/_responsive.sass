@@ -1,6 +1,9 @@
 /* *************** GENERAL *************** */
 
 /* *************** HEADER *************** */
+
+
+/* -------- NAVIGATION --------- */
 @media screen and (max-width: 991px)
 	.navbar-nav
 		li
@@ -50,7 +53,56 @@
 		padding: 18px 0
 
 
-/* -------- NAVIGATION --------- */
+/* *************** HOME *************** */
+@media screen and (min-width: 883px)
+	#homeCarousel
+		.carousel-indicators
+			margin: 0 0 0 -490px
 
+
+@media screen and (max-width: 991px)
+	#homeCarousel			
+		.item
+
+			&:last-child
+				blockquote
+					margin: 25px auto 30px
+
+		blockquote
+			margin: 200px auto 30px
+
+		p.bigPhrase
+			max-width: 494px
+
+	blockquote
+		span
+			line-height: 1em
+			padding: 5px 15px
+
+
+@media screen and (max-width: 500px)
+	.bigPhrase
+		font-size: 35px
+
+	#homeCarousel
+		.yellowButton
+			font-size: 19px
+			margin-left: auto
+			margin-right: auto
+			padding: 15px
+			width: 230px
+
+		.item
+			text-align: center
+
+		p
+			max-width: 90%
+
+		.general-logo
+			margin: 0 auto
+
+		blockquote
+			font-size: 15px
+			margin: 30px auto
 
 /* *************** FOOTER *************** */

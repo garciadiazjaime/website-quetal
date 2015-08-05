@@ -35,10 +35,10 @@ var HomeCarouselPanel = React.createClass({
                                     <span className="general-logo">General de seguros</span>
                                 </Col>
                                 <Col xs={12} sm={6}>
-                                    <blockquote><span>Justo lo que necesito,</span> <span>y al precio</span> <span>más barato</span></blockquote>
+                                    <blockquote><span>Justo lo que necesito, </span><span> y al precio </span><span>más barato </span></blockquote>
                                 </Col>
                             </Row>
-                            <span className="manImage"></span>  
+                            <span id="manImage"></span>  
                         </div>
                     </CarouselItem>
                     <CarouselItem>
@@ -56,7 +56,7 @@ de seguros por internet.</p>
                                 <Col xs={12} sm={5}>
                                 </Col>
                             </Row>
-                            <span className="womanImage"></span>  
+                            <span id="womanImage"></span>  
                         </div>
                     </CarouselItem>
                     <CarouselItem>
@@ -71,10 +71,10 @@ de seguros por internet.</p>
                                     <span className="general-logo">General de seguros</span>
                                 </Col>
                                 <Col xs={12} sm={6}>
-                                    <blockquote><span>Mejor lo aseguro</span> <span>rápido y fácil con</span> <span>una compañía</span> <span>de confianza</span></blockquote>
+                                    <blockquote><span>Mejor lo aseguro </span><span>rápido y fácil con </span><span>una compañía </span><span>de confianza </span></blockquote>
                                 </Col>
                             </Row>
-                            <span className="manImage"></span>  
+                            <span id="carImage"></span>  
                         </div>
                     </CarouselItem>
                 </Carousel>

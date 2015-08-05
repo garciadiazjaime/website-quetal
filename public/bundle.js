@@ -14306,10 +14306,10 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                     React.createElement("span", {className: "general-logo"}, "General de seguros")
                                 ), 
                                 React.createElement(Col, {xs: 12, sm: 6}, 
-                                    React.createElement("blockquote", null, React.createElement("span", null, "Justo lo que necesito,"), " ", React.createElement("span", null, "y al precio"), " ", React.createElement("span", null, "más barato"))
+                                    React.createElement("blockquote", null, React.createElement("span", null, "Justo lo que necesito, "), React.createElement("span", null, " y al precio "), React.createElement("span", null, "más barato "))
                                 )
                             ), 
-                            React.createElement("span", {className: "manImage"})
+                            React.createElement("span", {id: "manImage"})
                         )
                     ), 
                     React.createElement(CarouselItem, null, 
@@ -14327,7 +14327,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                 React.createElement(Col, {xs: 12, sm: 5}
                                 )
                             ), 
-                            React.createElement("span", {className: "womanImage"})
+                            React.createElement("span", {id: "womanImage"})
                         )
                     ), 
                     React.createElement(CarouselItem, null, 
@@ -14342,10 +14342,10 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                     React.createElement("span", {className: "general-logo"}, "General de seguros")
                                 ), 
                                 React.createElement(Col, {xs: 12, sm: 6}, 
-                                    React.createElement("blockquote", null, React.createElement("span", null, "Mejor lo aseguro"), " ", React.createElement("span", null, "rápido y fácil con"), " ", React.createElement("span", null, "una compañía"), " ", React.createElement("span", null, "de confianza"))
+                                    React.createElement("blockquote", null, React.createElement("span", null, "Mejor lo aseguro "), React.createElement("span", null, "rápido y fácil con "), React.createElement("span", null, "una compañía "), React.createElement("span", null, "de confianza "))
                                 )
                             ), 
-                            React.createElement("span", {className: "manImage"})
+                            React.createElement("span", {id: "carImage"})
                         )
                     )
                 )
