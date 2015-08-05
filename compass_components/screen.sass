@@ -7,28 +7,66 @@ html, body
 	background: white
 
 body
-	color: $black
+	color: $light-gray
+	@extend %roboto
 	font-size: 14px 
 	letter-spacing: 0.07em
 	line-height: 1.4em
 	padding: 0
 
 a
-	color: $black
+	color: $dark-gray
 	font-weight: normal
 
 	&:hover, &:focus, &:active
-		color: lighten($black, 20)
+		color: lighten($dark-gray, 20)
 		text-decoration: none
 
 em
 	font-style: normal
 
-/* ****************** LAYOUT ************** */
+h1
+	border-bottom: 1px dashed $blue
+	color: $blue
+	@extend %roboto
+	font-size: 35px
+	padding: 0 0 15px
 
+.medium
+	@extend %roboto-medium
+
+.checklist
+	list-style-type: none
+	margin: 0 0 30px
+	padding: 0
+
+	li
+		min-height: 17px
+		padding: 5px 0 0 30px
+		position: relative
+
+		&:before
+			background: sprite($general-icons, checkmark)
+			@include sprite-dimensions($general-icons, checkmark)
+			@include sprite-at2x($general-icons, $general2x-icons)
+			content: " "
+			display: block
+			left: 0
+			position: absolute
+			top: 0
+			
+/* ****************** LAYOUT ************** */
+#mainContent
+	padding: 110px 0 0
+	
 section
 	max-width: 100%
 	overflow: hidden
+
+.smallContainer
+	margin: 0 auto
+	max-width: 905px
+	width: 80%
 
 .container
 	max-width: 980px
@@ -48,25 +86,46 @@ select
 		cursor: pointer
 
 .btn
-	background: $gray
+	background: $blue
+	@include background-image(linear-gradient(to right, #006df6, #009ae2))	
 	border: none
-	@include border-radius(0)
-	color: $black
+	@include border-radius(5px)
+	@include box-shadow(2px 2px 3px rgba(0,0,0,.2))
+	color: $yellow
 	display: inline-block
-	font-size: 13px
+	@extend %roboto-bold
+	font-size: 19px
 	letter-spacing: 0.06em
 	margin: 30px 0 10px
-	padding: 17px 20px
+	max-width: 100%
+	min-width: 200px
+	padding: 11px 20px
 	text-align: center
-	width: 100%
+	width: auto
 
 	&:hover, &:focus, &:active
-		background: darken($gray, 5)
-		color: $black
+		background: lighten($blue, 10)
+		@include background-image(linear-gradient(to right, lighten(#006df6, 10), lighten(#009ae2, 10)))
+		color: $yellow
 
 .btn-default:active:hover, .btn-default:active:focus
-	background: darken($gray, 5)
-	color: $black
+	background: lighten($blue, 10)
+	@include background-image(linear-gradient(to right, lighten(#006df6, 10), lighten(#009ae2, 10)))
+	color: $yellow
+
+.yellowButton
+	@extend .btn
+	background: $yellow
+	color: $green
+	display: block
+	font-size: 25px
+	margin-bottom: 33px
+	padding: 20px
+	width: 260px
+
+	&:hover, &:focus, &:active
+		background: lighten($yellow, 15)
+		color: $green
 
 .social
 	list-style-type: none
@@ -109,18 +168,29 @@ select
 	overflow: hidden
 	width: 100%
 
+.hasColorBackground
+	color: white
+
+.general-logo	
+	@extend .img
+	background: sprite($general-icons, insurancelogo)
+	@include sprite-dimensions($general-icons, insurancelogo)
+	@include sprite-at2x($general-icons, $general2x-icons)
+
 
 /* ****************** HEADER ************** */	
 header, #header
-	background: transparent
+	background: white
 	font-size: 13px
 	left: 0
 	letter-spacing: 0.07em
+	min-height: 110px
 	overflow: hidden
-	padding: 30px 0 40px
-	position: absolute
+	padding: 35px 0 0
+	position: fixed
 	top: 0
 	width: 100%
+	z-index: 50
 
 	.container
 		position: relative
@@ -129,8 +199,61 @@ header, #header
 	.social
 		position: absolute
 		right: 15px
-		top: 19px
+		top: 6px
 		z-index: 5
+
+.navbar-brand	
+	background: sprite($general-icons, logo)
+	@include sprite-dimensions($general-icons, logo)
+	@include sprite-at2x($general-icons, $general2x-icons)
+	display: block
+	left: 15px
+	line-height: 5000em
+	overflow: hidden
+	position: absolute
+	top: 0
+	z-index: 5
+
+.navbar-nav > li
+	float: none
+
+.navbar-nav > li > a
+	padding: 10px 0 13px
+
+.navbar-nav
+	padding: 0 40px 0 205px
+	text-align: center
+	width: 100%
+
+	a
+		@extend %roboto-bold
+		color: $light-gray
+		display: block
+		text-align: center
+
+		&:hover, &:focus, &:active
+			color: $green
+
+	li
+		display: inline-block
+		margin: 0 0 0 60px
+
+	li:first-child
+		margin-left: 0
+
+	li:last-child //quote button
+		a
+			background: $blue
+			@include background-image(linear-gradient(to right, #006df6, #009ae2))	
+			@include border-radius(5px)
+			color: white
+			min-width: 77px
+			padding: 10px 12px 12px
+
+			&:hover, &:focus, &:active
+				background: lighten($blue, 10)
+				@include background-image(linear-gradient(to right, lighten(#006df6, 10), lighten(#009ae2, 10)))
+				color: white
 
 /* ****************** FOOTER ************** */
 footer, #footer

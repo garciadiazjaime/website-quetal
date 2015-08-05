@@ -14306,17 +14306,17 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                     React.createElement("span", {className: "general-logo"}, "General de seguros")
                                 ), 
                                 React.createElement(Col, {xs: 12, sm: 6}, 
-                                    React.createElement("blockquote", null, "Justo lo que necesito, y al precio más barato")
+                                    React.createElement("blockquote", null, React.createElement("span", null, "Justo lo que necesito, "), React.createElement("span", null, " y al precio "), React.createElement("span", null, "más barato "))
                                 )
                             ), 
-                            React.createElement("span", {className: "manImage"})
+                            React.createElement("span", {id: "manImage"})
                         )
                     ), 
                     React.createElement(CarouselItem, null, 
                         React.createElement("div", {className: "container"}, 
                             React.createElement(Row, null, 
                                 React.createElement(Col, {xs: 12, sm: 7}, 
-                                    React.createElement("p", {className: "bigPhrase"}, 
+                                    React.createElement("p", {className: "bigPhrase narrow"}, 
                                         React.createElement("span", null, "Ahorra"), " desde un 20% en tu Seguro de Auto"
                                     ), 
                                     React.createElement("p", {className: "restrictions"}, "*En comparación con otros portales de venta" + ' ' +
@@ -14327,7 +14327,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                 React.createElement(Col, {xs: 12, sm: 5}
                                 )
                             ), 
-                            React.createElement("span", {className: "womanImage"})
+                            React.createElement("span", {id: "womanImage"})
                         )
                     ), 
                     React.createElement(CarouselItem, null, 
@@ -14342,10 +14342,10 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                     React.createElement("span", {className: "general-logo"}, "General de seguros")
                                 ), 
                                 React.createElement(Col, {xs: 12, sm: 6}, 
-                                    React.createElement("blockquote", null, "Mejor lo aseguro rápido y fácil con una compañía de confianza")
+                                    React.createElement("blockquote", null, React.createElement("span", null, "Mejor lo aseguro "), React.createElement("span", null, "rápido y fácil con "), React.createElement("span", null, "una compañía "), React.createElement("span", null, "de confianza "))
                                 )
                             ), 
-                            React.createElement("span", {className: "manImage"})
+                            React.createElement("span", {id: "carImage"})
                         )
                     )
                 )
@@ -14471,7 +14471,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                     React.createElement("h1", null, "Contrata el paquete que necesitas"), 
                     React.createElement(Row, null, 
                         React.createElement(Col, {xs: 12, sm: 7}, 
-                            React.createElement("p", null, "En todas nuestras Coberturas cuentas con Seguro de Gastos Médicos para ocupantes del vehículo en caso de accidente." + ' ' +
+                            React.createElement("p", {className: "medium"}, "En todas nuestras Coberturas cuentas con Seguro de Gastos Médicos para ocupantes del vehículo en caso de accidente." + ' ' +
 "Además, dispones de los servicios de Asistencia Legal y Asistencia en el Camino.")
                         ), 
                         React.createElement(Col, {xs: 12, sm: 5}
@@ -14498,8 +14498,8 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                               "Ver detalles"
                             )
                         ), 
-                        React.createElement(Col, {xs: 12, sm: 3}, 
-                            React.createElement("div", {className: "servicesList-wrap featured"}, 
+                        React.createElement(Col, {xs: 12, sm: 3, className: "featured"}, 
+                            React.createElement("div", {className: "servicesList-wrap"}, 
                                 React.createElement("h3", null, "¿Qué tal si te cuidamos bien? ", React.createElement("span", {id: "comfortIcon"})), 
                                 React.createElement("div", {className: "servicesList-details"}, 
                                     React.createElement("h2", null, "Cobertura Confort Amplia"), 

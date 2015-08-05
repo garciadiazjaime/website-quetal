@@ -6,5 +6,13 @@ $general-icons: sprite-map("general/*.png", $layout: smart)
 @include all-general2x-sprites
 $general2x-icons: sprite-map("general2x/*.png", $layout: smart)
 
+@import "home/*.png"
+@include all-home-sprites
+$home-icons: sprite-map("home/*.png", $layout: smart)
+
+@import "home2x/*.png"
+@include all-home2x-sprites
+$home2x-icons: sprite-map("home2x/*.png", $layout: smart)
+
 .icon-holder
 	position: relative
