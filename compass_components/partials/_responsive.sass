@@ -57,8 +57,7 @@
 @media screen and (min-width: 883px)
 	#homeCarousel
 		.carousel-indicators
-			margin: 0 0 0 -490px
-
+			margin: 0 0 0 450px
 
 @media screen and (max-width: 991px)
 	#homeCarousel			
@@ -85,6 +84,24 @@
 		font-size: 35px
 
 	#homeCarousel
+		height: auto
+
+		.item
+			min-height: 670px
+
+			&:first-child
+				padding: 210px 0 0
+
+				.carouselImage
+					top: -210px
+
+			&:nth-child(2)
+				padding: 190px 0 0
+
+				.carouselImage
+					top: -190px
+
+
 		.yellowButton
 			font-size: 19px
 			margin-left: auto
@@ -103,6 +120,14 @@
 
 		blockquote
 			font-size: 15px
+			left: auto
 			margin: 30px auto
+			position: relative
+			top: auto
+
+@media screen and (max-width: 420px)
+	#homeCarousel
+		.carousel-indicators
+			margin: 0 0 0 40%
 
 /* *************** FOOTER *************** */
