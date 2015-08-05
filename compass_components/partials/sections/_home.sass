@@ -149,3 +149,27 @@ blockquote
 	background: sprite($home-icons, carousel-car)
 	@include sprite-dimensions($home-icons, carousel-car)
 	@include sprite-at2x($home-icons, $home2x-icons)
+
+#servicesList
+	h3
+		color: #8c8c8c
+		@extend %roboto-bold
+		font-size: 21px
+
+	h2
+		color: $blue
+		@extend %roboto-black
+		font-size: 16px
+
+.featured
+	@extend .hasColorBackground
+	background: #00b48c
+	@include background-image(linear-gradient(to bottom, #00b48c, #7ccf59))
+
+	.checklist
+		li
+
+			&:before
+				background: sprite($general-icons, yellow-checkmark)
+				@include sprite-dimensions($general-icons, yellow-checkmark)
+				@include sprite-at2x($general-icons, $general2x-icons)

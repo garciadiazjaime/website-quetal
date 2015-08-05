@@ -14471,7 +14471,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                     React.createElement("h1", null, "Contrata el paquete que necesitas"), 
                     React.createElement(Row, null, 
                         React.createElement(Col, {xs: 12, sm: 7}, 
-                            React.createElement("p", null, "En todas nuestras Coberturas cuentas con Seguro de Gastos Médicos para ocupantes del vehículo en caso de accidente." + ' ' +
+                            React.createElement("p", {className: "medium"}, "En todas nuestras Coberturas cuentas con Seguro de Gastos Médicos para ocupantes del vehículo en caso de accidente." + ' ' +
 "Además, dispones de los servicios de Asistencia Legal y Asistencia en el Camino.")
                         ), 
                         React.createElement(Col, {xs: 12, sm: 5}
@@ -14498,8 +14498,8 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                               "Ver detalles"
                             )
                         ), 
-                        React.createElement(Col, {xs: 12, sm: 3}, 
-                            React.createElement("div", {className: "servicesList-wrap featured"}, 
+                        React.createElement(Col, {xs: 12, sm: 3, className: "featured"}, 
+                            React.createElement("div", {className: "servicesList-wrap"}, 
                                 React.createElement("h3", null, "¿Qué tal si te cuidamos bien? ", React.createElement("span", {id: "comfortIcon"})), 
                                 React.createElement("div", {className: "servicesList-details"}, 
                                     React.createElement("h2", null, "Cobertura Confort Amplia"), 

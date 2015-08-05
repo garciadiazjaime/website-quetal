@@ -25,6 +25,36 @@ a
 em
 	font-style: normal
 
+h1
+	border-bottom: 1px dashed $blue
+	color: $blue
+	@extend %roboto
+	font-size: 35px
+	padding: 0 0 15px
+
+.medium
+	@extend %roboto-medium
+
+.checklist
+	list-style-type: none
+	margin: 0 0 30px
+	padding: 0
+
+	li
+		min-height: 17px
+		padding: 5px 0 0 30px
+		position: relative
+
+		&:before
+			background: sprite($general-icons, checkmark)
+			@include sprite-dimensions($general-icons, checkmark)
+			@include sprite-at2x($general-icons, $general2x-icons)
+			content: " "
+			display: block
+			left: 0
+			position: absolute
+			top: 0
+			
 /* ****************** LAYOUT ************** */
 #mainContent
 	padding: 110px 0 0
@@ -32,6 +62,11 @@ em
 section
 	max-width: 100%
 	overflow: hidden
+
+.smallContainer
+	margin: 0 auto
+	max-width: 905px
+	width: 80%
 
 .container
 	max-width: 980px
@@ -91,10 +126,6 @@ select
 	&:hover, &:focus, &:active
 		background: lighten($yellow, 15)
 		color: $green
-
-
-
-
 
 .social
 	list-style-type: none
