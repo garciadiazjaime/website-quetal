@@ -14391,7 +14391,7 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
                                         React.createElement("a", {href: "cotiza", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza"), 
                                         React.createElement("span", {id: "borderCarIcon"})
                                     ), 
-                                    React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                                    React.createElement("button", {onClick: this.open, className: "arrowLink"}, 
                                       "Ver detalles"
                                     )
                                 )
@@ -14406,7 +14406,7 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
                                         React.createElement("a", {href: "cotiza", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza"), 
                                         React.createElement("span", {id: "civilResponsibilityIcon"})
                                     ), 
-                                    React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                                    React.createElement("button", {onClick: this.open, className: "arrowLink"}, 
                                       "Ver detalles"
                                     )
                                 )
@@ -14482,7 +14482,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                     React.createElement(Row, {id: "servicesList"}, 
                         React.createElement(Col, {xs: 12, sm: 3}, 
                             React.createElement("div", {className: "servicesList-wrap"}, 
-                                React.createElement("h3", null, "¿Qué tal si tienes un auto del año*? ", React.createElement("span", {id: "prestigeIcon"})), 
+                                React.createElement("h3", null, React.createElement("span", {className: "wrap"}, "¿Qué tal si tienes un auto del año*? "), React.createElement("span", {id: "prestigeIcon"})), 
                                 React.createElement("div", {className: "servicesList-details"}, 
                                     React.createElement("h2", null, "Cobertura Prestigio"), 
                                     React.createElement("ul", {className: "checklist"}, 
@@ -14490,17 +14490,19 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                                         React.createElement("li", null, "Daños a tu vehículo"), 
                                         React.createElement("li", null, "Robo"), 
                                         React.createElement("li", null, "Daños a terceros")
-                                    )
+                                    ), 
+                                    React.createElement("p", {className: "notes"}, "*Vehículos último modelo" + ' ' + 
+"y modelos recientes.")
                                 ), 
                                 React.createElement("a", {href: "#", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza")
                             ), 
-                            React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                            React.createElement("button", {className: "arrowLink"}, 
                               "Ver detalles"
                             )
                         ), 
                         React.createElement(Col, {xs: 12, sm: 3, className: "featured"}, 
                             React.createElement("div", {className: "servicesList-wrap"}, 
-                                React.createElement("h3", null, "¿Qué tal si te cuidamos bien? ", React.createElement("span", {id: "comfortIcon"})), 
+                                React.createElement("h3", null, React.createElement("span", {className: "wrap"}, "¿Qué tal si te cuidamos bien? "), React.createElement("span", {id: "comfortIcon"})), 
                                 React.createElement("div", {className: "servicesList-details"}, 
                                     React.createElement("h2", null, "Cobertura Confort Amplia"), 
                                     React.createElement("ul", {className: "checklist"}, 
@@ -14511,13 +14513,13 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                                 ), 
                                 React.createElement("a", {href: "#", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza")
                             ), 
-                            React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                            React.createElement("button", {onClick: this.open, className: "arrowLink"}, 
                               "Ver detalles"
                             )
                         ), 
                         React.createElement(Col, {xs: 12, sm: 3}, 
                             React.createElement("div", {className: "servicesList-wrap"}, 
-                                React.createElement("h3", null, "¿Qué tal si tú pones los límites? ", React.createElement("span", {id: "limitedComfortIcon"})), 
+                                React.createElement("h3", null, React.createElement("span", {className: "wrap"}, "¿Qué tal si tú pones los límites? "), React.createElement("span", {id: "limitedComfortIcon"})), 
                                 React.createElement("div", {className: "servicesList-details"}, 
                                     React.createElement("h2", null, "Cobertura Confort Limitada"), 
                                     React.createElement("ul", {className: "checklist"}, 
@@ -14527,13 +14529,13 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                                 ), 
                                 React.createElement("a", {href: "#", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza")
                             ), 
-                            React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                            React.createElement("button", {onClick: this.open, className: "arrowLink"}, 
                               "Ver detalles"
                             )
                         ), 
                         React.createElement(Col, {xs: 12, sm: 3}, 
                             React.createElement("div", {className: "servicesList-wrap"}, 
-                                React.createElement("h3", null, "¿Qué tal si quieres un Seguro como tú lo necesitas?", React.createElement("span", {id: "basicComfortIcon"})), 
+                                React.createElement("h3", null, React.createElement("span", {className: "wrap"}, "¿Qué tal si quieres un Seguro como tú lo necesitas?"), React.createElement("span", {id: "basicComfortIcon"})), 
                                 React.createElement("div", {className: "servicesList-details"}, 
                                     React.createElement("h2", null, "Cobertura Confort Básica"), 
                                     React.createElement("ul", {className: "checklist"}, 
@@ -14542,7 +14544,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                                 ), 
                                 React.createElement("a", {href: "#", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza")
                             ), 
-                            React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                            React.createElement("button", {onClick: this.open, className: "arrowLink"}, 
                               "Ver detalles"
                             )
                         )

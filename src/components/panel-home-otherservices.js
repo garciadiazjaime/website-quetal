@@ -32,9 +32,9 @@ var HomeOtherServicesPanel = React.createClass({
                                         <a href="cotiza" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                                         <span id="borderCarIcon"></span>
                                     </p>
-                                    <Button bsStyle='primary' onClick={this.open} className="arrowLink">
+                                    <button onClick={this.open} className="arrowLink">
                                       Ver detalles
-                                    </Button>
+                                    </button>
                                 </div>
                             </div>
                         </Col>
@@ -47,9 +47,9 @@ var HomeOtherServicesPanel = React.createClass({
                                         <a href="cotiza" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                                         <span id="civilResponsibilityIcon"></span>
                                     </p>
-                                    <Button bsStyle='primary' onClick={this.open} className="arrowLink">
+                                    <button onClick={this.open} className="arrowLink">
                                       Ver detalles
-                                    </Button>
+                                    </button>
                                 </div>
                             </div>
                         </Col>
