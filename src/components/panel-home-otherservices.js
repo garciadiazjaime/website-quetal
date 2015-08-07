@@ -56,7 +56,7 @@ var HomeOtherServicesPanel = React.createClass({
                 <div className="smallContainer">
                     <Row>
                         <Col xs={12} sm={5}>
-                            <p id="substituteCar">Automóvil Sustituto</p>
+                            <p id="substituteCar"><span>Automóvil Sustituto</span></p>
                         </Col>
                         <Col xs={12} sm={7}>
                             <p>General de Seguros te ofrece un auto sustituto mientras reparamos tu auto por colisión o te pagamos tu automóvil por perdida total o robo total. </p>

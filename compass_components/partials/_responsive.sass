@@ -83,14 +83,20 @@
 			padding: 5px 15px
 
 	.servicesList-details
-		min-height: 261px
+		min-height: 260px
 
 	#servicesList
 		.col-xs-12:nth-child(2)
-			min-height: 248px
+			.servicesList-details
+				min-height: 270px
+
+		.col-xs-12:nth-child(3)
+			.servicesList-details
+				min-height: 279px
 
 		.col-xs-12:last-child
-			min-height: 219px
+			.servicesList-details
+				min-height: 238px
 
 	#homeServices
 		padding: 0 0 90px
@@ -124,14 +130,15 @@
 			.arrowLink
 				margin: 0
 
-		.col-xs-12:nth-child(2)
+		.col-xs-12:nth-child(2), .col-xs-12:nth-child(3), .col-xs-12:last-child
 			.servicesList-details
 				min-height: 1px
 
 		.col-xs-12
-			border-bottom: 1px solid $light-gray
+			border-bottom: 1px dashed #ebebeb
 			margin-bottom: 30px
 			min-height: 1px
+			padding-bottom: 40px
 
 	.servicesList-details, .servicesList-wrap
 		min-height: 1px

@@ -14415,7 +14415,7 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
                 React.createElement("div", {className: "smallContainer"}, 
                     React.createElement(Row, null, 
                         React.createElement(Col, {xs: 12, sm: 5}, 
-                            React.createElement("p", {id: "substituteCar"}, "Automóvil Sustituto")
+                            React.createElement("p", {id: "substituteCar"}, React.createElement("span", null, "Automóvil Sustituto"))
                         ), 
                         React.createElement(Col, {xs: 12, sm: 7}, 
                             React.createElement("p", null, "General de Seguros te ofrece un auto sustituto mientras reparamos tu auto por colisión o te pagamos tu automóvil por perdida total o robo total. "), 
