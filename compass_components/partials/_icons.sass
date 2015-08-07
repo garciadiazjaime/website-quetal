@@ -14,5 +14,20 @@ $home-icons: sprite-map("home/*.png", $layout: smart)
 @include all-home2x-sprites
 $home2x-icons: sprite-map("home2x/*.png", $layout: smart)
 
-.icon-holder
+.iconHolder
 	position: relative
+
+
+.iconStyle
+	display: block
+	margin: 0
+	position: absolute
+	top: 0
+
+.centeredIconStyle
+	@extend .iconStyle
+	left: 50%
+
+.leftIconStyle
+	@extend .iconStyle
+	left: 0

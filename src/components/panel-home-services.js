@@ -36,7 +36,7 @@ Además, dispones de los servicios de Asistencia Legal y Asistencia en el Camino
                     <Row id="servicesList">
                         <Col xs={12} sm={3}>
                             <div className="servicesList-wrap">
-                                <h3>¿Qué tal si tienes un auto del año*? <span id="prestigeIcon"></span></h3>
+                                <h3><span className="wrap">¿Qué tal si tienes un auto del año*? </span><span id="prestigeIcon"></span></h3>
                                 <div className="servicesList-details">
                                     <h2>Cobertura Prestigio</h2>
                                     <ul className="checklist">
@@ -45,16 +45,18 @@ Además, dispones de los servicios de Asistencia Legal y Asistencia en el Camino
                                         <li>Robo</li>
                                         <li>Daños a terceros</li>
                                     </ul>
+                                    <p className="notes">*Vehículos último modelo 
+y modelos recientes.</p>
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <Button bsStyle='primary' onClick={this.open} className="arrowLink">
+                            <button className="arrowLink">
                               Ver detalles
-                            </Button>
+                            </button>
                         </Col>
                         <Col xs={12} sm={3} className="featured">
                             <div className="servicesList-wrap">
-                                <h3>¿Qué tal si te cuidamos bien? <span id="comfortIcon"></span></h3>
+                                <h3><span className="wrap">¿Qué tal si te cuidamos bien? </span><span id="comfortIcon"></span></h3>
                                 <div className="servicesList-details">
                                     <h2>Cobertura Confort Amplia</h2>
                                     <ul className="checklist">
@@ -65,13 +67,13 @@ Además, dispones de los servicios de Asistencia Legal y Asistencia en el Camino
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <Button bsStyle='primary' onClick={this.open} className="arrowLink">
+                            <button onClick={this.open} className="arrowLink">
                               Ver detalles
-                            </Button>
+                            </button>
                         </Col>
                         <Col xs={12} sm={3}>
                             <div className="servicesList-wrap">
-                                <h3>¿Qué tal si tú pones los límites? <span id="limitedComfortIcon"></span></h3>
+                                <h3><span className="wrap">¿Qué tal si tú pones los límites? </span><span id="limitedComfortIcon"></span></h3>
                                 <div className="servicesList-details">
                                     <h2>Cobertura Confort Limitada</h2>
                                     <ul className="checklist">
@@ -81,13 +83,13 @@ Además, dispones de los servicios de Asistencia Legal y Asistencia en el Camino
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <Button bsStyle='primary' onClick={this.open} className="arrowLink">
+                            <button onClick={this.open} className="arrowLink">
                               Ver detalles
-                            </Button>
+                            </button>
                         </Col>
                         <Col xs={12} sm={3}>
                             <div className="servicesList-wrap">
-                                <h3>¿Qué tal si quieres un Seguro como tú lo necesitas?<span id="basicComfortIcon"></span></h3>
+                                <h3><span className="wrap">¿Qué tal si quieres un Seguro como tú lo necesitas?</span><span id="basicComfortIcon"></span></h3>
                                 <div className="servicesList-details">
                                     <h2>Cobertura Confort Básica</h2>
                                     <ul className="checklist">
@@ -96,9 +98,9 @@ Además, dispones de los servicios de Asistencia Legal y Asistencia en el Camino
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <Button bsStyle='primary' onClick={this.open} className="arrowLink">
+                            <button onClick={this.open} className="arrowLink">
                               Ver detalles
-                            </Button>
+                            </button>
                         </Col>
                     </Row>
                 </div>
