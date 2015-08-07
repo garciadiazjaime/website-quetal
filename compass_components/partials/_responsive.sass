@@ -46,6 +46,9 @@
 		.navbar-collapse
 			padding: 0
 
+		.navbar-nav > li > a:hover, .navbar-nav > li > a:focus
+			color: white
+
 	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus
 		background: $yellow
 
@@ -56,6 +59,24 @@
 	.navbar-nav > li > a, .navbar-nav > li:last-child > a
 		padding: 18px 0
 
+
+/* *************** FOOTER *************** */
+
+@media screen and (max-width: 767px)
+	footer, #footer
+		.social
+			margin: 30px 0 5px
+			position: static
+
+	#footerNavigation
+		ul
+			padding: 0
+
+		li
+			width: 100%
+
+	#footerNavigation > ul > li:nth-child(3), #footerNavigation > ul > li:last-child
+		width: 100%
 
 /* *************** HOME *************** */
 @media screen and (min-width: 883px)
@@ -82,6 +103,38 @@
 			line-height: 1em
 			padding: 5px 15px
 
+	.servicesList-details
+		min-height: 260px
+
+	#servicesList
+		.col-xs-12:nth-child(2)
+			.servicesList-details
+				min-height: 270px
+
+		.col-xs-12:nth-child(3)
+			.servicesList-details
+				min-height: 279px
+
+		.col-xs-12:last-child
+			.servicesList-details
+				min-height: 238px
+
+	#homeServices
+		padding: 0 0 90px
+
+	.otherServices-block
+		h3
+			padding: 80px 0 0
+
+		p
+			padding: 0
+
+		.blueButton	
+			margin: 25px 0 0
+
+	#substituteCar
+		font-size: 35px
+		
 @media screen and (max-width: 767px)
 	#homeCarousel
 		height: 600px			
@@ -89,6 +142,9 @@
 			min-height: 600px
 	.arrowLink
 		margin: 0 0 0 25px
+
+	#homeServices
+		padding: 0
 
 	#servicesList
 		.centeredIconStyle
@@ -111,12 +167,27 @@
 			.arrowLink
 				margin: 0
 
+		.col-xs-12:nth-child(2), .col-xs-12:nth-child(3), .col-xs-12:last-child
+			.servicesList-details
+				min-height: 1px
+
+		.col-xs-12:last-child
+			border: none
+
 		.col-xs-12
+			border-bottom: 1px dashed #ebebeb
 			margin-bottom: 30px
 			min-height: 1px
+			padding-bottom: 40px
 
 	.servicesList-details, .servicesList-wrap
 		min-height: 1px
+
+	#callToAction
+		padding: 0 0 60px
+
+		.col-xs-12:last-child
+			text-align: left
 
 @media screen and (max-width: 500px)
 	.bigPhrase
@@ -169,7 +240,7 @@
 		.carousel-indicators
 			margin: 0 0 0 40%
 
-
-
+	#substituteCar-ParticipantInsurance
+		text-align: center
 
 /* *************** FOOTER *************** */

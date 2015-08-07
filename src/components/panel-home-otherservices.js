@@ -26,9 +26,8 @@ var HomeOtherServicesPanel = React.createClass({
                         <Col xs={12} sm={6}>
                             <div className="otherServices-block">
                                 <div>
+                                    <h3>Autos Fronterizos o Legalizados</h3>
                                     <p>
-                                        Autos Fronterizos o Legalizados
-                            
                                         <a href="cotiza" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                                         <span id="borderCarIcon"></span>
                                     </p>
@@ -41,9 +40,8 @@ var HomeOtherServicesPanel = React.createClass({
                         <Col xs={12} sm={6}>
                             <div className="otherServices-block">
                                 <div>
+                                    <h3>RC Obligatoria Federal / Estatal</h3>
                                     <p>
-                                        RC Obligatoria Federal / Estatal
-                            
                                         <a href="cotiza" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                                         <span id="civilResponsibilityIcon"></span>
                                     </p>
@@ -58,7 +56,7 @@ var HomeOtherServicesPanel = React.createClass({
                 <div className="smallContainer">
                     <Row>
                         <Col xs={12} sm={5}>
-                            <p id="substituteCar">Automóvil Sustituto</p>
+                            <p id="substituteCar"><span>Automóvil Sustituto</span></p>
                         </Col>
                         <Col xs={12} sm={7}>
                             <p>General de Seguros te ofrece un auto sustituto mientras reparamos tu auto por colisión o te pagamos tu automóvil por perdida total o robo total. </p>

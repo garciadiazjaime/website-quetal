@@ -1,4 +1,5 @@
 /* ****************** HOME ************** */
+/* ----------- Carousel ----------- */
 #homeCarousel
 	@extend .hasColorBackground
 	background: #00b48c
@@ -150,7 +151,17 @@ blockquote
 	@include sprite-dimensions($home-icons, carousel-car)
 	@include sprite-at2x($home-icons, $home2x-icons)
 
+
+/* ----------- Services ----------- */
+
+#homeServices
+	margin: 0 0 30px
+
 #servicesList
+	margin: 37px 0 0
+
+	.smallContainer
+		margin-bottom: 38px
 
 	h2
 		color: $blue
@@ -290,6 +301,52 @@ blockquote
 	@include sprite-dimensions($home-icons, bordercar-icon)
 	@include sprite-at2x($home-icons, $home2x-icons)
 
+/* ----------- Other Services ----------- */
+#otherServices
+	.container
+		border-top: 1px dashed $blue 
+		padding-top: 30px
+
+	.smallContainer
+		border-bottom: 1px dashed $blue 
+		@extend .bigParagraph
+		margin-bottom: 45px
+		padding: 0 0 45px
+
+		p
+			max-width: 400px
+
+		.col-xs-12:nth-child(2)
+			p:first-child
+				margin-top: 27px
+
+.otherServices-block
+	background: #00b48c
+	@include background-image(linear-gradient(to right, #00b48c, #7ccf59))
+	margin: 0 0 65px
+	padding: 9px
+
+	div
+		background: white
+		min-height: 255px
+		padding: 30px 25px 25px
+		position: relative
+
+	h3
+		color: $gray
+		@extend %roboto-bold
+		font-size: 28px
+		padding: 0 0 0 145px
+
+	p
+		padding: 0 0 0 145px
+
+	.blueButton
+		margin: 38px 0 0
+
+	.arrowLink
+		margin: 35px auto 0 0
+
 #borderCarIcon
 	@extend .leftIconStyle
 	background: sprite($home-icons, bordercar-icon)
@@ -301,3 +358,79 @@ blockquote
 	background: sprite($home-icons, civilresponsibility-icon)
 	@include sprite-dimensions($home-icons, civilresponsibility-icon)
 	@include sprite-at2x($home-icons, $home2x-icons)
+
+#substituteCar
+	background: $blue
+	color: white
+	@extend %roboto-black
+	font-size: 50px
+	line-height: 1.1em
+	margin: 0 0 20px
+	max-width: 350px
+	padding: 155px 30px 30px
+	position: relative
+	text-align: center
+
+	&:before, &:after, span:before
+		content: ""
+		display: block
+		position: absolute
+
+	&:before //car icon
+		background: sprite($home-icons, substitutecar-icon)
+		@include sprite-dimensions($home-icons, substitutecar-icon)
+		@include sprite-at2x($home-icons, $home2x-icons)
+		left: 50%
+		margin: 0
+		margin-left: -(home-sprite-width(substitutecar-icon)/2)
+		top: 55px
+
+	&:after // replace arrows
+		background: sprite($home-icons, replacearrows-icon)
+		@include sprite-dimensions($home-icons, replacearrows-icon)
+		@include sprite-at2x($home-icons, $home2x-icons)
+		left: 18px
+		top: 21px
+
+	span
+		&:before // background for replace arrows
+			background: white
+			@include border-radius(50px)
+			height: 40px
+			left: 12px
+			top: 12px
+			width: 40px
+
+#substituteCar-ParticipantInsurance
+	color: $blue
+	@extend %roboto-black
+	font-size: 23px
+	line-height: 1em
+	margin: 20px -15px
+	max-width: 420px
+
+	span
+		&:first-child
+			display: block
+			font-size: 16px
+
+	.col-xs-12:nth-child(2)
+		color: $light-gray
+		@extend %roboto
+		font-size: 19px
+
+#callToAction
+	padding: 45px 0 90px
+
+	p
+		color: $blue
+		font-size: 35px
+		line-height: 1.2em
+		margin: 0 0 15px
+
+		span:first-child
+			display: block
+
+	.col-xs-12:last-child
+		text-align: right
+

@@ -9,6 +9,7 @@ var Col = rb.Col;
 var Button = rb.Button;
 var Carousel = rb.Carousel;
 var CarouselItem = rb.CarouselItem;
+var Link = ReactRouter.Link;
 
 var HomeCarouselPanel = React.createClass({
 
@@ -31,7 +32,7 @@ var HomeCarouselPanel = React.createClass({
                                     <p className="bigPhrase">
                                         <span>Hola, Quetal</span> un Seguro de auto a tu alcance
                                     </p> 
-                                    <a href="#" title="Ver Coberturas" className="yellowButton">Ver Coberturas</a>
+                                    <Link to="coverage" title="Ver Coberturas" className="yellowButton">Ver Coberturas</Link>
                                     <span className="general-logo">General de seguros</span>
                                 </Col>
                                 <Col xs={12} sm={6}>
@@ -50,7 +51,7 @@ var HomeCarouselPanel = React.createClass({
                                     </p>
                                     <p className="restrictions">*En comparación con otros portales de venta
 de seguros por internet.</p>
-                                    <a href="#" title="Ver Coberturas" className="yellowButton">Ver Coberturas</a>
+                                    <Link to="coverage" title="Ver Coberturas" className="yellowButton">Ver Coberturas</Link>
                                     <span className="general-logo">General de seguros</span>
                                 </Col>
                                 <Col xs={12} sm={5}>
@@ -67,7 +68,7 @@ de seguros por internet.</p>
                                         <span className="inline">¿Quetal</span> si choco?
                                     </p> 
                                     <p>Conoce nuestras Coberturas contra Daños a Terceros y Daños a tu Automóvil.</p>
-                                    <a href="#" title="Ver Coberturas" className="yellowButton">Ver Coberturas</a>
+                                    <Link to="coverage" title="Ver Coberturas" className="yellowButton">Ver Coberturas</Link>
                                     <span className="general-logo">General de seguros</span>
                                 </Col>
                                 <Col xs={12} sm={6}>
