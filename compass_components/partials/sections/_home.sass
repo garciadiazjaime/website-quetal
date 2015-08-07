@@ -1,4 +1,5 @@
 /* ****************** HOME ************** */
+/* ----------- Carousel ----------- */
 #homeCarousel
 	@extend .hasColorBackground
 	background: #00b48c
@@ -150,7 +151,17 @@ blockquote
 	@include sprite-dimensions($home-icons, carousel-car)
 	@include sprite-at2x($home-icons, $home2x-icons)
 
+
+/* ----------- Services ----------- */
+
+#homeServices
+	margin: 0 0 30px
+
 #servicesList
+	margin: 37px 0 0
+	
+	.smallContainer
+		margin-bottom: 38px
 
 	h2
 		color: $blue
@@ -289,6 +300,39 @@ blockquote
 	background: sprite($home-icons, bordercar-icon)
 	@include sprite-dimensions($home-icons, bordercar-icon)
 	@include sprite-at2x($home-icons, $home2x-icons)
+
+/* ----------- Other Services ----------- */
+#otherServices
+	.container
+		border-top: 1px dashed $blue 
+		padding-top: 30px
+
+.otherServices-block
+	background: #00b48c
+	@include background-image(linear-gradient(to right, #00b48c, #7ccf59))
+	margin: 0 0 65px
+	padding: 9px
+
+	div
+		background: white
+		min-height: 255px
+		padding: 30px 25px 25px
+		position: relative
+
+	h3
+		color: $gray
+		@extend %roboto-bold
+		font-size: 28px
+		padding: 0 0 0 145px
+
+	p
+		padding: 0 0 0 145px
+
+	.blueButton
+		margin: 38px 0 0
+
+	.arrowLink
+		margin: 35px auto 0 0
 
 #borderCarIcon
 	@extend .leftIconStyle

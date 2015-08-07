@@ -26,9 +26,8 @@ var HomeOtherServicesPanel = React.createClass({
                         <Col xs={12} sm={6}>
                             <div className="otherServices-block">
                                 <div>
+                                    <h3>Autos Fronterizos o Legalizados</h3>
                                     <p>
-                                        Autos Fronterizos o Legalizados
-                            
                                         <a href="cotiza" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                                         <span id="borderCarIcon"></span>
                                     </p>
@@ -41,9 +40,8 @@ var HomeOtherServicesPanel = React.createClass({
                         <Col xs={12} sm={6}>
                             <div className="otherServices-block">
                                 <div>
+                                    <h3>RC Obligatoria Federal / Estatal</h3>
                                     <p>
-                                        RC Obligatoria Federal / Estatal
-                            
                                         <a href="cotiza" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                                         <span id="civilResponsibilityIcon"></span>
                                     </p>

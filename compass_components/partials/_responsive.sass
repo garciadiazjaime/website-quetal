@@ -82,6 +82,19 @@
 			line-height: 1em
 			padding: 5px 15px
 
+	.servicesList-details
+		min-height: 261px
+
+	#servicesList
+		.col-xs-12:nth-child(2)
+			min-height: 248px
+
+		.col-xs-12:last-child
+			min-height: 219px
+
+	#homeServices
+		padding: 0 0 90px
+
 @media screen and (max-width: 767px)
 	#homeCarousel
 		height: 600px			
@@ -111,7 +124,12 @@
 			.arrowLink
 				margin: 0
 
+		.col-xs-12:nth-child(2)
+			.servicesList-details
+				min-height: 1px
+
 		.col-xs-12
+			border-bottom: 1px solid $light-gray
 			margin-bottom: 30px
 			min-height: 1px
 

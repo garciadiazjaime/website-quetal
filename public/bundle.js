@@ -14385,9 +14385,8 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
                         React.createElement(Col, {xs: 12, sm: 6}, 
                             React.createElement("div", {className: "otherServices-block"}, 
                                 React.createElement("div", null, 
+                                    React.createElement("h3", null, "Autos Fronterizos o Legalizados"), 
                                     React.createElement("p", null, 
-                                        "Autos Fronterizos o Legalizados", 
-                            
                                         React.createElement("a", {href: "cotiza", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza"), 
                                         React.createElement("span", {id: "borderCarIcon"})
                                     ), 
@@ -14400,9 +14399,8 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
                         React.createElement(Col, {xs: 12, sm: 6}, 
                             React.createElement("div", {className: "otherServices-block"}, 
                                 React.createElement("div", null, 
+                                    React.createElement("h3", null, "RC Obligatoria Federal / Estatal"), 
                                     React.createElement("p", null, 
-                                        "RC Obligatoria Federal / Estatal", 
-                            
                                         React.createElement("a", {href: "cotiza", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza"), 
                                         React.createElement("span", {id: "civilResponsibilityIcon"})
                                     ), 
