@@ -14250,6 +14250,40 @@ var rb = require('react-bootstrap');
 var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
+
+var coverageMain = React.createClass({displayName: "coverageMain",
+
+    mixins : [ReactRouter.Navigation],
+    
+    handleClick: function(){
+        console.log('handleClick');
+        // this.transitionTo('home');
+    },
+
+    render: function() {
+
+        return (
+            React.createElement("section", {id: "mainCoverage"}, 
+                React.createElement("div", {className: "container"}, 
+                    React.createElement("h1", null, "Coberturas y Beneficios")
+                )
+            )
+        );
+    }
+});
+
+module.exports = coverageMain;
+
+},{"react-bootstrap":70,"react-router":160}],185:[function(require,module,exports){
+'use strict';
+
+var React = window.React;
+var ReactRouter = require('react-router');
+var rb = require('react-bootstrap');
+
+var Row = rb.Row;
+var Col = rb.Col;
+var Button = rb.Button;
 var Link = ReactRouter.Link;
 
 var HomeCallToActionPanel = React.createClass({displayName: "HomeCallToActionPanel",
@@ -14282,7 +14316,7 @@ var HomeCallToActionPanel = React.createClass({displayName: "HomeCallToActionPan
 
 module.exports = HomeCallToActionPanel;
 
-},{"react-bootstrap":70,"react-router":160}],185:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],186:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14371,7 +14405,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
 
 module.exports = HomeCarouselPanel;
 
-},{"react-bootstrap":70,"react-router":160}],186:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],187:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14456,7 +14490,7 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
 
 module.exports = HomeOtherServicesPanel;
 
-},{"react-bootstrap":70,"react-router":160}],187:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],188:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14570,7 +14604,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
 
 module.exports = HomeServicesPanel;
 
-},{"react-bootstrap":70,"react-router":160}],188:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],189:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14603,7 +14637,7 @@ var AboutusPanel = React.createClass({displayName: "AboutusPanel",
 
 module.exports = AboutusPanel;
 
-},{"react-bootstrap":70,"react-router":160}],189:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],190:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14717,7 +14751,7 @@ var ContactPanel = React.createClass({displayName: "ContactPanel",
 
 module.exports = ContactPanel;
 
-},{"react-bootstrap":70,"react-router":160}],190:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],191:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14726,6 +14760,8 @@ var rb = require('react-bootstrap');
 var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
+
+var CoverageMain = require('./panel-coverage-main');
 
 var CoveragePanel = React.createClass({displayName: "CoveragePanel",
 
@@ -14745,7 +14781,7 @@ var CoveragePanel = React.createClass({displayName: "CoveragePanel",
 
         return (
             React.createElement("div", {id: "mainContent"}, 
-                "Cobertura"
+                React.createElement(CoverageMain, null)
             )
         );
     }
@@ -14753,7 +14789,7 @@ var CoveragePanel = React.createClass({displayName: "CoveragePanel",
 
 module.exports = CoveragePanel;
 
-},{"react-bootstrap":70,"react-router":160}],191:[function(require,module,exports){
+},{"./panel-coverage-main":184,"react-bootstrap":70,"react-router":160}],192:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14797,7 +14833,7 @@ var HomeSection = React.createClass({displayName: "HomeSection",
 
 module.exports = HomeSection;
 
-},{"./panel-home-calltoaction":184,"./panel-home-carousel":185,"./panel-home-otherservices":186,"./panel-home-services":187,"react-bootstrap":70,"react-router":160}],192:[function(require,module,exports){
+},{"./panel-home-calltoaction":185,"./panel-home-carousel":186,"./panel-home-otherservices":187,"./panel-home-services":188,"react-bootstrap":70,"react-router":160}],193:[function(require,module,exports){
 var React = window.React;
 var ReactRouter = require('react-router');
 var Route = ReactRouter.Route;
@@ -14829,7 +14865,7 @@ var routes = (
 );
 
 module.exports = routes;
-},{"./components/layout":183,"./components/section-aboutus":188,"./components/section-contactus":189,"./components/section-coverage":190,"./components/section-home":191,"react-router":160}],"myApp":[function(require,module,exports){
+},{"./components/layout":183,"./components/section-aboutus":189,"./components/section-contactus":190,"./components/section-coverage":191,"./components/section-home":192,"react-router":160}],"myApp":[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14840,4 +14876,4 @@ ReactRouter.run(routes, ReactRouter.HistoryLocation, function (Root) {
 	React.render(React.createElement(Root, null), document.getElementById('app'));
 });
 
-},{"./routes":192,"react-router":160}]},{},[]);
+},{"./routes":193,"react-router":160}]},{},[]);

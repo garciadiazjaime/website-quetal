@@ -7,6 +7,8 @@ var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
 
+var CoverageMain = require('./panel-coverage-main');
+
 var CoveragePanel = React.createClass({
 
     mixins : [ReactRouter.Navigation],
@@ -25,7 +27,7 @@ var CoveragePanel = React.createClass({
 
         return (
             <div id="mainContent">
-                Cobertura
+                <CoverageMain />
             </div>
         );
     }

@@ -287,7 +287,7 @@ header, #header
 		text-align: center
 
 		&:hover, &:focus, &:active
-			color: $green
+			color: $blue
 
 	li
 		display: inline-block
@@ -309,6 +309,13 @@ header, #header
 				background: lighten($blue, 10)
 				@include background-image(linear-gradient(to right, lighten(#006df6, 10), lighten(#009ae2, 10)))
 				color: white
+
+.navbar-default
+	.navbar-nav > li > a:hover, .navbar-nav > li > a:focus
+		color: $blue
+
+	.navbar-nav > li:last-child > a:hover, .navbar-nav > li:last-child > a:focus
+		color: white
 
 /* ****************** FOOTER ************** */
 footer, #footer
@@ -414,5 +421,6 @@ footer, #footer
 /* ****************** SECTIONS ************** */
 
 @import "partials/sections/_home"
+@import "partials/sections/_coverage"
 
 @import "partials/_responsive"
