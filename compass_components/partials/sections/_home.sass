@@ -1,4 +1,5 @@
 /* ****************** HOME ************** */
+/* ----------- Carousel ----------- */
 #homeCarousel
 	@extend .hasColorBackground
 	background: #00b48c
@@ -150,21 +151,110 @@ blockquote
 	@include sprite-dimensions($home-icons, carousel-car)
 	@include sprite-at2x($home-icons, $home2x-icons)
 
+
+/* ----------- Services ----------- */
+
+#homeServices
+	margin: 0 0 30px
+
 #servicesList
-	h3
-		color: #8c8c8c
-		@extend %roboto-bold
-		font-size: 21px
+	margin: 37px 0 0
+
+	.smallContainer
+		margin-bottom: 38px
 
 	h2
 		color: $blue
 		@extend %roboto-black
 		font-size: 16px
+		margin: 0 0 25px
+
+	h3
+		@extend .iconHolder
+		color: #8c8c8c
+		@extend %roboto-bold
+		font-size: 20px
+		margin: 0 0 23px
+		min-height: 95px
+		padding: 130px 0 0
+		position: relative
+
+		.wrap
+			display: block
+			max-width: 140px
+
+	.col-xs-12
+		min-height: 590px
+		overflow: hidden
+		padding: 0
+
+		&:first-child
+			padding-left: 15px
+
+			h3
+				.wrap
+					max-width: 150px
+
+			.servicesList-wrap
+				padding-left: 0
+
+		&:nth-child(2)
+			h2
+				margin: 35px 0
+
+			.servicesList-details
+				min-height: 192px
+
+		&:nth-child(3)
+			h2
+				margin: 26px 0 38px
+
+		&:last-child
+			padding-right: 15px
+
+			h3
+				letter-spacing: 0.02em
+				.wrap
+					max-width: 100%
+
+			.servicesList-wrap
+				padding-right: 0
+
+	.blueButton
+		display: block
+		margin: 0
+		min-width: 1px
+
+	.checklist
+		color: $blue
+		@extend %roboto-bold
+		font-size: 12px
+		line-height: 1.1em
+		margin: 0 0 15px
+
+	.featured
+		h2
+			color: $yellow
+
+		h3
+			color: white
+		
+		.checklist
+			color: white
+
+.servicesList-wrap
+	margin-bottom: 20px
+	min-height: 450px
+	padding: 25px 27px
+
+.servicesList-details
+	min-height: 205px
 
 .featured
-	@extend .hasColorBackground
-	background: #00b48c
-	@include background-image(linear-gradient(to bottom, #00b48c, #7ccf59))
+	.servicesList-wrap
+		@extend .hasColorBackground
+		background: #00b48c
+		@include background-image(linear-gradient(to bottom, #00b48c, #7ccf59))
 
 	.checklist
 		li
@@ -173,3 +263,174 @@ blockquote
 				background: sprite($general-icons, yellow-checkmark)
 				@include sprite-dimensions($general-icons, yellow-checkmark)
 				@include sprite-at2x($general-icons, $general2x-icons)
+
+#prestigeIcon
+	@extend .centeredIconStyle
+	background: sprite($home-icons, prestige-icon)
+	@include sprite-dimensions($home-icons, prestige-icon)
+	@include sprite-at2x($home-icons, $home2x-icons)
+	margin-left: -(home-sprite-width(prestige-icon)/2)
+	top: 2px
+
+#comfortIcon
+	@extend .centeredIconStyle
+	background: sprite($home-icons, comfort-icon)
+	@include sprite-dimensions($home-icons, comfort-icon)
+	@include sprite-at2x($home-icons, $home2x-icons)
+	margin-left: -(home-sprite-width(comfort-icon)/2)
+
+#limitedComfortIcon
+	@extend .centeredIconStyle
+	background: sprite($home-icons, limitedcomfort-icon)
+	@include sprite-dimensions($home-icons, limitedcomfort-icon)
+	@include sprite-at2x($home-icons, $home2x-icons)
+	margin-left: -(home-sprite-width(limitedcomfort-icon)/2)
+	top: 12px
+
+#basicComfortIcon
+	@extend .centeredIconStyle
+	background: sprite($home-icons, basiccomfort-icon)
+	@include sprite-dimensions($home-icons, basiccomfort-icon)
+	@include sprite-at2x($home-icons, $home2x-icons)
+	margin-left: -(home-sprite-width(basiccomfort-icon)/2)
+	top: 5px
+
+#borderCarIcon
+	@extend .leftIconStyle
+	background: sprite($home-icons, bordercar-icon)
+	@include sprite-dimensions($home-icons, bordercar-icon)
+	@include sprite-at2x($home-icons, $home2x-icons)
+
+/* ----------- Other Services ----------- */
+#otherServices
+	.container
+		border-top: 1px dashed $blue 
+		padding-top: 30px
+
+	.smallContainer
+		border-bottom: 1px dashed $blue 
+		@extend .bigParagraph
+		margin-bottom: 45px
+		padding: 0 0 45px
+
+		p
+			max-width: 400px
+
+		.col-xs-12:nth-child(2)
+			p:first-child
+				margin-top: 27px
+
+.otherServices-block
+	background: #00b48c
+	@include background-image(linear-gradient(to right, #00b48c, #7ccf59))
+	margin: 0 0 65px
+	padding: 9px
+
+	div
+		background: white
+		min-height: 255px
+		padding: 30px 25px 25px
+		position: relative
+
+	h3
+		color: $gray
+		@extend %roboto-bold
+		font-size: 28px
+		padding: 0 0 0 145px
+
+	p
+		padding: 0 0 0 145px
+
+	.blueButton
+		margin: 38px 0 0
+
+	.arrowLink
+		margin: 35px auto 0 0
+
+#borderCarIcon
+	@extend .leftIconStyle
+	background: sprite($home-icons, bordercar-icon)
+	@include sprite-dimensions($home-icons, bordercar-icon)
+	@include sprite-at2x($home-icons, $home2x-icons)
+
+#civilResponsibilityIcon
+	@extend .leftIconStyle
+	background: sprite($home-icons, civilresponsibility-icon)
+	@include sprite-dimensions($home-icons, civilresponsibility-icon)
+	@include sprite-at2x($home-icons, $home2x-icons)
+
+#substituteCar
+	background: $blue
+	color: white
+	@extend %roboto-black
+	font-size: 50px
+	line-height: 1.1em
+	margin: 0 0 20px
+	max-width: 350px
+	padding: 155px 30px 30px
+	position: relative
+	text-align: center
+
+	&:before, &:after, span:before
+		content: ""
+		display: block
+		position: absolute
+
+	&:before //car icon
+		background: sprite($home-icons, substitutecar-icon)
+		@include sprite-dimensions($home-icons, substitutecar-icon)
+		@include sprite-at2x($home-icons, $home2x-icons)
+		left: 50%
+		margin: 0
+		margin-left: -(home-sprite-width(substitutecar-icon)/2)
+		top: 55px
+
+	&:after // replace arrows
+		background: sprite($home-icons, replacearrows-icon)
+		@include sprite-dimensions($home-icons, replacearrows-icon)
+		@include sprite-at2x($home-icons, $home2x-icons)
+		left: 18px
+		top: 21px
+
+	span
+		&:before // background for replace arrows
+			background: white
+			@include border-radius(50px)
+			height: 40px
+			left: 12px
+			top: 12px
+			width: 40px
+
+#substituteCar-ParticipantInsurance
+	color: $blue
+	@extend %roboto-black
+	font-size: 23px
+	line-height: 1em
+	margin: 20px -15px
+	max-width: 420px
+
+	span
+		&:first-child
+			display: block
+			font-size: 16px
+
+	.col-xs-12:nth-child(2)
+		color: $light-gray
+		@extend %roboto
+		font-size: 19px
+
+#callToAction
+	padding: 45px 0 90px
+
+	p
+		color: $blue
+		font-size: 35px
+		line-height: 1.2em
+		margin: 0 0 15px
+
+		span:first-child
+			display: block
+
+	.col-xs-12:last-child
+		text-align: right
+

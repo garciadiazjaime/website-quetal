@@ -14053,63 +14053,76 @@ module.exports = SocialElement;
 'use strict';
 
 var React = window.React;
+var ReactRouter = require('react-router');
+
 var rb = require('react-bootstrap');
 var Row = rb.Row;
 var Col = rb.Col;
+var Link = ReactRouter.Link;
+
+var SocialElement = require('./element-social');
 
 var FooterSection = React.createClass({displayName: "FooterSection",
 
   render: function() {
     return (
-        React.createElement("div", {className: "container"}, 
-            React.createElement(Row, null, 
-                React.createElement(Col, {xs: 12, sm: 7}, 
-                    React.createElement("nav", {id: "footerNavigation"}, 
-                        React.createElement("ul", null, 
-                            React.createElement("li", null, 
-                                React.createElement("h5", null, React.createElement("a", {href: "coberturas", title: "Coberturas"}, "Coberturas")), 
-                                React.createElement("ul", null, 
-                                    React.createElement("li", null, React.createElement("a", {href: "coberturas/basica", title: "Básica"}, "Básica")), 
-                                    React.createElement("li", null, React.createElement("a", {href: "coberturas/limitada", title: "Limitada"}, "Limitada")), 
-                                    React.createElement("li", null, React.createElement("a", {href: "coberturas/amplia", title: "Amplia"}, "Amplia")), 
-                                    React.createElement("li", null, React.createElement("a", {href: "coberturas/prestigio", title: "Prestigio"}, "Prestigio")), 
-                                    React.createElement("li", null, React.createElement("a", {href: "coberturas/autos-fronterizos", title: "Autos Fronterizos"}, "Autos Fronterizos")), 
-                                    React.createElement("li", null, React.createElement("a", {href: "coberturas/rc-obligatoria", title: "RC Obligatoria"}, "RC Obligatoria"))
-                                )
-                            ), React.createElement("li", null, 
-                                React.createElement("h5", null, React.createElement("a", {href: "nosotros", title: "Nosotros"}, "Nosotros")), 
-                                React.createElement("ul", null, 
-                                    React.createElement("li", null, React.createElement("a", {href: "nosotros/por-que-nosotros", title: "Por qué Nosotros"}, "Por qué Nosotros")), 
-                                    React.createElement("li", null, React.createElement("a", {href: "nosotros/quienes-somos", title: "Quiénes somos"}, "Quiénes somos"))
-                                )
-                            ), React.createElement("li", null, 
-                                React.createElement("h5", null, React.createElement("a", {href: "contacto", title: "Contacto"}, "Contacto")), 
-                                React.createElement("ul", null, 
+        React.createElement("div", null, 
+            React.createElement("div", {className: "container"}, 
+                React.createElement(Row, null, 
+                    React.createElement(Col, {xs: 12, sm: 7}, 
+                        React.createElement("nav", {id: "footerNavigation"}, 
+                            React.createElement("ul", null, 
+                                React.createElement("li", null, 
+                                    React.createElement("h5", null, React.createElement(Link, {to: "coverage", title: "Coberturas"}, "Coberturas")), 
+                                    React.createElement("ul", null, 
+                                        React.createElement("li", null, React.createElement("a", {href: "coberturas/basica", title: "Básica"}, "Básica")), 
+                                        React.createElement("li", null, React.createElement("a", {href: "coberturas/limitada", title: "Limitada"}, "Limitada")), 
+                                        React.createElement("li", null, React.createElement("a", {href: "coberturas/amplia", title: "Amplia"}, "Amplia")), 
+                                        React.createElement("li", null, React.createElement("a", {href: "coberturas/prestigio", title: "Prestigio"}, "Prestigio")), 
+                                        React.createElement("li", null, React.createElement("a", {href: "coberturas/autos-fronterizos", title: "Autos Fronterizos"}, "Autos Fronterizos")), 
+                                        React.createElement("li", null, React.createElement("a", {href: "coberturas/rc-obligatoria", title: "RC Obligatoria"}, "RC Obligatoria"))
+                                    )
+                                ), React.createElement("li", null, 
+                                    React.createElement("h5", null, React.createElement(Link, {to: "aboutus", title: "Nosotros"}, "Nosotros")), 
+                                    React.createElement("ul", null, 
+                                        React.createElement("li", null, React.createElement(Link, {to: "whyUs", title: "Por qué Nosotros"}, "Por qué Nosotros")), 
+                                        React.createElement("li", null, React.createElement(Link, {to: "whoAreWe", title: "Quiénes somos"}, "Quiénes somos"))
+                                    )
+                                ), React.createElement("li", null, 
+                                    React.createElement("h5", null, React.createElement(Link, {to: "contact", title: "Contacto"}, "Contacto")), 
+                                    React.createElement("ul", null, 
+                                        React.createElement("li", null, React.createElement(Link, {to: "disaster", title: "En caso de Siniestro"}, "En caso de Siniestro")), 
+                                        React.createElement("li", null, React.createElement(Link, {to: "contactForm", title: "Contáctanos"}, "Contáctanos"))
+                                            
 
-                                    React.createElement("li", null, React.createElement("a", {href: "contacto/siniestro", title: "En caso de Siniestro"}, "En caso de Siniestro")), 
-                                    React.createElement("li", null, React.createElement("a", {href: "contacto", title: "Contáctanos"}, "Contáctanos"))
+                                    )
+                                ), React.createElement("li", null, 
+                                    React.createElement("h5", null, React.createElement("a", {href: "cotiza", title: "Cotiza", target: "_blank"}, "Cotiza"))
                                 )
-                            ), React.createElement("li", null, 
-                                React.createElement("h5", null, React.createElement("a", {href: "cotiza", title: "Cotiza"}, "Cotiza"))
                             )
                         )
+                    ), 
+                    React.createElement(Col, {xs: 12, sm: 5}, 
+                        React.createElement("span", {id: "brand-footer"}, "Quetal - Mi seguro de auto"), 
+                        React.createElement("p", null, "Con el respaldo de:"), 
+                        React.createElement("span", {className: "general-logo"}, "General de seguros"), 
+                        React.createElement(SocialElement, null)
                     )
-                ), 
-                React.createElement(Col, {xs: 12, sm: 5}, 
-                    React.createElement("span", {id: "brand-footer"}, "Quetal - Mi seguro de auto"), 
-                    React.createElement("p", null, "Con el respaldo de:"), 
-                    React.createElement("span", {className: "general-logo"}, "General de seguros")
                 )
             ), 
-            React.createElement(Row, null, 
-                React.createElement(Col, {xs: 12, sm: 5}, 
-                    React.createElement("p", null, "Todos los derechos reservados Quetal Seguro de auto   2015 ")
-                ), 
-                React.createElement(Col, {xs: 12, sm: 4}, 
-                    React.createElement("p", {id: "credit"}, React.createElement("span", null, "Un proyecto de: ", React.createElement("a", {href: "http://somospool.com/", title: "Visita Branding POOL", target: "_blank"}, "POOL")), "Código por: ", React.createElement("a", {href: "http://mintitmedia.com/", title: "Mint IT Media - Diseño y desarrollo web", target: "_blank"}, "MINT"))
-                ), 
-                React.createElement(Col, {xs: 12, sm: 3}, 
-                    React.createElement("a", {href: "", title: "Ver términos y condiciones"}, "Términos y Condiciones.")
+            React.createElement("div", {id: "footerExtras"}, 
+                React.createElement("div", {className: "container"}, 
+                    React.createElement(Row, null, 
+                        React.createElement(Col, {xs: 12, sm: 5}, 
+                            React.createElement("p", null, "Todos los derechos reservados Quetal Seguro de auto   2015 ")
+                        ), 
+                        React.createElement(Col, {xs: 12, sm: 4}, 
+                            React.createElement("p", {id: "credit"}, React.createElement("span", null, "Un proyecto de: ", React.createElement("a", {href: "http://somospool.com/", title: "Visita Branding POOL", target: "_blank"}, "POOL")), "Código por: ", React.createElement("a", {href: "http://mintitmedia.com/", title: "Mint IT Media - Diseño y desarrollo web", target: "_blank"}, "MINT"))
+                        ), 
+                        React.createElement(Col, {xs: 12, sm: 3}, 
+                            React.createElement("a", {href: "", title: "Ver términos y condiciones"}, "Términos y Condiciones.")
+                        )
+                    )
                 )
             )
         )
@@ -14118,7 +14131,7 @@ var FooterSection = React.createClass({displayName: "FooterSection",
 });
 
 module.exports = FooterSection;
-},{"react-bootstrap":70}],182:[function(require,module,exports){
+},{"./element-social":180,"react-bootstrap":70,"react-router":160}],182:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14237,6 +14250,7 @@ var rb = require('react-bootstrap');
 var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
+var Link = ReactRouter.Link;
 
 var HomeCallToActionPanel = React.createClass({displayName: "HomeCallToActionPanel",
 
@@ -14254,10 +14268,10 @@ var HomeCallToActionPanel = React.createClass({displayName: "HomeCallToActionPan
                 React.createElement("div", {className: "smallContainer"}, 
                     React.createElement(Row, null, 
                         React.createElement(Col, {xs: 12, sm: 6}, 
-                            React.createElement("p", null, "¿Qué hacer en caso de Siniestro?")
+                            React.createElement("p", null, React.createElement("span", null, "¿Qué hacer en"), " caso de Siniestro?")
                         ), 
                         React.createElement(Col, {xs: 12, sm: 6}, 
-                            React.createElement("a", {href: "contacto/siniestro", title: "Contáctanos", className: "greenButton"}, "Contáctanos")
+                            React.createElement(Link, {to: "disaster", title: "Contáctanos", className: "greenButton"}, "Contáctanos")
                         )
                     )
                 )
@@ -14280,6 +14294,7 @@ var Col = rb.Col;
 var Button = rb.Button;
 var Carousel = rb.Carousel;
 var CarouselItem = rb.CarouselItem;
+var Link = ReactRouter.Link;
 
 var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
 
@@ -14302,7 +14317,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                     React.createElement("p", {className: "bigPhrase"}, 
                                         React.createElement("span", null, "Hola, Quetal"), " un Seguro de auto a tu alcance"
                                     ), 
-                                    React.createElement("a", {href: "#", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
+                                    React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
                                     React.createElement("span", {className: "general-logo"}, "General de seguros")
                                 ), 
                                 React.createElement(Col, {xs: 12, sm: 6}, 
@@ -14321,7 +14336,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                     ), 
                                     React.createElement("p", {className: "restrictions"}, "*En comparación con otros portales de venta" + ' ' +
 "de seguros por internet."), 
-                                    React.createElement("a", {href: "#", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
+                                    React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
                                     React.createElement("span", {className: "general-logo"}, "General de seguros")
                                 ), 
                                 React.createElement(Col, {xs: 12, sm: 5}
@@ -14338,7 +14353,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                         React.createElement("span", {className: "inline"}, "¿Quetal"), " si choco?"
                                     ), 
                                     React.createElement("p", null, "Conoce nuestras Coberturas contra Daños a Terceros y Daños a tu Automóvil."), 
-                                    React.createElement("a", {href: "#", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
+                                    React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
                                     React.createElement("span", {className: "general-logo"}, "General de seguros")
                                 ), 
                                 React.createElement(Col, {xs: 12, sm: 6}, 
@@ -14385,13 +14400,12 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
                         React.createElement(Col, {xs: 12, sm: 6}, 
                             React.createElement("div", {className: "otherServices-block"}, 
                                 React.createElement("div", null, 
+                                    React.createElement("h3", null, "Autos Fronterizos o Legalizados"), 
                                     React.createElement("p", null, 
-                                        "Autos Fronterizos o Legalizados", 
-                            
                                         React.createElement("a", {href: "cotiza", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza"), 
                                         React.createElement("span", {id: "borderCarIcon"})
                                     ), 
-                                    React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                                    React.createElement("button", {onClick: this.open, className: "arrowLink"}, 
                                       "Ver detalles"
                                     )
                                 )
@@ -14400,13 +14414,12 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
                         React.createElement(Col, {xs: 12, sm: 6}, 
                             React.createElement("div", {className: "otherServices-block"}, 
                                 React.createElement("div", null, 
+                                    React.createElement("h3", null, "RC Obligatoria Federal / Estatal"), 
                                     React.createElement("p", null, 
-                                        "RC Obligatoria Federal / Estatal", 
-                            
                                         React.createElement("a", {href: "cotiza", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza"), 
                                         React.createElement("span", {id: "civilResponsibilityIcon"})
                                     ), 
-                                    React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                                    React.createElement("button", {onClick: this.open, className: "arrowLink"}, 
                                       "Ver detalles"
                                     )
                                 )
@@ -14417,7 +14430,7 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
                 React.createElement("div", {className: "smallContainer"}, 
                     React.createElement(Row, null, 
                         React.createElement(Col, {xs: 12, sm: 5}, 
-                            React.createElement("p", {id: "substituteCar"}, "Automóvil Sustituto")
+                            React.createElement("p", {id: "substituteCar"}, React.createElement("span", null, "Automóvil Sustituto"))
                         ), 
                         React.createElement(Col, {xs: 12, sm: 7}, 
                             React.createElement("p", null, "General de Seguros te ofrece un auto sustituto mientras reparamos tu auto por colisión o te pagamos tu automóvil por perdida total o robo total. "), 
@@ -14482,7 +14495,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                     React.createElement(Row, {id: "servicesList"}, 
                         React.createElement(Col, {xs: 12, sm: 3}, 
                             React.createElement("div", {className: "servicesList-wrap"}, 
-                                React.createElement("h3", null, "¿Qué tal si tienes un auto del año*? ", React.createElement("span", {id: "prestigeIcon"})), 
+                                React.createElement("h3", null, React.createElement("span", {className: "wrap"}, "¿Qué tal si tienes un auto del año*? "), React.createElement("span", {id: "prestigeIcon"})), 
                                 React.createElement("div", {className: "servicesList-details"}, 
                                     React.createElement("h2", null, "Cobertura Prestigio"), 
                                     React.createElement("ul", {className: "checklist"}, 
@@ -14490,17 +14503,19 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                                         React.createElement("li", null, "Daños a tu vehículo"), 
                                         React.createElement("li", null, "Robo"), 
                                         React.createElement("li", null, "Daños a terceros")
-                                    )
+                                    ), 
+                                    React.createElement("p", {className: "notes"}, "*Vehículos último modelo" + ' ' + 
+"y modelos recientes.")
                                 ), 
                                 React.createElement("a", {href: "#", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza")
                             ), 
-                            React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                            React.createElement("button", {className: "arrowLink"}, 
                               "Ver detalles"
                             )
                         ), 
                         React.createElement(Col, {xs: 12, sm: 3, className: "featured"}, 
                             React.createElement("div", {className: "servicesList-wrap"}, 
-                                React.createElement("h3", null, "¿Qué tal si te cuidamos bien? ", React.createElement("span", {id: "comfortIcon"})), 
+                                React.createElement("h3", null, React.createElement("span", {className: "wrap"}, "¿Qué tal si te cuidamos bien? "), React.createElement("span", {id: "comfortIcon"})), 
                                 React.createElement("div", {className: "servicesList-details"}, 
                                     React.createElement("h2", null, "Cobertura Confort Amplia"), 
                                     React.createElement("ul", {className: "checklist"}, 
@@ -14511,13 +14526,13 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                                 ), 
                                 React.createElement("a", {href: "#", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza")
                             ), 
-                            React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                            React.createElement("button", {onClick: this.open, className: "arrowLink"}, 
                               "Ver detalles"
                             )
                         ), 
                         React.createElement(Col, {xs: 12, sm: 3}, 
                             React.createElement("div", {className: "servicesList-wrap"}, 
-                                React.createElement("h3", null, "¿Qué tal si tú pones los límites? ", React.createElement("span", {id: "limitedComfortIcon"})), 
+                                React.createElement("h3", null, React.createElement("span", {className: "wrap"}, "¿Qué tal si tú pones los límites? "), React.createElement("span", {id: "limitedComfortIcon"})), 
                                 React.createElement("div", {className: "servicesList-details"}, 
                                     React.createElement("h2", null, "Cobertura Confort Limitada"), 
                                     React.createElement("ul", {className: "checklist"}, 
@@ -14527,13 +14542,13 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                                 ), 
                                 React.createElement("a", {href: "#", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza")
                             ), 
-                            React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                            React.createElement("button", {onClick: this.open, className: "arrowLink"}, 
                               "Ver detalles"
                             )
                         ), 
                         React.createElement(Col, {xs: 12, sm: 3}, 
                             React.createElement("div", {className: "servicesList-wrap"}, 
-                                React.createElement("h3", null, "¿Qué tal si quieres un Seguro como tú lo necesitas?", React.createElement("span", {id: "basicComfortIcon"})), 
+                                React.createElement("h3", null, React.createElement("span", {className: "wrap"}, "¿Qué tal si quieres un Seguro como tú lo necesitas?"), React.createElement("span", {id: "basicComfortIcon"})), 
                                 React.createElement("div", {className: "servicesList-details"}, 
                                     React.createElement("h2", null, "Cobertura Confort Básica"), 
                                     React.createElement("ul", {className: "checklist"}, 
@@ -14542,7 +14557,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                                 ), 
                                 React.createElement("a", {href: "#", target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza")
                             ), 
-                            React.createElement(Button, {bsStyle: "primary", onClick: this.open, className: "arrowLink"}, 
+                            React.createElement("button", {onClick: this.open, className: "arrowLink"}, 
                               "Ver detalles"
                             )
                         )
@@ -14798,9 +14813,18 @@ var routes = (
 	React.createElement(Route, {path: "/", handler: Layout}, 
 		React.createElement(DefaultRoute, {name: "home", handler: HomeSection}), 
 		React.createElement(Route, {name: "homepage", path: "/inicio", handler: HomeSection}), 
+
 		React.createElement(Route, {name: "coverage", path: "/coberturas", handler: CoverageSection}), 
+		
 		React.createElement(Route, {name: "aboutus", path: "/nosotros", handler: AboutusSection}), 
-		React.createElement(Route, {name: "contact", path: "/contacto", handler: ContactUsSection})
+		React.createElement(Route, {name: "whyUs", path: "/nosotros/por-que-nosotros", handler: AboutusSection}), 
+		React.createElement(Route, {name: "whoAreWe", path: "/nosotros/quienes-somos", handler: AboutusSection}), 
+
+		React.createElement(Route, {name: "contact", path: "/contacto", handler: ContactUsSection}), 
+		React.createElement(Route, {name: "disaster", path: "/contacto/siniestro", handler: ContactUsSection}), 
+		React.createElement(Route, {name: "contactForm", path: "/contacto/forma", handler: ContactUsSection})
+
+
 	)
 );
 

@@ -7,6 +7,7 @@ var rb = require('react-bootstrap');
 var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
+var Link = ReactRouter.Link;
 
 var HomeCallToActionPanel = React.createClass({
 
@@ -24,10 +25,10 @@ var HomeCallToActionPanel = React.createClass({
                 <div className="smallContainer">
                     <Row>
                         <Col xs={12} sm={6}>
-                            <p>¿Qué hacer en caso de Siniestro?</p>
+                            <p><span>¿Qué hacer en</span> caso de Siniestro?</p>
                         </Col>
                         <Col xs={12} sm={6}>
-                            <a href="contacto/siniestro" title="Contáctanos" className="greenButton">Contáctanos</a>
+                            <Link to="disaster" title="Contáctanos" className="greenButton">Contáctanos</Link>
                         </Col>
                     </Row>
                 </div> 
