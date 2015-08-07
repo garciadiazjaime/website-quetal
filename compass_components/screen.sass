@@ -167,6 +167,21 @@ select
 		background: lighten($yellow, 15)
 		color: $green
 
+.greenButton
+	@extend .btn
+	background: #00b785
+	@include background-image(linear-gradient(to right, #00b785, #96d554))
+	color: white
+	font-size: 32px
+	margin: 0 0 30px
+	min-width: 270px
+	padding: 30px
+
+	&:hover, &:focus, &:active
+		background: lighten(#00b785, 10)
+		@include background-image(linear-gradient(to right, lighten(#00b785, 10), lighten(#96d554, 10)))
+		color: white
+
 .social
 	list-style-type: none
 	margin: 0
@@ -297,11 +312,15 @@ header, #header
 
 /* ****************** FOOTER ************** */
 footer, #footer
-	background: $black
+	background: $dark-gray
 	color: white
-	font-size: 10px
-	padding: 60px 0 20px
-	text-align: center
+	@extend %roboto-bold
+	font-size: 16px
+	padding: 45px 0 0
+	text-align: left
+
+	.row
+		margin-bottom: 50px
 
 	a
 		color: white
@@ -309,7 +328,88 @@ footer, #footer
 		padding: 0 5px
 
 		&:hover, &:focus, &:active
-			color: $pink
+			color: $yellow
+
+	p
+		color: $green
+		max-width: 165px
+
+	.general-logo
+		margin-top: 30px
+
+	.col-xs-12:last-child
+		position: relative
+
+	.social
+		position: absolute
+		right: 15px
+		top: 0
+
+#footerNavigation
+	@extend %roboto
+	font-size: 12px
+
+	ul
+		list-style-type: none
+		margin: 0 0 15px
+		padding: 75px 0 0
+
+		ul
+			padding: 0
+
+	li
+		display: inline-block
+		margin: 0 0 15px
+		vertical-align: top
+		width: 25%
+
+		li
+			display: block
+			margin: 0 0 12px
+			width: 100%
+
+	h5
+		a
+			color: $green
+			display: block
+
+			&:hover,  &:focus, &:active
+				color: lighten($green,15)
+
+#footerNavigation > ul > li:nth-child(3)
+	width: 30%
+
+#footerNavigation > ul > li:last-child
+	width: 20%
+
+
+#brand-footer
+	@extend .img
+	background: sprite($general-icons, logo)
+	@include sprite-dimensions($general-icons, logo)
+	@include sprite-at2x($general-icons, $general2x-icons)
+	margin: 0 0 25px
+
+#footerExtras
+	background: $black
+	color: #707070
+	@extend %roboto
+	font-size: 10px
+	padding: 15px 0
+
+	p
+		color: #707070
+		max-width: 100%
+
+	a
+		color: #707070
+
+		&:hover, &:focus, &:active
+			color: white
+
+	.row
+		margin-bottom: 0
+
 
 /* ****************** SECTIONS ************** */
 
