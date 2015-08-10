@@ -226,6 +226,11 @@ select
 .hasColorBackground
 	color: white
 
+.blueBackground
+	@extend .hasColorBackground
+	background: #009ce2
+	@include background-image(linear-gradient(to right, #00b7d6, #009ce2))
+
 .general-logo	
 	@extend .img
 	background: sprite($general-icons, insurancelogo)
