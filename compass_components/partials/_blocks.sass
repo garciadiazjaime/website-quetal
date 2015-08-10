@@ -1,0 +1,53 @@
+/* ****************** REUSABLE BLOCKS ************** */
+
+/* ----------- What to do in case of disaster (home) ----------- */
+#callToAction
+	padding: 45px 0 90px
+
+	p
+		color: $blue
+		font-size: 35px
+		line-height: 1.2em
+		margin: 0 0 15px
+
+		span:first-child
+			display: block
+
+	.col-xs-12:last-child
+		text-align: right
+
+
+/* ----------- Save 20% (coverage, about-us) ----------- */
+
+#savingsCallToAction
+	margin-bottom: 50px
+
+	p
+		color: $blue
+		@extend %roboto-bold
+		font-size: 39px
+		line-height: 1.2em
+		max-width: 400px
+
+	.notes
+		color: #aaaaaa
+		@extend %roboto
+		font-size: 10px
+		line-height: 1.2em
+		max-width: 100%
+
+	.logo
+		@extend .img
+		background: sprite($aboutus-icons, blue-logo)
+		@include sprite-dimensions($aboutus-icons, blue-logo)
+		@include sprite-at2x($aboutus-icons, $aboutus2x-icons)
+		display: inline-block
+		vertical-align: middle
+
+	.col-xs-12:last-child
+		text-align: right
+
+	.blueButton
+		font-size: 24px
+		margin: 40px 0 20px
+		padding: 20px 27px 23px

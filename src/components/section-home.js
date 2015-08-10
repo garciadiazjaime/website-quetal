@@ -5,7 +5,7 @@ var ReactRouter = require('react-router');
 var CarouselPanel = require('./panel-home-carousel');
 var ServicesPanel = require('./panel-home-services');
 var OtherServicesPanel = require('./panel-home-otherservices');
-var CallToActionPanel = require('./panel-home-calltoaction');
+var WhatToDo = require('./block-whattodo');
 
 var rb = require('react-bootstrap');
 var Row = rb.Row;
@@ -33,7 +33,7 @@ var HomeSection = React.createClass({
                 <CarouselPanel />
                 <ServicesPanel />
                 <OtherServicesPanel />
-                <CallToActionPanel />
+                <WhatToDo />
             </div>
         );
     }

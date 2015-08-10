@@ -8,7 +8,7 @@ var Col = rb.Col;
 var Button = rb.Button;
 
 var CoverageTable = require('./panel-coverage-table');
-var SavingsBlock = require('./panel-savings');
+var SavingsBlock = require('./block-savings');
 
 var CoveragePanel = React.createClass({
 
