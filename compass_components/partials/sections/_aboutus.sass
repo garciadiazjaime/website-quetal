@@ -1,0 +1,41 @@
+/* ****************** ABOUT US ************** */
+
+/* ----------- Carousel ----------- */
+#aboutusCarousel
+	color: white
+	@extend %roboto-bold
+	font-size: 63px
+	height: 340px
+	line-height: 1em
+
+	.container
+		position: relative
+
+	em
+		background-color: #ff0000 //red
+		color: $yellow
+		display: inline-block
+		vertical-align: top
+
+	p
+		margin-top: 0
+		max-width: 730px
+
+	.item
+		padding-top: 68px
+		z-index: 5
+
+	.carousel-inner
+		min-height: 100%
+
+		&:before
+			@extend .img
+			background: sprite($aboutus-icons, baner-qimage)
+			@include sprite-dimensions($aboutus-icons, baner-qimage)
+			content: " "
+			left: 50%
+			margin: 0
+			margin-left: -70px
+			position: absolute
+			top: 0
+			z-index: 1

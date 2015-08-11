@@ -1,9 +1,14 @@
 /* ****************** HOME ************** */
 /* ----------- Carousel ----------- */
-#homeCarousel
+.carousel
 	@extend .hasColorBackground
 	background: #00b48c
 	@include background-image(linear-gradient(to right, #00b48c, #7ccf59))
+
+	.carousel-control
+		display: none
+	
+#homeCarousel
 	@extend %roboto-bold
 	font-size: 16px
 	height: 580px
@@ -53,32 +58,30 @@
 		position: relative
 		z-index: 5
 
-	.carousel-indicators
-		left: 50%
-		margin: 0 0 0 45%
-		max-width: 980px
-		text-align: right
-		top: 40px
-		width: 20px
 
-		li
-			background: $yellow
-			border: none
-			display: block
-			height: 14px
-			margin: 0 0 10px auto
-			width: 14px
+.carousel-indicators
+	left: 50%
+	margin: 0 0 0 45%
+	max-width: 980px
+	text-align: right
+	top: 40px
+	width: 20px
 
-			&:hover, &:focus, &:active
-				background: $blue
+	li
+		background: $yellow
+		border: none
+		display: block
+		height: 14px
+		margin: 0 0 10px auto
+		width: 14px
 
-		li.active
+		&:hover, &:focus, &:active
 			background: $blue
-			border: none
-			margin: 0 0 10px auto
 
-	.carousel-control
-		display: none
+	li.active
+		background: $blue
+		border: none
+		margin: 0 0 10px auto
 
 .bigPhrase
 	color: white

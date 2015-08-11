@@ -25,7 +25,7 @@ var AboutusPanel = React.createClass({
     render: function() {
 
         return (
-            <section id="nosotros">
+            <section id="mainContent">
                 <CarouselPanel />
                 <WhyUsPanel />
                 <WhoAreWePanel />

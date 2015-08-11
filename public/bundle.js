@@ -15304,7 +15304,7 @@ var AboutusPanel = React.createClass({displayName: "AboutusPanel",
     render: function() {
 
         return (
-            React.createElement("section", {id: "nosotros"}, 
+            React.createElement("section", {id: "mainContent"}, 
                 React.createElement(CarouselPanel, null), 
                 React.createElement(WhyUsPanel, null), 
                 React.createElement(WhoAreWePanel, null), 
