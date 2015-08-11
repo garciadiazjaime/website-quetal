@@ -3,21 +3,14 @@
 var React = require('react');
 var ReactRouter = require('react-router');
 var rb = require('react-bootstrap');
+
 var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
 
-var HelloPanel = require('./panel-contact-hello');
-var ContactInfo = require('./panel-contact-info');
-
-var ContactPanel = React.createClass({
+var HelloPanel = React.createClass({
 
     mixins : [ReactRouter.Navigation],
-
-    getInitialState: function(){
-        return {
-        }
-    },
     
     handleClick: function(){
         console.log('handleClick');
@@ -25,16 +18,15 @@ var ContactPanel = React.createClass({
     },
 
     render: function() {
-        var mapStyle = {
-            border: 0
-        };
+
         return (
-            <section id="mainContent">
-                <HelloPanel />
-                <ContactInfo />
+            <section id="helloIntro">
+                <div className="container">
+                    <p><em>Hola, Quetal</em> Estamos para ayudarte</p>
+                </div>
             </section>
         );
-    },
+    }
 });
 
-module.exports = ContactPanel;
+module.exports = HelloPanel;
