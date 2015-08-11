@@ -9,6 +9,7 @@ var Button = rb.Button;
 
 var HelloPanel = require('./panel-contact-hello');
 var ContactInfo = require('./panel-contact-info');
+var NeedHelp = require('./block-needhelp');
 
 var ContactPanel = React.createClass({
 
@@ -32,6 +33,7 @@ var ContactPanel = React.createClass({
             <section id="mainContent">
                 <HelloPanel />
                 <ContactInfo />
+                <NeedHelp />
             </section>
         );
     },

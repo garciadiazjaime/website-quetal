@@ -25,19 +25,22 @@ var ContactForm = React.createClass({
 
         return (
             <form id="form">
+                <h1><em>Contacto</em>
+                Para cualquier duda o comentario</h1>
+                <p>Llena la siguiente forma</p>
                 <div className="formGroup">
                     <label id="lab_name">Nombre*</label>
-                    <input type="text" id="name" name="name" placeholder="nombre" onChange={this.onChangeHandler.bind(this, 'name')} value={this.state.formData.name.value}/>
+                    <input type="text" id="name" name="name" placeholder="Nombre" onChange={this.onChangeHandler.bind(this, 'name')} value={this.state.formData.name.value}/>
                 </div>
                 <div className="formGroup">
                     <label id="lab_email">Correo*</label>
-                    <input type="text" id="email" name="email" placeholder="correo" onChange={this.onChangeHandler.bind(this, 'email')} value={this.state.formData.email.value}/>
+                    <input type="text" id="email" name="email" placeholder="Correo" onChange={this.onChangeHandler.bind(this, 'email')} value={this.state.formData.email.value}/>
                 </div>
                 <div className="formGroup">
                     <label id="lab_tel">Tel&eacute;fono*</label>
-                    <input type="tel" id="tel" name="tel" placeholder="tel&eacute;fono" onChange={this.onChangeHandler.bind(this, 'tel')} value={this.state.formData.tel.value}/>
+                    <input type="tel" id="tel" name="tel" placeholder="Tel&eacute;fono" onChange={this.onChangeHandler.bind(this, 'tel')} value={this.state.formData.tel.value}/>
                 </div>
-                <textarea id="message" name="message" onChange={this.onChangeHandler.bind(this, 'message')} value={this.state.formData.message.value}></textarea>
+                <textarea id="message" name="message" placeholder="Mensaje" onChange={this.onChangeHandler.bind(this, 'message')} value={this.state.formData.message.value}></textarea>
                 <span id="msg"></span>
 
                 { this.state.showLoading ? <span id="loader">Cargando</span> : null }

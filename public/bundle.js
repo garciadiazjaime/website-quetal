@@ -18674,6 +18674,47 @@ var rb = require('react-bootstrap');
 var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
+var Link = ReactRouter.Link;
+
+var NeedHelp = React.createClass({displayName: "NeedHelp",
+
+    mixins : [ReactRouter.Navigation],
+    
+    handleClick: function(){
+        console.log('handleClick');
+    },
+
+    render: function() {
+
+        return ( 
+            React.createElement("section", {id: "needHelp"}, 
+                React.createElement("div", {className: "container"}, 
+                    React.createElement(Row, null, 
+                        React.createElement(Col, {xs: 12, sm: 7}, 
+                            React.createElement("p", null, "¿Necesitas ayuda en tu compra? Llámanos al ", React.createElement("a", {href: "tel:6646588993", title: "¡Llámanos para cualquier duda!"}, "664 658 8993"))
+                        ), 
+                        React.createElement(Col, {xs: 12, sm: 5}, 
+                            React.createElement("a", {href: "tel:6646588993", title: "¡Llámanos para cualquier duda!", className: "greenButton"}, "Llámanos")
+                        )
+                    )
+                )
+            )
+        );
+    }
+});
+
+module.exports = NeedHelp;
+
+},{"react-bootstrap":70,"react-router":160}],223:[function(require,module,exports){
+'use strict';
+
+var React = window.React;
+var ReactRouter = require('react-router');
+var rb = require('react-bootstrap');
+
+var Row = rb.Row;
+var Col = rb.Col;
+var Button = rb.Button;
 
 var savingsBlock = React.createClass({displayName: "savingsBlock",
 
@@ -18704,7 +18745,7 @@ var savingsBlock = React.createClass({displayName: "savingsBlock",
 
 module.exports = savingsBlock;
 
-},{"react-bootstrap":70,"react-router":160}],223:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],224:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -18746,7 +18787,7 @@ var WhatToDo = React.createClass({displayName: "WhatToDo",
 
 module.exports = WhatToDo;
 
-},{"react-bootstrap":70,"react-router":160}],224:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],225:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -18773,7 +18814,7 @@ var SocialElement = React.createClass({displayName: "SocialElement",
 
 module.exports = SocialElement;
 
-},{"react-router":160}],225:[function(require,module,exports){
+},{"react-router":160}],226:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -18855,7 +18896,7 @@ var FooterSection = React.createClass({displayName: "FooterSection",
 });
 
 module.exports = FooterSection;
-},{"./element-social":224,"react-bootstrap":70,"react-router":160}],226:[function(require,module,exports){
+},{"./element-social":225,"react-bootstrap":70,"react-router":160}],227:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -18907,7 +18948,7 @@ var HeaderSection = React.createClass({displayName: "HeaderSection",
 
 module.exports = HeaderSection;
 
-},{"./element-social":224,"react-bootstrap":70,"react-router":160}],227:[function(require,module,exports){
+},{"./element-social":225,"react-bootstrap":70,"react-router":160}],228:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -18964,7 +19005,7 @@ var Layout = React.createClass({displayName: "Layout",
 
 module.exports = Layout;
 
-},{"./layout-footer":225,"./layout-header":226,"react-router":160}],228:[function(require,module,exports){
+},{"./layout-footer":226,"./layout-header":227,"react-router":160}],229:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19015,7 +19056,7 @@ var AboutusCarouselPanel = React.createClass({displayName: "AboutusCarouselPanel
 
 module.exports = AboutusCarouselPanel;
 
-},{"react-bootstrap":70,"react-router":160}],229:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],230:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19058,7 +19099,7 @@ var WhoAreWePanel = React.createClass({displayName: "WhoAreWePanel",
 
 module.exports = WhoAreWePanel;
 
-},{"react-bootstrap":70,"react-router":160}],230:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],231:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19110,7 +19151,7 @@ var WhyUsPanel = React.createClass({displayName: "WhyUsPanel",
 
 module.exports = WhyUsPanel;
 
-},{"react-bootstrap":70,"react-router":160}],231:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],232:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19138,19 +19179,22 @@ var ContactForm = React.createClass({displayName: "ContactForm",
 
         return (
             React.createElement("form", {id: "form"}, 
+                React.createElement("h1", null, React.createElement("em", null, "Contacto"), 
+                "Para cualquier duda o comentario"), 
+                React.createElement("p", null, "Llena la siguiente forma"), 
                 React.createElement("div", {className: "formGroup"}, 
                     React.createElement("label", {id: "lab_name"}, "Nombre*"), 
-                    React.createElement("input", {type: "text", id: "name", name: "name", placeholder: "nombre", onChange: this.onChangeHandler.bind(this, 'name'), value: this.state.formData.name.value})
+                    React.createElement("input", {type: "text", id: "name", name: "name", placeholder: "Nombre", onChange: this.onChangeHandler.bind(this, 'name'), value: this.state.formData.name.value})
                 ), 
                 React.createElement("div", {className: "formGroup"}, 
                     React.createElement("label", {id: "lab_email"}, "Correo*"), 
-                    React.createElement("input", {type: "text", id: "email", name: "email", placeholder: "correo", onChange: this.onChangeHandler.bind(this, 'email'), value: this.state.formData.email.value})
+                    React.createElement("input", {type: "text", id: "email", name: "email", placeholder: "Correo", onChange: this.onChangeHandler.bind(this, 'email'), value: this.state.formData.email.value})
                 ), 
                 React.createElement("div", {className: "formGroup"}, 
                     React.createElement("label", {id: "lab_tel"}, "Teléfono*"), 
-                    React.createElement("input", {type: "tel", id: "tel", name: "tel", placeholder: "teléfono", onChange: this.onChangeHandler.bind(this, 'tel'), value: this.state.formData.tel.value})
+                    React.createElement("input", {type: "tel", id: "tel", name: "tel", placeholder: "Teléfono", onChange: this.onChangeHandler.bind(this, 'tel'), value: this.state.formData.tel.value})
                 ), 
-                React.createElement("textarea", {id: "message", name: "message", onChange: this.onChangeHandler.bind(this, 'message'), value: this.state.formData.message.value}), 
+                React.createElement("textarea", {id: "message", name: "message", placeholder: "Mensaje", onChange: this.onChangeHandler.bind(this, 'message'), value: this.state.formData.message.value}), 
                 React.createElement("span", {id: "msg"}), 
 
                  this.state.showLoading ? React.createElement("span", {id: "loader"}, "Cargando") : null, 
@@ -19278,7 +19322,7 @@ var ContactForm = React.createClass({displayName: "ContactForm",
 
 module.exports = ContactForm;
 
-},{"../lib/rest-client":242,"react-bootstrap":70,"react-router":160}],232:[function(require,module,exports){
+},{"../lib/rest-client":243,"react-bootstrap":70,"react-router":160}],233:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19312,7 +19356,7 @@ var HelloPanel = React.createClass({displayName: "HelloPanel",
 
 module.exports = HelloPanel;
 
-},{"react-bootstrap":70,"react-router":160}],233:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],234:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19338,31 +19382,33 @@ var HelloPanel = React.createClass({displayName: "HelloPanel",
 
         return (
             React.createElement("section", {id: "contactInfo"}, 
-                React.createElement(Row, null, 
-                    React.createElement(Col, {xs: 12, sm: 6, id: "disaster"}, 
-                        React.createElement("h2", null, React.createElement("em", null, React.createElement("span", {className: "hidden"}, "Contáctanos "), "En caso de Siniestro"), 
-                            "Reporte de Robo, Choque o Asistencia Legal"
-                        ), 
-                        React.createElement("p", {className: "instructionsParagraph"}, React.createElement("em", null, "Llama a los siguientes teléfonos"), 
-                        "de General de Seguros para que envíen a un ajustador para que te auxilie, nunca negocies por tu cuenta, permite que el ajustador te aconseje para que  el siniestro se resuelva de la mejor manera, recuerda que ellos son los expertos y además pagaste por ese servicio."
-                        ), 
-                        React.createElement("ul", null, 
-                            React.createElement("li", null, 
-                                "En el Distrito Federal", 
-                                React.createElement("a", {href: "tel:52708888", className: "tel"}, "5270.8888")
+                React.createElement("div", {className: "smallContainer"}, 
+                    React.createElement(Row, null, 
+                        React.createElement(Col, {xs: 12, sm: 6, id: "disaster"}, 
+                            React.createElement("h2", null, React.createElement("em", null, React.createElement("span", {className: "hidden"}, "Contáctanos "), "En caso de Siniestro"), 
+                                "Reporte de Robo, Choque o Asistencia Legal"
                             ), 
-                            React.createElement("li", null, 
-                                "Del Interior de la República", 
-                                React.createElement("a", {href: "tel:018004727696", className: "tel"}, "01800.GS.APOYO ", React.createElement("span", {className: "telMeaning"}, "47.27696"))
+                            React.createElement("p", {className: "instructionsParagraph"}, React.createElement("em", null, "Llama a los siguientes teléfonos"), 
+                            "de General de Seguros para que envíen a un ajustador para que te auxilie, nunca negocies por tu cuenta, permite que el ajustador te aconseje para que  el siniestro se resuelva de la mejor manera, recuerda que ellos son los expertos y además pagaste por ese servicio."
                             ), 
-                            React.createElement("li", null, 
-                                "Asistencia en Viajes y Auxilio Vial en el Distrito Federal e Interior del País, marque sin costo", 
-                                React.createElement("a", {href: "tel:018004729832", className: "tel"}, "01800.GS.AYUDA ", React.createElement("span", {className: "telMeaning"}, "47.29832"))
+                            React.createElement("ul", null, 
+                                React.createElement("li", null, 
+                                    "En el Distrito Federal", 
+                                    React.createElement("a", {href: "tel:52708888", className: "tel", tel: "Llámanos desde el D.F."}, "5270.8888")
+                                ), 
+                                React.createElement("li", null, 
+                                    "Del Interior de la República", 
+                                    React.createElement("a", {href: "tel:018004727696", className: "tel", tel: "Llámanos desde el interior de la república"}, "01800.GS.APOYO ", React.createElement("span", {className: "telMeaning"}, "47.27696"))
+                                ), 
+                                React.createElement("li", null, 
+                                    "Asistencia en Viajes y Auxilio Vial en el Distrito Federal e Interior del País, marque sin costo", 
+                                    React.createElement("a", {href: "tel:018004729832", className: "tel", tel: "Llámanos para asistencia desde el interior del país"}, "01800.GS.AYUDA ", React.createElement("span", {className: "telMeaning"}, "47.29832"))
+                                )
                             )
+                        ), 
+                        React.createElement(Col, {xs: 12, sm: 6, id: "contactform"}, 
+                            React.createElement(ContactForm, null)
                         )
-                    ), 
-                    React.createElement(Col, {xs: 12, sm: 6, id: "contactform"}, 
-                        React.createElement(ContactForm, null)
                     )
                 )
             )
@@ -19372,7 +19418,7 @@ var HelloPanel = React.createClass({displayName: "HelloPanel",
 
 module.exports = HelloPanel;
 
-},{"./panel-contact-form":231,"react-bootstrap":70,"react-router":160}],234:[function(require,module,exports){
+},{"./panel-contact-form":232,"react-bootstrap":70,"react-router":160}],235:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19892,7 +19938,7 @@ var coverageTable = React.createClass({displayName: "coverageTable",
 
 module.exports = coverageTable;
 
-},{"react-bootstrap":70,"react-router":160}],235:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],236:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19981,7 +20027,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
 
 module.exports = HomeCarouselPanel;
 
-},{"react-bootstrap":70,"react-router":160}],236:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],237:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20066,7 +20112,7 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
 
 module.exports = HomeOtherServicesPanel;
 
-},{"react-bootstrap":70,"react-router":160}],237:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],238:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20180,7 +20226,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
 
 module.exports = HomeServicesPanel;
 
-},{"react-bootstrap":70,"react-router":160}],238:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],239:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20220,7 +20266,7 @@ var AboutusPanel = React.createClass({displayName: "AboutusPanel",
 
 module.exports = AboutusPanel;
 
-},{"./block-savings":222,"./panel-aboutus-carousel":228,"./panel-aboutus-whoarewe":229,"./panel-aboutus-whyus":230,"react-bootstrap":70,"react-router":160}],239:[function(require,module,exports){
+},{"./block-savings":223,"./panel-aboutus-carousel":229,"./panel-aboutus-whoarewe":230,"./panel-aboutus-whyus":231,"react-bootstrap":70,"react-router":160}],240:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20232,6 +20278,7 @@ var Button = rb.Button;
 
 var HelloPanel = require('./panel-contact-hello');
 var ContactInfo = require('./panel-contact-info');
+var NeedHelp = require('./block-needhelp');
 
 var ContactPanel = React.createClass({displayName: "ContactPanel",
 
@@ -20254,7 +20301,8 @@ var ContactPanel = React.createClass({displayName: "ContactPanel",
         return (
             React.createElement("section", {id: "mainContent"}, 
                 React.createElement(HelloPanel, null), 
-                React.createElement(ContactInfo, null)
+                React.createElement(ContactInfo, null), 
+                React.createElement(NeedHelp, null)
             )
         );
     },
@@ -20262,7 +20310,7 @@ var ContactPanel = React.createClass({displayName: "ContactPanel",
 
 module.exports = ContactPanel;
 
-},{"./panel-contact-hello":232,"./panel-contact-info":233,"react-bootstrap":70,"react-router":160}],240:[function(require,module,exports){
+},{"./block-needhelp":222,"./panel-contact-hello":233,"./panel-contact-info":234,"react-bootstrap":70,"react-router":160}],241:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20302,7 +20350,7 @@ var CoveragePanel = React.createClass({displayName: "CoveragePanel",
 
 module.exports = CoveragePanel;
 
-},{"./block-savings":222,"./panel-coverage-table":234,"react-bootstrap":70,"react-router":160}],241:[function(require,module,exports){
+},{"./block-savings":223,"./panel-coverage-table":235,"react-bootstrap":70,"react-router":160}],242:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20346,7 +20394,7 @@ var HomeSection = React.createClass({displayName: "HomeSection",
 
 module.exports = HomeSection;
 
-},{"./block-whattodo":223,"./panel-home-carousel":235,"./panel-home-otherservices":236,"./panel-home-services":237,"react-bootstrap":70,"react-router":160}],242:[function(require,module,exports){
+},{"./block-whattodo":224,"./panel-home-carousel":236,"./panel-home-otherservices":237,"./panel-home-services":238,"react-bootstrap":70,"react-router":160}],243:[function(require,module,exports){
 'use strict';
 
 var rest = require('rest');
@@ -20358,7 +20406,7 @@ var client = rest
   .wrap(errorCode, { code: 300 });
 
 module.exports = client;
-},{"rest":181,"rest/interceptor/errorCode":186,"rest/interceptor/mime":187}],243:[function(require,module,exports){
+},{"rest":181,"rest/interceptor/errorCode":186,"rest/interceptor/mime":187}],244:[function(require,module,exports){
 var React = window.React;
 var ReactRouter = require('react-router');
 var Route = ReactRouter.Route;
@@ -20390,7 +20438,7 @@ var routes = (
 );
 
 module.exports = routes;
-},{"./components/layout":227,"./components/section-aboutus":238,"./components/section-contactus":239,"./components/section-coverage":240,"./components/section-home":241,"react-router":160}],"myApp":[function(require,module,exports){
+},{"./components/layout":228,"./components/section-aboutus":239,"./components/section-contactus":240,"./components/section-coverage":241,"./components/section-home":242,"react-router":160}],"myApp":[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20401,4 +20449,4 @@ ReactRouter.run(routes, ReactRouter.HistoryLocation, function (Root) {
 	React.render(React.createElement(Root, null), document.getElementById('app'));
 });
 
-},{"./routes":243,"react-router":160}]},{},[]);
+},{"./routes":244,"react-router":160}]},{},[]);
