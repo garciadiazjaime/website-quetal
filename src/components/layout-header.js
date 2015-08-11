@@ -34,11 +34,11 @@ var HeaderSection = React.createClass({
             <Navbar brand='Volver a inicio de Quetal' toggleNavKey={0}  className="navbar-static-top">
                 <CollapsibleNav eventKey={0}> {/* This is the eventKey referenced */}
                   <Nav navbar>
-                    <NavItem eventKey={1} href='inicio'>Inicio</NavItem>
-                    <NavItem eventKey={2} href='coberturas'>Coberturas</NavItem>
-                    <NavItem eventKey={3} href='nosotros'>Nosotros</NavItem>
-                    <NavItem eventKey={4} href='contacto'>Contacto</NavItem>
-                    <NavItem eventKey={5} href='cotiza' target="_blank" className="external">Cotiza</NavItem>
+                    <NavItem eventKey={1} href='/inicio' onClick={this.handleClick.bind(this, 'homepage')}>Inicio</NavItem>
+                    <NavItem eventKey={2} href='/coberturas' onClick={this.handleClick.bind(this, 'coverage')}>Coberturas</NavItem>
+                    <NavItem eventKey={3} href='/nosotros' onClick={this.handleClick.bind(this, 'aboutus')}>Nosotros</NavItem>
+                    <NavItem eventKey={4} href='/contacto' onClick={this.handleClick.bind(this, 'contact')}>Contacto</NavItem>
+                    <NavItem eventKey={5} href='/cotiza' target="_blank" className="external">Cotiza</NavItem>
                   </Nav>
                 </CollapsibleNav>
                 <SocialElement />

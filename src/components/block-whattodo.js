@@ -9,7 +9,7 @@ var Col = rb.Col;
 var Button = rb.Button;
 var Link = ReactRouter.Link;
 
-var HomeCallToActionPanel = React.createClass({
+var WhatToDo = React.createClass({
 
     mixins : [ReactRouter.Navigation],
     
@@ -37,4 +37,4 @@ var HomeCallToActionPanel = React.createClass({
     }
 });
 
-module.exports = HomeCallToActionPanel;
+module.exports = WhatToDo;

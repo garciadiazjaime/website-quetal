@@ -183,12 +183,6 @@
 	.servicesList-details, .servicesList-wrap
 		min-height: 1px
 
-	#callToAction
-		padding: 0 0 60px
-
-		.col-xs-12:last-child
-			text-align: left
-
 @media screen and (max-width: 500px)
 	.bigPhrase
 		font-size: 35px
@@ -243,4 +237,72 @@
 	#substituteCar-ParticipantInsurance
 		text-align: center
 
-/* *************** FOOTER *************** */
+/* *************** COVERAGE *************** */
+
+
+@media screen and (max-width: 991px)
+	#benefitsTable
+		h5
+			font-size: 13px
+
+@media screen and (max-width: 767px)
+	#benefitsTable
+
+		h6
+			border-bottom: 1px dashed white
+			display: block
+			padding-bottom: 10px
+
+		.checked
+			margin: 0 auto 10px
+
+		p
+			text-align: center
+
+		.notes
+			text-align: center
+
+		.col-sm-3:first-child, .col-sm-3:nth-child(2)
+			margin-bottom: 10px
+
+		.col-sm-3
+			border: none
+
+		.longRow .col-sm-3, .col-sm-3
+			min-height: 90px
+	
+	#benefitsTable > .row
+		border: none
+
+	#benefitsTable > .row:first-child
+		display: none
+
+	#benefitsTable > .row:nth-child(2)
+		margin-top: 0
+
+	#benefitsTable > .row > .col-sm-5 > p
+		border: 1px solid white
+		border-left: none
+		border-right: none
+		padding: 5px 0
+
+@media screen and (max-width: 350px)
+	#benefitsTable
+		h6
+			min-height: 31px
+
+	#benefitsTable
+		.longRow .col-sm-3, .col-sm-3
+			min-height: 95px
+
+/* ****************** REUSABLE BLOCKS ************** */
+
+/* ----------- What to do in case of disaster (home) ----------- */
+
+@media screen and (max-width: 767px)
+	#callToAction
+		padding: 0 0 60px
+
+		.col-xs-12:last-child
+			text-align: left
+

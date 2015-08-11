@@ -14027,6 +14027,88 @@ module.exports = warning;
 
 var React = window.React;
 var ReactRouter = require('react-router');
+var rb = require('react-bootstrap');
+
+var Row = rb.Row;
+var Col = rb.Col;
+var Button = rb.Button;
+
+var savingsBlock = React.createClass({displayName: "savingsBlock",
+
+    mixins : [ReactRouter.Navigation],
+    
+    handleClick: function(){
+        console.log('handleClick');
+        // this.transitionTo('home');
+    },
+
+    render: function() {
+
+        return (
+            React.createElement("div", {id: "savingsCallToAction", className: "smallContainer"}, 
+                React.createElement(Row, null, 
+                    React.createElement(Col, {xs: 12, sm: 6}, 
+                        React.createElement("p", null, "Ahorra desde un 20% en tu Seguro de Auto comprando a través de ", React.createElement("span", {className: "logo"}, "Quetal")), 
+                        React.createElement("p", {className: "notes"}, "*En comparación con otros portales de venta de Seguros por internet.")
+                    ), 
+                    React.createElement(Col, {xs: 12, sm: 6}, 
+                        React.createElement("a", {href: "cotizacion", title: "Cotiza tu Seguro", className: "blueButton", target: "_blank"}, "Cotiza tu Seguro")
+                    )
+                )
+            )
+        );
+    }
+});
+
+module.exports = savingsBlock;
+
+},{"react-bootstrap":70,"react-router":160}],181:[function(require,module,exports){
+'use strict';
+
+var React = window.React;
+var ReactRouter = require('react-router');
+var rb = require('react-bootstrap');
+
+var Row = rb.Row;
+var Col = rb.Col;
+var Button = rb.Button;
+var Link = ReactRouter.Link;
+
+var WhatToDo = React.createClass({displayName: "WhatToDo",
+
+    mixins : [ReactRouter.Navigation],
+    
+    handleClick: function(){
+        console.log('handleClick');
+        // this.transitionTo('home');
+    },
+
+    render: function() {
+
+        return ( 
+            React.createElement("section", {id: "callToAction"}, 
+                React.createElement("div", {className: "smallContainer"}, 
+                    React.createElement(Row, null, 
+                        React.createElement(Col, {xs: 12, sm: 6}, 
+                            React.createElement("p", null, React.createElement("span", null, "¿Qué hacer en"), " caso de Siniestro?")
+                        ), 
+                        React.createElement(Col, {xs: 12, sm: 6}, 
+                            React.createElement(Link, {to: "disaster", title: "Contáctanos", className: "greenButton"}, "Contáctanos")
+                        )
+                    )
+                )
+            )
+        );
+    }
+});
+
+module.exports = WhatToDo;
+
+},{"react-bootstrap":70,"react-router":160}],182:[function(require,module,exports){
+'use strict';
+
+var React = window.React;
+var ReactRouter = require('react-router');
 
 var SocialElement = React.createClass({displayName: "SocialElement",
 
@@ -14049,7 +14131,7 @@ var SocialElement = React.createClass({displayName: "SocialElement",
 
 module.exports = SocialElement;
 
-},{"react-router":160}],181:[function(require,module,exports){
+},{"react-router":160}],183:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14131,7 +14213,7 @@ var FooterSection = React.createClass({displayName: "FooterSection",
 });
 
 module.exports = FooterSection;
-},{"./element-social":180,"react-bootstrap":70,"react-router":160}],182:[function(require,module,exports){
+},{"./element-social":182,"react-bootstrap":70,"react-router":160}],184:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14168,11 +14250,11 @@ var HeaderSection = React.createClass({displayName: "HeaderSection",
             React.createElement(Navbar, {brand: "Volver a inicio de Quetal", toggleNavKey: 0, className: "navbar-static-top"}, 
                 React.createElement(CollapsibleNav, {eventKey: 0}, " ", /* This is the eventKey referenced */
                   React.createElement(Nav, {navbar: true}, 
-                    React.createElement(NavItem, {eventKey: 1, href: "inicio"}, "Inicio"), 
-                    React.createElement(NavItem, {eventKey: 2, href: "coberturas"}, "Coberturas"), 
-                    React.createElement(NavItem, {eventKey: 3, href: "nosotros"}, "Nosotros"), 
-                    React.createElement(NavItem, {eventKey: 4, href: "contacto"}, "Contacto"), 
-                    React.createElement(NavItem, {eventKey: 5, href: "cotiza", target: "_blank", className: "external"}, "Cotiza")
+                    React.createElement(NavItem, {eventKey: 1, href: "/inicio", onClick: this.handleClick.bind(this, 'homepage')}, "Inicio"), 
+                    React.createElement(NavItem, {eventKey: 2, href: "/coberturas", onClick: this.handleClick.bind(this, 'coverage')}, "Coberturas"), 
+                    React.createElement(NavItem, {eventKey: 3, href: "/nosotros", onClick: this.handleClick.bind(this, 'aboutus')}, "Nosotros"), 
+                    React.createElement(NavItem, {eventKey: 4, href: "/contacto", onClick: this.handleClick.bind(this, 'contact')}, "Contacto"), 
+                    React.createElement(NavItem, {eventKey: 5, href: "/cotiza", target: "_blank", className: "external"}, "Cotiza")
                   )
                 ), 
                 React.createElement(SocialElement, null)
@@ -14183,7 +14265,7 @@ var HeaderSection = React.createClass({displayName: "HeaderSection",
 
 module.exports = HeaderSection;
 
-},{"./element-social":180,"react-bootstrap":70,"react-router":160}],183:[function(require,module,exports){
+},{"./element-social":182,"react-bootstrap":70,"react-router":160}],185:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14240,7 +14322,7 @@ var Layout = React.createClass({displayName: "Layout",
 
 module.exports = Layout;
 
-},{"./layout-footer":181,"./layout-header":182,"react-router":160}],184:[function(require,module,exports){
+},{"./layout-footer":183,"./layout-header":184,"react-router":160}],186:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14251,7 +14333,7 @@ var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
 
-var coverageMain = React.createClass({displayName: "coverageMain",
+var coverageTable = React.createClass({displayName: "coverageTable",
 
     mixins : [ReactRouter.Navigation],
     
@@ -14263,49 +14345,493 @@ var coverageMain = React.createClass({displayName: "coverageMain",
     render: function() {
 
         return (
-            React.createElement("section", {id: "mainCoverage"}, 
+            React.createElement("div", null, 
                 React.createElement("div", {className: "container"}, 
-                    React.createElement("h1", null, "Coberturas y Beneficios")
-                )
-            )
-        );
-    }
-});
-
-module.exports = coverageMain;
-
-},{"react-bootstrap":70,"react-router":160}],185:[function(require,module,exports){
-'use strict';
-
-var React = window.React;
-var ReactRouter = require('react-router');
-var rb = require('react-bootstrap');
-
-var Row = rb.Row;
-var Col = rb.Col;
-var Button = rb.Button;
-var Link = ReactRouter.Link;
-
-var HomeCallToActionPanel = React.createClass({displayName: "HomeCallToActionPanel",
-
-    mixins : [ReactRouter.Navigation],
-    
-    handleClick: function(){
-        console.log('handleClick');
-        // this.transitionTo('home');
-    },
-
-    render: function() {
-
-        return ( 
-            React.createElement("section", {id: "callToAction"}, 
+                    React.createElement("h1", null, "Coberturas y Beneficios"), 
+                    React.createElement("div", {id: "benefitsTable"}, 
+                        React.createElement(Row, null, 
+                            React.createElement(Col, {xs: 12, sm: 5}
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h5", null, "Prestigio")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h5", null, "Confort Amplia")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h5", null, "Confort Limitada")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h5", null, "Confort Básica")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, null, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Asistencia Vial y en Viajes GS²")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, null, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Asistentcia Jurídica GS")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, null, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Gastos Médicos")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, {className: "longRow"}, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Responsabilidad Civil por Fallecimiento¹")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, {className: "longRow"}, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Responsabilidad Civil por Daños a Terceros (L.U.C.)*")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, null, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Robo Total")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", null, "*N/A")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, {className: "longRow"}, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Daños Materiales Pérdida Total")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", null, "*N/A")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", null, "*N/A")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, {className: "longRow"}, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Daños Materiales Pérdida Parcial")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", null, "*N/A")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", null, "*N/A")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, {className: "longRow"}, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Protección GS Extensión de Responsabilidad Civil")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", null, "Opcional")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", null, "Opcional")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", null, "Opcional")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, {className: "longRow"}, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Responsabilidad Civil Daños Ocupantes")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", null, "Opcional")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", null, "*N/A")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", null, "*N/A")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, null, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Cero Deducible Robo Total")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", null, "Opcional")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", null, "Opcional")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", null, "*N/A")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", null, "*N/A")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, null, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Protección GS Asalto")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", null, "Opcional")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", null, "*N/A")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", null, "*N/A")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, {className: "longRow"}, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Protección GS Objetos Personales")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", null, "Opcional")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", null, "*N/A")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", null, "*N/A")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, null, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Robo Parcial")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", null, "Opcional")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", null, "*N/A")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", null, "*N/A")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, {className: "longRow"}, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Cero Deducible Daños Materiales Pérdida Total")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", null, "Opcional")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", null, "Opcional")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", null, "*N/A")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", null, "*N/A")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, {className: "longRow"}, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Daños al Vehículo por Tercero sin Seguro")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", null, "Opcional")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", null, "*N/A")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", null, "*N/A")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, null, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Muerte Accidental al Conductor")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", {className: "checked"}, "Checked")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", null, "*N/A")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", null, "*N/A")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", null, "*N/A")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement(Row, {className: "longRow"}, 
+                            React.createElement(Col, {xs: 12, sm: 5}, 
+                                React.createElement("p", null, "Extensión de Gastos Médicos para el Titular")
+                            ), 
+                            React.createElement(Col, {xs: 12, sm: 7}, 
+                                React.createElement(Row, null, 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Prestigio"), 
+                                        React.createElement("p", null, "Opcional")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Amplia"), 
+                                        React.createElement("p", null, "Opcional")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Limitada"), 
+                                        React.createElement("p", null, "Opcional")
+                                    ), 
+                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                        React.createElement("h6", null, "Confort Básica"), 
+                                        React.createElement("p", null, "Opcional")
+                                    )
+                                )
+                            )
+                        ), 
+                        React.createElement("p", {className: "notes"}, "*No Amparado")
+                    )
+                ), 
                 React.createElement("div", {className: "smallContainer"}, 
                     React.createElement(Row, null, 
-                        React.createElement(Col, {xs: 12, sm: 6}, 
-                            React.createElement("p", null, React.createElement("span", null, "¿Qué hacer en"), " caso de Siniestro?")
+                        React.createElement(Col, {xs: 12, sm: 6, id: "coverageNotes"}, 
+                            React.createElement("p", null, "*Límite Único y Combinado."), 
+                            React.createElement("ol", null, 
+                                React.createElement("li", null, "Esta cobertura se incluye sólo en Automóviles y Pick Up´s de hasta 3.5 Toneladas. Puede ser contratada de forma opcional para Camiones."), 
+                                React.createElement("li", null, "Esta cobertura sólo está disponible para Automóviles y Pick Up´s de hasta 3.5 Toneladas.")
+                            )
                         ), 
-                        React.createElement(Col, {xs: 12, sm: 6}, 
-                            React.createElement(Link, {to: "disaster", title: "Contáctanos", className: "greenButton"}, "Contáctanos")
+                        React.createElement(Col, {xs: 12, sm: 6}
                         )
                     )
                 )
@@ -14314,9 +14840,9 @@ var HomeCallToActionPanel = React.createClass({displayName: "HomeCallToActionPan
     }
 });
 
-module.exports = HomeCallToActionPanel;
+module.exports = coverageTable;
 
-},{"react-bootstrap":70,"react-router":160}],186:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],187:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14405,7 +14931,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
 
 module.exports = HomeCarouselPanel;
 
-},{"react-bootstrap":70,"react-router":160}],187:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],188:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14490,7 +15016,7 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
 
 module.exports = HomeOtherServicesPanel;
 
-},{"react-bootstrap":70,"react-router":160}],188:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],189:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14604,7 +15130,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
 
 module.exports = HomeServicesPanel;
 
-},{"react-bootstrap":70,"react-router":160}],189:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],190:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14637,7 +15163,7 @@ var AboutusPanel = React.createClass({displayName: "AboutusPanel",
 
 module.exports = AboutusPanel;
 
-},{"react-bootstrap":70,"react-router":160}],190:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],191:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14751,7 +15277,7 @@ var ContactPanel = React.createClass({displayName: "ContactPanel",
 
 module.exports = ContactPanel;
 
-},{"react-bootstrap":70,"react-router":160}],191:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],192:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14761,7 +15287,8 @@ var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
 
-var CoverageMain = require('./panel-coverage-main');
+var CoverageTable = require('./panel-coverage-table');
+var SavingsBlock = require('./block-savings');
 
 var CoveragePanel = React.createClass({displayName: "CoveragePanel",
 
@@ -14781,7 +15308,8 @@ var CoveragePanel = React.createClass({displayName: "CoveragePanel",
 
         return (
             React.createElement("div", {id: "mainContent"}, 
-                React.createElement(CoverageMain, null)
+                React.createElement(CoverageTable, null), 
+                React.createElement(SavingsBlock, null)
             )
         );
     }
@@ -14789,7 +15317,7 @@ var CoveragePanel = React.createClass({displayName: "CoveragePanel",
 
 module.exports = CoveragePanel;
 
-},{"./panel-coverage-main":184,"react-bootstrap":70,"react-router":160}],192:[function(require,module,exports){
+},{"./block-savings":180,"./panel-coverage-table":186,"react-bootstrap":70,"react-router":160}],193:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14797,7 +15325,7 @@ var ReactRouter = require('react-router');
 var CarouselPanel = require('./panel-home-carousel');
 var ServicesPanel = require('./panel-home-services');
 var OtherServicesPanel = require('./panel-home-otherservices');
-var CallToActionPanel = require('./panel-home-calltoaction');
+var WhatToDo = require('./block-whattodo');
 
 var rb = require('react-bootstrap');
 var Row = rb.Row;
@@ -14825,7 +15353,7 @@ var HomeSection = React.createClass({displayName: "HomeSection",
                 React.createElement(CarouselPanel, null), 
                 React.createElement(ServicesPanel, null), 
                 React.createElement(OtherServicesPanel, null), 
-                React.createElement(CallToActionPanel, null)
+                React.createElement(WhatToDo, null)
             )
         );
     }
@@ -14833,7 +15361,7 @@ var HomeSection = React.createClass({displayName: "HomeSection",
 
 module.exports = HomeSection;
 
-},{"./panel-home-calltoaction":185,"./panel-home-carousel":186,"./panel-home-otherservices":187,"./panel-home-services":188,"react-bootstrap":70,"react-router":160}],193:[function(require,module,exports){
+},{"./block-whattodo":181,"./panel-home-carousel":187,"./panel-home-otherservices":188,"./panel-home-services":189,"react-bootstrap":70,"react-router":160}],194:[function(require,module,exports){
 var React = window.React;
 var ReactRouter = require('react-router');
 var Route = ReactRouter.Route;
@@ -14865,7 +15393,7 @@ var routes = (
 );
 
 module.exports = routes;
-},{"./components/layout":183,"./components/section-aboutus":189,"./components/section-contactus":190,"./components/section-coverage":191,"./components/section-home":192,"react-router":160}],"myApp":[function(require,module,exports){
+},{"./components/layout":185,"./components/section-aboutus":190,"./components/section-contactus":191,"./components/section-coverage":192,"./components/section-home":193,"react-router":160}],"myApp":[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14876,4 +15404,4 @@ ReactRouter.run(routes, ReactRouter.HistoryLocation, function (Root) {
 	React.render(React.createElement(Root, null), document.getElementById('app'));
 });
 
-},{"./routes":193,"react-router":160}]},{},[]);
+},{"./routes":194,"react-router":160}]},{},[]);
