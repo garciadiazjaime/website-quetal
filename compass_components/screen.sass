@@ -316,9 +316,11 @@ header, #header
 			background: $blue
 			@include background-image(linear-gradient(to right, #006df6, #009ae2))	
 			@include border-radius(5px)
+			@include box-shadow(2px 2px 3px rgba(0,0,0,.2))
 			color: white
+			font-size: 19px
 			min-width: 77px
-			padding: 10px 12px 12px
+			padding: 15px 25px 16px
 
 			&:hover, &:focus, &:active
 				background: lighten($blue, 10)
