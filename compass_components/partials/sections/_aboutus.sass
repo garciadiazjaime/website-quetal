@@ -91,10 +91,26 @@
 		display: block
 		@extend %roboto
 		margin: 25px 0 15px
-		
+
 #insuranceLogoColor
 	@extend .img
 	background: sprite($aboutus-icons, insurance-logo)
 	@include sprite-dimensions($aboutus-icons, insurance-logo)
 	@include sprite-at2x($aboutus-icons, $aboutus2x-icons)
 	margin: 28px 0 15px
+
+
+/* ----------- Who are we ----------- */
+#whoarewe
+	@extend .greenGradientBackground
+	font-size: 15px
+	margin-bottom: 80px
+	padding: 97px 0 76px
+
+
+#quetalBigLogo
+	@extend .img
+	background: sprite($aboutus-icons, big-logo)
+	@include sprite-dimensions($aboutus-icons, big-logo)
+	@include sprite-at2x($aboutus-icons, $aboutus2x-icons)
+	margin: 0 0 25px
