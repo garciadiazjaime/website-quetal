@@ -17,12 +17,12 @@ var routes = (
 		<Route name="coverage" path="/coberturas" handler={CoverageSection} />
 		
 		<Route name="aboutus" path="/nosotros" handler={AboutusSection} />
-		<Route name="whyUs" path="/nosotros/por-que-nosotros" handler={AboutusSection} />
-		<Route name="whoAreWe" path="/nosotros/quienes-somos" handler={AboutusSection} />
+		<Route name="whyus" path="/nosotros/por-que-nosotros" handler={AboutusSection} />
+		<Route name="whoarewe" path="/nosotros/quienes-somos" handler={AboutusSection} />
 
 		<Route name="contact" path="/contacto" handler={ContactUsSection} />
 		<Route name="disaster" path="/contacto/siniestro" handler={ContactUsSection} />
-		<Route name="contactForm" path="/contacto/forma" handler={ContactUsSection} />
+		<Route name="contactform" path="/contacto/forma" handler={ContactUsSection} />
 
 
 	</Route>

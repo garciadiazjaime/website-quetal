@@ -14167,14 +14167,14 @@ var FooterSection = React.createClass({displayName: "FooterSection",
                                 ), React.createElement("li", null, 
                                     React.createElement("h5", null, React.createElement(Link, {to: "aboutus", title: "Nosotros"}, "Nosotros")), 
                                     React.createElement("ul", null, 
-                                        React.createElement("li", null, React.createElement(Link, {to: "whyUs", title: "Por qué Nosotros"}, "Por qué Nosotros")), 
-                                        React.createElement("li", null, React.createElement(Link, {to: "whoAreWe", title: "Quiénes somos"}, "Quiénes somos"))
+                                        React.createElement("li", null, React.createElement(Link, {to: "whyus", title: "Por qué Nosotros"}, "Por qué Nosotros")), 
+                                        React.createElement("li", null, React.createElement(Link, {to: "whoarewe", title: "Quiénes somos"}, "Quiénes somos"))
                                     )
                                 ), React.createElement("li", null, 
                                     React.createElement("h5", null, React.createElement(Link, {to: "contact", title: "Contacto"}, "Contacto")), 
                                     React.createElement("ul", null, 
                                         React.createElement("li", null, React.createElement(Link, {to: "disaster", title: "En caso de Siniestro"}, "En caso de Siniestro")), 
-                                        React.createElement("li", null, React.createElement(Link, {to: "contactForm", title: "Contáctanos"}, "Contáctanos"))
+                                        React.createElement("li", null, React.createElement(Link, {to: "contactform", title: "Contáctanos"}, "Contáctanos"))
                                             
 
                                     )
@@ -14323,6 +14323,152 @@ var Layout = React.createClass({displayName: "Layout",
 module.exports = Layout;
 
 },{"./layout-footer":183,"./layout-header":184,"react-router":160}],186:[function(require,module,exports){
+'use strict';
+
+var React = window.React;
+var ReactRouter = require('react-router');
+var rb = require('react-bootstrap');
+
+var Row = rb.Row;
+var Col = rb.Col;
+var Button = rb.Button;
+var Carousel = rb.Carousel;
+var CarouselItem = rb.CarouselItem;
+var Link = ReactRouter.Link;
+
+var AboutusCarouselPanel = React.createClass({displayName: "AboutusCarouselPanel",
+
+    mixins : [ReactRouter.Navigation],
+    
+    handleClick: function(){
+        console.log('handleClick');
+        // this.transitionTo('home');
+    },
+
+    render: function() {
+
+        return (
+            React.createElement("section", {id: "aboutusIntro"}, 
+                React.createElement(Carousel, {id: "aboutusCarousel", interval: "3000"}, 
+                    React.createElement(CarouselItem, null, 
+                        React.createElement("div", {className: "container"}, 
+                            React.createElement("p", null, "Hay muchas razones por las que NO se ", React.createElement("em", null, "comparan"), " con nosotros")
+                        )
+                    ), 
+                    React.createElement(CarouselItem, null, 
+                        React.createElement("div", {className: "container"}, 
+                            React.createElement("p", null, "Hay muchas razones por las que NO se ", React.createElement("em", null, "comparan"), " con nosotros")
+                        )
+                    ), 
+                    React.createElement(CarouselItem, null, 
+                        React.createElement("div", {className: "container"}, 
+                            React.createElement("p", null, "Hay muchas razones por las que NO se ", React.createElement("em", null, "comparan"), " con nosotros")
+                        )
+                    )
+                )
+            )
+        );
+    }
+});
+
+module.exports = AboutusCarouselPanel;
+
+},{"react-bootstrap":70,"react-router":160}],187:[function(require,module,exports){
+'use strict';
+
+var React = window.React;
+var ReactRouter = require('react-router');
+var rb = require('react-bootstrap');
+
+var Row = rb.Row;
+var Col = rb.Col;
+var Button = rb.Button;
+
+var WhoAreWePanel = React.createClass({displayName: "WhoAreWePanel",
+
+    mixins : [ReactRouter.Navigation],
+    
+    handleClick: function(){
+        console.log('handleClick');
+        // this.transitionTo('home');
+    },
+
+    render: function() {
+
+        return ( 
+            React.createElement("section", {id: "whoarewe"}, 
+                React.createElement("div", {className: "container"}, 
+                    React.createElement(Row, null, 
+                        React.createElement(Col, {xs: 12, sm: 6}, 
+                            React.createElement("span", {id: "quetalBigLogo"}, "Quetal - Mi seguro de auto")
+                        ), 
+                        React.createElement(Col, {xs: 12, sm: 6}, 
+                            React.createElement("p", null, "A través de Quetal™ puedes encontrar el paquete de seguro de Auto más barato del mercado, ya que somos intermediarios exclusivos de General de Seguros S.A.B."), 
+                            React.createElement("p", null, "Con Quetal™ cuentas con el respaldo de General de Seguros  S.A.B. una compañía con más de 40 años de experiencia en el sector asegurador, 100% mexicana y con cobertura a nivel Nacional. "), 
+                            React.createElement("p", null, "Si buscas el mejor paquete de seguro y sin complicaciones somos tu solución, sólo elige la cobertura que necesitas, cotiza, compra e imprime tu póliza. ")
+                        )
+                    )
+                )
+            )
+        );
+    }
+});
+
+module.exports = WhoAreWePanel;
+
+},{"react-bootstrap":70,"react-router":160}],188:[function(require,module,exports){
+'use strict';
+
+var React = window.React;
+var ReactRouter = require('react-router');
+var rb = require('react-bootstrap');
+
+var Row = rb.Row;
+var Col = rb.Col;
+var Button = rb.Button;
+
+var WhyUsPanel = React.createClass({displayName: "WhyUsPanel",
+
+    mixins : [ReactRouter.Navigation],
+    
+    handleClick: function(){
+        console.log('handleClick');
+        // this.transitionTo('home');
+    },
+
+    render: function() {
+
+        return ( 
+            React.createElement("section", {id: "whyus"}, 
+                React.createElement("div", {className: "container"}, 
+                    React.createElement("h1", null, "¿Por qué comprar a través de ", React.createElement("span", {className: "logo"}, "Quetal™"), "?"), 
+                    React.createElement("ol", {className: "row"}, 
+                        React.createElement("li", {className: "col-xs-12 col-xs-4"}, 
+                            React.createElement("div", {className: "wrap"}, 
+                                "Te ofrecemos el seguro de auto más barato", 
+                                React.createElement("span", {className: "notes"}, "*En comparación con otros portales de venta de seguros por internet.")
+                            )
+                        ), 
+                        React.createElement("li", {className: "col-xs-12 col-xs-4"}, 
+                            React.createElement("div", {className: "wrap"}, 
+                                "Contamos con el respaldo de ", React.createElement("span", {id: "insuranceLogoColor"}, "General de seguros")
+                            )
+                        ), 
+                        React.createElement("li", {className: "col-xs-12 col-xs-4"}, 
+                            React.createElement("div", {className: "wrap"}, 
+                                "Por nuestro compromiso y profesionalismo." 
+                            )
+                        )
+                    )
+                )
+            )
+        );
+    }
+});
+
+module.exports = WhyUsPanel;
+
+},{"react-bootstrap":70,"react-router":160}],189:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14842,7 +14988,7 @@ var coverageTable = React.createClass({displayName: "coverageTable",
 
 module.exports = coverageTable;
 
-},{"react-bootstrap":70,"react-router":160}],187:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],190:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -14931,7 +15077,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
 
 module.exports = HomeCarouselPanel;
 
-},{"react-bootstrap":70,"react-router":160}],188:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],191:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -15016,7 +15162,7 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
 
 module.exports = HomeOtherServicesPanel;
 
-},{"react-bootstrap":70,"react-router":160}],189:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],192:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -15130,7 +15276,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
 
 module.exports = HomeServicesPanel;
 
-},{"react-bootstrap":70,"react-router":160}],190:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],193:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -15141,6 +15287,10 @@ var Col = rb.Col;
 var Button = rb.Button;
 var Carousel = rb.Carousel;
 var CarouselItem = rb.CarouselItem;
+var CarouselPanel = require('./panel-aboutus-carousel');
+var WhyUsPanel = require('./panel-aboutus-whyus');
+var WhoAreWePanel = require('./panel-aboutus-whoarewe');
+var SavingsBlock = require('./block-savings');
 
 var AboutusPanel = React.createClass({displayName: "AboutusPanel",
 
@@ -15155,7 +15305,10 @@ var AboutusPanel = React.createClass({displayName: "AboutusPanel",
 
         return (
             React.createElement("section", {id: "nosotros"}, 
-                "nosotros"
+                React.createElement(CarouselPanel, null), 
+                React.createElement(WhyUsPanel, null), 
+                React.createElement(WhoAreWePanel, null), 
+                React.createElement(SavingsBlock, null)
             )
         );
     }
@@ -15163,7 +15316,7 @@ var AboutusPanel = React.createClass({displayName: "AboutusPanel",
 
 module.exports = AboutusPanel;
 
-},{"react-bootstrap":70,"react-router":160}],191:[function(require,module,exports){
+},{"./block-savings":180,"./panel-aboutus-carousel":186,"./panel-aboutus-whoarewe":187,"./panel-aboutus-whyus":188,"react-bootstrap":70,"react-router":160}],194:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -15277,7 +15430,7 @@ var ContactPanel = React.createClass({displayName: "ContactPanel",
 
 module.exports = ContactPanel;
 
-},{"react-bootstrap":70,"react-router":160}],192:[function(require,module,exports){
+},{"react-bootstrap":70,"react-router":160}],195:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -15317,7 +15470,7 @@ var CoveragePanel = React.createClass({displayName: "CoveragePanel",
 
 module.exports = CoveragePanel;
 
-},{"./block-savings":180,"./panel-coverage-table":186,"react-bootstrap":70,"react-router":160}],193:[function(require,module,exports){
+},{"./block-savings":180,"./panel-coverage-table":189,"react-bootstrap":70,"react-router":160}],196:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -15361,7 +15514,7 @@ var HomeSection = React.createClass({displayName: "HomeSection",
 
 module.exports = HomeSection;
 
-},{"./block-whattodo":181,"./panel-home-carousel":187,"./panel-home-otherservices":188,"./panel-home-services":189,"react-bootstrap":70,"react-router":160}],194:[function(require,module,exports){
+},{"./block-whattodo":181,"./panel-home-carousel":190,"./panel-home-otherservices":191,"./panel-home-services":192,"react-bootstrap":70,"react-router":160}],197:[function(require,module,exports){
 var React = window.React;
 var ReactRouter = require('react-router');
 var Route = ReactRouter.Route;
@@ -15381,19 +15534,19 @@ var routes = (
 		React.createElement(Route, {name: "coverage", path: "/coberturas", handler: CoverageSection}), 
 		
 		React.createElement(Route, {name: "aboutus", path: "/nosotros", handler: AboutusSection}), 
-		React.createElement(Route, {name: "whyUs", path: "/nosotros/por-que-nosotros", handler: AboutusSection}), 
-		React.createElement(Route, {name: "whoAreWe", path: "/nosotros/quienes-somos", handler: AboutusSection}), 
+		React.createElement(Route, {name: "whyus", path: "/nosotros/por-que-nosotros", handler: AboutusSection}), 
+		React.createElement(Route, {name: "whoarewe", path: "/nosotros/quienes-somos", handler: AboutusSection}), 
 
 		React.createElement(Route, {name: "contact", path: "/contacto", handler: ContactUsSection}), 
 		React.createElement(Route, {name: "disaster", path: "/contacto/siniestro", handler: ContactUsSection}), 
-		React.createElement(Route, {name: "contactForm", path: "/contacto/forma", handler: ContactUsSection})
+		React.createElement(Route, {name: "contactform", path: "/contacto/forma", handler: ContactUsSection})
 
 
 	)
 );
 
 module.exports = routes;
-},{"./components/layout":185,"./components/section-aboutus":190,"./components/section-contactus":191,"./components/section-coverage":192,"./components/section-home":193,"react-router":160}],"myApp":[function(require,module,exports){
+},{"./components/layout":185,"./components/section-aboutus":193,"./components/section-contactus":194,"./components/section-coverage":195,"./components/section-home":196,"react-router":160}],"myApp":[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -15404,4 +15557,4 @@ ReactRouter.run(routes, ReactRouter.HistoryLocation, function (Root) {
 	React.render(React.createElement(Root, null), document.getElementById('app'));
 });
 
-},{"./routes":194,"react-router":160}]},{},[]);
+},{"./routes":197,"react-router":160}]},{},[]);

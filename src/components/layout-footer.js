@@ -33,14 +33,14 @@ var FooterSection = React.createClass({
                                 </li><li>
                                     <h5><Link to="aboutus" title="Nosotros">Nosotros</Link></h5>
                                     <ul>
-                                        <li><Link to="whyUs" title="Por qué Nosotros">Por qué Nosotros</Link></li>
-                                        <li><Link to="whoAreWe" title="Quiénes somos">Quiénes somos</Link></li>
+                                        <li><Link to="whyus" title="Por qué Nosotros">Por qué Nosotros</Link></li>
+                                        <li><Link to="whoarewe" title="Quiénes somos">Quiénes somos</Link></li>
                                     </ul>    
                                 </li><li>
                                     <h5><Link to="contact" title="Contacto">Contacto</Link></h5>
                                     <ul> 
                                         <li><Link to="disaster" title="En caso de Siniestro">En caso de Siniestro</Link></li>
-                                        <li><Link to="contactForm" title="Contáctanos">Contáctanos</Link></li>
+                                        <li><Link to="contactform" title="Contáctanos">Contáctanos</Link></li>
                                             
 
                                     </ul>
