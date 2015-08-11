@@ -22,7 +22,7 @@ var HelloPanel = React.createClass({
         return (
             <section id="helloIntro">
                 <div className="container">
-                    <p><em>Hola, Quetal</em> Estamos para ayudarte</p>
+                    <p><em><span>Hola,</span> <span>Quetal</span></em> Estamos para ayudarte</p>
                 </div>
             </section>
         );

@@ -19347,7 +19347,7 @@ var HelloPanel = React.createClass({displayName: "HelloPanel",
         return (
             React.createElement("section", {id: "helloIntro"}, 
                 React.createElement("div", {className: "container"}, 
-                    React.createElement("p", null, React.createElement("em", null, "Hola, Quetal"), " Estamos para ayudarte")
+                    React.createElement("p", null, React.createElement("em", null, React.createElement("span", null, "Hola,"), " ", React.createElement("span", null, "Quetal")), " Estamos para ayudarte")
                 )
             )
         );
