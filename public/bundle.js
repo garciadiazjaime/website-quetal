@@ -14345,7 +14345,7 @@ var coverageTable = React.createClass({displayName: "coverageTable",
     render: function() {
 
         return (
-            React.createElement("div", null, 
+            React.createElement("section", null, 
                 React.createElement("div", {className: "container"}, 
                     React.createElement("h1", null, "Coberturas y Beneficios"), 
                     React.createElement("div", {id: "benefitsTable"}, 
