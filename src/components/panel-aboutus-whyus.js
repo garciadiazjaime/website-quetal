@@ -24,18 +24,18 @@ var WhyUsPanel = React.createClass({
                 <div className="container">
                     <h1>¿Por qué comprar a través de <span className="logo">Quetal™</span>?</h1>
                     <ol className="row">
-                        <li className="col-xs-12 col-xs-4">
+                        <li className="col-xs-12 col-sm-4">
                             <div className="wrap">
                                 Te ofrecemos el seguro de auto más barato
                                 <span className="notes">*En comparación con otros portales de venta de seguros por internet.</span>
                             </div>
                         </li>
-                        <li className="col-xs-12 col-xs-4">
+                        <li className="col-xs-12 col-sm-4">
                             <div className="wrap">
                                 Contamos con el respaldo de <span id="insuranceLogoColor">General de seguros</span>
                             </div>
                         </li>
-                        <li className="col-xs-12 col-xs-4">
+                        <li className="col-xs-12 col-sm-4">
                             <div className="wrap">
                                 Por nuestro compromiso y profesionalismo. 
                             </div>
