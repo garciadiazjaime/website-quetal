@@ -20,7 +20,7 @@ var coverageTable = React.createClass({
     render: function() {
 
         return (
-            <div>
+            <section>
                 <div className="container">
                     <h1>Coberturas y Beneficios</h1>
                     <div id="benefitsTable">
@@ -510,7 +510,7 @@ var coverageTable = React.createClass({
                         </Col>
                     </Row>
                 </div>
-            </div>
+            </section>
         );
     }
 });
