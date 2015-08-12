@@ -1,15 +1,16 @@
 {
-    "name": "metra",
-    "version": "0.0.0",
-    "license": "MIT",
-    "ignore": [
-        "**/.*",
-        "node_modules",
-        "bower_components",
-        "test",
-        "tests"
-    ],
-    "dependencies": {
-        "bootstrap": "~3.3.5"
-    }
+  "name": "metra",
+  "version": "0.0.0",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.5",
+    "rest": "~1.3.1"
+  }
 }

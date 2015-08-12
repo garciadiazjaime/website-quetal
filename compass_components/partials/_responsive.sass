@@ -41,6 +41,9 @@
 		li:last-child //quote button
 			a
 				@include border-radius(0)
+				@include box-shadow(none)
+				font-size: 13px
+				padding: 10px 0 13px
 
 	.navbar-default
 		.navbar-collapse
@@ -336,6 +339,13 @@
 			.wrap
 				margin: 0 0 20px
 				max-width: 100%
+
+/* *************** CONTACT US *************** */
+
+@media screen and (max-width: 767px)
+
+	#loader
+		top: 250px
 				
 /* ****************** REUSABLE BLOCKS ************** */
 
