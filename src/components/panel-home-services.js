@@ -3,6 +3,8 @@
 var React = require('react');
 var ReactRouter = require('react-router');
 var rb = require('react-bootstrap');
+var ModalWidget = require('./widgets/modal-widget');
+var Test = require('./partials/test');
 
 var Row = rb.Row;
 var Col = rb.Col;
@@ -50,6 +52,9 @@ y modelos recientes.</p>
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
+                            <ModalWidget>
+                                <Test />
+                            </ModalWidget>
                             <button className="arrowLink">
                               Ver detalles
                             </button>
