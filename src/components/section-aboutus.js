@@ -8,6 +8,10 @@ var Col = rb.Col;
 var Button = rb.Button;
 var Carousel = rb.Carousel;
 var CarouselItem = rb.CarouselItem;
+var CarouselPanel = require('./panel-aboutus-carousel');
+var WhyUsPanel = require('./panel-aboutus-whyus');
+var WhoAreWePanel = require('./panel-aboutus-whoarewe');
+var SavingsBlock = require('./block-savings');
 
 var AboutusPanel = React.createClass({
 
@@ -21,8 +25,11 @@ var AboutusPanel = React.createClass({
     render: function() {
 
         return (
-            <section id="nosotros">
-                nosotros
+            <section id="mainContent">
+                <CarouselPanel />
+                <WhyUsPanel />
+                <WhoAreWePanel />
+                <SavingsBlock />
             </section>
         );
     }
