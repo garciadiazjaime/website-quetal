@@ -4,6 +4,9 @@ gulp.task('build', function(callback) {
 	var runSequence = require('run-sequence');
     runSequence('delete',
         [
+            'vendor:css',
+        	'vendor:js',
+            'screen:css',
             'jsx',
             'reactify'
         ],
