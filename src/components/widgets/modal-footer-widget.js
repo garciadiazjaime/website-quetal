@@ -8,7 +8,6 @@ var Popover = rb.Popover;
 var Tooltip = rb.Tooltip;
 var OverlayTrigger = rb.OverlayTrigger;
 
-
 var ModalWidget = React.createClass({
 
   getInitialState: function(){
@@ -29,6 +28,7 @@ var ModalWidget = React.createClass({
           </Modal.Body>
         </Modal>
         <a title="{this.props.title}" onClick={this.open}>{this.props.title}</a>
+        
       </li>
     );
   },

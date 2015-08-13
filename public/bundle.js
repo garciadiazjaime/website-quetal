@@ -20576,7 +20576,6 @@ var Popover = rb.Popover;
 var Tooltip = rb.Tooltip;
 var OverlayTrigger = rb.OverlayTrigger;
 
-
 var ModalWidget = React.createClass({displayName: "ModalWidget",
 
   getInitialState: function(){
@@ -20597,6 +20596,7 @@ var ModalWidget = React.createClass({displayName: "ModalWidget",
           )
         ), 
         React.createElement("a", {title: "{this.props.title}", onClick: this.open}, this.props.title)
+        
       )
     );
   },
