@@ -6,7 +6,8 @@ require 'bootstrap-sass'
 http_path = "/"
 css_dir = "public/"
 sass_dir = "compass_components"
-images_dir = "public/img"
+images_dir = "resources/sprites"
+generated_images_dir = 'public/img/sprites'
 javascripts_dir = "public/"
 fonts_dir = "public/fonts"
 
