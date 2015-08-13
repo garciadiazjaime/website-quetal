@@ -70,7 +70,7 @@ var ContactForm = React.createClass({
 
         if(isFormValid){
             this.setState({
-                showLoading: true
+                showLoading: false
             });
 
             var _this = this;
