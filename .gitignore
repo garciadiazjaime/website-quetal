@@ -4,3 +4,6 @@ bower_components/
 node_modules/
 npm-debug.log
 build
+public/*.js
+public/*.css
+public/img/sprites

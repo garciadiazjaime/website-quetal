@@ -3,7 +3,7 @@
 var React = require('react');
 var ReactRouter = require('react-router');
 var rb = require('react-bootstrap');
-// var RestClient = require('../lib/rest-client');
+var RestClient = require('../lib/rest-client');
 
 var Row = rb.Row;
 var Col = rb.Col;
@@ -82,23 +82,23 @@ var ContactForm = React.createClass({
                 html: html
             };
             
-            // RestClient({
-            //     path: '/api/send_email',
-            //     method: 'POST',
-            //     entity: data
-            // }).then(function(response) {
-            //     var state = {
-            //         showLoading: false
-            //     };
-            //     if(response.entity.status){
-            //         state['formData'] = _this._getInitialFormState();
-            //     }
-            //     _this.setState(state);
-            //     msgElement.className = response.entity.status ? _this.state.successCSSClass : _this.state.errorCSSClass;
-            //     msgElement.innerHTML = response.entity.status ? 
-            //         'Tu información ha sido enviada de manera exitosa. Gracias.':
-            //         'Lo sentimos, el mensaje no pudo ser enviado, intenta más tarde.';
-            // });
+            RestClient({
+                path: '/api/send_email',
+                method: 'POST',
+                entity: data
+            }).then(function(response) {
+                var state = {
+                    showLoading: false
+                };
+                if(response.entity.status){
+                    state['formData'] = _this._getInitialFormState();
+                }
+                _this.setState(state);
+                msgElement.className = response.entity.status ? _this.state.successCSSClass : _this.state.errorCSSClass;
+                msgElement.innerHTML = response.entity.status ? 
+                    'Tu información ha sido enviada de manera exitosa. Gracias.':
+                    'Lo sentimos, el mensaje no pudo ser enviado, intenta más tarde.';
+            });
         }else{
             msgElement.className = this.state.errorCSSClass;
         }
