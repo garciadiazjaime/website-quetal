@@ -3,18 +3,41 @@
 	@extend .greenGradientBackground
 	font-size: 22px
 	line-height: 1.2em
-	padding: 100px 0 35px
+	margin: 0 0 120px
+	overflow: visible
+	padding: 75px 0 35px
 
 	.container
 		position: relative
 
+	p
+		color: white
+
+		& > span:last-child
+			display: inline-block
+			margin-left: 55%
+
 	em
 		display: block
+		@extend %roboto-black
 		font-size: 168px
 		line-height: 1.2em
 
-	span:nth-child(2)
-		color: yellow
+		span:last-child
+			color: $yellow
+
+	.container
+		&:after
+			content: ""
+			background: sprite($contactus-icons, car)
+			@include sprite-dimensions($contactus-icons, car)
+			@include sprite-at2x($contactus-icons, $contactus2x-icons)
+			bottom: -145px
+			display: block
+			left: 50%
+			margin: 0 0 0 -450px
+			position: absolute
+
 
 #msg
 	color: $black

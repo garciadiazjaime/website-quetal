@@ -342,11 +342,57 @@
 
 /* *************** CONTACT US *************** */
 
+@media screen and (max-width: 1199px)
+	#helloIntro
+		em
+			font-size: 150px
+
+		.container:after
+			margin: 0 0 0 -490px
+
+	#helloIntro p > span:last-child
+		margin-left: 48%
+
+@media screen and (max-width: 991px)
+	#helloIntro
+		em
+			font-size: 120px
+
+		.container:after
+			margin: 0 0 0 -430px
+
 @media screen and (max-width: 767px)
+	#helloIntro
+		padding: 30px 0 35px
+
+		em
+			font-size: 90px
+
+		.container:after
+			bottom: -175px
+
+	#helloIntro p > span:last-child
+		margin-left: 38%
 
 	#loader
 		top: 250px
 				
+@media screen and (max-width: 550px)
+	#helloIntro
+		em
+			line-height: 1em
+			margin: 0 0 10px
+
+@media screen and (max-width: 500px)
+	#helloIntro
+		.container::after
+			margin: 0 0 0 -70px
+			position: static
+
+	#helloIntro p > span:last-child
+		margin-left: 0
+
+
 /* ****************** REUSABLE BLOCKS ************** */
 
 /* ----------- What to do in case of disaster (home) ----------- */
