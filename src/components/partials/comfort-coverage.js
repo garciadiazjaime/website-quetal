@@ -10,7 +10,7 @@ var ModalWidget = React.createClass({
     
     return (
       <div>
-        TODO: <br />
+        Comfort Extendido <br />
         Crear varios partials referente a cada contenido <br />
         Cargar los partials desde 'panel-home-services' (seguir estructura que deje) <br />
         Ajustar nombre de archivos/carpetas.

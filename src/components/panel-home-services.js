@@ -4,7 +4,10 @@ var React = require('react');
 var ReactRouter = require('react-router');
 var rb = require('react-bootstrap');
 var ModalWidget = require('./widgets/modal-widget');
-var Test = require('./partials/test');
+var PrestigeCoverage = require('./partials/prestige-coverage');
+var ComfortCoverage = require('./partials/comfort-coverage');
+var LimitedComfortCoverage = require('./partials/limited-comfort-coverage');
+var BasicComfortCoverage = require('./partials/basic-comfort-coverage');
 
 var Row = rb.Row;
 var Col = rb.Col;
@@ -53,11 +56,8 @@ y modelos recientes.</p>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
                             <ModalWidget>
-                                <Test />
+                                <PrestigeCoverage />
                             </ModalWidget>
-                            <button className="arrowLink">
-                              Ver detalles
-                            </button>
                         </Col>
                         <Col xs={12} sm={3} className="featured">
                             <div className="servicesList-wrap">
@@ -72,9 +72,9 @@ y modelos recientes.</p>
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <button onClick={this.open} className="arrowLink">
-                              Ver detalles
-                            </button>
+                            <ModalWidget>
+                                <ComfortCoverage />
+                            </ModalWidget>
                         </Col>
                         <Col xs={12} sm={3}>
                             <div className="servicesList-wrap">
@@ -88,9 +88,9 @@ y modelos recientes.</p>
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <button onClick={this.open} className="arrowLink">
-                              Ver detalles
-                            </button>
+                            <ModalWidget>
+                                <LimitedComfortCoverage />
+                            </ModalWidget>
                         </Col>
                         <Col xs={12} sm={3}>
                             <div className="servicesList-wrap">
@@ -103,9 +103,9 @@ y modelos recientes.</p>
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <button onClick={this.open} className="arrowLink">
-                              Ver detalles
-                            </button>
+                            <ModalWidget>
+                                <BasicComfortCoverage />
+                            </ModalWidget>
                         </Col>
                     </Row>
                 </div>

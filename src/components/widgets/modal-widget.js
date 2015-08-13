@@ -28,10 +28,7 @@ var ModalWidget = React.createClass({
             {this.props.children}
           </Modal.Body>
         </Modal>
-        <Button
-          bsStyle='primary'
-          bsSize='large'
-          onClick={this.open} />
+        <Button className="arrowLink" onClick={this.open} >Ver detalles</Button>
       </div>
     );
   },

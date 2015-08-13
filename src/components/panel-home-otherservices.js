@@ -7,6 +7,9 @@ var rb = require('react-bootstrap');
 var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
+var ModalWidget = require('./widgets/modal-widget');
+var LegalizedCars = require('./partials/legalized-cars');
+var CivilResponsibility = require('./partials/civil-responsibility');
 
 var HomeOtherServicesPanel = React.createClass({
 
@@ -31,9 +34,9 @@ var HomeOtherServicesPanel = React.createClass({
                                         <a href="cotiza" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                                         <span id="borderCarIcon"></span>
                                     </p>
-                                    <button onClick={this.open} className="arrowLink">
-                                      Ver detalles
-                                    </button>
+                                    <ModalWidget>
+                                        <LegalizedCars />
+                                    </ModalWidget>
                                 </div>
                             </div>
                         </Col>
@@ -45,9 +48,10 @@ var HomeOtherServicesPanel = React.createClass({
                                         <a href="cotiza" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                                         <span id="civilResponsibilityIcon"></span>
                                     </p>
-                                    <button onClick={this.open} className="arrowLink">
-                                      Ver detalles
-                                    </button>
+                                    <ModalWidget>
+                                        <CivilResponsibility />
+                                    </ModalWidget>
+                                    
                                 </div>
                             </div>
                         </Col>
