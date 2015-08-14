@@ -55,7 +55,7 @@ y modelos recientes.</p>
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <ModalWidget>
+                            <ModalWidget title="Ver detalles" className="arrowLink">
                                 <PrestigeCoverage />
                             </ModalWidget>
                         </Col>
@@ -72,7 +72,7 @@ y modelos recientes.</p>
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <ModalWidget>
+                            <ModalWidget title="Ver detalles" className="arrowLink">
                                 <ComfortCoverage />
                             </ModalWidget>
                         </Col>
@@ -88,7 +88,7 @@ y modelos recientes.</p>
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <ModalWidget>
+                            <ModalWidget title="Ver detalles" className="arrowLink">
                                 <LimitedComfortCoverage />
                             </ModalWidget>
                         </Col>
@@ -103,7 +103,7 @@ y modelos recientes.</p>
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <ModalWidget>
+                            <ModalWidget title="Ver detalles" className="arrowLink">
                                 <BasicComfortCoverage />
                             </ModalWidget>
                         </Col>

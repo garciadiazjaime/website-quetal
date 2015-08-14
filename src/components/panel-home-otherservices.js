@@ -34,7 +34,7 @@ var HomeOtherServicesPanel = React.createClass({
                                         <a href="cotiza" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                                         <span id="borderCarIcon"></span>
                                     </p>
-                                    <ModalWidget>
+                                    <ModalWidget title="Ver detalles" className="arrowLink">
                                         <LegalizedCars />
                                     </ModalWidget>
                                 </div>
@@ -48,7 +48,7 @@ var HomeOtherServicesPanel = React.createClass({
                                         <a href="cotiza" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                                         <span id="civilResponsibilityIcon"></span>
                                     </p>
-                                    <ModalWidget>
+                                    <ModalWidget title="Ver detalles" className="arrowLink">
                                         <CivilResponsibility />
                                     </ModalWidget>
                                     

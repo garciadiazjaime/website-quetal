@@ -8,7 +8,7 @@ var Row = rb.Row;
 var Col = rb.Col;
 var Link = ReactRouter.Link;
 
-var FooterModalWidget = require('./widgets/modal-footer-widget');
+var ModalWidget = require('./widgets/modal-widget');
 var PrestigeCoverage = require('./partials/prestige-coverage');
 var ComfortCoverage = require('./partials/comfort-coverage');
 var LimitedComfortCoverage = require('./partials/limited-comfort-coverage');
@@ -31,24 +31,24 @@ var FooterSection = React.createClass({
                                 <li>
                                     <h5><Link to="coverage" title="Coberturas">Coberturas</Link></h5>
                                     <ul>
-                                        <FooterModalWidget title="Básica">
+                                        <ModalWidget title="Básica" className="">
                                             <BasicComfortCoverage />
-                                        </FooterModalWidget>
-                                        <FooterModalWidget title="Limitada">
+                                        </ModalWidget>
+                                        <ModalWidget title="Limitada" className="">
                                             <LimitedComfortCoverage />
-                                        </FooterModalWidget>
-                                        <FooterModalWidget title="Amplia">
+                                        </ModalWidget>
+                                        <ModalWidget title="Amplia" className="">
                                             <ComfortCoverage />
-                                        </FooterModalWidget>
-                                        <FooterModalWidget title="Prestigio">
+                                        </ModalWidget>
+                                        <ModalWidget title="Prestigio" className="">
                                             <PrestigeCoverage />
-                                        </FooterModalWidget>
-                                        <FooterModalWidget title="Autos Fronterizos">
+                                        </ModalWidget>
+                                        <ModalWidget title="Autos Fronterizos" className="">
                                             <LegalizedCars />
-                                        </FooterModalWidget>
-                                        <FooterModalWidget title="RC Obligatoria">
+                                        </ModalWidget>
+                                        <ModalWidget title="RC Obligatoria" className="">
                                             <CivilResponsibility />
-                                        </FooterModalWidget>
+                                        </ModalWidget>
                                     </ul>
                                 </li><li>
                                     <h5><Link to="aboutus" title="Nosotros">Nosotros</Link></h5>

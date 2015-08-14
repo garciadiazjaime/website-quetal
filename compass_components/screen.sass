@@ -86,6 +86,9 @@ h1
 	&:hover, &:focus, &:active
 		color: $gray
 
+	&:hover
+		cursor: pointer
+
 .btn.arrowLink
 	@include border-radius(none)
 	@include box-shadow(none)
@@ -260,7 +263,6 @@ select
 	background: sprite($general-icons, insurancelogo)
 	@include sprite-dimensions($general-icons, insurancelogo)
 	@include sprite-at2x($general-icons, $general2x-icons)
-
 
 /* ****************** HEADER ************** */	
 header, #header
@@ -462,5 +464,6 @@ footer, #footer
 @import "partials/sections/_aboutus"
 @import "partials/sections/_contactus"
 @import "partials/_blocks"
+@import "partials/_modals"
 
 @import "partials/_responsive"
