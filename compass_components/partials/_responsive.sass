@@ -342,11 +342,60 @@
 
 /* *************** CONTACT US *************** */
 
-@media screen and (max-width: 767px)
+@media screen and (max-width: 1199px)
+	#helloIntro
+		em
+			font-size: 150px
 
-	#loader
-		top: 250px
+		.container:after
+			margin: 0 0 0 -490px
+
+	#helloIntro p > span:last-child
+		margin-left: 48%
+
+@media screen and (max-width: 991px)
+	#helloIntro
+		em
+			font-size: 120px
+
+		.container:after
+			margin: 0 0 0 -430px
+
+@media screen and (max-width: 767px)
+	#helloIntro
+		padding: 30px 0 35px
+
+		em
+			font-size: 90px
+
+		.container:after
+			bottom: -175px
+
+	#helloIntro p > span:last-child
+		margin-left: 38%
+
+	#disaster
+		margin-bottom: 40px
+
 				
+@media screen and (max-width: 550px)
+	#helloIntro
+		em
+			line-height: 1em
+			margin: 0 0 10px
+
+@media screen and (max-width: 500px)
+	#helloIntro
+		margin: 0 0 50px
+
+		.container::after
+			margin: 0 0 0 -70px
+			position: static
+
+	#helloIntro p > span:last-child
+		margin-left: 0
+
+
 /* ****************** REUSABLE BLOCKS ************** */
 
 /* ----------- What to do in case of disaster (home) ----------- */
@@ -364,5 +413,13 @@
 @media screen and (max-width: 767px)
 	#savingsCallToAction
 
+		.col-xs-12:last-child
+			text-align: left
+
+
+/* ----------- Need help in your shopping? (contact) ----------- */
+
+@media screen and (max-width: 767px)
+	#needHelp	
 		.col-xs-12:last-child
 			text-align: left

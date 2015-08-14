@@ -22,3 +22,4 @@ Notes
 
 * HTML and JS editable files are in **src** folder
 * SASS files are in **compass_components**
+* To improve speed when generating sprites, install oily (gem install oily_png) (http://compass-style.org/help/tutorials/spriting/)

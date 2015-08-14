@@ -1,0 +1,39 @@
+/* ************* MODALS ************** */
+.modal-content
+	@include border-radius(0)
+
+.modal-header
+	border: none
+	min-height: 67px
+	padding: 20px
+
+.close
+	opacity: 1
+
+button.close
+	background: $blue
+	height: 28px
+	float: none
+	line-height: 5000em
+	right: 20px
+	overflow: hidden
+	position: absolute
+	top: 20px
+	width: 28px
+
+	&:before
+		background: sprite($modal-icons, close)
+		@include sprite-dimensions($modal-icons, close)
+		@include sprite-at2x($modal-icons, $modal2x-icons)
+		content: " "
+		display: block
+		left: 7px
+		position: absolute
+		top: 7px
+
+	&:hover, &:focus, &:active
+		background: darken($blue, 5)
+		opacity: 1
+
+.modal-body
+	padding: 0 20px 35px

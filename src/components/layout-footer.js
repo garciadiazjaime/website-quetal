@@ -8,6 +8,9 @@ var Row = rb.Row;
 var Col = rb.Col;
 var Link = ReactRouter.Link;
 
+var ModalWidget = require('./widgets/modal-widget');
+var CoverageTemplate = require('./coverage-template');
+
 var SocialElement = require('./element-social');
 
 var FooterSection = React.createClass({
@@ -23,12 +26,36 @@ var FooterSection = React.createClass({
                                 <li>
                                     <h5><Link to="coverage" title="Coberturas">Coberturas</Link></h5>
                                     <ul>
-                                        <li><a href="coberturas/basica" title="Básica">Básica</a></li>
-                                        <li><a href="coberturas/limitada" title="Limitada">Limitada</a></li>
-                                        <li><a href="coberturas/amplia" title="Amplia">Amplia</a></li>
-                                        <li><a href="coberturas/prestigio" title="Prestigio">Prestigio</a></li>
-                                        <li><a href="coberturas/autos-fronterizos" title="Autos Fronterizos">Autos Fronterizos</a></li>
-                                        <li><a href="coberturas/rc-obligatoria" title="RC Obligatoria">RC Obligatoria</a></li>
+                                        <li>
+                                            <ModalWidget title="Básica">
+                                                <CoverageTemplate />
+                                            </ModalWidget>
+                                        </li>
+                                        <li>
+                                            <ModalWidget title="Limitada">
+                                                <CoverageTemplate />
+                                            </ModalWidget>
+                                        </li>
+                                        <li>
+                                            <ModalWidget title="Amplia">
+                                                <CoverageTemplate />
+                                            </ModalWidget>
+                                        </li>
+                                        <li>
+                                            <ModalWidget title="Prestigio">
+                                                <CoverageTemplate />
+                                            </ModalWidget>
+                                        </li>
+                                        <li>
+                                            <ModalWidget title="Autos Fronterizos">
+                                                <CoverageTemplate />
+                                            </ModalWidget>
+                                        </li>
+                                        <li>
+                                            <ModalWidget title="RC Obligatoria">
+                                                <CoverageTemplate />
+                                            </ModalWidget>
+                                        </li>
                                     </ul>
                                 </li><li>
                                     <h5><Link to="aboutus" title="Nosotros">Nosotros</Link></h5>
@@ -41,8 +68,6 @@ var FooterSection = React.createClass({
                                     <ul> 
                                         <li><Link to="disaster" title="En caso de Siniestro">En caso de Siniestro</Link></li>
                                         <li><Link to="contactform" title="Contáctanos">Contáctanos</Link></li>
-                                            
-
                                     </ul>
                                 </li><li>
                                     <h5><a href="cotiza" title="Cotiza" target="_blank">Cotiza</a></h5>

@@ -60,7 +60,7 @@ h1
 	font-size: 11px
 	line-height: 1.1em
 
-.arrowLink
+.arrowLink, .btn.arrowLink
 	background: transparent
 	border: none
 	color: #c4c4c4
@@ -85,6 +85,23 @@ h1
 
 	&:hover, &:focus, &:active
 		color: $gray
+
+	&:hover
+		cursor: pointer
+
+.btn.arrowLink
+	@include border-radius(none)
+	@include box-shadow(none)
+	font-size: 14px 
+	min-width: 1px
+
+	&:hover, &:focus, &:active, &:active:hover, &:active:focus
+		background: transparent
+		@include border-radius(none)
+		@include box-shadow(none)
+		color: $gray
+		@extend %roboto
+		font-size: 14px 
 
 .bigParagraph
 	font-size: 19px
@@ -247,7 +264,6 @@ select
 	@include sprite-dimensions($general-icons, insurancelogo)
 	@include sprite-at2x($general-icons, $general2x-icons)
 
-
 /* ****************** HEADER ************** */	
 header, #header
 	background: white
@@ -403,6 +419,9 @@ footer, #footer
 			&:hover,  &:focus, &:active
 				color: lighten($green,15)
 
+	a:hover
+		cursor: pointer
+
 #footerNavigation > ul > li:nth-child(3)
 	width: 30%
 
@@ -445,5 +464,6 @@ footer, #footer
 @import "partials/sections/_aboutus"
 @import "partials/sections/_contactus"
 @import "partials/_blocks"
+@import "partials/_modals"
 
 @import "partials/_responsive"
