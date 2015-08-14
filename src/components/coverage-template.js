@@ -1,10 +1,12 @@
 'use strict';
 
 var React = require('react');
+var ReactRouter = require('react-router');
 var rb = require('react-bootstrap');
 
 var Row = rb.Row;
 var Col = rb.Col;
+var Link = ReactRouter.Link;
 
 
 var ModalWidget = React.createClass({
@@ -47,6 +49,8 @@ var ModalWidget = React.createClass({
               </li>
             </ul>
             <p className="notes"><em>1</em> Esta Cobertura debe de estar incluida en la Carátula de la Póliza.</p>
+
+            <Link to="coverage" title="Compara nuestras Coberturas" className="greenButton">Compara nuestras Coberturas</Link>
           </Col>
           <Col xs={12} sm={6}>
             <h3><span className="hidden">Tipo de protección </span>Para Ti y los Tuyos</h3>
@@ -69,6 +73,7 @@ var ModalWidget = React.createClass({
               </li>
             </ul>
             <p className="notes"><em>1</em> Esta Cobertura debe de estar incluida en la Carátula de la Póliza.</p>
+            <a href="#" title="Cotiza tu Seguro" className="blueButton" target="_blank">Cotiza tu Seguro</a>
           </Col>
         </Row> 
       </div>

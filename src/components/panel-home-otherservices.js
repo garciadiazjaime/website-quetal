@@ -8,7 +8,7 @@ var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
 var ModalWidget = require('./widgets/modal-widget');
-var CoverageTemplate = require('./element-coverage-template');
+var CoverageTemplate = require('./coverage-template');
 
 var HomeOtherServicesPanel = React.createClass({
 

@@ -9,7 +9,7 @@ var Col = rb.Col;
 var Link = ReactRouter.Link;
 
 var ModalWidget = require('./widgets/modal-widget');
-var CoverageTemplate = require('./element-coverage-template');
+var CoverageTemplate = require('./coverage-template');
 
 var SocialElement = require('./element-social');
 
@@ -26,24 +26,36 @@ var FooterSection = React.createClass({
                                 <li>
                                     <h5><Link to="coverage" title="Coberturas">Coberturas</Link></h5>
                                     <ul>
-                                        <ModalWidget title="Básica" className="">
-                                            <CoverageTemplate />
-                                        </ModalWidget>
-                                        <ModalWidget title="Limitada" className="">
-                                            <CoverageTemplate />
-                                        </ModalWidget>
-                                        <ModalWidget title="Amplia" className="">
-                                            <CoverageTemplate />
-                                        </ModalWidget>
-                                        <ModalWidget title="Prestigio" className="">
-                                            <CoverageTemplate />
-                                        </ModalWidget>
-                                        <ModalWidget title="Autos Fronterizos" className="">
-                                            <CoverageTemplate />
-                                        </ModalWidget>
-                                        <ModalWidget title="RC Obligatoria" className="">
-                                            <CoverageTemplate />
-                                        </ModalWidget>
+                                        <li>
+                                            <ModalWidget title="Básica">
+                                                <CoverageTemplate />
+                                            </ModalWidget>
+                                        </li>
+                                        <li>
+                                            <ModalWidget title="Limitada">
+                                                <CoverageTemplate />
+                                            </ModalWidget>
+                                        </li>
+                                        <li>
+                                            <ModalWidget title="Amplia">
+                                                <CoverageTemplate />
+                                            </ModalWidget>
+                                        </li>
+                                        <li>
+                                            <ModalWidget title="Prestigio">
+                                                <CoverageTemplate />
+                                            </ModalWidget>
+                                        </li>
+                                        <li>
+                                            <ModalWidget title="Autos Fronterizos">
+                                                <CoverageTemplate />
+                                            </ModalWidget>
+                                        </li>
+                                        <li>
+                                            <ModalWidget title="RC Obligatoria">
+                                                <CoverageTemplate />
+                                            </ModalWidget>
+                                        </li>
                                     </ul>
                                 </li><li>
                                     <h5><Link to="aboutus" title="Nosotros">Nosotros</Link></h5>

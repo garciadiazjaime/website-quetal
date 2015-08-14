@@ -4,7 +4,7 @@ var React = require('react');
 var ReactRouter = require('react-router');
 var rb = require('react-bootstrap');
 var ModalWidget = require('./widgets/modal-widget');
-var CoverageTemplate = require('./element-coverage-template');
+var CoverageTemplate = require('./coverage-template');
 
 var Row = rb.Row;
 var Col = rb.Col;

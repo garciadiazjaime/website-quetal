@@ -28,7 +28,7 @@ var ModalWidget = React.createClass({
             {this.props.children}
           </Modal.Body>
         </Modal>
-        <a title={this.props.title} onClick={this.open} className={this.props.className}>{this.props.title}</a>
+        <a title={this.props.title} onClick={this.open} className={this.props.className || ''}>{this.props.title}</a>
       </div>
     );
   },
