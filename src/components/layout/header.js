@@ -12,7 +12,7 @@ var DropdownButton = rb.DropdownButton;
 var CollapsibleNav = rb.CollapsibleNav;
 
 
-var SocialElement = require('./element-social');
+var SocialWidget = require('./../widgets/social-link-widget');
 
 var Button = rb.Button;
 var Link = ReactRouter.Link;
@@ -41,7 +41,7 @@ var HeaderSection = React.createClass({
                     <NavItem eventKey={5} href='/cotiza' target="_blank" className="external">Cotiza</NavItem>
                   </Nav>
                 </CollapsibleNav>
-                <SocialElement />
+                <SocialWidget />
             </Navbar>
         );
     }

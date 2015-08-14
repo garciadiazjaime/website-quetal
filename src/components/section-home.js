@@ -2,10 +2,10 @@
 
 var React = require('react');
 var ReactRouter = require('react-router');
-var CarouselPanel = require('./panel-home-carousel');
-var ServicesPanel = require('./panel-home-services');
-var OtherServicesPanel = require('./panel-home-otherservices');
-var WhatToDo = require('./block-whattodo');
+var CarouselPanel = require('./home/carousel');
+var ServicesPanel = require('./home/services');
+var OtherServicesPanel = require('./home/otherservices');
+var WhatToDo = require('./custom/whattodo');
 
 var rb = require('react-bootstrap');
 var Row = rb.Row;

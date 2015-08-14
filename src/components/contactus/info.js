@@ -8,7 +8,7 @@ var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
 
-var ContactForm = require('./panel-contact-form');
+var ContactForm = require('./form');
 
 var HelloPanel = React.createClass({
 

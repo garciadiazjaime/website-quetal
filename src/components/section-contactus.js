@@ -7,9 +7,9 @@ var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
 
-var HelloPanel = require('./panel-contact-hello');
-var ContactInfo = require('./panel-contact-info');
-var NeedHelp = require('./block-needhelp');
+var HelloPanel = require('./contactus/hello');
+var ContactInfo = require('./contactus/info');
+var NeedHelp = require('./custom/needhelp');
 
 var ContactPanel = React.createClass({
 
