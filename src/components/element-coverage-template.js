@@ -22,12 +22,10 @@ var ModalWidget = React.createClass({
         <h2>¿Qué tipo de Protección ofrece? </h2>
         <Row>
           <Col xs={12} sm={6}>
-
-
-            <a href="" title="" className="blueButton"></a>
+            <a href="" title="" className="greenButton"></a>
           </Col>
           <Col xs={12} sm={6}>
-            <a href="" title="" className="greenButton"></a>
+            <a href="" title="" className="blueButton"></a>
           </Col>
         </Row> 
       </div>

@@ -8,8 +8,7 @@ var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
 var ModalWidget = require('./widgets/modal-widget');
-var LegalizedCars = require('./partials/legalized-cars');
-var CivilResponsibility = require('./partials/civil-responsibility');
+var CoverageTemplate = require('./element-coverage-template');
 
 var HomeOtherServicesPanel = React.createClass({
 
@@ -35,7 +34,7 @@ var HomeOtherServicesPanel = React.createClass({
                                         <span id="borderCarIcon"></span>
                                     </p>
                                     <ModalWidget title="Ver detalles" className="arrowLink">
-                                        <LegalizedCars />
+                                        <CoverageTemplate />
                                     </ModalWidget>
                                 </div>
                             </div>
@@ -49,7 +48,7 @@ var HomeOtherServicesPanel = React.createClass({
                                         <span id="civilResponsibilityIcon"></span>
                                     </p>
                                     <ModalWidget title="Ver detalles" className="arrowLink">
-                                        <CivilResponsibility />
+                                        <CoverageTemplate />
                                     </ModalWidget>
                                     
                                 </div>

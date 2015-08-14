@@ -4,10 +4,7 @@ var React = require('react');
 var ReactRouter = require('react-router');
 var rb = require('react-bootstrap');
 var ModalWidget = require('./widgets/modal-widget');
-var PrestigeCoverage = require('./partials/prestige-coverage');
-var ComfortCoverage = require('./partials/comfort-coverage');
-var LimitedComfortCoverage = require('./partials/limited-comfort-coverage');
-var BasicComfortCoverage = require('./partials/basic-comfort-coverage');
+var CoverageTemplate = require('./element-coverage-template');
 
 var Row = rb.Row;
 var Col = rb.Col;
@@ -56,7 +53,7 @@ y modelos recientes.</p>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
                             <ModalWidget title="Ver detalles" className="arrowLink">
-                                <PrestigeCoverage />
+                                <CoverageTemplate />
                             </ModalWidget>
                         </Col>
                         <Col xs={12} sm={3} className="featured">
@@ -73,7 +70,7 @@ y modelos recientes.</p>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
                             <ModalWidget title="Ver detalles" className="arrowLink">
-                                <ComfortCoverage />
+                                <CoverageTemplate />
                             </ModalWidget>
                         </Col>
                         <Col xs={12} sm={3}>
@@ -89,7 +86,7 @@ y modelos recientes.</p>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
                             <ModalWidget title="Ver detalles" className="arrowLink">
-                                <LimitedComfortCoverage />
+                                <CoverageTemplate />
                             </ModalWidget>
                         </Col>
                         <Col xs={12} sm={3}>
@@ -104,7 +101,7 @@ y modelos recientes.</p>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
                             <ModalWidget title="Ver detalles" className="arrowLink">
-                                <BasicComfortCoverage />
+                                <CoverageTemplate />
                             </ModalWidget>
                         </Col>
                     </Row>

@@ -9,12 +9,7 @@ var Col = rb.Col;
 var Link = ReactRouter.Link;
 
 var ModalWidget = require('./widgets/modal-widget');
-var PrestigeCoverage = require('./partials/prestige-coverage');
-var ComfortCoverage = require('./partials/comfort-coverage');
-var LimitedComfortCoverage = require('./partials/limited-comfort-coverage');
-var BasicComfortCoverage = require('./partials/basic-comfort-coverage');
-var LegalizedCars = require('./partials/legalized-cars');
-var CivilResponsibility = require('./partials/civil-responsibility');
+var CoverageTemplate = require('./element-coverage-template');
 
 var SocialElement = require('./element-social');
 
@@ -32,22 +27,22 @@ var FooterSection = React.createClass({
                                     <h5><Link to="coverage" title="Coberturas">Coberturas</Link></h5>
                                     <ul>
                                         <ModalWidget title="Básica" className="">
-                                            <BasicComfortCoverage />
+                                            <CoverageTemplate />
                                         </ModalWidget>
                                         <ModalWidget title="Limitada" className="">
-                                            <LimitedComfortCoverage />
+                                            <CoverageTemplate />
                                         </ModalWidget>
                                         <ModalWidget title="Amplia" className="">
-                                            <ComfortCoverage />
+                                            <CoverageTemplate />
                                         </ModalWidget>
                                         <ModalWidget title="Prestigio" className="">
-                                            <PrestigeCoverage />
+                                            <CoverageTemplate />
                                         </ModalWidget>
                                         <ModalWidget title="Autos Fronterizos" className="">
-                                            <LegalizedCars />
+                                            <CoverageTemplate />
                                         </ModalWidget>
                                         <ModalWidget title="RC Obligatoria" className="">
-                                            <CivilResponsibility />
+                                            <CoverageTemplate />
                                         </ModalWidget>
                                     </ul>
                                 </li><li>
