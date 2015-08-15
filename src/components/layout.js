@@ -6,7 +6,6 @@ var RouteHandler = Router.RouteHandler;
 var HeaderSection = require('./layout/header');
 var FooterSection = require('./layout/footer');
 
-
 var Layout = React.createClass({
 
   getInitialState: function(){

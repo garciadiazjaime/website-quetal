@@ -11,7 +11,6 @@ var Button = rb.Button;
 var DropdownButton = rb.DropdownButton;
 var CollapsibleNav = rb.CollapsibleNav;
 
-
 var SocialWidget = require('./../widgets/social-link-widget');
 
 var Button = rb.Button;

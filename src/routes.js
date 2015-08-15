@@ -23,8 +23,6 @@ var routes = (
 		<Route name="contact" path="/contacto" handler={ContactUsSection} />
 		<Route name="disaster" path="/contacto/siniestro" handler={ContactUsSection} />
 		<Route name="contactform" path="/contacto/forma" handler={ContactUsSection} />
-
-
 	</Route>
 );
 

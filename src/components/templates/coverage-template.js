@@ -17,7 +17,9 @@ var ModalWidget = React.createClass({
       <div>
         <Row>
           <Col xs={12} sm={5}>
-            <h1><span>GS Autos</span>Prestigio</h1>
+            <h1><span>GS Autos</span>
+                Prestigio
+            </h1>
           </Col>
           <Col xs={12} sm={7}>
             <p className="bigParagraph">La Cobertura más completa para el Conductor y su vehículo último modelo o modelos recientes.</p>
