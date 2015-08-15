@@ -8,10 +8,10 @@ var Row = rb.Row;
 var Col = rb.Col;
 var Link = ReactRouter.Link;
 
-var ModalWidget = require('./widgets/modal-widget');
-var CoverageTemplate = require('./coverage-template');
+var ModalWidget = require('./../widgets/modal-widget');
+var CoverageTemplate = require('./../templates/coverage-template');
 
-var SocialElement = require('./element-social');
+var SocialWidget = require('./../widgets/social-link-widget');
 
 var FooterSection = React.createClass({
 
@@ -79,7 +79,7 @@ var FooterSection = React.createClass({
                         <span id="brand-footer">Quetal - Mi seguro de auto</span>
                         <p>Con el respaldo de:</p>
                         <span className="general-logo">General de seguros</span>
-                        <SocialElement />
+                        <SocialWidget />
                     </Col>
                 </Row>   
             </div>

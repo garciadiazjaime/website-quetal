@@ -3,9 +3,8 @@
 var React = require('react');
 var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
-var HeaderSection = require('./layout-header');
-var FooterSection = require('./layout-footer');
-
+var HeaderSection = require('./layout/header');
+var FooterSection = require('./layout/footer');
 
 var Layout = React.createClass({
 

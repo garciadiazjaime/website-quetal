@@ -17,7 +17,9 @@ var ModalWidget = React.createClass({
       <div>
         <Row>
           <Col xs={12} sm={5}>
-            <h1><span>GS Autos</span>Prestigio</h1>
+            <h1><span>GS Autos</span>
+                Prestigio
+            </h1>
           </Col>
           <Col xs={12} sm={7}>
             <p className="bigParagraph">La Cobertura más completa para el Conductor y su vehículo último modelo o modelos recientes.</p>
@@ -48,9 +50,8 @@ var ModalWidget = React.createClass({
                   Tus Objetos Personales y los de tu familia están cubiertos en caso de que seas víctima del robo de tu Vehículo.
               </li>
             </ul>
-            <p className="notes"><em>1</em> Esta Cobertura debe de estar incluida en la Carátula de la Póliza.</p>
+            <p className="notes"><sup>1</sup> Esta Cobertura debe de estar incluida en la Carátula de la Póliza.</p>
 
-            <Link to="coverage" title="Compara nuestras Coberturas" className="greenButton">Compara nuestras Coberturas</Link>
           </Col>
           <Col xs={12} sm={6}>
             <h3><span className="hidden">Tipo de protección </span>Para Ti y los Tuyos</h3>
@@ -72,10 +73,12 @@ var ModalWidget = React.createClass({
                   Te ofrecemos un Automóvil Sustituto para que sigas tu camino mientras te pagamos o reparamos el tuyo.
               </li>
             </ul>
-            <p className="notes"><em>1</em> Esta Cobertura debe de estar incluida en la Carátula de la Póliza.</p>
-            <a href="#" title="Cotiza tu Seguro" className="blueButton" target="_blank">Cotiza tu Seguro</a>
+            <p className="notes"><sup>1</sup> Esta Cobertura debe de estar incluida en la Carátula de la Póliza.</p>
+        
           </Col>
         </Row> 
+        <Link to="coverage" title="Compara nuestras Coberturas" className="greenButton">Compara nuestras Coberturas</Link>
+        <a href="#" title="Cotiza tu Seguro" className="blueButton" target="_blank">Cotiza tu Seguro</a>
       </div>
     );
   }

@@ -3,7 +3,7 @@
 var React = require('react');
 var ReactRouter = require('react-router');
 var rb = require('react-bootstrap');
-var RestClient = require('../lib/rest-client');
+var RestClient = require('../../lib/rest-client');
 
 var Row = rb.Row;
 var Col = rb.Col;
