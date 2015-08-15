@@ -7,17 +7,12 @@ var rb = require('react-bootstrap');
 var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
-var ModalWidget = require('./../widgets/modal-widget');
-var CoverageTemplate = require('./../templates/coverage-template');
+var ModalActions = require('../../actions/ModalActions');
+
 
 var HomeOtherServicesPanel = React.createClass({
 
     mixins : [ReactRouter.Navigation],
-    
-    handleClick: function(){
-        console.log('handleClick');
-        // this.transitionTo('home');
-    },
 
     render: function() {
 
@@ -33,9 +28,7 @@ var HomeOtherServicesPanel = React.createClass({
                                         <a href="cotiza" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                                         <span id="borderCarIcon"></span>
                                     </p>
-                                    <ModalWidget title="Ver detalles" className="arrowLink">
-                                        <CoverageTemplate />
-                                    </ModalWidget>
+                                    <a onClick={this.handleClick.bind(this, 'fronterizo')} className="arrowLink">Ver detalles</a>
                                 </div>
                             </div>
                         </Col>
@@ -47,10 +40,7 @@ var HomeOtherServicesPanel = React.createClass({
                                         <a href="cotiza" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                                         <span id="civilResponsibilityIcon"></span>
                                     </p>
-                                    <ModalWidget title="Ver detalles" className="arrowLink">
-                                        <CoverageTemplate />
-                                    </ModalWidget>
-                                    
+                                    <a onClick={this.handleClick.bind(this, 'federal')} className="arrowLink">Ver detalles</a>
                                 </div>
                             </div>
                         </Col>
@@ -80,6 +70,10 @@ var HomeOtherServicesPanel = React.createClass({
                 </div>
             </section>
         );
+    },
+
+    handleClick: function(coverage){
+        ModalActions.openModal(coverage);
     }
 });
 

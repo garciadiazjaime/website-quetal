@@ -8,10 +8,9 @@ var Row = rb.Row;
 var Col = rb.Col;
 var Link = ReactRouter.Link;
 
-var ModalWidget = require('./../widgets/modal-widget');
-var CoverageTemplate = require('./../templates/coverage-template');
+var ModalActions = require('../../actions/ModalActions');
+var SocialWidget = require('../widgets/social-link-widget');
 
-var SocialWidget = require('./../widgets/social-link-widget');
 
 var FooterSection = React.createClass({
 
@@ -27,34 +26,22 @@ var FooterSection = React.createClass({
                                     <h5><Link to="coverage" title="Coberturas">Coberturas</Link></h5>
                                     <ul>
                                         <li>
-                                            <ModalWidget title="Básica">
-                                                <CoverageTemplate />
-                                            </ModalWidget>
+                                            <a onClick={this.handleClick.bind(this, 'basica')}>Básica</a>
                                         </li>
                                         <li>
-                                            <ModalWidget title="Limitada">
-                                                <CoverageTemplate />
-                                            </ModalWidget>
+                                            <a onClick={this.handleClick.bind(this, 'limitada')}>Limitada</a>
                                         </li>
                                         <li>
-                                            <ModalWidget title="Amplia">
-                                                <CoverageTemplate />
-                                            </ModalWidget>
+                                            <a onClick={this.handleClick.bind(this, 'amplia')}>Amplia</a>
                                         </li>
                                         <li>
-                                            <ModalWidget title="Prestigio">
-                                                <CoverageTemplate />
-                                            </ModalWidget>
+                                            <a onClick={this.handleClick.bind(this, 'prestigio')}>Prestigio</a>
                                         </li>
                                         <li>
-                                            <ModalWidget title="Autos Fronterizos">
-                                                <CoverageTemplate />
-                                            </ModalWidget>
+                                            <a onClick={this.handleClick.bind(this, 'fronterizo')}>Autos Fronterizos</a>
                                         </li>
                                         <li>
-                                            <ModalWidget title="RC Obligatoria">
-                                                <CoverageTemplate />
-                                            </ModalWidget>
+                                            <a onClick={this.handleClick.bind(this, 'federal')}>RC Obligatoria</a>
                                         </li>
                                     </ul>
                                 </li><li>
@@ -100,7 +87,11 @@ var FooterSection = React.createClass({
             </div>
         </div>
     );
-  }
+  },
+
+  handleClick: function(coverage){
+        ModalActions.openModal(coverage);
+    }
 });
 
 module.exports = FooterSection;

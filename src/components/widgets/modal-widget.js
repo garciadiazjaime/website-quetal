@@ -3,39 +3,46 @@
 var React = require('react');
 var rb = require('react-bootstrap');
 var Modal = rb.Modal;
-var Button = rb.Button;
-var Popover = rb.Popover;
-var Tooltip = rb.Tooltip;
-var OverlayTrigger = rb.OverlayTrigger;
+var ModalStore = require('../../stores/ModalStore');
+var CoverageTemplate = require('../templates/coverage-template');
 
 
 var ModalWidget = React.createClass({
 
   getInitialState: function(){
-    return { showModal: false };
+    return { showModal: false, coverage: '' };
+  },
+
+  componentDidMount: function() {
+    ModalStore.addChangeListener(this._onChangeHandler);
+  },
+
+  componentWillUnmount: function() {
+    ModalStore.removeChangeListener(this._onChangeHandler);
   },
 
   render: function() {
-    var popover = <Popover title='popover'>very popover. such engagement</Popover>;
-    var tooltip = <Tooltip>wow.</Tooltip>;
 
     return (
-      <div>
-        <Modal show={this.state.showModal} onHide={this.close}>
-          <Modal.Header closeButton>
-          </Modal.Header>
-          <Modal.Body>
-            {this.props.children}
-          </Modal.Body>
-        </Modal>
-        <a title={this.props.title} onClick={this.open} className={this.props.className || ''}>{this.props.title}</a>
-      </div>
+      <Modal show={this.state.showModal} onHide={this.close}>
+        <Modal.Header closeButton>
+        </Modal.Header>
+        <Modal.Body>
+          <CoverageTemplate coverage={this.state.coverage} />
+        </Modal.Body>
+      </Modal>
     );
   },
 
-  open: function(){
+  _onChangeHandler: function(){
+    var data = ModalStore.getData();
+    
+    console.log('data', data);
 
-    this.setState({ showModal: true });
+    this.setState({ 
+      showModal: data.status,
+      coverage: data.coverage
+    });
   },
 
   close: function(){

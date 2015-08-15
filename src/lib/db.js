@@ -31,7 +31,7 @@ var CoverageInfo = {
                  content: 'Tus Objetos Personales y los de tu familia están cubiertos en caso de que seas víctima del robo de tu Vehículo.' 
             }
         ],
-        leftNotes: '<em>1</em> Esta Cobertura debe de estar incluida en la Carátula de la Póliza.',
+        leftNotes: '<sup>1</sup> Esta Cobertura debe de estar incluida en la Carátula de la Póliza.',
         
 
         rightTitle: 'Para Ti y los Tuyos',
@@ -50,14 +50,14 @@ var CoverageInfo = {
             },
             {
                  title:'Durante tu Viaje',
-                 content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.'. 
+                 content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.'
             },
             {
                  title:'Para que sigas tu camino',
                  content: 'Te ofrecemos un Automóvil Sustituto para que sigas tu camino mientras te pagamos o reparamos el tuyo.' 
             },
         ],
-        rightNotes: '<em>1</em> Esta Cobertura debe de estar incluida en la Carátula de la Póliza.',
+        rightNotes: '<sup>1</sup> Esta Cobertura debe de estar incluida en la Carátula de la Póliza.',
     },
     amplia: {
         title: 'Confort Amplia',
@@ -95,8 +95,8 @@ var CoverageInfo = {
             },
             {
                  title:'Para que sigas tu camino',
-                 content: 'Te ofrecemos un Automóvil Sustituto para que sigas tu camino mientras te pagamos o reparamos el tuyo.'. 
-            },
+                 content: 'Te ofrecemos un Automóvil Sustituto para que sigas tu camino mientras te pagamos o reparamos el tuyo.'
+            }
         ],
     },
     basica: {

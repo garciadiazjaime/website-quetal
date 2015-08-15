@@ -24,7 +24,7 @@ var AboutusCarouselPanel = React.createClass({
 
         return (
             <section id="aboutusIntro">
-                <Carousel id="aboutusCarousel" interval="3000">
+                <Carousel id="aboutusCarousel" interval={3000}>
                     <CarouselItem>
                         <div className="container">
                             <p>Hay muchas razones por las que NO se <em>comparan</em> con nosotros</p>

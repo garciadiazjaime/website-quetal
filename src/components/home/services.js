@@ -3,21 +3,16 @@
 var React = require('react');
 var ReactRouter = require('react-router');
 var rb = require('react-bootstrap');
-var ModalWidget = require('./../widgets/modal-widget');
-var CoverageTemplate = require('./../templates/coverage-template');
+var ModalActions = require('../../actions/ModalActions');
 
 var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
 
+
 var HomeServicesPanel = React.createClass({
 
     mixins : [ReactRouter.Navigation],
-    
-    handleClick: function(){
-        console.log('handleClick');
-        // this.transitionTo('home');
-    },
 
     render: function() {
 
@@ -52,9 +47,7 @@ y modelos recientes.</p>
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <ModalWidget title="Ver detalles" className="arrowLink">
-                                <CoverageTemplate />
-                            </ModalWidget>
+                            <a onClick={this.handleClick.bind(this, 'prestigio')} className="arrowLink">Ver detalles</a>
                         </Col>
                         <Col xs={12} sm={3} className="featured">
                             <div className="servicesList-wrap">
@@ -69,9 +62,7 @@ y modelos recientes.</p>
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <ModalWidget title="Ver detalles" className="arrowLink">
-                                <CoverageTemplate />
-                            </ModalWidget>
+                            <a onClick={this.handleClick.bind(this, 'amplia')} className="arrowLink">Ver detalles</a>
                         </Col>
                         <Col xs={12} sm={3}>
                             <div className="servicesList-wrap">
@@ -85,9 +76,7 @@ y modelos recientes.</p>
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <ModalWidget title="Ver detalles" className="arrowLink">
-                                <CoverageTemplate />
-                            </ModalWidget>
+                            <a onClick={this.handleClick.bind(this, 'limitada')} className="arrowLink">Ver detalles</a>
                         </Col>
                         <Col xs={12} sm={3}>
                             <div className="servicesList-wrap">
@@ -100,14 +89,16 @@ y modelos recientes.</p>
                                 </div>
                                 <a href="#" target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
                             </div>
-                            <ModalWidget title="Ver detalles" className="arrowLink">
-                                <CoverageTemplate />
-                            </ModalWidget>
+                            <a onClick={this.handleClick.bind(this, 'basica')} className="arrowLink">Ver detalles</a>
                         </Col>
                     </Row>
                 </div>
             </section>
         );
+    },
+
+    handleClick: function(coverage){
+        ModalActions.openModal(coverage);
     }
 });
 

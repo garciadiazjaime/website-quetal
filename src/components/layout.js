@@ -5,6 +5,7 @@ var Router = require('react-router');
 var RouteHandler = Router.RouteHandler;
 var HeaderSection = require('./layout/header');
 var FooterSection = require('./layout/footer');
+var ModalWidget = require('./widgets/modal-widget');
 
 var Layout = React.createClass({
 
@@ -36,6 +37,7 @@ var Layout = React.createClass({
             <footer id="footer">
                 <FooterSection/>
             </footer>
+            <ModalWidget />
         </div>
     );
   },
