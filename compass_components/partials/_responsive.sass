@@ -149,6 +149,11 @@
 		padding: 0
 
 	#servicesList
+		.arrowLink
+			max-width: 120px
+			text-align: left
+
+
 		.centeredIconStyle
 			left: 0
 			margin-left: 0
@@ -184,6 +189,11 @@
 
 	.servicesList-details, .servicesList-wrap
 		min-height: 1px
+
+	#otherServices
+		.arrowLink
+			max-width: 120px
+			text-align: left
 
 @media screen and (max-width: 500px)
 	.bigPhrase
@@ -423,3 +433,19 @@
 	#needHelp	
 		.col-xs-12:last-child
 			text-align: left
+
+/* ----------- Modal ----------- */
+@media screen and (max-width: 699px)
+	.modal-dialog
+		.greenButton, .blueButton
+			padding: 14px 20px 16px
+			position: static
+
+		.greenButton
+			margin: 0 20px 35px 0
+
+		.blueButton
+			margin-top: 0
+
+	.modal-body > div
+		padding-bottom: 0
