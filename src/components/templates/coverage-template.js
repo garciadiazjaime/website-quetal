@@ -49,9 +49,14 @@ var CoverageTemplate = React.createClass({
               }
             </Col>
             {
-              data.rightTitle ? 
+              data.rightContent ? 
               <Col xs={12} sm={6}>
-                <h3><span className="hidden">Tipo de protección </span>{data.rightTitle}</h3>
+
+                {
+                  data.rightTitle ? 
+                  <h3><span className="hidden">Tipo de protección </span>{data.rightTitle}</h3>
+                  : null
+                }
                 <ul>
                   {this.getColumnContent(data.rightContent)}
                 </ul>
