@@ -8,14 +8,11 @@ var Row = rb.Row;
 var Col = rb.Col;
 var Button = rb.Button;
 
+var ModalActions = require('../../actions/ModalActions');
+
 var coverageTable = React.createClass({
 
     mixins : [ReactRouter.Navigation],
-    
-    handleClick: function(){
-        console.log('handleClick');
-        // this.transitionTo('home');
-    },
 
     render: function() {
 
@@ -30,16 +27,16 @@ var coverageTable = React.createClass({
                             <Col xs={12} sm={7}>
                                 <Row>
                                     <Col xs={6} sm={3}>
-                                        <h5>Prestigio</h5>
+                                        <h5 onClick={this.handleClick.bind(this, 'prestigio')}>Prestigio</h5>
                                     </Col>
                                     <Col xs={6} sm={3}>
-                                        <h5>Confort Amplia</h5>
+                                        <h5 onClick={this.handleClick.bind(this, 'amplia')}>Confort Amplia</h5>
                                     </Col>
                                     <Col xs={6} sm={3}>
-                                        <h5>Confort Limitada</h5>
+                                        <h5 onClick={this.handleClick.bind(this, 'limitada')}>Confort Limitada</h5>
                                     </Col>
                                     <Col xs={6} sm={3}>
-                                        <h5>Confort Básica</h5>
+                                        <h5 onClick={this.handleClick.bind(this, 'basica')}>Confort Básica</h5>
                                     </Col>
                                 </Row>
                             </Col>
@@ -512,6 +509,10 @@ var coverageTable = React.createClass({
                 </div>
             </section>
         );
+    },
+
+  handleClick: function(coverage){
+        ModalActions.openModal(coverage);
     }
 });
 

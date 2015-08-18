@@ -20,6 +20,7 @@ var HeaderSection = React.createClass({
 
     mixins : [ReactRouter.Navigation],
 
+
     handleClick: function(){
         console.log('handleClick');
         this.transitionTo('inicio');
@@ -30,10 +31,10 @@ var HeaderSection = React.createClass({
 
     render: function() {
         return (
-            <Navbar brand='Volver a inicio de Quetal' toggleNavKey={0}  className="navbar-static-top">
+            <Navbar brand={<Link to="home" className='navbar-brand' title="Quetal | Volver a inicio">Quetal | Volver a inicio</Link>} toggleNavKey={0}  className="navbar-static-top">
                 <CollapsibleNav eventKey={0}> {/* This is the eventKey referenced */}
                   <Nav navbar>
-                    <NavItem eventKey={1} href='/inicio' onClick={this.handleClick.bind(this, 'homepage')}>Inicio</NavItem>
+                    <NavItem eventKey={1} href='/inicio' onClick={this.handleClick.bind(this, 'home')}>Inicio</NavItem>
                     <NavItem eventKey={2} href='/coberturas' onClick={this.handleClick.bind(this, 'coverage')}>Coberturas</NavItem>
                     <NavItem eventKey={3} href='/nosotros' onClick={this.handleClick.bind(this, 'aboutus')}>Nosotros</NavItem>
                     <NavItem eventKey={4} href='/contacto' onClick={this.handleClick.bind(this, 'contact')}>Contacto</NavItem>

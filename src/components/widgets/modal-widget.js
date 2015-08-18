@@ -24,7 +24,7 @@ var ModalWidget = React.createClass({
   render: function() {
 
     return (
-      <Modal show={this.state.showModal} onHide={this.close}>
+      <Modal show={this.state.showModal} onHide={this.close} id={this.state.coverage}>
         <Modal.Header closeButton>
         </Modal.Header>
         <Modal.Body>
