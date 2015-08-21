@@ -3,7 +3,9 @@ var express = require('express'),
     path = require("path"),
     bodyParser = require('body-parser'),
     cookieParser = require('cookie-parser'),
-    routes = require('./routes');
+    routes = require('./routes'),
+    apiRoutes = require('./routes/api'),
+    conf = require('./config.js');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
@@ -12,10 +14,10 @@ app.use(bodyParser.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', routes);
+app.use('/api/', apiRoutes);
 
-app.set('ipaddress', process.env.OPENSHIFT_NODEJS_IP || '127.0.0.1');
-app.set('port', process.env.OPENSHIFT_NODEJS_PORT || 3000);
-
+app.set('ipaddress', conf.get('ipaddress'));
+app.set('port', conf.get('port'));
 
 app.listen(app.get('port'), app.get('ipaddress'), function(err) {
     if (err) throw err;
