@@ -1,0 +1,162 @@
+/* ****************** CONTACT US ************** */
+#helloIntro
+	@extend .greenGradientBackground
+	font-size: 22px
+	line-height: 1.2em
+	margin: 0 0 120px
+	overflow: visible
+	padding: 75px 0 35px
+
+	.container
+		position: relative
+
+	p
+		color: white
+
+		& > span:last-child
+			display: inline-block
+			margin-left: 55%
+
+	em
+		display: block
+		@extend %roboto-black
+		font-size: 168px
+		line-height: 1.2em
+
+		span:last-child
+			color: $yellow
+
+	.container
+		&:after
+			content: ""
+			background: sprite($contactus-icons, car)
+			@include sprite-dimensions($contactus-icons, car)
+			@include sprite-at2x($contactus-icons, $contactus2x-icons)
+			bottom: -145px
+			display: block
+			left: 50%
+			margin: 0 0 0 -450px
+			position: absolute
+
+
+#contactInfo
+	margin: 0 0 50px
+	
+	h1
+		border: none
+		padding-bottom: 0
+
+	h1, h2
+		color: $blue
+		@extend %roboto
+		font-size: 15px
+		margin: 0 0 26px
+
+		em
+			color: $gray
+			display: block
+			@extend %roboto-black
+			font-size: 23px
+			line-height: 2em
+
+	ul
+		list-style-type: none
+		padding: 0
+
+		li
+			padding: 0 0 0 40px
+		a
+			color: $light-gray
+			display: block
+			@extend %roboto-bold
+			margin: 17px 0 17px -40px
+			min-height: 25px
+			padding: 4px 0 0 40px
+			position: relative
+
+			&:hover, &:focus, &:active
+				color: $gray
+				&:before
+					background: $yellow
+					@include transition(.6s)
+
+			&:before, &:after
+				content: ""
+				display: block
+				position: absolute
+
+			&:before
+				background: transparent
+				border: 1px solid #231f20
+				@include border-radius(50px)
+				height: 23px
+				left: 0
+				top: 0
+				@include transition(.4s)
+				width: 23px
+				z-index: 1
+
+			&:after
+				background: sprite($contactus-icons, telephone)
+				@include sprite-dimensions($contactus-icons, telephone)
+				@include sprite-at2x($contactus-icons, $contactus2x-icons)
+				left: 9px
+				top: 5px
+				z-index: 2
+
+.instructionsParagraph
+	padding: 0 0 0 40px
+
+	em
+		color: $blue
+		@extend %roboto
+		display: block
+		font-size: 15px
+		margin: 0 0 15px -40px
+
+.telMeaning
+	display: block
+	padding: 0 0 0 50px
+
+#contactform
+	p
+		color: $blue
+
+label
+	display: none
+
+form
+	position: relative
+
+input, textarea
+	border: none
+	border-bottom: 1px solid #c8c8c8
+	color: $gray
+	display: block
+	@extend %roboto
+	letter-spacing: .04em
+	margin: 0 0 10px
+	width: 100%
+
+textarea
+	height: 68px
+
+#msg
+	color: $black
+	display: block
+	font: 10px Verdana, sans-serif
+	margin: 10px 0
+	min-height: 20px
+
+#msg.text-error, label.text-error, input.text-error, textarea.text-error
+	color: #aa1a21
+
+#msg.text-success
+	color: #42895e
+
+#submitButton
+	@extend .blueButton
+	display: block
+	margin: 0 0 15px auto
+	min-width: 130px
+	text-align: left

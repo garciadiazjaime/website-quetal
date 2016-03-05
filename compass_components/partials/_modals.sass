@@ -1,0 +1,191 @@
+/* ************* MODALS ************** */
+.modal-dialog
+	max-width: 900px
+	width: 94%
+
+	sup
+		color: $blue
+
+	h1
+		border: none
+		@extend %roboto-black
+		font-size: 33px
+		margin: 0 0 10px
+		padding: 0
+
+		span:first-child
+			display: block
+			font-size: 22px
+
+	.bigParagraph
+		color: #757575
+		@extend %roboto-bold
+		font-size: 17px
+
+
+	h2
+		border-bottom: 1px dashed $blue
+		color: #757575
+		@extend %roboto-bold
+		font-size: 11px
+		margin: 0 0 25px
+		padding: 0 0 8px
+
+	h3
+		color: #757575
+		@extend %roboto-bold
+		font-size: 16px
+		padding: 55px 0 0 22px
+		position: relative
+
+		&:before, &:after
+			content: " "
+			display: block
+			position: absolute
+
+		&:before
+			background: $green
+			@include border-radius(50px)
+			height: 7px
+			left: 0
+			top: 60px
+			width: 7px
+
+		&:after
+			background: sprite($modal-icons, car)
+			@include sprite-dimensions($modal-icons, car)
+			@include sprite-at2x($modal-icons, $modal2x-icons)
+			left: 22px
+			top: 0
+
+	ul
+		list-style-type: none
+		margin: 0 0 20px
+		padding: 0 0 0 22px
+
+		ul
+			list-style-type: disc
+			margin: 15px 0
+			padding: 0 0 0 11px
+
+	li
+		color: $light-gray
+		font-size: 12px
+		letter-spacing: 0.07em
+		line-height: 1.3em
+		margin: 0 0 17px
+		em
+			color: $blue
+			display: block
+			@extend %roboto-bold
+			font-size: 13px
+
+	.notes
+		color: $light-gray
+		font-size: 10px
+		margin: 0 0 25px
+		padding: 0 0 0 22px
+
+		sup
+			color: $blue
+			top: 0
+
+	.greenButton, .blueButton
+		bottom: 30px
+		font-size: 19px
+		min-width: 1px
+		margin-bottom: 0
+		padding: 14px 25px 16px
+		position: absolute
+
+	.greenButton
+		left: 22px
+
+	.blueButton
+		right: 22px
+
+.modal-content
+	@include border-radius(0)
+
+.modal-header
+	border: none
+	min-height: 67px
+	padding: 20px
+
+.close
+	opacity: 1
+
+button.close
+	background: $blue
+	height: 28px
+	float: none
+	line-height: 5000em
+	right: 20px
+	overflow: hidden
+	position: absolute
+	top: 20px
+	width: 28px
+
+	&:before
+		background: sprite($modal-icons, close)
+		@include sprite-dimensions($modal-icons, close)
+		@include sprite-at2x($modal-icons, $modal2x-icons)
+		content: " "
+		display: block
+		left: 7px
+		position: absolute
+		top: 7px
+
+	&:hover, &:focus, &:active
+		background: darken($blue, 5)
+		opacity: 1
+
+.modal-body
+	padding: 0 20px 35px
+
+	& > div
+		padding-bottom: 80px
+		position: relative
+
+	& > div > .row:nth-child(3)
+
+		.col-xs-12:last-child
+			h3
+				&:after
+					background: sprite($modal-icons, people)
+					@include sprite-dimensions($modal-icons, people)
+
+.oneColumnModal
+	.modal-dialog
+		max-width: 490px
+
+		h1
+			font-size: 25px
+
+	.modal-body		
+		& > div > .row:nth-child(3)
+			.col-sm-6
+				width: 100%
+
+
+	.modal-body > div
+		padding-bottom: 0
+
+	.modal-dialog
+		.greenButton, .blueButton
+			padding: 14px 20px 16px
+			position: static
+
+.onlyHasPeopleIcon
+	.modal-dialog
+		h3
+			&:after
+				background: sprite($modal-icons, people)
+				@include sprite-dimensions($modal-icons, people)
+
+#fronterizo
+	@extend .oneColumnModal
+	@extend .onlyHasPeopleIcon
+
+#federal
+	@extend .onlyHasPeopleIcon

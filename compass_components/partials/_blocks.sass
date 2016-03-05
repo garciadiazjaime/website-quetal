@@ -1,0 +1,78 @@
+/* ****************** REUSABLE BLOCKS ************** */
+
+/* ----------- What to do in case of disaster (home) ----------- */
+#callToAction
+	padding: 45px 0 90px
+
+	p
+		color: $blue
+		font-size: 35px
+		line-height: 1.2em
+		margin: 0 0 15px
+
+		span:first-child
+			display: block
+
+	.col-xs-12:last-child
+		text-align: right
+
+
+/* ----------- Save 20% (coverage, about-us) ----------- */
+
+.brandBlue-style
+	@extend .img
+	background: sprite($coverage-icons, blue-logo)
+	@include sprite-dimensions($coverage-icons, blue-logo)
+	@include sprite-at2x($coverage-icons, $coverage2x-icons)
+	display: inline-block
+	vertical-align: middle
+
+#savingsCallToAction
+	margin-bottom: 50px
+
+	p
+		color: $blue
+		@extend %roboto-bold
+		font-size: 39px
+		line-height: 1.2em
+		max-width: 400px
+
+	.notes
+		color: #aaaaaa
+		@extend %roboto
+		font-size: 10px
+		line-height: 1.2em
+		max-width: 100%
+
+	.logo
+		@extend .brandBlue-style
+
+	.col-xs-12:last-child
+		text-align: right
+
+	.blueButton
+		font-size: 24px
+		margin: 40px 0 20px
+		padding: 20px 27px 23px
+
+/* ----------- Need help in your shopping? (contact) ----------- */
+#needHelp
+	p
+		color: $blue
+		font-size: 35px
+		line-height: 1.2em
+		margin: 0 0 20px
+		max-width: 550px
+
+		a
+			color: $black
+
+			&:hover, &:focus, &:active
+				color: $green
+
+	.greenButton
+		margin: 0 0 65px
+
+
+	.col-xs-12:last-child
+		text-align: right

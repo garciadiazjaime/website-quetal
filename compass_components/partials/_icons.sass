@@ -1,0 +1,70 @@
+@import "general/*.png"
+@include all-general-sprites
+$general-icons: sprite-map("general/*.png", $layout: smart)
+
+@import "general2x/*.png"
+@include all-general2x-sprites
+$general2x-icons: sprite-map("general2x/*.png", $layout: smart)
+
+@import "home/*.png"
+@include all-home-sprites
+$home-icons: sprite-map("home/*.png", $layout: smart)
+
+@import "home2x/*.png"
+@include all-home2x-sprites
+$home2x-icons: sprite-map("home2x/*.png", $layout: smart)
+
+@import "banner/*.png"
+@include all-banner-sprites
+$banner-icons: sprite-map("banner/*.png", $layout: smart)
+
+@import "coverage/*.png"
+@include all-coverage-sprites
+$coverage-icons: sprite-map("coverage/*.png", $layout: smart)
+
+@import "coverage2x/*.png"
+@include all-coverage2x-sprites
+$coverage2x-icons: sprite-map("coverage2x/*.png", $layout: smart)
+
+@import "aboutus/*.png"
+@include all-aboutus-sprites
+$aboutus-icons: sprite-map("aboutus/*.png", $layout: smart)
+
+@import "aboutus2x/*.png"
+@include all-aboutus2x-sprites
+$aboutus2x-icons: sprite-map("aboutus2x/*.png", $layout: smart)
+
+@import "contactus/*.png"
+@include all-contactus-sprites
+$contactus-icons: sprite-map("contactus/*.png", $layout: smart)
+
+@import "contactus2x/*.png"
+@include all-contactus2x-sprites
+$contactus2x-icons: sprite-map("contactus2x/*.png", $layout: smart)
+
+@import "modal/*.png"
+@include all-modal-sprites
+$modal-icons: sprite-map("modal/*.png", $layout: smart)
+
+@import "modal2x/*.png"
+@include all-modal2x-sprites
+$modal2x-icons: sprite-map("modal2x/*.png", $layout: smart)
+
+.iconHolder
+	position: relative
+
+
+.iconStyle
+	display: block
+	margin: 0
+	position: absolute
+	top: 0
+
+.centeredIconStyle
+	@extend .iconStyle
+	left: 50%
+
+.leftIconStyle
+	@extend .iconStyle
+	left: 25px
+	top: 40px

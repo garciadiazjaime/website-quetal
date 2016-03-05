@@ -1,0 +1,451 @@
+/* *************** GENERAL *************** */
+
+@media screen and (max-width: 767px)
+	.smallContainer
+		width: 90%
+
+/* *************** HEADER *************** */
+
+
+/* -------- NAVIGATION --------- */
+@media screen and (max-width: 991px)
+	.navbar-nav
+		li
+			margin: 0 0 0 25px
+
+@media screen and (max-width: 767px)
+
+	header, #header
+		.container
+			padding: 0
+
+	.navbar-toggle
+		margin: 2px 70px 25px 0
+
+	.navbar-nav
+		margin: 0
+		padding: 0
+
+		li
+			display: block
+			margin: 0
+
+		a
+			background: white
+			display: block
+
+			&:hover, &:focus, &:active
+				background: $yellow
+				color: white
+
+		li:last-child //quote button
+			a
+				@include border-radius(0)
+				@include box-shadow(none)
+				font-size: 13px
+				padding: 10px 0 13px
+
+	.navbar-default
+		.navbar-collapse
+			padding: 0
+
+		.navbar-nav > li > a:hover, .navbar-nav > li > a:focus
+			color: white
+
+	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus
+		background: $yellow
+
+	.navbar-default .navbar-nav > li:last-child > a:hover, .navbar-default .navbar-nav > li:last-child > a:focus
+		background: lighten($blue, 10)
+		@include background-image(linear-gradient(to right, lighten(#006df6, 10), lighten(#009ae2, 10)))
+		
+	.navbar-nav > li > a, .navbar-nav > li:last-child > a
+		padding: 18px 0
+
+
+/* *************** FOOTER *************** */
+
+@media screen and (max-width: 767px)
+	footer, #footer
+		.social
+			margin: 30px 0 5px
+			position: static
+
+	#footerNavigation
+		ul
+			padding: 0
+
+		li
+			width: 100%
+
+	#footerNavigation > ul > li:nth-child(3), #footerNavigation > ul > li:last-child
+		width: 100%
+
+/* *************** HOME *************** */
+@media screen and (min-width: 883px)
+	.carousel-indicators
+		margin: 0 0 0 450px
+
+@media screen and (max-width: 991px)
+	#homeCarousel			
+		.item
+
+			&:last-child
+				blockquote
+					margin: 25px auto 30px
+
+		blockquote
+			margin: 200px auto 30px
+
+		p.bigPhrase
+			max-width: 494px
+
+	blockquote
+		span
+			line-height: 1em
+			padding: 5px 15px
+
+	.servicesList-details
+		min-height: 260px
+
+	#servicesList
+		.col-xs-12:nth-child(2)
+			.servicesList-details
+				min-height: 270px
+
+		.col-xs-12:nth-child(3)
+			.servicesList-details
+				min-height: 279px
+
+		.col-xs-12:last-child
+			.servicesList-details
+				min-height: 238px
+
+	#homeServices
+		padding: 0 0 90px
+
+	.otherServices-block
+		h3
+			padding: 80px 0 0
+
+		p
+			padding: 0
+
+		.blueButton	
+			margin: 25px 0 0
+
+	#substituteCar
+		font-size: 35px
+		
+@media screen and (max-width: 767px)
+	#homeCarousel
+		height: 600px			
+		.item
+			min-height: 600px
+	.arrowLink
+		margin: 0 0 0 25px
+
+	#homeServices
+		padding: 0
+
+	#servicesList
+		.arrowLink
+			max-width: 120px
+			text-align: left
+
+
+		.centeredIconStyle
+			left: 0
+			margin-left: 0
+		h3
+			.wrap
+				max-width: 100%
+
+		.blueButton
+			display: inline-block
+			min-width: 200px
+
+		.col-xs-12:first-child, .col-xs-12:nth-child(3)
+			h3
+				.wrap
+					max-width: 100%
+
+		.col-xs-12:first-child
+			.arrowLink
+				margin: 0
+
+		.col-xs-12:nth-child(2), .col-xs-12:nth-child(3), .col-xs-12:last-child
+			.servicesList-details
+				min-height: 1px
+
+		.col-xs-12:last-child
+			border: none
+
+		.col-xs-12
+			border-bottom: 1px dashed #ebebeb
+			margin-bottom: 30px
+			min-height: 1px
+			padding-bottom: 40px
+
+	.servicesList-details, .servicesList-wrap
+		min-height: 1px
+
+	#otherServices
+		.arrowLink
+			max-width: 120px
+			text-align: left
+
+@media screen and (max-width: 500px)
+	.bigPhrase
+		font-size: 35px
+
+	#homeCarousel
+		height: auto
+
+		.item
+			min-height: 670px
+
+			&:first-child
+				padding: 210px 0 0
+
+				.carouselImage
+					top: -210px
+
+			&:nth-child(2)
+				padding: 190px 0 0
+
+				.carouselImage
+					top: -190px
+
+
+		.yellowButton
+			font-size: 19px
+			margin-left: auto
+			margin-right: auto
+			padding: 15px
+			width: 230px
+
+		.item
+			text-align: center
+
+		p
+			max-width: 90%
+
+		.general-logo
+			margin: 0 auto
+
+		blockquote
+			font-size: 15px
+			left: auto
+			margin: 30px auto
+			position: relative
+			top: auto
+
+@media screen and (max-width: 420px)
+	.carousel-indicators
+		margin: 0 0 0 40%
+
+	#substituteCar-ParticipantInsurance
+		text-align: center
+
+/* *************** COVERAGE *************** */
+
+
+@media screen and (max-width: 991px)
+	#benefitsTable
+		h5
+			font-size: 13px
+
+@media screen and (max-width: 767px)
+	#benefitsTable
+
+		h6
+			border-bottom: 1px dashed white
+			display: block
+			padding-bottom: 10px
+
+		.checked
+			margin: 0 auto 10px
+
+		p
+			text-align: center
+
+		.notes
+			text-align: center
+
+		.col-sm-3:first-child, .col-sm-3:nth-child(2)
+			margin-bottom: 10px
+
+		.col-sm-3
+			border: none
+
+		.longRow .col-sm-3, .col-sm-3
+			min-height: 90px
+	
+	#benefitsTable > .row
+		border: none
+
+	#benefitsTable > .row:first-child
+		display: none
+
+	#benefitsTable > .row:nth-child(2)
+		margin-top: 0
+
+	#benefitsTable > .row > .col-sm-5 > p
+		border: 1px solid white
+		border-left: none
+		border-right: none
+		padding: 5px 0
+
+@media screen and (max-width: 350px)
+	#benefitsTable
+		h6
+			min-height: 31px
+
+	#benefitsTable
+		.longRow .col-sm-3, .col-sm-3
+			min-height: 95px
+
+
+/* ****************** ABOUT US ************** */
+
+
+/* ----------- Carousel ----------- */
+@media screen and (max-width: 767px)
+	#aboutusCarousel
+		font-size: 40px
+
+		p
+			margin: 0 auto 10px
+			max-width: 80%
+
+@media screen and (max-width: 420px)
+	#aboutusCarousel
+		.item
+			padding-top: 60px
+
+
+@media screen and (max-width: 340px)
+	#aboutusCarousel
+		font-size: 35px
+		.item
+			padding-top: 30px
+
+
+/* ----------- Why us ----------- */
+@media screen and (max-width: 767px)
+	#insuranceLogoColor
+		display: inline-block
+		margin: 5px 0 0 5px
+		vertical-align: middle
+
+	#whyus
+		.wrap
+			margin: 0 0 20px
+			max-width: 100%
+
+
+		li:first-child
+			.wrap
+				margin: 0 0 20px
+				max-width: 100%
+
+/* *************** CONTACT US *************** */
+
+@media screen and (max-width: 1199px)
+	#helloIntro
+		em
+			font-size: 150px
+
+		.container:after
+			margin: 0 0 0 -490px
+
+	#helloIntro p > span:last-child
+		margin-left: 48%
+
+@media screen and (max-width: 991px)
+	#helloIntro
+		em
+			font-size: 120px
+
+		.container:after
+			margin: 0 0 0 -430px
+
+@media screen and (max-width: 767px)
+	#helloIntro
+		padding: 30px 0 35px
+
+		em
+			font-size: 90px
+
+		.container:after
+			bottom: -175px
+
+	#helloIntro p > span:last-child
+		margin-left: 38%
+
+	#disaster
+		margin-bottom: 40px
+
+				
+@media screen and (max-width: 550px)
+	#helloIntro
+		em
+			line-height: 1em
+			margin: 0 0 10px
+
+@media screen and (max-width: 500px)
+	#helloIntro
+		margin: 0 0 50px
+
+		.container::after
+			margin: 0 0 0 -70px
+			position: static
+
+	#helloIntro p > span:last-child
+		margin-left: 0
+
+
+/* ****************** REUSABLE BLOCKS ************** */
+
+/* ----------- What to do in case of disaster (home) ----------- */
+
+@media screen and (max-width: 767px)
+	#callToAction
+		padding: 0 0 60px
+
+		.col-xs-12:last-child
+			text-align: left
+
+
+/* ----------- Save 20% (coverage, about-us) ----------- */
+
+@media screen and (max-width: 767px)
+	#savingsCallToAction
+
+		.col-xs-12:last-child
+			text-align: left
+
+
+/* ----------- Need help in your shopping? (contact) ----------- */
+
+@media screen and (max-width: 767px)
+	#needHelp	
+		.col-xs-12:last-child
+			text-align: left
+
+/* ----------- Modal ----------- */
+@media screen and (max-width: 699px)
+	.modal-dialog
+		.greenButton, .blueButton
+			padding: 14px 20px 16px
+			position: static
+
+		.greenButton
+			margin: 0 20px 35px 0
+
+		.blueButton
+			margin-top: 0
+
+	.modal-body > div
+		padding-bottom: 0

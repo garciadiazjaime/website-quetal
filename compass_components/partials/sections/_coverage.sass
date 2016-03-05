@@ -1,0 +1,81 @@
+/* ****************** COVERAGE ************** */
+#benefitsTable
+	@extend .blueBackground
+	@extend %roboto-bold
+	font-size: 15px
+	padding: 30px 18px 18px
+
+	h5, h6
+		@extend %roboto-bold
+		font-size: 19px
+		text-align: center
+
+	h5
+		&:hover, &:focus, &:active
+			color: $yellow
+			cursor: pointer
+	
+	h6
+		display: none
+		font-size: 10px
+
+	p
+		margin: 0
+
+	.col-sm-3
+		font-size: 12px
+		text-align: center
+		text-transform: uppercase
+
+	.checked
+		background: sprite($coverage-icons, checkmark)
+		@include sprite-dimensions($coverage-icons, checkmark)
+		@include sprite-at2x($coverage-icons, $coverage2x-icons)
+		display: block
+		line-height: 5000em
+		overflow: hidden
+		margin: 0 auto
+
+	.notes
+		font-size: 12px
+		margin: 20px 0 0
+		text-align: right
+
+	.col-xs-12, .col-xs-6
+		padding-bottom: 6px
+		padding-top: 6px
+
+	.col-sm-3
+		border-left: 1px solid white
+		min-height: 35px
+
+	.col-sm-7	
+		padding-bottom: 0
+		padding-top: 0
+
+#benefitsTable > .row
+	border-top: 1px solid white	
+	margin: 0
+
+#benefitsTable > .row:first-child
+	border: none
+
+	.col-sm-3	
+		border: none
+
+#benefitsTable > .row:nth-child(19)
+	border-bottom: 1px solid white
+
+#benefitsTable
+	.longRow
+		.col-sm-3
+			min-height: 55px
+
+#coverageNotes
+	color: #adadad
+	font-size: 11px
+	line-height: 1.2em
+	margin: 12px 0 50px
+
+	ol
+		padding: 0 0 0 15px
