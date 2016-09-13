@@ -20670,8 +20670,8 @@ var Layout = React.createClass({displayName: "Layout",
 
   render: function() {
     var data = {
-      cotizaLink: 'https://gswas.com.mx/AutosVentaDirecta/cotizacion.xhtml?u=2956&ori=0&neg=2',
-      rcObligatorioLink: 'https://gswas.com.mx/AutosVentaDirecta/rcobligatorio.xhtml?u=2956',
+      cotizaLink: 'https://gswas.com.mx/AutosVentaDirecta/cotizacion.xhtml?u=5144&ori=0&neg=2',
+      rcObligatorioLink: 'https://gswas.com.mx/AutosVentaDirecta/rcobligatorio.xhtml?u=5144',
     };
     return (
         React.createElement("div", null, 

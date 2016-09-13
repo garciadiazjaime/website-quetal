@@ -35,7 +35,10 @@
   },
   "scripts": {
     "start": "node server.js",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "update": "git checkout prod && git pull openshift master",
+    "deploy": "git add . && git commit -am 'update' && git push openshift HEAD:master",
+    "watch": "./node_modules/.bin/gulp watch"
   },
   "browserify": {
     "transform": [
