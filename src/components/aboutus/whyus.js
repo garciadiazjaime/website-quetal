@@ -11,7 +11,7 @@ var Button = rb.Button;
 var WhyUsPanel = React.createClass({
 
     mixins : [ReactRouter.Navigation],
-    
+
     handleClick: function(){
         console.log('handleClick');
         // this.transitionTo('home');
@@ -19,25 +19,29 @@ var WhyUsPanel = React.createClass({
 
     render: function() {
 
-        return ( 
+        return (
             <section id="whyus">
                 <div className="container">
                     <h1>¿Por qué comprar a través de <span className="logo">Quetal™</span>?</h1>
                     <ol className="row">
-                        <li className="col-xs-12 col-sm-4">
+                        <li className="col-xs-12 col-sm-3">
                             <div className="wrap">
-                                Te ofrecemos el seguro de auto más barato
-                                <span className="notes">*En comparación con otros portales de venta de seguros por internet.</span>
+                                QUETAL es agente persona moral autorizado por la CNSF (logo)
                             </div>
                         </li>
-                        <li className="col-xs-12 col-sm-4">
+                        <li className="col-xs-12 col-sm-3">
                             <div className="wrap">
-                                Contamos con el respaldo de <span id="insuranceLogoColor">General de seguros</span>
+                                Contamos con el respaldo de <a href="http://www.generaldeseguros.mx/" target="_blank"><span id="insuranceLogoColor">General de seguros</span></a>
                             </div>
                         </li>
-                        <li className="col-xs-12 col-sm-4">
+                        <li className="col-xs-12 col-sm-3">
                             <div className="wrap">
-                                Por nuestro compromiso y profesionalismo. 
+                                Somos el único Agente autorizado para venta en línea de GS
+                            </div>
+                        </li>
+                        <li className="col-xs-12 col-sm-3">
+                            <div className="wrap">
+                                Porque te otorgamos el máximo descuento autorizado por GS
                             </div>
                         </li>
                     </ol>

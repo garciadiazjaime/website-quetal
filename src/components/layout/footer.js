@@ -15,6 +15,7 @@ var SocialWidget = require('../widgets/social-link-widget');
 var FooterSection = React.createClass({
 
   render: function() {
+    var date = new Date();
     return (
         <div>
             <div className="container">
@@ -33,9 +34,6 @@ var FooterSection = React.createClass({
                                         </li>
                                         <li>
                                             <a onClick={this.handleClick.bind(this, 'amplia')}>Amplia</a>
-                                        </li>
-                                        <li>
-                                            <a onClick={this.handleClick.bind(this, 'prestigio')}>Prestigio</a>
                                         </li>
                                         <li>
                                             <a onClick={this.handleClick.bind(this, 'fronterizo')}>Autos Fronterizos</a>
@@ -65,7 +63,7 @@ var FooterSection = React.createClass({
                     <Col xs={12} sm={5}>
                         <span id="brand-footer">Quetal - Mi seguro de auto</span>
                         <p>Con el respaldo de:</p>
-                        <span className="general-logo">General de seguros</span>
+                        <a href="http://www.generaldeseguros.mx/" target="_blank"><span className="general-logo">General de seguros</span></a>
                         <SocialWidget />
                     </Col>
                 </Row>
@@ -74,7 +72,8 @@ var FooterSection = React.createClass({
                 <div className="container">
                     <Row>
                         <Col xs={12} sm={5}>
-                            <p>Todos los derechos reservados Quetal Seguro de auto   2015 </p>
+                            <p>Todos los derechos reservados Quetal Seguro de auto  {date.getFullYear()}</p>
+                            <p><Link to="privacy" title="Quiénes somos">AVISO DE PRIVACIDAD</Link></p>
                         </Col>
                         <Col xs={12} sm={4}>
                             <p id="credit"><span>Un proyecto de: <a href="http://somospool.com/" title="Visita Branding POOL" target="_blank">POOL</a></span>Código por: <a href="http://mintitmedia.com/" title="Mint IT Media - Diseño y desarrollo web" target="_blank">MINT</a></p>

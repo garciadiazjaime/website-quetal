@@ -14,7 +14,7 @@ var Link = ReactRouter.Link;
 var HomeCarouselPanel = React.createClass({
 
     mixins : [ReactRouter.Navigation],
-    
+
     handleClick: function(){
         console.log('handleClick');
         // this.transitionTo('home');
@@ -24,22 +24,22 @@ var HomeCarouselPanel = React.createClass({
 
         return (
             <section id="homeIntro">
-                <Carousel id="homeCarousel" interval={3000}>
+                <Carousel id="homeCarousel" interval={7000}>
                     <CarouselItem>
                         <div className="container">
                             <Row>
                                 <Col xs={12} sm={6}>
                                     <p className="bigPhrase">
                                         <span>Hola, Quetal</span> un Seguro de auto a tu alcance
-                                    </p> 
+                                    </p>
                                     <Link to="coverage" title="Ver Coberturas" className="yellowButton">Ver Coberturas</Link>
-                                    <span className="general-logo">General de seguros</span>
+                                    <a href="http://www.generaldeseguros.mx/" target="_blank"><span className="general-logo">General de seguros</span></a>
                                 </Col>
                                 <Col xs={12} sm={6}>
                                     <blockquote><span>Justo lo que necesito, </span><span> y al precio </span><span>más barato </span></blockquote>
                                 </Col>
                             </Row>
-                            <span id="manImage"></span>  
+                            <span id="manImage"></span>
                         </div>
                     </CarouselItem>
                     <CarouselItem>
@@ -47,17 +47,16 @@ var HomeCarouselPanel = React.createClass({
                             <Row>
                                 <Col xs={12} sm={7}>
                                     <p className="bigPhrase narrow">
-                                        <span>Ahorra</span> desde un 20% en tu Seguro de Auto
+                                        <span>Ahorra</span> 35% en tu Seguro de Auto
                                     </p>
-                                    <p className="restrictions">*En comparación con otros portales de venta
-de seguros por internet.</p>
+                                    <p className="restrictions">*Máximo descuento que otorga GS.</p>
                                     <Link to="coverage" title="Ver Coberturas" className="yellowButton">Ver Coberturas</Link>
-                                    <span className="general-logo">General de seguros</span>
+                                    <a href="http://www.generaldeseguros.mx/" target="_blank"><span className="general-logo">General de seguros</span></a>
                                 </Col>
                                 <Col xs={12} sm={5}>
                                 </Col>
                             </Row>
-                            <span id="womanImage"></span>  
+                            <span id="womanImage"></span>
                         </div>
                     </CarouselItem>
                     <CarouselItem>
@@ -66,16 +65,33 @@ de seguros por internet.</p>
                                 <Col xs={12} sm={6}>
                                     <p className="bigPhrase">
                                         <span className="inline">¿Quetal</span> si choco?
-                                    </p> 
+                                    </p>
                                     <p>Conoce nuestras Coberturas contra Daños a Terceros y Daños a tu Automóvil.</p>
                                     <Link to="coverage" title="Ver Coberturas" className="yellowButton">Ver Coberturas</Link>
-                                    <span className="general-logo">General de seguros</span>
+                                    <a href="http://www.generaldeseguros.mx/" target="_blank"><span className="general-logo">General de seguros</span></a>
                                 </Col>
                                 <Col xs={12} sm={6}>
                                     <blockquote><span>Mejor lo aseguro </span><span>rápido y fácil con </span><span>una compañía </span><span>de confianza </span></blockquote>
                                 </Col>
                             </Row>
-                            <span id="carImage"></span>  
+                            <span id="carImage"></span>
+                        </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                        <div className="container">
+                            <Row>
+                                <Col xs={12} sm={7}>
+                                    <p className="bigPhrase narrow">
+                                        <span>35% de descuento</span> + 6 meses sin intereses
+                                    </p>
+                                    <p className="restrictions">*con BBVA Bancomer, Banamex y American Express.</p>
+                                    <Link to="coverage" title="Ver Coberturas" className="yellowButton">Ver Coberturas</Link>
+                                    <a href="http://www.generaldeseguros.mx/" target="_blank"><span className="general-logo">General de seguros</span></a>
+                                </Col>
+                                <Col xs={12} sm={5}>
+                                </Col>
+                            </Row>
+                            <span id="womanImage"></span>
                         </div>
                     </CarouselItem>
                 </Carousel>

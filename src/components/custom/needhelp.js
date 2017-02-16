@@ -12,25 +12,25 @@ var Link = ReactRouter.Link;
 var NeedHelp = React.createClass({
 
     mixins : [ReactRouter.Navigation],
-    
+
     handleClick: function(){
         console.log('handleClick');
     },
 
     render: function() {
 
-        return ( 
+        return (
             <section id="needHelp">
                 <div className="container">
                     <Row>
                         <Col xs={12} sm={7}>
-                            <p>¿Necesitas ayuda en tu compra? Llámanos al <a href="tel:6646588993" title="¡Llámanos para cualquier duda!">664 658 8993</a></p>
+                            <p>¿Necesitas ayuda en tu compra? Llámanos al <a href="tel:6649766363" title="¡Llámanos para cualquier duda!">664.976.6363</a></p>
                         </Col>
                         <Col xs={12} sm={5}>
-                            <a href="tel:6646588993" title="¡Llámanos para cualquier duda!" className="greenButton">Llámanos</a>
+                            <a href="tel:6649766363" title="¡Llámanos para cualquier duda!" className="greenButton">Llámanos</a>
                         </Col>
                     </Row>
-                </div> 
+                </div>
             </section>
         );
     }

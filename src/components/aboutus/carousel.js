@@ -14,7 +14,7 @@ var Link = ReactRouter.Link;
 var AboutusCarouselPanel = React.createClass({
 
     mixins : [ReactRouter.Navigation],
-    
+
     handleClick: function(){
         console.log('handleClick');
         // this.transitionTo('home');
@@ -24,7 +24,7 @@ var AboutusCarouselPanel = React.createClass({
 
         return (
             <section id="aboutusIntro">
-                <Carousel id="aboutusCarousel" interval={3000}>
+                <Carousel id="aboutusCarousel" interval={7000}>
                     <CarouselItem>
                         <div className="container">
                             <p>Hay muchas razones por las que NO se <em>comparan</em> con nosotros</p>
@@ -32,12 +32,12 @@ var AboutusCarouselPanel = React.createClass({
                     </CarouselItem>
                     <CarouselItem>
                         <div className="container">
-                            <p>Hay muchas razones por las que NO se <em>comparan</em> con nosotros</p>
-                        </div>  
+                            <p>6 meses sin intereses con BBVA Bancomer, Banamex Y American Express</p>
+                        </div>
                     </CarouselItem>
                     <CarouselItem>
                         <div className="container">
-                            <p>Hay muchas razones por las que NO se <em>comparan</em> con nosotros</p>     
+                            <p>Aceptamos tarjetas visa, Master Card y American Express</p>
                         </div>
                     </CarouselItem>
                 </Carousel>
