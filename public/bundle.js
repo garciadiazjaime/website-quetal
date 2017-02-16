@@ -1,412 +1,4 @@
 require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/object/assign"), __esModule: true };
-},{"core-js/library/fn/object/assign":13}],2:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/object/create"), __esModule: true };
-},{"core-js/library/fn/object/create":14}],3:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/object/keys"), __esModule: true };
-},{"core-js/library/fn/object/keys":15}],4:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/object/set-prototype-of"), __esModule: true };
-},{"core-js/library/fn/object/set-prototype-of":16}],5:[function(require,module,exports){
-"use strict";
-
-exports["default"] = function (instance, Constructor) {
-  if (!(instance instanceof Constructor)) {
-    throw new TypeError("Cannot call a class as a function");
-  }
-};
-
-exports.__esModule = true;
-},{}],6:[function(require,module,exports){
-"use strict";
-
-var _Object$assign = require("babel-runtime/core-js/object/assign")["default"];
-
-exports["default"] = _Object$assign || function (target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = arguments[i];
-
-    for (var key in source) {
-      if (Object.prototype.hasOwnProperty.call(source, key)) {
-        target[key] = source[key];
-      }
-    }
-  }
-
-  return target;
-};
-
-exports.__esModule = true;
-},{"babel-runtime/core-js/object/assign":1}],7:[function(require,module,exports){
-"use strict";
-
-var _Object$create = require("babel-runtime/core-js/object/create")["default"];
-
-var _Object$setPrototypeOf = require("babel-runtime/core-js/object/set-prototype-of")["default"];
-
-exports["default"] = function (subClass, superClass) {
-  if (typeof superClass !== "function" && superClass !== null) {
-    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
-  }
-
-  subClass.prototype = _Object$create(superClass && superClass.prototype, {
-    constructor: {
-      value: subClass,
-      enumerable: false,
-      writable: true,
-      configurable: true
-    }
-  });
-  if (superClass) _Object$setPrototypeOf ? _Object$setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
-};
-
-exports.__esModule = true;
-},{"babel-runtime/core-js/object/create":2,"babel-runtime/core-js/object/set-prototype-of":4}],8:[function(require,module,exports){
-"use strict";
-
-exports["default"] = function (obj) {
-  return obj && obj.__esModule ? obj : {
-    "default": obj
-  };
-};
-
-exports.__esModule = true;
-},{}],9:[function(require,module,exports){
-"use strict";
-
-exports["default"] = function (obj) {
-  if (obj && obj.__esModule) {
-    return obj;
-  } else {
-    var newObj = {};
-
-    if (obj != null) {
-      for (var key in obj) {
-        if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
-      }
-    }
-
-    newObj["default"] = obj;
-    return newObj;
-  }
-};
-
-exports.__esModule = true;
-},{}],10:[function(require,module,exports){
-"use strict";
-
-exports["default"] = function (obj, keys) {
-  var target = {};
-
-  for (var i in obj) {
-    if (keys.indexOf(i) >= 0) continue;
-    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
-    target[i] = obj[i];
-  }
-
-  return target;
-};
-
-exports.__esModule = true;
-},{}],11:[function(require,module,exports){
-var canUseDOM = !!(
-  typeof window !== 'undefined' &&
-  window.document &&
-  window.document.createElement
-);
-
-module.exports = canUseDOM;
-},{}],12:[function(require,module,exports){
-/*!
-  Copyright (c) 2016 Jed Watson.
-  Licensed under the MIT License (MIT), see
-  http://jedwatson.github.io/classnames
-*/
-/* global define */
-
-(function () {
-	'use strict';
-
-	var hasOwn = {}.hasOwnProperty;
-
-	function classNames () {
-		var classes = [];
-
-		for (var i = 0; i < arguments.length; i++) {
-			var arg = arguments[i];
-			if (!arg) continue;
-
-			var argType = typeof arg;
-
-			if (argType === 'string' || argType === 'number') {
-				classes.push(arg);
-			} else if (Array.isArray(arg)) {
-				classes.push(classNames.apply(null, arg));
-			} else if (argType === 'object') {
-				for (var key in arg) {
-					if (hasOwn.call(arg, key) && arg[key]) {
-						classes.push(key);
-					}
-				}
-			}
-		}
-
-		return classes.join(' ');
-	}
-
-	if (typeof module !== 'undefined' && module.exports) {
-		module.exports = classNames;
-	} else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
-		// register as 'classnames', consistent with npm package name
-		define('classnames', [], function () {
-			return classNames;
-		});
-	} else {
-		window.classNames = classNames;
-	}
-}());
-
-},{}],13:[function(require,module,exports){
-require('../../modules/es6.object.assign');
-module.exports = require('../../modules/$.core').Object.assign;
-},{"../../modules/$.core":20,"../../modules/es6.object.assign":33}],14:[function(require,module,exports){
-var $ = require('../../modules/$');
-module.exports = function create(P, D){
-  return $.create(P, D);
-};
-},{"../../modules/$":28}],15:[function(require,module,exports){
-require('../../modules/es6.object.keys');
-module.exports = require('../../modules/$.core').Object.keys;
-},{"../../modules/$.core":20,"../../modules/es6.object.keys":34}],16:[function(require,module,exports){
-require('../../modules/es6.object.set-prototype-of');
-module.exports = require('../../modules/$.core').Object.setPrototypeOf;
-},{"../../modules/$.core":20,"../../modules/es6.object.set-prototype-of":35}],17:[function(require,module,exports){
-module.exports = function(it){
-  if(typeof it != 'function')throw TypeError(it + ' is not a function!');
-  return it;
-};
-},{}],18:[function(require,module,exports){
-var isObject = require('./$.is-object');
-module.exports = function(it){
-  if(!isObject(it))throw TypeError(it + ' is not an object!');
-  return it;
-};
-},{"./$.is-object":27}],19:[function(require,module,exports){
-var toString = {}.toString;
-
-module.exports = function(it){
-  return toString.call(it).slice(8, -1);
-};
-},{}],20:[function(require,module,exports){
-var core = module.exports = {version: '1.2.6'};
-if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
-},{}],21:[function(require,module,exports){
-// optional / simple context binding
-var aFunction = require('./$.a-function');
-module.exports = function(fn, that, length){
-  aFunction(fn);
-  if(that === undefined)return fn;
-  switch(length){
-    case 1: return function(a){
-      return fn.call(that, a);
-    };
-    case 2: return function(a, b){
-      return fn.call(that, a, b);
-    };
-    case 3: return function(a, b, c){
-      return fn.call(that, a, b, c);
-    };
-  }
-  return function(/* ...args */){
-    return fn.apply(that, arguments);
-  };
-};
-},{"./$.a-function":17}],22:[function(require,module,exports){
-// 7.2.1 RequireObjectCoercible(argument)
-module.exports = function(it){
-  if(it == undefined)throw TypeError("Can't call method on  " + it);
-  return it;
-};
-},{}],23:[function(require,module,exports){
-var global    = require('./$.global')
-  , core      = require('./$.core')
-  , ctx       = require('./$.ctx')
-  , PROTOTYPE = 'prototype';
-
-var $export = function(type, name, source){
-  var IS_FORCED = type & $export.F
-    , IS_GLOBAL = type & $export.G
-    , IS_STATIC = type & $export.S
-    , IS_PROTO  = type & $export.P
-    , IS_BIND   = type & $export.B
-    , IS_WRAP   = type & $export.W
-    , exports   = IS_GLOBAL ? core : core[name] || (core[name] = {})
-    , target    = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE]
-    , key, own, out;
-  if(IS_GLOBAL)source = name;
-  for(key in source){
-    // contains in native
-    own = !IS_FORCED && target && key in target;
-    if(own && key in exports)continue;
-    // export native or passed
-    out = own ? target[key] : source[key];
-    // prevent global pollution for namespaces
-    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
-    // bind timers to global for call from export context
-    : IS_BIND && own ? ctx(out, global)
-    // wrap global constructors for prevent change them in library
-    : IS_WRAP && target[key] == out ? (function(C){
-      var F = function(param){
-        return this instanceof C ? new C(param) : C(param);
-      };
-      F[PROTOTYPE] = C[PROTOTYPE];
-      return F;
-    // make static versions for prototype methods
-    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
-    if(IS_PROTO)(exports[PROTOTYPE] || (exports[PROTOTYPE] = {}))[key] = out;
-  }
-};
-// type bitmap
-$export.F = 1;  // forced
-$export.G = 2;  // global
-$export.S = 4;  // static
-$export.P = 8;  // proto
-$export.B = 16; // bind
-$export.W = 32; // wrap
-module.exports = $export;
-},{"./$.core":20,"./$.ctx":21,"./$.global":25}],24:[function(require,module,exports){
-module.exports = function(exec){
-  try {
-    return !!exec();
-  } catch(e){
-    return true;
-  }
-};
-},{}],25:[function(require,module,exports){
-// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
-var global = module.exports = typeof window != 'undefined' && window.Math == Math
-  ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
-if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
-},{}],26:[function(require,module,exports){
-// fallback for non-array-like ES3 and non-enumerable old V8 strings
-var cof = require('./$.cof');
-module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
-  return cof(it) == 'String' ? it.split('') : Object(it);
-};
-},{"./$.cof":19}],27:[function(require,module,exports){
-module.exports = function(it){
-  return typeof it === 'object' ? it !== null : typeof it === 'function';
-};
-},{}],28:[function(require,module,exports){
-var $Object = Object;
-module.exports = {
-  create:     $Object.create,
-  getProto:   $Object.getPrototypeOf,
-  isEnum:     {}.propertyIsEnumerable,
-  getDesc:    $Object.getOwnPropertyDescriptor,
-  setDesc:    $Object.defineProperty,
-  setDescs:   $Object.defineProperties,
-  getKeys:    $Object.keys,
-  getNames:   $Object.getOwnPropertyNames,
-  getSymbols: $Object.getOwnPropertySymbols,
-  each:       [].forEach
-};
-},{}],29:[function(require,module,exports){
-// 19.1.2.1 Object.assign(target, source, ...)
-var $        = require('./$')
-  , toObject = require('./$.to-object')
-  , IObject  = require('./$.iobject');
-
-// should work with symbols and should have deterministic property order (V8 bug)
-module.exports = require('./$.fails')(function(){
-  var a = Object.assign
-    , A = {}
-    , B = {}
-    , S = Symbol()
-    , K = 'abcdefghijklmnopqrst';
-  A[S] = 7;
-  K.split('').forEach(function(k){ B[k] = k; });
-  return a({}, A)[S] != 7 || Object.keys(a({}, B)).join('') != K;
-}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
-  var T     = toObject(target)
-    , $$    = arguments
-    , $$len = $$.length
-    , index = 1
-    , getKeys    = $.getKeys
-    , getSymbols = $.getSymbols
-    , isEnum     = $.isEnum;
-  while($$len > index){
-    var S      = IObject($$[index++])
-      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
-      , length = keys.length
-      , j      = 0
-      , key;
-    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
-  }
-  return T;
-} : Object.assign;
-},{"./$":28,"./$.fails":24,"./$.iobject":26,"./$.to-object":32}],30:[function(require,module,exports){
-// most Object methods by ES6 should accept primitives
-var $export = require('./$.export')
-  , core    = require('./$.core')
-  , fails   = require('./$.fails');
-module.exports = function(KEY, exec){
-  var fn  = (core.Object || {})[KEY] || Object[KEY]
-    , exp = {};
-  exp[KEY] = exec(fn);
-  $export($export.S + $export.F * fails(function(){ fn(1); }), 'Object', exp);
-};
-},{"./$.core":20,"./$.export":23,"./$.fails":24}],31:[function(require,module,exports){
-// Works with __proto__ only. Old v8 can't work with null proto objects.
-/* eslint-disable no-proto */
-var getDesc  = require('./$').getDesc
-  , isObject = require('./$.is-object')
-  , anObject = require('./$.an-object');
-var check = function(O, proto){
-  anObject(O);
-  if(!isObject(proto) && proto !== null)throw TypeError(proto + ": can't set as prototype!");
-};
-module.exports = {
-  set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
-    function(test, buggy, set){
-      try {
-        set = require('./$.ctx')(Function.call, getDesc(Object.prototype, '__proto__').set, 2);
-        set(test, []);
-        buggy = !(test instanceof Array);
-      } catch(e){ buggy = true; }
-      return function setPrototypeOf(O, proto){
-        check(O, proto);
-        if(buggy)O.__proto__ = proto;
-        else set(O, proto);
-        return O;
-      };
-    }({}, false) : undefined),
-  check: check
-};
-},{"./$":28,"./$.an-object":18,"./$.ctx":21,"./$.is-object":27}],32:[function(require,module,exports){
-// 7.1.13 ToObject(argument)
-var defined = require('./$.defined');
-module.exports = function(it){
-  return Object(defined(it));
-};
-},{"./$.defined":22}],33:[function(require,module,exports){
-// 19.1.3.1 Object.assign(target, source)
-var $export = require('./$.export');
-
-$export($export.S + $export.F, 'Object', {assign: require('./$.object-assign')});
-},{"./$.export":23,"./$.object-assign":29}],34:[function(require,module,exports){
-// 19.1.2.14 Object.keys(O)
-var toObject = require('./$.to-object');
-
-require('./$.object-sap')('keys', function($keys){
-  return function keys(it){
-    return $keys(toObject(it));
-  };
-});
-},{"./$.object-sap":30,"./$.to-object":32}],35:[function(require,module,exports){
-// 19.1.3.19 Object.setPrototypeOf(O, proto)
-var $export = require('./$.export');
-$export($export.S, 'Object', {setPrototypeOf: require('./$.set-proto').set});
-},{"./$.export":23,"./$.set-proto":31}],36:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -709,59 +301,95 @@ function isUndefined(arg) {
   return arg === void 0;
 }
 
-},{}],37:[function(require,module,exports){
-(function (process){
-/**
- * Copyright 2013-2015, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule invariant
- */
+},{}],2:[function(require,module,exports){
+// shim for using process in browser
 
-"use strict";
+var process = module.exports = {};
 
-/**
- * Use invariant() to assert state which your program assumes to be true.
- *
- * Provide sprintf-style format (only %s is supported) and arguments
- * to provide information about what broke and what you were
- * expecting.
- *
- * The invariant message will be stripped in production, but the invariant
- * will remain to ensure logic does not differ in production.
- */
+process.nextTick = (function () {
+    var canSetImmediate = typeof window !== 'undefined'
+    && window.setImmediate;
+    var canMutationObserver = typeof window !== 'undefined'
+    && window.MutationObserver;
+    var canPost = typeof window !== 'undefined'
+    && window.postMessage && window.addEventListener
+    ;
 
-var invariant = function (condition, format, a, b, c, d, e, f) {
-  if (process.env.NODE_ENV !== 'production') {
-    if (format === undefined) {
-      throw new Error('invariant requires an error message argument');
-    }
-  }
-
-  if (!condition) {
-    var error;
-    if (format === undefined) {
-      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
-    } else {
-      var args = [a, b, c, d, e, f];
-      var argIndex = 0;
-      error = new Error('Invariant Violation: ' + format.replace(/%s/g, function () {
-        return args[argIndex++];
-      }));
+    if (canSetImmediate) {
+        return function (f) { return window.setImmediate(f) };
     }
 
-    error.framesToPop = 1; // we don't care about invariant's own frame
-    throw error;
-  }
+    var queue = [];
+
+    if (canMutationObserver) {
+        var hiddenDiv = document.createElement("div");
+        var observer = new MutationObserver(function () {
+            var queueList = queue.slice();
+            queue.length = 0;
+            queueList.forEach(function (fn) {
+                fn();
+            });
+        });
+
+        observer.observe(hiddenDiv, { attributes: true });
+
+        return function nextTick(fn) {
+            if (!queue.length) {
+                hiddenDiv.setAttribute('yes', 'no');
+            }
+            queue.push(fn);
+        };
+    }
+
+    if (canPost) {
+        window.addEventListener('message', function (ev) {
+            var source = ev.source;
+            if ((source === window || source === null) && ev.data === 'process-tick') {
+                ev.stopPropagation();
+                if (queue.length > 0) {
+                    var fn = queue.shift();
+                    fn();
+                }
+            }
+        }, true);
+
+        return function nextTick(fn) {
+            queue.push(fn);
+            window.postMessage('process-tick', '*');
+        };
+    }
+
+    return function nextTick(fn) {
+        setTimeout(fn, 0);
+    };
+})();
+
+process.title = 'browser';
+process.browser = true;
+process.env = {};
+process.argv = [];
+
+function noop() {}
+
+process.on = noop;
+process.addListener = noop;
+process.once = noop;
+process.off = noop;
+process.removeListener = noop;
+process.removeAllListeners = noop;
+process.emit = noop;
+
+process.binding = function (name) {
+    throw new Error('process.binding is not supported');
 };
 
-module.exports = invariant;
-}).call(this,require('_process'))
-},{"_process":43}],38:[function(require,module,exports){
+// TODO(shtylman)
+process.cwd = function () { return '/' };
+process.chdir = function (dir) {
+    throw new Error('process.chdir is not supported');
+};
+
+},{}],3:[function(require,module,exports){
 /**
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -773,7 +401,7 @@ module.exports = invariant;
 
 module.exports.Dispatcher = require('./lib/Dispatcher');
 
-},{"./lib/Dispatcher":39}],39:[function(require,module,exports){
+},{"./lib/Dispatcher":4}],4:[function(require,module,exports){
 (function (process){
 /**
  * Copyright (c) 2014-2015, Facebook, Inc.
@@ -1007,7 +635,7 @@ var Dispatcher = (function () {
 
 module.exports = Dispatcher;
 }).call(this,require('_process'))
-},{"_process":43,"fbjs/lib/invariant":37}],40:[function(require,module,exports){
+},{"_process":2,"fbjs/lib/invariant":5}],5:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2013-2015, Facebook, Inc.
@@ -1016,9 +644,11 @@ module.exports = Dispatcher;
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
+ *
+ * @providesModule invariant
  */
 
-'use strict';
+"use strict";
 
 /**
  * Use invariant() to assert state which your program assumes to be true.
@@ -1031,7 +661,7 @@ module.exports = Dispatcher;
  * will remain to ensure logic does not differ in production.
  */
 
-var invariant = function(condition, format, a, b, c, d, e, f) {
+var invariant = function (condition, format, a, b, c, d, e, f) {
   if (process.env.NODE_ENV !== 'production') {
     if (format === undefined) {
       throw new Error('invariant requires an error message argument');
@@ -1041,17 +671,13 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
   if (!condition) {
     var error;
     if (format === undefined) {
-      error = new Error(
-        'Minified exception occurred; use the non-minified dev environment ' +
-        'for the full error message and additional helpful warnings.'
-      );
+      error = new Error('Minified exception occurred; use the non-minified dev environment ' + 'for the full error message and additional helpful warnings.');
     } else {
       var args = [a, b, c, d, e, f];
       var argIndex = 0;
-      error = new Error(
-        format.replace(/%s/g, function() { return args[argIndex++]; })
-      );
-      error.name = 'Invariant Violation';
+      error = new Error('Invariant Violation: ' + format.replace(/%s/g, function () {
+        return args[argIndex++];
+      }));
     }
 
     error.framesToPop = 1; // we don't care about invariant's own frame
@@ -1060,9 +686,8 @@ var invariant = function(condition, format, a, b, c, d, e, f) {
 };
 
 module.exports = invariant;
-
 }).call(this,require('_process'))
-},{"_process":43}],41:[function(require,module,exports){
+},{"_process":2}],6:[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -1117,7 +742,7 @@ var keyMirror = function(obj) {
 
 module.exports = keyMirror;
 
-},{}],42:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 var propIsEnumerable = Object.prototype.propertyIsEnumerable;
 
@@ -1158,95 +783,7 @@ module.exports = Object.assign || function (target, source) {
 	return to;
 };
 
-},{}],43:[function(require,module,exports){
-// shim for using process in browser
-
-var process = module.exports = {};
-
-process.nextTick = (function () {
-    var canSetImmediate = typeof window !== 'undefined'
-    && window.setImmediate;
-    var canMutationObserver = typeof window !== 'undefined'
-    && window.MutationObserver;
-    var canPost = typeof window !== 'undefined'
-    && window.postMessage && window.addEventListener
-    ;
-
-    if (canSetImmediate) {
-        return function (f) { return window.setImmediate(f) };
-    }
-
-    var queue = [];
-
-    if (canMutationObserver) {
-        var hiddenDiv = document.createElement("div");
-        var observer = new MutationObserver(function () {
-            var queueList = queue.slice();
-            queue.length = 0;
-            queueList.forEach(function (fn) {
-                fn();
-            });
-        });
-
-        observer.observe(hiddenDiv, { attributes: true });
-
-        return function nextTick(fn) {
-            if (!queue.length) {
-                hiddenDiv.setAttribute('yes', 'no');
-            }
-            queue.push(fn);
-        };
-    }
-
-    if (canPost) {
-        window.addEventListener('message', function (ev) {
-            var source = ev.source;
-            if ((source === window || source === null) && ev.data === 'process-tick') {
-                ev.stopPropagation();
-                if (queue.length > 0) {
-                    var fn = queue.shift();
-                    fn();
-                }
-            }
-        }, true);
-
-        return function nextTick(fn) {
-            queue.push(fn);
-            window.postMessage('process-tick', '*');
-        };
-    }
-
-    return function nextTick(fn) {
-        setTimeout(fn, 0);
-    };
-})();
-
-process.title = 'browser';
-process.browser = true;
-process.env = {};
-process.argv = [];
-
-function noop() {}
-
-process.on = noop;
-process.addListener = noop;
-process.once = noop;
-process.off = noop;
-process.removeListener = noop;
-process.removeAllListeners = noop;
-process.emit = noop;
-
-process.binding = function (name) {
-    throw new Error('process.binding is not supported');
-};
-
-// TODO(shtylman)
-process.cwd = function () { return '/' };
-process.chdir = function (dir) {
-    throw new Error('process.chdir is not supported');
-};
-
-},{}],44:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -1277,7 +814,7 @@ var Accordion = _react2['default'].createClass({
 
 exports['default'] = Accordion;
 module.exports = exports['default'];
-},{"./PanelGroup":95,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8}],45:[function(require,module,exports){
+},{"./PanelGroup":59,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97}],9:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -1326,7 +863,7 @@ var Affix = _react2['default'].createClass({
 
 exports['default'] = Affix;
 module.exports = exports['default'];
-},{"./AffixMixin":46,"./utils/domUtils":123,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],46:[function(require,module,exports){
+},{"./AffixMixin":10,"./utils/domUtils":87,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],10:[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -1471,7 +1008,7 @@ var AffixMixin = {
 
 exports['default'] = AffixMixin;
 module.exports = exports['default'];
-},{"./utils/EventListener":115,"./utils/domUtils":123,"babel-runtime/helpers/interop-require-default":8}],47:[function(require,module,exports){
+},{"./utils/EventListener":79,"./utils/domUtils":87,"babel-runtime/helpers/interop-require-default":97}],11:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -1554,7 +1091,7 @@ var Alert = _react2['default'].createClass({
 
 exports['default'] = Alert;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],48:[function(require,module,exports){
+},{"./BootstrapMixin":13,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],12:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -1602,7 +1139,7 @@ var Badge = _react2['default'].createClass({
 
 exports['default'] = Badge;
 module.exports = exports['default'];
-},{"./utils/ValidComponentChildren":117,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],49:[function(require,module,exports){
+},{"./utils/ValidComponentChildren":81,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],13:[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -1666,7 +1203,7 @@ var BootstrapMixin = {
 
 exports['default'] = BootstrapMixin;
 module.exports = exports['default'];
-},{"./styleMaps":113,"./utils/CustomPropTypes":114,"babel-runtime/helpers/interop-require-default":8}],50:[function(require,module,exports){
+},{"./styleMaps":77,"./utils/CustomPropTypes":78,"babel-runtime/helpers/interop-require-default":97}],14:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -1787,7 +1324,7 @@ var Button = _react2['default'].createClass({
 
 exports['default'] = Button;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./ButtonInput":52,"./utils/CustomPropTypes":114,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],51:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./ButtonInput":16,"./utils/CustomPropTypes":78,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],15:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -1855,7 +1392,7 @@ var ButtonGroup = _react2['default'].createClass({
 
 exports['default'] = ButtonGroup;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./utils/CustomPropTypes":114,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],52:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./utils/CustomPropTypes":78,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],16:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -1945,7 +1482,7 @@ ButtonInput.propTypes = {
 
 exports['default'] = ButtonInput;
 module.exports = exports['default'];
-},{"./Button":50,"./FormGroup":67,"./InputBase":71,"./utils/childrenValueInputValidation":118,"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8,"babel-runtime/helpers/object-without-properties":10}],53:[function(require,module,exports){
+},{"./Button":14,"./FormGroup":31,"./InputBase":35,"./utils/childrenValueInputValidation":82,"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97,"babel-runtime/helpers/object-without-properties":99}],17:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -1992,7 +1529,7 @@ var ButtonToolbar = _react2['default'].createClass({
 
 exports['default'] = ButtonToolbar;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],54:[function(require,module,exports){
+},{"./BootstrapMixin":13,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],18:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -2292,7 +1829,7 @@ var Carousel = _react2['default'].createClass({
 
 exports['default'] = Carousel;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./Glyphicon":68,"./utils/ValidComponentChildren":117,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],55:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./Glyphicon":32,"./utils/ValidComponentChildren":81,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],19:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -2403,7 +1940,7 @@ var CarouselItem = _react2['default'].createClass({
 
 exports['default'] = CarouselItem;
 module.exports = exports['default'];
-},{"./utils/TransitionEvents":116,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],56:[function(require,module,exports){
+},{"./utils/TransitionEvents":80,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],20:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -2616,7 +2153,7 @@ var Col = _react2['default'].createClass({
 
 exports['default'] = Col;
 module.exports = exports['default'];
-},{"./styleMaps":113,"./utils/CustomPropTypes":114,"babel-runtime/core-js/object/keys":3,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],57:[function(require,module,exports){
+},{"./styleMaps":77,"./utils/CustomPropTypes":78,"babel-runtime/core-js/object/keys":92,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],21:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -2847,7 +2384,7 @@ Collapse.defaultProps = {
 
 exports['default'] = Collapse;
 module.exports = exports['default'];
-},{"./Transition":110,"./utils/createChainedFunction":119,"./utils/domUtils":123,"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8}],58:[function(require,module,exports){
+},{"./Transition":74,"./utils/createChainedFunction":83,"./utils/domUtils":87,"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97}],22:[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -3038,7 +2575,7 @@ var CollapsibleMixin = {
 
 exports['default'] = CollapsibleMixin;
 module.exports = exports['default'];
-},{"./utils/TransitionEvents":116,"./utils/deprecationWarning":122,"babel-runtime/helpers/interop-require-default":8}],59:[function(require,module,exports){
+},{"./utils/TransitionEvents":80,"./utils/deprecationWarning":86,"babel-runtime/helpers/interop-require-default":97}],23:[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -3152,7 +2689,7 @@ var CollapsibleNav = _react2['default'].createClass({
 
 exports['default'] = CollapsibleNav;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./Collapse":57,"./utils/ValidComponentChildren":117,"./utils/createChainedFunction":119,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],60:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./Collapse":21,"./utils/ValidComponentChildren":81,"./utils/createChainedFunction":83,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],24:[function(require,module,exports){
 /* eslint react/prop-types: [2, {ignore: "bsSize"}] */
 /* BootstrapMixin contains `bsSize` type validation */
 
@@ -3310,7 +2847,7 @@ var DropdownButton = _react2['default'].createClass({
 
 exports['default'] = DropdownButton;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./Button":50,"./ButtonGroup":51,"./DropdownMenu":61,"./DropdownStateMixin":62,"./utils/ValidComponentChildren":117,"./utils/createChainedFunction":119,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],61:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./Button":14,"./ButtonGroup":15,"./DropdownMenu":25,"./DropdownStateMixin":26,"./utils/ValidComponentChildren":81,"./utils/createChainedFunction":83,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],25:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -3371,7 +2908,7 @@ var DropdownMenu = _react2['default'].createClass({
 
 exports['default'] = DropdownMenu;
 module.exports = exports['default'];
-},{"./utils/ValidComponentChildren":117,"./utils/createChainedFunction":119,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],62:[function(require,module,exports){
+},{"./utils/ValidComponentChildren":81,"./utils/createChainedFunction":83,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],26:[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -3471,7 +3008,7 @@ var DropdownStateMixin = {
 
 exports['default'] = DropdownStateMixin;
 module.exports = exports['default'];
-},{"./utils/EventListener":115,"./utils/domUtils":123,"babel-runtime/helpers/interop-require-default":8}],63:[function(require,module,exports){
+},{"./utils/EventListener":79,"./utils/domUtils":87,"babel-runtime/helpers/interop-require-default":97}],27:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -3580,7 +3117,7 @@ Fade.defaultProps = {
 
 exports['default'] = Fade;
 module.exports = exports['default'];
-},{"./Transition":110,"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8}],64:[function(require,module,exports){
+},{"./Transition":74,"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97}],28:[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -3680,7 +3217,7 @@ exports['default'] = {
   }
 };
 module.exports = exports['default'];
-},{"./utils/deprecationWarning":122,"./utils/domUtils":123,"babel-runtime/helpers/interop-require-default":8}],65:[function(require,module,exports){
+},{"./utils/deprecationWarning":86,"./utils/domUtils":87,"babel-runtime/helpers/interop-require-default":97}],29:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -3744,7 +3281,7 @@ Static.propTypes = {
 
 exports['default'] = Static;
 module.exports = exports['default'];
-},{"../InputBase":71,"../utils/childrenValueInputValidation":118,"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],66:[function(require,module,exports){
+},{"../InputBase":35,"../utils/childrenValueInputValidation":82,"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],30:[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -3756,7 +3293,7 @@ var _Static2 = require('./Static');
 var _Static3 = _interopRequireDefault(_Static2);
 
 exports.Static = _Static3['default'];
-},{"./Static":65,"babel-runtime/helpers/interop-require-default":8}],67:[function(require,module,exports){
+},{"./Static":29,"babel-runtime/helpers/interop-require-default":97}],31:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -3825,7 +3362,7 @@ FormGroup.propTypes = {
 
 exports['default'] = FormGroup;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],68:[function(require,module,exports){
+},{"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],32:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -3880,7 +3417,7 @@ var Glyphicon = _react2['default'].createClass({
 
 exports['default'] = Glyphicon;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./styleMaps":113,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],69:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./styleMaps":77,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],33:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -3938,7 +3475,7 @@ var Grid = _react2['default'].createClass({
 
 exports['default'] = Grid;
 module.exports = exports['default'];
-},{"./utils/CustomPropTypes":114,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],70:[function(require,module,exports){
+},{"./utils/CustomPropTypes":78,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],34:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -3994,7 +3531,7 @@ Input.propTypes = {
 
 exports['default'] = Input;
 module.exports = exports['default'];
-},{"./FormControls":66,"./InputBase":71,"./utils/deprecationWarning":122,"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8,"babel-runtime/helpers/interop-require-wildcard":9}],71:[function(require,module,exports){
+},{"./FormControls":30,"./InputBase":35,"./utils/deprecationWarning":86,"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97,"babel-runtime/helpers/interop-require-wildcard":98}],35:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -4238,7 +3775,7 @@ InputBase.propTypes = {
 
 exports['default'] = InputBase;
 module.exports = exports['default'];
-},{"./FormGroup":67,"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],72:[function(require,module,exports){
+},{"./FormGroup":31,"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],36:[function(require,module,exports){
 // https://www.npmjs.org/package/react-interpolate-component
 // TODO: Drop this in favor of es6 string interpolation
 
@@ -4334,7 +3871,7 @@ var Interpolate = _react2['default'].createClass({
 
 exports['default'] = Interpolate;
 module.exports = exports['default'];
-},{"./utils/ValidComponentChildren":117,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8}],73:[function(require,module,exports){
+},{"./utils/ValidComponentChildren":81,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97}],37:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -4382,7 +3919,7 @@ var Jumbotron = _react2['default'].createClass({
 
 exports['default'] = Jumbotron;
 module.exports = exports['default'];
-},{"./utils/CustomPropTypes":114,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],74:[function(require,module,exports){
+},{"./utils/CustomPropTypes":78,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],38:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -4428,7 +3965,7 @@ var Label = _react2['default'].createClass({
 
 exports['default'] = Label;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],75:[function(require,module,exports){
+},{"./BootstrapMixin":13,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],39:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -4524,7 +4061,7 @@ ListGroup.propTypes = {
 
 exports['default'] = ListGroup;
 module.exports = exports['default'];
-},{"./utils/ValidComponentChildren":117,"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],76:[function(require,module,exports){
+},{"./utils/ValidComponentChildren":81,"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],40:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -4641,7 +4178,7 @@ var ListGroupItem = _react2['default'].createClass({
 
 exports['default'] = ListGroupItem;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./SafeAnchor":102,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],77:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./SafeAnchor":66,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],41:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -4728,7 +4265,7 @@ var MenuItem = _react2['default'].createClass({
 
 exports['default'] = MenuItem;
 module.exports = exports['default'];
-},{"./SafeAnchor":102,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],78:[function(require,module,exports){
+},{"./SafeAnchor":66,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],42:[function(require,module,exports){
 /*eslint-disable react/prop-types */
 'use strict';
 
@@ -5218,7 +4755,7 @@ Modal.BACKDROP_TRANSITION_DURATION = 150;
 
 exports['default'] = Modal;
 module.exports = exports['default'];
-},{"./Fade":63,"./ModalBody":79,"./ModalDialog":80,"./ModalFooter":81,"./ModalHeader":82,"./ModalTitle":83,"./Portal":97,"./utils/EventListener":115,"./utils/createChainedFunction":119,"./utils/domUtils":123,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"babel-runtime/helpers/object-without-properties":10,"classnames":12}],79:[function(require,module,exports){
+},{"./Fade":27,"./ModalBody":43,"./ModalDialog":44,"./ModalFooter":45,"./ModalHeader":46,"./ModalTitle":47,"./Portal":61,"./utils/EventListener":79,"./utils/createChainedFunction":83,"./utils/domUtils":87,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"babel-runtime/helpers/object-without-properties":99,"classnames":123}],43:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -5272,7 +4809,7 @@ ModalBody.defaultProps = {
 
 exports['default'] = ModalBody;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],80:[function(require,module,exports){
+},{"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],44:[function(require,module,exports){
 /*eslint-disable react/prop-types */
 'use strict';
 
@@ -5354,7 +4891,7 @@ var ModalDialog = _react2['default'].createClass({
 
 exports['default'] = ModalDialog;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],81:[function(require,module,exports){
+},{"./BootstrapMixin":13,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],45:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -5408,7 +4945,7 @@ ModalFooter.defaultProps = {
 
 exports['default'] = ModalFooter;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],82:[function(require,module,exports){
+},{"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],46:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -5497,7 +5034,7 @@ ModalHeader.defaultProps = {
 
 exports['default'] = ModalHeader;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],83:[function(require,module,exports){
+},{"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],47:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -5551,7 +5088,7 @@ ModalTitle.defaultProps = {
 
 exports['default'] = ModalTitle;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],84:[function(require,module,exports){
+},{"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],48:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -5699,7 +5236,7 @@ var Nav = _react2['default'].createClass({
 
 exports['default'] = Nav;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./Collapse":57,"./utils/ValidComponentChildren":117,"./utils/createChainedFunction":119,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],85:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./Collapse":21,"./utils/ValidComponentChildren":81,"./utils/createChainedFunction":83,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],49:[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -5799,7 +5336,7 @@ var NavItem = _react2['default'].createClass({
 
 exports['default'] = NavItem;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./SafeAnchor":102,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"babel-runtime/helpers/object-without-properties":10,"classnames":12}],86:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./SafeAnchor":66,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"babel-runtime/helpers/object-without-properties":99,"classnames":123}],50:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -5974,7 +5511,7 @@ var Navbar = _react2['default'].createClass({
 
 exports['default'] = Navbar;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./utils/CustomPropTypes":114,"./utils/ValidComponentChildren":117,"./utils/createChainedFunction":119,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],87:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./utils/CustomPropTypes":78,"./utils/ValidComponentChildren":81,"./utils/createChainedFunction":83,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],51:[function(require,module,exports){
 /* eslint react/prop-types: [2, {ignore: ["container", "containerPadding", "target", "placement", "children"] }] */
 /* These properties are validated in 'Portal' and 'Position' components */
 
@@ -6188,7 +5725,7 @@ Overlay.defaultProps = {
 
 exports['default'] = Overlay;
 module.exports = exports['default'];
-},{"./Fade":63,"./Portal":97,"./Position":98,"./RootCloseWrapper":100,"./utils/CustomPropTypes":114,"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8,"babel-runtime/helpers/object-without-properties":10,"classnames":12}],88:[function(require,module,exports){
+},{"./Fade":27,"./Portal":61,"./Position":62,"./RootCloseWrapper":64,"./utils/CustomPropTypes":78,"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97,"babel-runtime/helpers/object-without-properties":99,"classnames":123}],52:[function(require,module,exports){
 /*eslint-disable react/prop-types */
 'use strict';
 
@@ -6482,7 +6019,7 @@ OverlayTrigger.withContext = _utilsCreateContextWrapper2['default'](OverlayTrigg
 
 exports['default'] = OverlayTrigger;
 module.exports = exports['default'];
-},{"./Overlay":87,"./utils/createChainedFunction":119,"./utils/createContextWrapper":120,"babel-runtime/core-js/object/keys":3,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"lodash/object/pick":149,"react/lib/warning":193}],89:[function(require,module,exports){
+},{"./Overlay":51,"./utils/createChainedFunction":83,"./utils/createContextWrapper":84,"babel-runtime/core-js/object/keys":92,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"lodash/object/pick":147,"react/lib/warning":192}],53:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -6517,7 +6054,7 @@ var PageHeader = _react2['default'].createClass({
 
 exports['default'] = PageHeader;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],90:[function(require,module,exports){
+},{"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],54:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -6588,7 +6125,7 @@ var PageItem = _react2['default'].createClass({
 
 exports['default'] = PageItem;
 module.exports = exports['default'];
-},{"./SafeAnchor":102,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],91:[function(require,module,exports){
+},{"./SafeAnchor":66,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],55:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -6639,7 +6176,7 @@ var Pager = _react2['default'].createClass({
 
 exports['default'] = Pager;
 module.exports = exports['default'];
-},{"./utils/ValidComponentChildren":117,"./utils/createChainedFunction":119,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],92:[function(require,module,exports){
+},{"./utils/ValidComponentChildren":81,"./utils/createChainedFunction":83,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],56:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -6871,7 +6408,7 @@ var Pagination = _react2['default'].createClass({
 
 exports['default'] = Pagination;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./PaginationButton":93,"./SafeAnchor":102,"./utils/CustomPropTypes":114,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],93:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./PaginationButton":57,"./SafeAnchor":66,"./utils/CustomPropTypes":78,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],57:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -6957,7 +6494,7 @@ var PaginationButton = _react2['default'].createClass({
 
 exports['default'] = PaginationButton;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./utils/CustomPropTypes":114,"./utils/createSelectedEvent":121,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"babel-runtime/helpers/object-without-properties":10,"classnames":12}],94:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./utils/CustomPropTypes":78,"./utils/createSelectedEvent":85,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"babel-runtime/helpers/object-without-properties":99,"classnames":123}],58:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -7191,7 +6728,7 @@ var Panel = _react2['default'].createClass({
 
 exports['default'] = Panel;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./Collapse":57,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],95:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./Collapse":21,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],59:[function(require,module,exports){
 /* eslint react/prop-types: [2, {ignore: "bsStyle"}] */
 /* BootstrapMixin contains `bsStyle` type validation */
 
@@ -7300,7 +6837,7 @@ var PanelGroup = _react2['default'].createClass({
 
 exports['default'] = PanelGroup;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./utils/ValidComponentChildren":117,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],96:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./utils/ValidComponentChildren":81,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],60:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -7413,7 +6950,7 @@ var Popover = _react2['default'].createClass({
 
 exports['default'] = Popover;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./utils/CustomPropTypes":114,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],97:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./utils/CustomPropTypes":78,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],61:[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -7519,7 +7056,7 @@ var Portal = _react2['default'].createClass({
 
 exports['default'] = Portal;
 module.exports = exports['default'];
-},{"./utils/CustomPropTypes":114,"./utils/domUtils":123,"babel-runtime/helpers/interop-require-default":8}],98:[function(require,module,exports){
+},{"./utils/CustomPropTypes":78,"./utils/domUtils":87,"babel-runtime/helpers/interop-require-default":97}],62:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -7684,7 +7221,7 @@ Position.defaultProps = {
 
 exports['default'] = Position;
 module.exports = exports['default'];
-},{"./utils/CustomPropTypes":114,"./utils/domUtils":123,"./utils/overlayPositionUtils":125,"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8,"babel-runtime/helpers/object-without-properties":10,"classnames":12}],99:[function(require,module,exports){
+},{"./utils/CustomPropTypes":78,"./utils/domUtils":87,"./utils/overlayPositionUtils":89,"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97,"babel-runtime/helpers/object-without-properties":99,"classnames":123}],63:[function(require,module,exports){
 /* eslint react/prop-types: [2, {ignore: "bsStyle"}] */
 /* BootstrapMixin contains `bsStyle` type validation */
 
@@ -7855,7 +7392,7 @@ function onlyProgressBar(props, propName, componentName) {
 
 exports['default'] = ProgressBar;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./Interpolate":72,"./utils/ValidComponentChildren":117,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],100:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./Interpolate":36,"./utils/ValidComponentChildren":81,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],64:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -7970,7 +7507,7 @@ RootCloseWrapper.propTypes = {
   onRootClose: _react2['default'].PropTypes.func.isRequired
 };
 module.exports = exports['default'];
-},{"./utils/EventListener":115,"./utils/domUtils":123,"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8}],101:[function(require,module,exports){
+},{"./utils/EventListener":79,"./utils/domUtils":87,"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97}],65:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -8020,7 +7557,7 @@ var Row = _react2['default'].createClass({
 
 exports['default'] = Row;
 module.exports = exports['default'];
-},{"./utils/CustomPropTypes":114,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],102:[function(require,module,exports){
+},{"./utils/CustomPropTypes":78,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],66:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -8081,7 +7618,7 @@ SafeAnchor.propTypes = {
   onClick: _react2['default'].PropTypes.func
 };
 module.exports = exports['default'];
-},{"./utils/createChainedFunction":119,"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8}],103:[function(require,module,exports){
+},{"./utils/createChainedFunction":83,"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97}],67:[function(require,module,exports){
 /* eslint react/prop-types: [2, {ignore: "bsSize"}] */
 /* BootstrapMixin contains `bsSize` type validation */
 
@@ -8233,7 +7770,7 @@ var SplitButton = _react2['default'].createClass({
 
 exports['default'] = SplitButton;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./Button":50,"./ButtonGroup":51,"./DropdownMenu":61,"./DropdownStateMixin":62,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],104:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./Button":14,"./ButtonGroup":15,"./DropdownMenu":25,"./DropdownStateMixin":26,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],68:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -8387,7 +7924,7 @@ var SubNav = _react2['default'].createClass({
 
 exports['default'] = SubNav;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./SafeAnchor":102,"./utils/ValidComponentChildren":117,"./utils/createChainedFunction":119,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],105:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./SafeAnchor":66,"./utils/ValidComponentChildren":81,"./utils/createChainedFunction":83,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],69:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -8496,7 +8033,7 @@ var TabPane = _react2['default'].createClass({
 
 exports['default'] = TabPane;
 module.exports = exports['default'];
-},{"./utils/TransitionEvents":116,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],106:[function(require,module,exports){
+},{"./utils/TransitionEvents":80,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],70:[function(require,module,exports){
 'use strict';
 
 var _objectWithoutProperties = require('babel-runtime/helpers/object-without-properties')['default'];
@@ -8680,7 +8217,7 @@ var TabbedArea = _react2['default'].createClass({
 
 exports['default'] = TabbedArea;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./Nav":84,"./NavItem":85,"./utils/ValidComponentChildren":117,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"babel-runtime/helpers/object-without-properties":10}],107:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./Nav":48,"./NavItem":49,"./utils/ValidComponentChildren":81,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"babel-runtime/helpers/object-without-properties":99}],71:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -8732,7 +8269,7 @@ var Table = _react2['default'].createClass({
 
 exports['default'] = Table;
 module.exports = exports['default'];
-},{"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],108:[function(require,module,exports){
+},{"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],72:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -8808,7 +8345,7 @@ var Thumbnail = _react2['default'].createClass({
 
 exports['default'] = Thumbnail;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"./SafeAnchor":102,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],109:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./SafeAnchor":66,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],73:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -8913,7 +8450,7 @@ var Tooltip = _react2['default'].createClass({
 exports['default'] = Tooltip;
 module.exports = exports['default'];
 // we don't want to expose the `style` property
-},{"./BootstrapMixin":49,"./utils/CustomPropTypes":114,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],110:[function(require,module,exports){
+},{"./BootstrapMixin":13,"./utils/CustomPropTypes":78,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],74:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -9228,7 +8765,7 @@ Transition.defaultProps = {
 };
 
 exports['default'] = Transition;
-},{"./utils/TransitionEvents":116,"babel-runtime/core-js/object/keys":3,"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8,"babel-runtime/helpers/object-without-properties":10,"classnames":12}],111:[function(require,module,exports){
+},{"./utils/TransitionEvents":80,"babel-runtime/core-js/object/keys":92,"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97,"babel-runtime/helpers/object-without-properties":99,"classnames":123}],75:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -9273,7 +8810,7 @@ var Well = _react2['default'].createClass({
 
 exports['default'] = Well;
 module.exports = exports['default'];
-},{"./BootstrapMixin":49,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8,"classnames":12}],112:[function(require,module,exports){
+},{"./BootstrapMixin":13,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97,"classnames":123}],76:[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -9657,7 +9194,7 @@ var _utils2 = require('./utils');
 var _utils = _interopRequireWildcard(_utils2);
 
 exports.utils = _utils;
-},{"./Accordion":44,"./Affix":45,"./AffixMixin":46,"./Alert":47,"./Badge":48,"./BootstrapMixin":49,"./Button":50,"./ButtonGroup":51,"./ButtonInput":52,"./ButtonToolbar":53,"./Carousel":54,"./CarouselItem":55,"./Col":56,"./Collapse":57,"./CollapsibleMixin":58,"./CollapsibleNav":59,"./DropdownButton":60,"./DropdownMenu":61,"./DropdownStateMixin":62,"./FadeMixin":64,"./FormControls":66,"./Glyphicon":68,"./Grid":69,"./Input":70,"./Interpolate":72,"./Jumbotron":73,"./Label":74,"./ListGroup":75,"./ListGroupItem":76,"./MenuItem":77,"./Modal":78,"./ModalBody":79,"./ModalFooter":81,"./ModalHeader":82,"./ModalTitle":83,"./Nav":84,"./NavItem":85,"./Navbar":86,"./Overlay":87,"./OverlayTrigger":88,"./PageHeader":89,"./PageItem":90,"./Pager":91,"./Pagination":92,"./Panel":94,"./PanelGroup":95,"./Popover":96,"./Portal":97,"./Position":98,"./ProgressBar":99,"./Row":101,"./SafeAnchor":102,"./SplitButton":103,"./SubNav":104,"./TabPane":105,"./TabbedArea":106,"./Table":107,"./Thumbnail":108,"./Tooltip":109,"./Well":111,"./styleMaps":113,"./utils":124,"babel-runtime/helpers/interop-require-default":8,"babel-runtime/helpers/interop-require-wildcard":9}],113:[function(require,module,exports){
+},{"./Accordion":8,"./Affix":9,"./AffixMixin":10,"./Alert":11,"./Badge":12,"./BootstrapMixin":13,"./Button":14,"./ButtonGroup":15,"./ButtonInput":16,"./ButtonToolbar":17,"./Carousel":18,"./CarouselItem":19,"./Col":20,"./Collapse":21,"./CollapsibleMixin":22,"./CollapsibleNav":23,"./DropdownButton":24,"./DropdownMenu":25,"./DropdownStateMixin":26,"./FadeMixin":28,"./FormControls":30,"./Glyphicon":32,"./Grid":33,"./Input":34,"./Interpolate":36,"./Jumbotron":37,"./Label":38,"./ListGroup":39,"./ListGroupItem":40,"./MenuItem":41,"./Modal":42,"./ModalBody":43,"./ModalFooter":45,"./ModalHeader":46,"./ModalTitle":47,"./Nav":48,"./NavItem":49,"./Navbar":50,"./Overlay":51,"./OverlayTrigger":52,"./PageHeader":53,"./PageItem":54,"./Pager":55,"./Pagination":56,"./Panel":58,"./PanelGroup":59,"./Popover":60,"./Portal":61,"./Position":62,"./ProgressBar":63,"./Row":65,"./SafeAnchor":66,"./SplitButton":67,"./SubNav":68,"./TabPane":69,"./TabbedArea":70,"./Table":71,"./Thumbnail":72,"./Tooltip":73,"./Well":75,"./styleMaps":77,"./utils":88,"babel-runtime/helpers/interop-require-default":97,"babel-runtime/helpers/interop-require-wildcard":98}],77:[function(require,module,exports){
 'use strict';
 
 exports.__esModule = true;
@@ -9710,7 +9247,7 @@ var styleMaps = {
 
 exports['default'] = styleMaps;
 module.exports = exports['default'];
-},{}],114:[function(require,module,exports){
+},{}],78:[function(require,module,exports){
 'use strict';
 
 var _Object$keys = require('babel-runtime/core-js/object/keys')['default'];
@@ -9900,7 +9437,7 @@ function createElementTypeChecker() {
 
 exports['default'] = CustomPropTypes;
 module.exports = exports['default'];
-},{"babel-runtime/core-js/object/keys":3,"babel-runtime/helpers/interop-require-default":8}],115:[function(require,module,exports){
+},{"babel-runtime/core-js/object/keys":92,"babel-runtime/helpers/interop-require-default":97}],79:[function(require,module,exports){
 /**
  * Copyright 2013-2014 Facebook, Inc.
  *
@@ -9959,7 +9496,7 @@ var EventListener = {
 
 exports['default'] = EventListener;
 module.exports = exports['default'];
-},{}],116:[function(require,module,exports){
+},{}],80:[function(require,module,exports){
 /**
  * Copyright 2013-2014, Facebook, Inc.
  * All rights reserved.
@@ -10073,7 +9610,7 @@ var ReactTransitionEvents = {
 
 exports['default'] = ReactTransitionEvents;
 module.exports = exports['default'];
-},{}],117:[function(require,module,exports){
+},{}],81:[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -10176,7 +9713,7 @@ exports['default'] = {
   hasValidComponent: hasValidComponent
 };
 module.exports = exports['default'];
-},{"babel-runtime/helpers/interop-require-default":8}],118:[function(require,module,exports){
+},{"babel-runtime/helpers/interop-require-default":97}],82:[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -10203,7 +9740,7 @@ function valueValidation(props, propName, componentName) {
 }
 
 module.exports = exports['default'];
-},{"./CustomPropTypes":114,"babel-runtime/helpers/interop-require-default":8}],119:[function(require,module,exports){
+},{"./CustomPropTypes":78,"babel-runtime/helpers/interop-require-default":97}],83:[function(require,module,exports){
 /**
  * Safe chained function
  *
@@ -10245,7 +9782,7 @@ function createChainedFunction() {
 
 exports['default'] = createChainedFunction;
 module.exports = exports['default'];
-},{}],120:[function(require,module,exports){
+},{}],84:[function(require,module,exports){
 'use strict';
 
 var _inherits = require('babel-runtime/helpers/inherits')['default'];
@@ -10333,7 +9870,7 @@ function createContextWrapper(Trigger, propName) {
 }
 
 module.exports = exports['default'];
-},{"babel-runtime/helpers/class-call-check":5,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/inherits":7,"babel-runtime/helpers/interop-require-default":8,"babel-runtime/helpers/object-without-properties":10}],121:[function(require,module,exports){
+},{"babel-runtime/helpers/class-call-check":94,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/inherits":96,"babel-runtime/helpers/interop-require-default":97,"babel-runtime/helpers/object-without-properties":99}],85:[function(require,module,exports){
 "use strict";
 
 exports.__esModule = true;
@@ -10356,7 +9893,7 @@ function createSelectedEvent(eventKey) {
 }
 
 module.exports = exports["default"];
-},{}],122:[function(require,module,exports){
+},{}],86:[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -10379,7 +9916,7 @@ function deprecationWarning(oldname, newname, link) {
 }
 
 module.exports = exports['default'];
-},{"babel-runtime/helpers/interop-require-default":8,"react/lib/warning":193}],123:[function(require,module,exports){
+},{"babel-runtime/helpers/interop-require-default":97,"react/lib/warning":192}],87:[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -10567,7 +10104,7 @@ exports['default'] = {
   offsetParent: offsetParentFunc
 };
 module.exports = exports['default'];
-},{"babel-runtime/helpers/interop-require-default":8}],124:[function(require,module,exports){
+},{"babel-runtime/helpers/interop-require-default":97}],88:[function(require,module,exports){
 'use strict';
 
 var _interopRequireDefault = require('babel-runtime/helpers/interop-require-default')['default'];
@@ -10603,7 +10140,7 @@ var _ValidComponentChildren2 = require('./ValidComponentChildren');
 var _ValidComponentChildren3 = _interopRequireDefault(_ValidComponentChildren2);
 
 exports.ValidComponentChildren = _ValidComponentChildren3['default'];
-},{"./CustomPropTypes":114,"./ValidComponentChildren":117,"./childrenValueInputValidation":118,"./createChainedFunction":119,"./domUtils":123,"babel-runtime/helpers/interop-require-default":8}],125:[function(require,module,exports){
+},{"./CustomPropTypes":78,"./ValidComponentChildren":81,"./childrenValueInputValidation":82,"./createChainedFunction":83,"./domUtils":87,"babel-runtime/helpers/interop-require-default":97}],89:[function(require,module,exports){
 'use strict';
 
 var _extends = require('babel-runtime/helpers/extends')['default'];
@@ -10728,7 +10265,407 @@ function getLeftDelta(left, overlayWidth, container, padding) {
 }
 exports['default'] = utils;
 module.exports = exports['default'];
-},{"./domUtils":123,"babel-runtime/helpers/extends":6,"babel-runtime/helpers/interop-require-default":8}],126:[function(require,module,exports){
+},{"./domUtils":87,"babel-runtime/helpers/extends":95,"babel-runtime/helpers/interop-require-default":97}],90:[function(require,module,exports){
+module.exports = { "default": require("core-js/library/fn/object/assign"), __esModule: true };
+},{"core-js/library/fn/object/assign":100}],91:[function(require,module,exports){
+module.exports = { "default": require("core-js/library/fn/object/create"), __esModule: true };
+},{"core-js/library/fn/object/create":101}],92:[function(require,module,exports){
+module.exports = { "default": require("core-js/library/fn/object/keys"), __esModule: true };
+},{"core-js/library/fn/object/keys":102}],93:[function(require,module,exports){
+module.exports = { "default": require("core-js/library/fn/object/set-prototype-of"), __esModule: true };
+},{"core-js/library/fn/object/set-prototype-of":103}],94:[function(require,module,exports){
+"use strict";
+
+exports["default"] = function (instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+};
+
+exports.__esModule = true;
+},{}],95:[function(require,module,exports){
+"use strict";
+
+var _Object$assign = require("babel-runtime/core-js/object/assign")["default"];
+
+exports["default"] = _Object$assign || function (target) {
+  for (var i = 1; i < arguments.length; i++) {
+    var source = arguments[i];
+
+    for (var key in source) {
+      if (Object.prototype.hasOwnProperty.call(source, key)) {
+        target[key] = source[key];
+      }
+    }
+  }
+
+  return target;
+};
+
+exports.__esModule = true;
+},{"babel-runtime/core-js/object/assign":90}],96:[function(require,module,exports){
+"use strict";
+
+var _Object$create = require("babel-runtime/core-js/object/create")["default"];
+
+var _Object$setPrototypeOf = require("babel-runtime/core-js/object/set-prototype-of")["default"];
+
+exports["default"] = function (subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function, not " + typeof superClass);
+  }
+
+  subClass.prototype = _Object$create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      enumerable: false,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _Object$setPrototypeOf ? _Object$setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+};
+
+exports.__esModule = true;
+},{"babel-runtime/core-js/object/create":91,"babel-runtime/core-js/object/set-prototype-of":93}],97:[function(require,module,exports){
+"use strict";
+
+exports["default"] = function (obj) {
+  return obj && obj.__esModule ? obj : {
+    "default": obj
+  };
+};
+
+exports.__esModule = true;
+},{}],98:[function(require,module,exports){
+"use strict";
+
+exports["default"] = function (obj) {
+  if (obj && obj.__esModule) {
+    return obj;
+  } else {
+    var newObj = {};
+
+    if (obj != null) {
+      for (var key in obj) {
+        if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key];
+      }
+    }
+
+    newObj["default"] = obj;
+    return newObj;
+  }
+};
+
+exports.__esModule = true;
+},{}],99:[function(require,module,exports){
+"use strict";
+
+exports["default"] = function (obj, keys) {
+  var target = {};
+
+  for (var i in obj) {
+    if (keys.indexOf(i) >= 0) continue;
+    if (!Object.prototype.hasOwnProperty.call(obj, i)) continue;
+    target[i] = obj[i];
+  }
+
+  return target;
+};
+
+exports.__esModule = true;
+},{}],100:[function(require,module,exports){
+require('../../modules/es6.object.assign');
+module.exports = require('../../modules/$.core').Object.assign;
+},{"../../modules/$.core":107,"../../modules/es6.object.assign":120}],101:[function(require,module,exports){
+var $ = require('../../modules/$');
+module.exports = function create(P, D){
+  return $.create(P, D);
+};
+},{"../../modules/$":115}],102:[function(require,module,exports){
+require('../../modules/es6.object.keys');
+module.exports = require('../../modules/$.core').Object.keys;
+},{"../../modules/$.core":107,"../../modules/es6.object.keys":121}],103:[function(require,module,exports){
+require('../../modules/es6.object.set-prototype-of');
+module.exports = require('../../modules/$.core').Object.setPrototypeOf;
+},{"../../modules/$.core":107,"../../modules/es6.object.set-prototype-of":122}],104:[function(require,module,exports){
+module.exports = function(it){
+  if(typeof it != 'function')throw TypeError(it + ' is not a function!');
+  return it;
+};
+},{}],105:[function(require,module,exports){
+var isObject = require('./$.is-object');
+module.exports = function(it){
+  if(!isObject(it))throw TypeError(it + ' is not an object!');
+  return it;
+};
+},{"./$.is-object":114}],106:[function(require,module,exports){
+var toString = {}.toString;
+
+module.exports = function(it){
+  return toString.call(it).slice(8, -1);
+};
+},{}],107:[function(require,module,exports){
+var core = module.exports = {version: '1.2.6'};
+if(typeof __e == 'number')__e = core; // eslint-disable-line no-undef
+},{}],108:[function(require,module,exports){
+// optional / simple context binding
+var aFunction = require('./$.a-function');
+module.exports = function(fn, that, length){
+  aFunction(fn);
+  if(that === undefined)return fn;
+  switch(length){
+    case 1: return function(a){
+      return fn.call(that, a);
+    };
+    case 2: return function(a, b){
+      return fn.call(that, a, b);
+    };
+    case 3: return function(a, b, c){
+      return fn.call(that, a, b, c);
+    };
+  }
+  return function(/* ...args */){
+    return fn.apply(that, arguments);
+  };
+};
+},{"./$.a-function":104}],109:[function(require,module,exports){
+// 7.2.1 RequireObjectCoercible(argument)
+module.exports = function(it){
+  if(it == undefined)throw TypeError("Can't call method on  " + it);
+  return it;
+};
+},{}],110:[function(require,module,exports){
+var global    = require('./$.global')
+  , core      = require('./$.core')
+  , ctx       = require('./$.ctx')
+  , PROTOTYPE = 'prototype';
+
+var $export = function(type, name, source){
+  var IS_FORCED = type & $export.F
+    , IS_GLOBAL = type & $export.G
+    , IS_STATIC = type & $export.S
+    , IS_PROTO  = type & $export.P
+    , IS_BIND   = type & $export.B
+    , IS_WRAP   = type & $export.W
+    , exports   = IS_GLOBAL ? core : core[name] || (core[name] = {})
+    , target    = IS_GLOBAL ? global : IS_STATIC ? global[name] : (global[name] || {})[PROTOTYPE]
+    , key, own, out;
+  if(IS_GLOBAL)source = name;
+  for(key in source){
+    // contains in native
+    own = !IS_FORCED && target && key in target;
+    if(own && key in exports)continue;
+    // export native or passed
+    out = own ? target[key] : source[key];
+    // prevent global pollution for namespaces
+    exports[key] = IS_GLOBAL && typeof target[key] != 'function' ? source[key]
+    // bind timers to global for call from export context
+    : IS_BIND && own ? ctx(out, global)
+    // wrap global constructors for prevent change them in library
+    : IS_WRAP && target[key] == out ? (function(C){
+      var F = function(param){
+        return this instanceof C ? new C(param) : C(param);
+      };
+      F[PROTOTYPE] = C[PROTOTYPE];
+      return F;
+    // make static versions for prototype methods
+    })(out) : IS_PROTO && typeof out == 'function' ? ctx(Function.call, out) : out;
+    if(IS_PROTO)(exports[PROTOTYPE] || (exports[PROTOTYPE] = {}))[key] = out;
+  }
+};
+// type bitmap
+$export.F = 1;  // forced
+$export.G = 2;  // global
+$export.S = 4;  // static
+$export.P = 8;  // proto
+$export.B = 16; // bind
+$export.W = 32; // wrap
+module.exports = $export;
+},{"./$.core":107,"./$.ctx":108,"./$.global":112}],111:[function(require,module,exports){
+module.exports = function(exec){
+  try {
+    return !!exec();
+  } catch(e){
+    return true;
+  }
+};
+},{}],112:[function(require,module,exports){
+// https://github.com/zloirock/core-js/issues/86#issuecomment-115759028
+var global = module.exports = typeof window != 'undefined' && window.Math == Math
+  ? window : typeof self != 'undefined' && self.Math == Math ? self : Function('return this')();
+if(typeof __g == 'number')__g = global; // eslint-disable-line no-undef
+},{}],113:[function(require,module,exports){
+// fallback for non-array-like ES3 and non-enumerable old V8 strings
+var cof = require('./$.cof');
+module.exports = Object('z').propertyIsEnumerable(0) ? Object : function(it){
+  return cof(it) == 'String' ? it.split('') : Object(it);
+};
+},{"./$.cof":106}],114:[function(require,module,exports){
+module.exports = function(it){
+  return typeof it === 'object' ? it !== null : typeof it === 'function';
+};
+},{}],115:[function(require,module,exports){
+var $Object = Object;
+module.exports = {
+  create:     $Object.create,
+  getProto:   $Object.getPrototypeOf,
+  isEnum:     {}.propertyIsEnumerable,
+  getDesc:    $Object.getOwnPropertyDescriptor,
+  setDesc:    $Object.defineProperty,
+  setDescs:   $Object.defineProperties,
+  getKeys:    $Object.keys,
+  getNames:   $Object.getOwnPropertyNames,
+  getSymbols: $Object.getOwnPropertySymbols,
+  each:       [].forEach
+};
+},{}],116:[function(require,module,exports){
+// 19.1.2.1 Object.assign(target, source, ...)
+var $        = require('./$')
+  , toObject = require('./$.to-object')
+  , IObject  = require('./$.iobject');
+
+// should work with symbols and should have deterministic property order (V8 bug)
+module.exports = require('./$.fails')(function(){
+  var a = Object.assign
+    , A = {}
+    , B = {}
+    , S = Symbol()
+    , K = 'abcdefghijklmnopqrst';
+  A[S] = 7;
+  K.split('').forEach(function(k){ B[k] = k; });
+  return a({}, A)[S] != 7 || Object.keys(a({}, B)).join('') != K;
+}) ? function assign(target, source){ // eslint-disable-line no-unused-vars
+  var T     = toObject(target)
+    , $$    = arguments
+    , $$len = $$.length
+    , index = 1
+    , getKeys    = $.getKeys
+    , getSymbols = $.getSymbols
+    , isEnum     = $.isEnum;
+  while($$len > index){
+    var S      = IObject($$[index++])
+      , keys   = getSymbols ? getKeys(S).concat(getSymbols(S)) : getKeys(S)
+      , length = keys.length
+      , j      = 0
+      , key;
+    while(length > j)if(isEnum.call(S, key = keys[j++]))T[key] = S[key];
+  }
+  return T;
+} : Object.assign;
+},{"./$":115,"./$.fails":111,"./$.iobject":113,"./$.to-object":119}],117:[function(require,module,exports){
+// most Object methods by ES6 should accept primitives
+var $export = require('./$.export')
+  , core    = require('./$.core')
+  , fails   = require('./$.fails');
+module.exports = function(KEY, exec){
+  var fn  = (core.Object || {})[KEY] || Object[KEY]
+    , exp = {};
+  exp[KEY] = exec(fn);
+  $export($export.S + $export.F * fails(function(){ fn(1); }), 'Object', exp);
+};
+},{"./$.core":107,"./$.export":110,"./$.fails":111}],118:[function(require,module,exports){
+// Works with __proto__ only. Old v8 can't work with null proto objects.
+/* eslint-disable no-proto */
+var getDesc  = require('./$').getDesc
+  , isObject = require('./$.is-object')
+  , anObject = require('./$.an-object');
+var check = function(O, proto){
+  anObject(O);
+  if(!isObject(proto) && proto !== null)throw TypeError(proto + ": can't set as prototype!");
+};
+module.exports = {
+  set: Object.setPrototypeOf || ('__proto__' in {} ? // eslint-disable-line
+    function(test, buggy, set){
+      try {
+        set = require('./$.ctx')(Function.call, getDesc(Object.prototype, '__proto__').set, 2);
+        set(test, []);
+        buggy = !(test instanceof Array);
+      } catch(e){ buggy = true; }
+      return function setPrototypeOf(O, proto){
+        check(O, proto);
+        if(buggy)O.__proto__ = proto;
+        else set(O, proto);
+        return O;
+      };
+    }({}, false) : undefined),
+  check: check
+};
+},{"./$":115,"./$.an-object":105,"./$.ctx":108,"./$.is-object":114}],119:[function(require,module,exports){
+// 7.1.13 ToObject(argument)
+var defined = require('./$.defined');
+module.exports = function(it){
+  return Object(defined(it));
+};
+},{"./$.defined":109}],120:[function(require,module,exports){
+// 19.1.3.1 Object.assign(target, source)
+var $export = require('./$.export');
+
+$export($export.S + $export.F, 'Object', {assign: require('./$.object-assign')});
+},{"./$.export":110,"./$.object-assign":116}],121:[function(require,module,exports){
+// 19.1.2.14 Object.keys(O)
+var toObject = require('./$.to-object');
+
+require('./$.object-sap')('keys', function($keys){
+  return function keys(it){
+    return $keys(toObject(it));
+  };
+});
+},{"./$.object-sap":117,"./$.to-object":119}],122:[function(require,module,exports){
+// 19.1.3.19 Object.setPrototypeOf(O, proto)
+var $export = require('./$.export');
+$export($export.S, 'Object', {setPrototypeOf: require('./$.set-proto').set});
+},{"./$.export":110,"./$.set-proto":118}],123:[function(require,module,exports){
+/*!
+  Copyright (c) 2016 Jed Watson.
+  Licensed under the MIT License (MIT), see
+  http://jedwatson.github.io/classnames
+*/
+/* global define */
+
+(function () {
+	'use strict';
+
+	var hasOwn = {}.hasOwnProperty;
+
+	function classNames () {
+		var classes = [];
+
+		for (var i = 0; i < arguments.length; i++) {
+			var arg = arguments[i];
+			if (!arg) continue;
+
+			var argType = typeof arg;
+
+			if (argType === 'string' || argType === 'number') {
+				classes.push(arg);
+			} else if (Array.isArray(arg)) {
+				classes.push(classNames.apply(null, arg));
+			} else if (argType === 'object') {
+				for (var key in arg) {
+					if (hasOwn.call(arg, key) && arg[key]) {
+						classes.push(key);
+					}
+				}
+			}
+		}
+
+		return classes.join(' ');
+	}
+
+	if (typeof module !== 'undefined' && module.exports) {
+		module.exports = classNames;
+	} else if (typeof define === 'function' && typeof define.amd === 'object' && define.amd) {
+		// register as 'classnames', consistent with npm package name
+		define('classnames', [], function () {
+			return classNames;
+		});
+	} else {
+		window.classNames = classNames;
+	}
+}());
+
+},{}],124:[function(require,module,exports){
 /** Used as the `TypeError` message for "Functions" methods. */
 var FUNC_ERROR_TEXT = 'Expected a function';
 
@@ -10788,7 +10725,7 @@ function restParam(func, start) {
 
 module.exports = restParam;
 
-},{}],127:[function(require,module,exports){
+},{}],125:[function(require,module,exports){
 /**
  * Appends the elements of `values` to `array`.
  *
@@ -10810,7 +10747,7 @@ function arrayPush(array, values) {
 
 module.exports = arrayPush;
 
-},{}],128:[function(require,module,exports){
+},{}],126:[function(require,module,exports){
 var arrayPush = require('./arrayPush'),
     isArguments = require('../lang/isArguments'),
     isArray = require('../lang/isArray'),
@@ -10853,7 +10790,7 @@ function baseFlatten(array, isDeep, isStrict, result) {
 
 module.exports = baseFlatten;
 
-},{"../lang/isArguments":143,"../lang/isArray":144,"./arrayPush":127,"./isArrayLike":136,"./isObjectLike":139}],129:[function(require,module,exports){
+},{"../lang/isArguments":141,"../lang/isArray":142,"./arrayPush":125,"./isArrayLike":134,"./isObjectLike":137}],127:[function(require,module,exports){
 var createBaseFor = require('./createBaseFor');
 
 /**
@@ -10872,7 +10809,7 @@ var baseFor = createBaseFor();
 
 module.exports = baseFor;
 
-},{"./createBaseFor":133}],130:[function(require,module,exports){
+},{"./createBaseFor":131}],128:[function(require,module,exports){
 var baseFor = require('./baseFor'),
     keysIn = require('../object/keysIn');
 
@@ -10891,7 +10828,7 @@ function baseForIn(object, iteratee) {
 
 module.exports = baseForIn;
 
-},{"../object/keysIn":148,"./baseFor":129}],131:[function(require,module,exports){
+},{"../object/keysIn":146,"./baseFor":127}],129:[function(require,module,exports){
 /**
  * The base implementation of `_.property` without support for deep paths.
  *
@@ -10907,7 +10844,7 @@ function baseProperty(key) {
 
 module.exports = baseProperty;
 
-},{}],132:[function(require,module,exports){
+},{}],130:[function(require,module,exports){
 var identity = require('../utility/identity');
 
 /**
@@ -10948,7 +10885,7 @@ function bindCallback(func, thisArg, argCount) {
 
 module.exports = bindCallback;
 
-},{"../utility/identity":150}],133:[function(require,module,exports){
+},{"../utility/identity":148}],131:[function(require,module,exports){
 var toObject = require('./toObject');
 
 /**
@@ -10977,7 +10914,7 @@ function createBaseFor(fromRight) {
 
 module.exports = createBaseFor;
 
-},{"./toObject":142}],134:[function(require,module,exports){
+},{"./toObject":140}],132:[function(require,module,exports){
 var baseProperty = require('./baseProperty');
 
 /**
@@ -10994,7 +10931,7 @@ var getLength = baseProperty('length');
 
 module.exports = getLength;
 
-},{"./baseProperty":131}],135:[function(require,module,exports){
+},{"./baseProperty":129}],133:[function(require,module,exports){
 var isNative = require('../lang/isNative');
 
 /**
@@ -11012,7 +10949,7 @@ function getNative(object, key) {
 
 module.exports = getNative;
 
-},{"../lang/isNative":146}],136:[function(require,module,exports){
+},{"../lang/isNative":144}],134:[function(require,module,exports){
 var getLength = require('./getLength'),
     isLength = require('./isLength');
 
@@ -11029,7 +10966,7 @@ function isArrayLike(value) {
 
 module.exports = isArrayLike;
 
-},{"./getLength":134,"./isLength":138}],137:[function(require,module,exports){
+},{"./getLength":132,"./isLength":136}],135:[function(require,module,exports){
 /** Used to detect unsigned integer values. */
 var reIsUint = /^\d+$/;
 
@@ -11055,7 +10992,7 @@ function isIndex(value, length) {
 
 module.exports = isIndex;
 
-},{}],138:[function(require,module,exports){
+},{}],136:[function(require,module,exports){
 /**
  * Used as the [maximum length](http://ecma-international.org/ecma-262/6.0/#sec-number.max_safe_integer)
  * of an array-like value.
@@ -11077,7 +11014,7 @@ function isLength(value) {
 
 module.exports = isLength;
 
-},{}],139:[function(require,module,exports){
+},{}],137:[function(require,module,exports){
 /**
  * Checks if `value` is object-like.
  *
@@ -11091,7 +11028,7 @@ function isObjectLike(value) {
 
 module.exports = isObjectLike;
 
-},{}],140:[function(require,module,exports){
+},{}],138:[function(require,module,exports){
 var toObject = require('./toObject');
 
 /**
@@ -11121,7 +11058,7 @@ function pickByArray(object, props) {
 
 module.exports = pickByArray;
 
-},{"./toObject":142}],141:[function(require,module,exports){
+},{"./toObject":140}],139:[function(require,module,exports){
 var baseForIn = require('./baseForIn');
 
 /**
@@ -11145,7 +11082,7 @@ function pickByCallback(object, predicate) {
 
 module.exports = pickByCallback;
 
-},{"./baseForIn":130}],142:[function(require,module,exports){
+},{"./baseForIn":128}],140:[function(require,module,exports){
 var isObject = require('../lang/isObject');
 
 /**
@@ -11161,7 +11098,7 @@ function toObject(value) {
 
 module.exports = toObject;
 
-},{"../lang/isObject":147}],143:[function(require,module,exports){
+},{"../lang/isObject":145}],141:[function(require,module,exports){
 var isArrayLike = require('../internal/isArrayLike'),
     isObjectLike = require('../internal/isObjectLike');
 
@@ -11197,7 +11134,7 @@ function isArguments(value) {
 
 module.exports = isArguments;
 
-},{"../internal/isArrayLike":136,"../internal/isObjectLike":139}],144:[function(require,module,exports){
+},{"../internal/isArrayLike":134,"../internal/isObjectLike":137}],142:[function(require,module,exports){
 var getNative = require('../internal/getNative'),
     isLength = require('../internal/isLength'),
     isObjectLike = require('../internal/isObjectLike');
@@ -11239,7 +11176,7 @@ var isArray = nativeIsArray || function(value) {
 
 module.exports = isArray;
 
-},{"../internal/getNative":135,"../internal/isLength":138,"../internal/isObjectLike":139}],145:[function(require,module,exports){
+},{"../internal/getNative":133,"../internal/isLength":136,"../internal/isObjectLike":137}],143:[function(require,module,exports){
 var isObject = require('./isObject');
 
 /** `Object#toString` result references. */
@@ -11279,7 +11216,7 @@ function isFunction(value) {
 
 module.exports = isFunction;
 
-},{"./isObject":147}],146:[function(require,module,exports){
+},{"./isObject":145}],144:[function(require,module,exports){
 var isFunction = require('./isFunction'),
     isObjectLike = require('../internal/isObjectLike');
 
@@ -11329,7 +11266,7 @@ function isNative(value) {
 
 module.exports = isNative;
 
-},{"../internal/isObjectLike":139,"./isFunction":145}],147:[function(require,module,exports){
+},{"../internal/isObjectLike":137,"./isFunction":143}],145:[function(require,module,exports){
 /**
  * Checks if `value` is the [language type](https://es5.github.io/#x8) of `Object`.
  * (e.g. arrays, functions, objects, regexes, `new Number(0)`, and `new String('')`)
@@ -11359,7 +11296,7 @@ function isObject(value) {
 
 module.exports = isObject;
 
-},{}],148:[function(require,module,exports){
+},{}],146:[function(require,module,exports){
 var isArguments = require('../lang/isArguments'),
     isArray = require('../lang/isArray'),
     isIndex = require('../internal/isIndex'),
@@ -11425,7 +11362,7 @@ function keysIn(object) {
 
 module.exports = keysIn;
 
-},{"../internal/isIndex":137,"../internal/isLength":138,"../lang/isArguments":143,"../lang/isArray":144,"../lang/isObject":147}],149:[function(require,module,exports){
+},{"../internal/isIndex":135,"../internal/isLength":136,"../lang/isArguments":141,"../lang/isArray":142,"../lang/isObject":145}],147:[function(require,module,exports){
 var baseFlatten = require('../internal/baseFlatten'),
     bindCallback = require('../internal/bindCallback'),
     pickByArray = require('../internal/pickByArray'),
@@ -11469,7 +11406,7 @@ var pick = restParam(function(object, props) {
 
 module.exports = pick;
 
-},{"../function/restParam":126,"../internal/baseFlatten":128,"../internal/bindCallback":132,"../internal/pickByArray":140,"../internal/pickByCallback":141}],150:[function(require,module,exports){
+},{"../function/restParam":124,"../internal/baseFlatten":126,"../internal/bindCallback":130,"../internal/pickByArray":138,"../internal/pickByCallback":139}],148:[function(require,module,exports){
 /**
  * This method returns the first argument provided to it.
  *
@@ -11491,7 +11428,7 @@ function identity(value) {
 
 module.exports = identity;
 
-},{}],151:[function(require,module,exports){
+},{}],149:[function(require,module,exports){
 /**
  * Represents a cancellation caused by navigating away
  * before the previous transition has fully resolved.
@@ -11501,7 +11438,7 @@ module.exports = identity;
 function Cancellation() {}
 
 module.exports = Cancellation;
-},{}],152:[function(require,module,exports){
+},{}],150:[function(require,module,exports){
 'use strict';
 
 var invariant = require('invariant');
@@ -11532,7 +11469,7 @@ var History = {
 };
 
 module.exports = History;
-},{"can-use-dom":11,"invariant":40}],153:[function(require,module,exports){
+},{"can-use-dom":183,"invariant":184}],151:[function(require,module,exports){
 /* jshint -W084 */
 'use strict';
 
@@ -11608,7 +11545,7 @@ var Match = (function () {
 })();
 
 module.exports = Match;
-},{"./PathUtils":155}],154:[function(require,module,exports){
+},{"./PathUtils":153}],152:[function(require,module,exports){
 'use strict';
 
 var PropTypes = require('./PropTypes');
@@ -11679,7 +11616,7 @@ var Navigation = {
 };
 
 module.exports = Navigation;
-},{"./PropTypes":156}],155:[function(require,module,exports){
+},{"./PropTypes":154}],153:[function(require,module,exports){
 'use strict';
 
 var invariant = require('invariant');
@@ -11833,10 +11770,10 @@ var PathUtils = {
 };
 
 module.exports = PathUtils;
-},{"invariant":40,"object-assign":185,"qs":186}],156:[function(require,module,exports){
+},{"invariant":184,"object-assign":185,"qs":186}],154:[function(require,module,exports){
 'use strict';
 
-var assign = require('react/lib/Object.assign');
+var assign = require('object-assign');
 var ReactPropTypes = window.React.PropTypes;
 var Route = require('./Route');
 
@@ -11863,7 +11800,7 @@ var PropTypes = assign({}, ReactPropTypes, {
 });
 
 module.exports = PropTypes;
-},{"./Route":158,"react/lib/Object.assign":191}],157:[function(require,module,exports){
+},{"./Route":156,"object-assign":185}],155:[function(require,module,exports){
 /**
  * Encapsulates a redirect to the given route.
  */
@@ -11876,14 +11813,14 @@ function Redirect(to, params, query) {
 }
 
 module.exports = Redirect;
-},{}],158:[function(require,module,exports){
+},{}],156:[function(require,module,exports){
 'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
-var assign = require('react/lib/Object.assign');
+var assign = require('object-assign');
 var invariant = require('invariant');
 var warning = require('./warning');
 var PathUtils = require('./PathUtils');
@@ -12079,7 +12016,7 @@ var Route = (function () {
 })();
 
 module.exports = Route;
-},{"./PathUtils":155,"./warning":184,"invariant":40,"react/lib/Object.assign":191}],159:[function(require,module,exports){
+},{"./PathUtils":153,"./warning":182,"invariant":184,"object-assign":185}],157:[function(require,module,exports){
 'use strict';
 
 var invariant = require('invariant');
@@ -12155,7 +12092,7 @@ var ScrollHistory = {
 };
 
 module.exports = ScrollHistory;
-},{"./getWindowScrollPosition":174,"can-use-dom":11,"invariant":40}],160:[function(require,module,exports){
+},{"./getWindowScrollPosition":172,"can-use-dom":183,"invariant":184}],158:[function(require,module,exports){
 'use strict';
 
 var PropTypes = require('./PropTypes');
@@ -12230,7 +12167,7 @@ var State = {
 };
 
 module.exports = State;
-},{"./PropTypes":156}],161:[function(require,module,exports){
+},{"./PropTypes":154}],159:[function(require,module,exports){
 /* jshint -W058 */
 
 'use strict';
@@ -12306,7 +12243,7 @@ Transition.to = function (transition, routes, params, query, callback) {
 };
 
 module.exports = Transition;
-},{"./Cancellation":151,"./Redirect":157}],162:[function(require,module,exports){
+},{"./Cancellation":149,"./Redirect":155}],160:[function(require,module,exports){
 /**
  * Actions that modify the URL.
  */
@@ -12332,7 +12269,7 @@ var LocationActions = {
 };
 
 module.exports = LocationActions;
-},{}],163:[function(require,module,exports){
+},{}],161:[function(require,module,exports){
 'use strict';
 
 var LocationActions = require('../actions/LocationActions');
@@ -12362,7 +12299,7 @@ var ImitateBrowserBehavior = {
 };
 
 module.exports = ImitateBrowserBehavior;
-},{"../actions/LocationActions":162}],164:[function(require,module,exports){
+},{"../actions/LocationActions":160}],162:[function(require,module,exports){
 /**
  * A scroll behavior that always scrolls to the top of the page
  * after a transition.
@@ -12378,7 +12315,7 @@ var ScrollToTopBehavior = {
 };
 
 module.exports = ScrollToTopBehavior;
-},{}],165:[function(require,module,exports){
+},{}],163:[function(require,module,exports){
 /**
  * This component is necessary to get around a context warning
  * present in React 0.13.0. It sovles this by providing a separation
@@ -12417,7 +12354,7 @@ var ContextWrapper = (function (_React$Component) {
 })(React.Component);
 
 module.exports = ContextWrapper;
-},{}],166:[function(require,module,exports){
+},{}],164:[function(require,module,exports){
 'use strict';
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -12465,7 +12402,7 @@ DefaultRoute.defaultProps = {
 };
 
 module.exports = DefaultRoute;
-},{"../PropTypes":156,"./Route":170,"./RouteHandler":171}],167:[function(require,module,exports){
+},{"../PropTypes":154,"./Route":168,"./RouteHandler":169}],165:[function(require,module,exports){
 'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -12477,7 +12414,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _inherits(subClass, superClass) { if (typeof superClass !== 'function' && superClass !== null) { throw new TypeError('Super expression must either be null or a function, not ' + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var React = window.React;
-var assign = require('react/lib/Object.assign');
+var assign = require('object-assign');
 var PropTypes = require('../PropTypes');
 
 function isLeftClickEvent(event) {
@@ -12575,6 +12512,12 @@ var Link = (function (_React$Component) {
 
       if (props.activeStyle && this.getActiveState()) props.style = props.activeStyle;
 
+      delete props.to;
+      delete props.params;
+      delete props.query;
+      delete props.activeClassName;
+      delete props.activeStyle;
+
       return React.DOM.a(props, this.props.children);
     }
   }]);
@@ -12601,7 +12544,7 @@ Link.defaultProps = {
 };
 
 module.exports = Link;
-},{"../PropTypes":156,"react/lib/Object.assign":191}],168:[function(require,module,exports){
+},{"../PropTypes":154,"object-assign":185}],166:[function(require,module,exports){
 'use strict';
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -12650,7 +12593,7 @@ NotFoundRoute.defaultProps = {
 };
 
 module.exports = NotFoundRoute;
-},{"../PropTypes":156,"./Route":170,"./RouteHandler":171}],169:[function(require,module,exports){
+},{"../PropTypes":154,"./Route":168,"./RouteHandler":169}],167:[function(require,module,exports){
 'use strict';
 
 var _get = function get(_x, _x2, _x3) { var _again = true; _function: while (_again) { var object = _x, property = _x2, receiver = _x3; _again = false; if (object === null) object = Function.prototype; var desc = Object.getOwnPropertyDescriptor(object, property); if (desc === undefined) { var parent = Object.getPrototypeOf(object); if (parent === null) { return undefined; } else { _x = parent; _x2 = property; _x3 = receiver; _again = true; desc = parent = undefined; continue _function; } } else if ('value' in desc) { return desc.value; } else { var getter = desc.get; if (getter === undefined) { return undefined; } return getter.call(receiver); } } };
@@ -12694,7 +12637,7 @@ Redirect.propTypes = {
 Redirect.defaultProps = {};
 
 module.exports = Redirect;
-},{"../PropTypes":156,"./Route":170}],170:[function(require,module,exports){
+},{"../PropTypes":154,"./Route":168}],168:[function(require,module,exports){
 'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -12786,7 +12729,7 @@ Route.defaultProps = {
 };
 
 module.exports = Route;
-},{"../PropTypes":156,"./RouteHandler":171,"invariant":40}],171:[function(require,module,exports){
+},{"../PropTypes":154,"./RouteHandler":169,"invariant":184}],169:[function(require,module,exports){
 'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -12799,7 +12742,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== 'function' 
 
 var React = window.React;
 var ContextWrapper = require('./ContextWrapper');
-var assign = require('react/lib/Object.assign');
+var assign = require('object-assign');
 var PropTypes = require('../PropTypes');
 
 var REF_NAME = '__routeHandler__';
@@ -12895,7 +12838,7 @@ RouteHandler.childContextTypes = {
 };
 
 module.exports = RouteHandler;
-},{"../PropTypes":156,"./ContextWrapper":165,"react/lib/Object.assign":191}],172:[function(require,module,exports){
+},{"../PropTypes":154,"./ContextWrapper":163,"object-assign":185}],170:[function(require,module,exports){
 (function (process){
 /* jshint -W058 */
 'use strict';
@@ -13410,12 +13353,12 @@ function createRouter(options) {
 
 module.exports = createRouter;
 }).call(this,require('_process'))
-},{"./Cancellation":151,"./History":152,"./Match":153,"./PathUtils":155,"./PropTypes":156,"./Redirect":157,"./Route":158,"./ScrollHistory":159,"./Transition":161,"./actions/LocationActions":162,"./behaviors/ImitateBrowserBehavior":163,"./createRoutesFromReactChildren":173,"./isReactChildren":176,"./locations/HashLocation":177,"./locations/HistoryLocation":178,"./locations/RefreshLocation":179,"./locations/StaticLocation":180,"./supportsHistory":183,"./warning":184,"_process":43,"can-use-dom":11,"invariant":40}],173:[function(require,module,exports){
+},{"./Cancellation":149,"./History":150,"./Match":151,"./PathUtils":153,"./PropTypes":154,"./Redirect":155,"./Route":156,"./ScrollHistory":157,"./Transition":159,"./actions/LocationActions":160,"./behaviors/ImitateBrowserBehavior":161,"./createRoutesFromReactChildren":171,"./isReactChildren":174,"./locations/HashLocation":175,"./locations/HistoryLocation":176,"./locations/RefreshLocation":177,"./locations/StaticLocation":178,"./supportsHistory":181,"./warning":182,"_process":2,"can-use-dom":183,"invariant":184}],171:[function(require,module,exports){
 /* jshint -W084 */
 'use strict';
 
 var React = window.React;
-var assign = require('react/lib/Object.assign');
+var assign = require('object-assign');
 var warning = require('./warning');
 var DefaultRoute = require('./components/DefaultRoute');
 var NotFoundRoute = require('./components/NotFoundRoute');
@@ -13492,7 +13435,7 @@ function createRoutesFromReactChildren(children) {
 }
 
 module.exports = createRoutesFromReactChildren;
-},{"./Route":158,"./components/DefaultRoute":166,"./components/NotFoundRoute":168,"./components/Redirect":169,"./warning":184,"react/lib/Object.assign":191}],174:[function(require,module,exports){
+},{"./Route":156,"./components/DefaultRoute":164,"./components/NotFoundRoute":166,"./components/Redirect":167,"./warning":182,"object-assign":185}],172:[function(require,module,exports){
 'use strict';
 
 var invariant = require('invariant');
@@ -13511,7 +13454,7 @@ function getWindowScrollPosition() {
 }
 
 module.exports = getWindowScrollPosition;
-},{"can-use-dom":11,"invariant":40}],175:[function(require,module,exports){
+},{"can-use-dom":183,"invariant":184}],173:[function(require,module,exports){
 'use strict';
 
 exports.DefaultRoute = require('./components/DefaultRoute');
@@ -13543,7 +13486,7 @@ exports.createRoutesFromReactChildren = require('./createRoutesFromReactChildren
 
 exports.create = require('./createRouter');
 exports.run = require('./runRouter');
-},{"./History":152,"./Navigation":154,"./Route":158,"./State":160,"./behaviors/ImitateBrowserBehavior":163,"./behaviors/ScrollToTopBehavior":164,"./components/DefaultRoute":166,"./components/Link":167,"./components/NotFoundRoute":168,"./components/Redirect":169,"./components/Route":170,"./components/RouteHandler":171,"./createRouter":172,"./createRoutesFromReactChildren":173,"./locations/HashLocation":177,"./locations/HistoryLocation":178,"./locations/RefreshLocation":179,"./locations/StaticLocation":180,"./locations/TestLocation":181,"./runRouter":182}],176:[function(require,module,exports){
+},{"./History":150,"./Navigation":152,"./Route":156,"./State":158,"./behaviors/ImitateBrowserBehavior":161,"./behaviors/ScrollToTopBehavior":162,"./components/DefaultRoute":164,"./components/Link":165,"./components/NotFoundRoute":166,"./components/Redirect":167,"./components/Route":168,"./components/RouteHandler":169,"./createRouter":170,"./createRoutesFromReactChildren":171,"./locations/HashLocation":175,"./locations/HistoryLocation":176,"./locations/RefreshLocation":177,"./locations/StaticLocation":178,"./locations/TestLocation":179,"./runRouter":180}],174:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -13557,7 +13500,7 @@ function isReactChildren(object) {
 }
 
 module.exports = isReactChildren;
-},{}],177:[function(require,module,exports){
+},{}],175:[function(require,module,exports){
 'use strict';
 
 var LocationActions = require('../actions/LocationActions');
@@ -13669,7 +13612,7 @@ var HashLocation = {
 };
 
 module.exports = HashLocation;
-},{"../History":152,"../actions/LocationActions":162}],178:[function(require,module,exports){
+},{"../History":150,"../actions/LocationActions":160}],176:[function(require,module,exports){
 'use strict';
 
 var LocationActions = require('../actions/LocationActions');
@@ -13754,7 +13697,7 @@ var HistoryLocation = {
 };
 
 module.exports = HistoryLocation;
-},{"../History":152,"../actions/LocationActions":162}],179:[function(require,module,exports){
+},{"../History":150,"../actions/LocationActions":160}],177:[function(require,module,exports){
 'use strict';
 
 var HistoryLocation = require('./HistoryLocation');
@@ -13786,7 +13729,7 @@ var RefreshLocation = {
 };
 
 module.exports = RefreshLocation;
-},{"../History":152,"./HistoryLocation":178}],180:[function(require,module,exports){
+},{"../History":150,"./HistoryLocation":176}],178:[function(require,module,exports){
 'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -13836,7 +13779,7 @@ StaticLocation.prototype.replace = throwCannotModify;
 StaticLocation.prototype.pop = throwCannotModify;
 
 module.exports = StaticLocation;
-},{"invariant":40}],181:[function(require,module,exports){
+},{"invariant":184}],179:[function(require,module,exports){
 'use strict';
 
 var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
@@ -13927,7 +13870,7 @@ var TestLocation = (function () {
 })();
 
 module.exports = TestLocation;
-},{"../History":152,"../actions/LocationActions":162,"invariant":40}],182:[function(require,module,exports){
+},{"../History":150,"../actions/LocationActions":160,"invariant":184}],180:[function(require,module,exports){
 'use strict';
 
 var createRouter = require('./createRouter');
@@ -13978,7 +13921,7 @@ function runRouter(routes, location, callback) {
 }
 
 module.exports = runRouter;
-},{"./createRouter":172}],183:[function(require,module,exports){
+},{"./createRouter":170}],181:[function(require,module,exports){
 'use strict';
 
 function supportsHistory() {
@@ -13995,7 +13938,7 @@ function supportsHistory() {
 }
 
 module.exports = supportsHistory;
-},{}],184:[function(require,module,exports){
+},{}],182:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -14057,7 +14000,70 @@ if (__DEV__) {
 
 module.exports = warning;
 }).call(this,require('_process'))
-},{"_process":43}],185:[function(require,module,exports){
+},{"_process":2}],183:[function(require,module,exports){
+var canUseDOM = !!(
+  typeof window !== 'undefined' &&
+  window.document &&
+  window.document.createElement
+);
+
+module.exports = canUseDOM;
+},{}],184:[function(require,module,exports){
+(function (process){
+/**
+ * Copyright 2013-2015, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+'use strict';
+
+/**
+ * Use invariant() to assert state which your program assumes to be true.
+ *
+ * Provide sprintf-style format (only %s is supported) and arguments
+ * to provide information about what broke and what you were
+ * expecting.
+ *
+ * The invariant message will be stripped in production, but the invariant
+ * will remain to ensure logic does not differ in production.
+ */
+
+var invariant = function(condition, format, a, b, c, d, e, f) {
+  if (process.env.NODE_ENV !== 'production') {
+    if (format === undefined) {
+      throw new Error('invariant requires an error message argument');
+    }
+  }
+
+  if (!condition) {
+    var error;
+    if (format === undefined) {
+      error = new Error(
+        'Minified exception occurred; use the non-minified dev environment ' +
+        'for the full error message and additional helpful warnings.'
+      );
+    } else {
+      var args = [a, b, c, d, e, f];
+      var argIndex = 0;
+      error = new Error(
+        format.replace(/%s/g, function() { return args[argIndex++]; })
+      );
+      error.name = 'Invariant Violation';
+    }
+
+    error.framesToPop = 1; // we don't care about invariant's own frame
+    throw error;
+  }
+};
+
+module.exports = invariant;
+
+}).call(this,require('_process'))
+},{"_process":2}],185:[function(require,module,exports){
 'use strict';
 
 function ToObject(val) {
@@ -14503,55 +14509,6 @@ exports.isBuffer = function (obj) {
 
 },{}],191:[function(require,module,exports){
 /**
- * Copyright 2014-2015, Facebook, Inc.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree. An additional grant
- * of patent rights can be found in the PATENTS file in the same directory.
- *
- * @providesModule Object.assign
- */
-
-// https://people.mozilla.org/~jorendorff/es6-draft.html#sec-object.assign
-
-'use strict';
-
-function assign(target, sources) {
-  if (target == null) {
-    throw new TypeError('Object.assign target cannot be null or undefined');
-  }
-
-  var to = Object(target);
-  var hasOwnProperty = Object.prototype.hasOwnProperty;
-
-  for (var nextIndex = 1; nextIndex < arguments.length; nextIndex++) {
-    var nextSource = arguments[nextIndex];
-    if (nextSource == null) {
-      continue;
-    }
-
-    var from = Object(nextSource);
-
-    // We don't currently support accessors nor proxies. Therefore this
-    // copy cannot throw. If we ever supported this then we must handle
-    // exceptions and side-effects. We don't support symbols so they won't
-    // be transferred.
-
-    for (var key in from) {
-      if (hasOwnProperty.call(from, key)) {
-        to[key] = from[key];
-      }
-    }
-  }
-
-  return to;
-}
-
-module.exports = assign;
-
-},{}],192:[function(require,module,exports){
-/**
  * Copyright 2013-2015, Facebook, Inc.
  * All rights reserved.
  *
@@ -14584,7 +14541,7 @@ emptyFunction.thatReturnsArgument = function(arg) { return arg; };
 
 module.exports = emptyFunction;
 
-},{}],193:[function(require,module,exports){
+},{}],192:[function(require,module,exports){
 (function (process){
 /**
  * Copyright 2014-2015, Facebook, Inc.
@@ -14647,7 +14604,7 @@ if ("production" !== process.env.NODE_ENV) {
 module.exports = warning;
 
 }).call(this,require('_process'))
-},{"./emptyFunction":192,"_process":43}],194:[function(require,module,exports){
+},{"./emptyFunction":191,"_process":2}],193:[function(require,module,exports){
 /*
  * Copyright 2012-2013 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -14878,7 +14835,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{"./util/mixin":213}],195:[function(require,module,exports){
+},{"./util/mixin":230}],194:[function(require,module,exports){
 /*
  * Copyright 2014 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -14905,7 +14862,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{"./client/default":197,"./client/xhr":198}],196:[function(require,module,exports){
+},{"./client/default":196,"./client/xhr":197}],195:[function(require,module,exports){
 /*
  * Copyright 2014 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -14971,7 +14928,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{}],197:[function(require,module,exports){
+},{}],196:[function(require,module,exports){
 /*
  * Copyright 2014 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -15097,7 +15054,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{"../client":196}],198:[function(require,module,exports){
+},{"../client":195}],197:[function(require,module,exports){
 /*
  * Copyright 2012-2014 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -15183,16 +15140,16 @@ module.exports = warning;
 					return;
 				}
 
-				XMLHttpRequest = request.engine || global.XMLHttpRequest;
-				if (!XMLHttpRequest) {
-					reject({ request: request, error: 'xhr-not-available' });
-					return;
-				}
-
 				entity = request.entity;
 				request.method = request.method || (entity ? 'POST' : 'GET');
 				method = request.method;
-				url = new UrlBuilder(request.path || '', request.params).build();
+				url = response.url = new UrlBuilder(request.path || '', request.params).build();
+
+				XMLHttpRequest = request.engine || global.XMLHttpRequest;
+				if (!XMLHttpRequest) {
+					reject({ request: request, url: url, error: 'xhr-not-available' });
+					return;
+				}
 
 				try {
 					client = response.raw = new XMLHttpRequest();
@@ -15273,7 +15230,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{"../UrlBuilder":194,"../client":196,"../util/normalizeHeaderName":214,"../util/responsePromise":215,"when":235}],199:[function(require,module,exports){
+},{"../UrlBuilder":193,"../client":195,"../util/normalizeHeaderName":231,"../util/responsePromise":232,"when":227}],198:[function(require,module,exports){
 /*
  * Copyright 2012-2015 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -15440,7 +15397,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{"./client":196,"./client/default":197,"./util/mixin":213,"./util/responsePromise":215,"when":235}],200:[function(require,module,exports){
+},{"./client":195,"./client/default":196,"./util/mixin":230,"./util/responsePromise":232,"when":227}],199:[function(require,module,exports){
 /*
  * Copyright 2012-2013 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -15489,7 +15446,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{"../interceptor":199,"when":235}],201:[function(require,module,exports){
+},{"../interceptor":198,"when":227}],200:[function(require,module,exports){
 /*
  * Copyright 2012-2014 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -15601,7 +15558,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{"../interceptor":199,"../mime":204,"../mime/registry":205,"when":235}],202:[function(require,module,exports){
+},{"../interceptor":198,"../mime":203,"../mime/registry":204,"when":227}],201:[function(require,module,exports){
 /*
  * Copyright 2012-2013 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -15662,7 +15619,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{"../UrlBuilder":194,"../interceptor":199}],203:[function(require,module,exports){
+},{"../UrlBuilder":193,"../interceptor":198}],202:[function(require,module,exports){
 /*
  * Copyright 2015 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -15685,6 +15642,8 @@ module.exports = warning;
 		 * Applies request params to the path as a URI Template
 		 *
 		 * Params are removed from the request object, as they have been consumed.
+		 *
+		 * @see https://tools.ietf.org/html/rfc6570
 		 *
 		 * @param {Client} [client] client to wrap
 		 * @param {Object} [config.params] default param values
@@ -15718,7 +15677,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{"../interceptor":199,"../util/mixin":213,"../util/uriTemplate":217}],204:[function(require,module,exports){
+},{"../interceptor":198,"../util/mixin":230,"../util/uriTemplate":234}],203:[function(require,module,exports){
 /*
 * Copyright 2014 the original author or authors
 * @license MIT, see LICENSE.txt for details
@@ -15773,7 +15732,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{}],205:[function(require,module,exports){
+},{}],204:[function(require,module,exports){
 /*
  * Copyright 2012-2014 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -15890,7 +15849,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{"../mime":204,"./type/application/hal":206,"./type/application/json":207,"./type/application/x-www-form-urlencoded":208,"./type/multipart/form-data":209,"./type/text/plain":210,"when":235}],206:[function(require,module,exports){
+},{"../mime":203,"./type/application/hal":205,"./type/application/json":206,"./type/application/x-www-form-urlencoded":207,"./type/multipart/form-data":208,"./type/text/plain":209,"when":227}],205:[function(require,module,exports){
 /*
  * Copyright 2013-2015 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -16031,7 +15990,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{"../../../interceptor/pathPrefix":202,"../../../interceptor/template":203,"../../../util/find":211,"../../../util/lazyPromise":212,"../../../util/responsePromise":215,"when":235}],207:[function(require,module,exports){
+},{"../../../interceptor/pathPrefix":201,"../../../interceptor/template":202,"../../../util/find":228,"../../../util/lazyPromise":229,"../../../util/responsePromise":232,"when":227}],206:[function(require,module,exports){
 /*
  * Copyright 2012-2015 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -16080,7 +16039,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{}],208:[function(require,module,exports){
+},{}],207:[function(require,module,exports){
 /*
  * Copyright 2012 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -16172,7 +16131,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{}],209:[function(require,module,exports){
+},{}],208:[function(require,module,exports){
 /*
  * Copyright 2014 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -16247,7 +16206,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{}],210:[function(require,module,exports){
+},{}],209:[function(require,module,exports){
 /*
  * Copyright 2012 the original author or authors
  * @license MIT, see LICENSE.txt for details
@@ -16278,694 +16237,7 @@ module.exports = warning;
 	// Boilerplate for AMD and Node
 ));
 
-},{}],211:[function(require,module,exports){
-/*
- * Copyright 2013 the original author or authors
- * @license MIT, see LICENSE.txt for details
- *
- * @author Scott Andrews
- */
-
-(function (define) {
-	'use strict';
-
-	define(function (/* require */) {
-
-		return {
-
-			/**
-			 * Find objects within a graph the contain a property of a certain name.
-			 *
-			 * NOTE: this method will not discover object graph cycles.
-			 *
-			 * @param {*} obj object to search on
-			 * @param {string} prop name of the property to search for
-			 * @param {Function} callback function to receive the found properties and their parent
-			 */
-			findProperties: function findProperties(obj, prop, callback) {
-				if (typeof obj !== 'object' || obj === null) { return; }
-				if (prop in obj) {
-					callback(obj[prop], obj, prop);
-				}
-				Object.keys(obj).forEach(function (key) {
-					findProperties(obj[key], prop, callback);
-				});
-			}
-
-		};
-
-	});
-
-}(
-	typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); }
-	// Boilerplate for AMD and Node
-));
-
-},{}],212:[function(require,module,exports){
-/*
- * Copyright 2013 the original author or authors
- * @license MIT, see LICENSE.txt for details
- *
- * @author Scott Andrews
- */
-
-(function (define) {
-	'use strict';
-
-	define(function (require) {
-
-		var when;
-
-		when = require('when');
-
-		/**
-		 * Create a promise whose work is started only when a handler is registered.
-		 *
-		 * The work function will be invoked at most once. Thrown values will result
-		 * in promise rejection.
-		 *
-		 * @param {Function} work function whose ouput is used to resolve the
-		 *   returned promise.
-		 * @returns {Promise} a lazy promise
-		 */
-		function lazyPromise(work) {
-			var defer, started, resolver, promise, then;
-
-			defer = when.defer();
-			started = false;
-
-			resolver = defer.resolver;
-			promise = defer.promise;
-			then = promise.then;
-
-			promise.then = function () {
-				if (!started) {
-					started = true;
-					when.attempt(work).then(resolver.resolve, resolver.reject);
-				}
-				return then.apply(promise, arguments);
-			};
-
-			return promise;
-		}
-
-		return lazyPromise;
-
-	});
-
-}(
-	typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); }
-	// Boilerplate for AMD and Node
-));
-
-},{"when":235}],213:[function(require,module,exports){
-/*
- * Copyright 2012-2013 the original author or authors
- * @license MIT, see LICENSE.txt for details
- *
- * @author Scott Andrews
- */
-
-(function (define) {
-	'use strict';
-
-	// derived from dojo.mixin
-	define(function (/* require */) {
-
-		var empty = {};
-
-		/**
-		 * Mix the properties from the source object into the destination object.
-		 * When the same property occurs in more then one object, the right most
-		 * value wins.
-		 *
-		 * @param {Object} dest the object to copy properties to
-		 * @param {Object} sources the objects to copy properties from.  May be 1 to N arguments, but not an Array.
-		 * @return {Object} the destination object
-		 */
-		function mixin(dest /*, sources... */) {
-			var i, l, source, name;
-
-			if (!dest) { dest = {}; }
-			for (i = 1, l = arguments.length; i < l; i += 1) {
-				source = arguments[i];
-				for (name in source) {
-					if (!(name in dest) || (dest[name] !== source[name] && (!(name in empty) || empty[name] !== source[name]))) {
-						dest[name] = source[name];
-					}
-				}
-			}
-
-			return dest; // Object
-		}
-
-		return mixin;
-
-	});
-
-}(
-	typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); }
-	// Boilerplate for AMD and Node
-));
-
-},{}],214:[function(require,module,exports){
-/*
- * Copyright 2012 the original author or authors
- * @license MIT, see LICENSE.txt for details
- *
- * @author Scott Andrews
- */
-
-(function (define) {
-	'use strict';
-
-	define(function (/* require */) {
-
-		/**
-		 * Normalize HTTP header names using the pseudo camel case.
-		 *
-		 * For example:
-		 *   content-type         -> Content-Type
-		 *   accepts              -> Accepts
-		 *   x-custom-header-name -> X-Custom-Header-Name
-		 *
-		 * @param {string} name the raw header name
-		 * @return {string} the normalized header name
-		 */
-		function normalizeHeaderName(name) {
-			return name.toLowerCase()
-				.split('-')
-				.map(function (chunk) { return chunk.charAt(0).toUpperCase() + chunk.slice(1); })
-				.join('-');
-		}
-
-		return normalizeHeaderName;
-
-	});
-
-}(
-	typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); }
-	// Boilerplate for AMD and Node
-));
-
-},{}],215:[function(require,module,exports){
-/*
- * Copyright 2014-2015 the original author or authors
- * @license MIT, see LICENSE.txt for details
- *
- * @author Scott Andrews
- */
-
-(function (define) {
-	'use strict';
-
-	define(function (require) {
-
-		var when = require('when'),
-			normalizeHeaderName = require('./normalizeHeaderName');
-
-		function property(promise, name) {
-			return promise.then(
-				function (value) {
-					return value && value[name];
-				},
-				function (value) {
-					return when.reject(value && value[name]);
-				}
-			);
-		}
-
-		/**
-		 * Obtain the response entity
-		 *
-		 * @returns {Promise} for the response entity
-		 */
-		function entity() {
-			/*jshint validthis:true */
-			return property(this, 'entity');
-		}
-
-		/**
-		 * Obtain the response status
-		 *
-		 * @returns {Promise} for the response status
-		 */
-		function status() {
-			/*jshint validthis:true */
-			return property(property(this, 'status'), 'code');
-		}
-
-		/**
-		 * Obtain the response headers map
-		 *
-		 * @returns {Promise} for the response headers map
-		 */
-		function headers() {
-			/*jshint validthis:true */
-			return property(this, 'headers');
-		}
-
-		/**
-		 * Obtain a specific response header
-		 *
-		 * @param {String} headerName the header to retrieve
-		 * @returns {Promise} for the response header's value
-		 */
-		function header(headerName) {
-			/*jshint validthis:true */
-			headerName = normalizeHeaderName(headerName);
-			return property(this.headers(), headerName);
-		}
-
-		/**
-		 * Follow a related resource
-		 *
-		 * The relationship to follow may be define as a plain string, an object
-		 * with the rel and params, or an array containing one or more entries
-		 * with the previous forms.
-		 *
-		 * Examples:
-		 *   response.follow('next')
-		 *
-		 *   response.follow({ rel: 'next', params: { pageSize: 100 } })
-		 *
-		 *   response.follow([
-		 *       { rel: 'items', params: { projection: 'noImages' } },
-		 *       'search',
-		 *       { rel: 'findByGalleryIsNull', params: { projection: 'noImages' } },
-		 *       'items'
-		 *   ])
-		 *
-		 * @param {String|Object|Array} rels one, or more, relationships to follow
-		 * @returns ResponsePromise<Response> related resource
-		 */
-		function follow(rels) {
-			/*jshint validthis:true */
-			rels = [].concat(rels);
-			return make(when.reduce(rels, function (response, rel) {
-				if (typeof rel === 'string') {
-					rel = { rel: rel };
-				}
-				if (typeof response.entity.clientFor !== 'function') {
-					throw new Error('Hypermedia response expected');
-				}
-				var client = response.entity.clientFor(rel.rel);
-				return client({ params: rel.params });
-			}, this));
-		}
-
-		/**
-		 * Wrap a Promise as an ResponsePromise
-		 *
-		 * @param {Promise<Response>} promise the promise for an HTTP Response
-		 * @returns {ResponsePromise<Response>} wrapped promise for Response with additional helper methods
-		 */
-		function make(promise) {
-			promise.status = status;
-			promise.headers = headers;
-			promise.header = header;
-			promise.entity = entity;
-			promise.follow = follow;
-			return promise;
-		}
-
-		function responsePromise() {
-			return make(when.apply(when, arguments));
-		}
-
-		responsePromise.make = make;
-		responsePromise.reject = function (val) {
-			return make(when.reject(val));
-		};
-		responsePromise.promise = function (func) {
-			return make(when.promise(func));
-		};
-
-		return responsePromise;
-
-	});
-
-}(
-	typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); }
-	// Boilerplate for AMD and Node
-));
-
-},{"./normalizeHeaderName":214,"when":235}],216:[function(require,module,exports){
-/*
- * Copyright 2015 the original author or authors
- * @license MIT, see LICENSE.txt for details
- *
- * @author Scott Andrews
- */
-
-(function (define) {
-	'use strict';
-
-	define(function (/* require */) {
-
-		var charMap;
-
-		charMap = (function () {
-			var strings = {
-				alpha: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
-				digit: '0123456789'
-			};
-
-			strings.genDelims = ':/?#[]@';
-			strings.subDelims = '!$&\'()*+,;=';
-			strings.reserved = strings.genDelims + strings.subDelims;
-			strings.unreserved = strings.alpha + strings.digit + '-._~';
-			strings.url = strings.reserved + strings.unreserved;
-			strings.scheme = strings.alpha + strings.digit + '+-.';
-			strings.userinfo = strings.unreserved + strings.subDelims + ':';
-			strings.host = strings.unreserved + strings.subDelims;
-			strings.port = strings.digit;
-			strings.pchar = strings.unreserved + strings.subDelims + ':@';
-			strings.segment = strings.pchar;
-			strings.path = strings.segment + '/';
-			strings.query = strings.pchar + '/?';
-			strings.fragment = strings.pchar + '/?';
-
-			return Object.keys(strings).reduce(function (charMap, set) {
-				charMap[set] = strings[set].split('').reduce(function (chars, myChar) {
-					chars[myChar] = true;
-					return chars;
-				}, {});
-				return charMap;
-			}, {});
-		}());
-
-		function encode(str, allowed) {
-			if (typeof str !== 'string') {
-				throw new Error('String required for URL encoding');
-			}
-			return str.split('').map(function (myChar) {
-				if (allowed.hasOwnProperty(myChar)) {
-					return myChar;
-				}
-				var code = myChar.charCodeAt(0);
-				if (code <= 127) {
-					return '%' + code.toString(16).toUpperCase();
-				}
-				else {
-					return encodeURIComponent(myChar).toUpperCase();
-				}
-			}).join('');
-		}
-
-		function makeEncoder(allowed) {
-			allowed = allowed || charMap.unreserved;
-			return function (str) {
-				return encode(str, allowed);
-			};
-		}
-
-		function decode(str) {
-			return decodeURIComponent(str);
-		}
-
-		return {
-
-			/*
-			 * Decode URL encoded strings
-			 *
-			 * @param {string} URL encoded string
-			 * @returns {string} URL decoded string
-			 */
-			decode: decode,
-
-			/*
-			 * URL encode a string
-			 *
-			 * All but alpha-numerics and a very limited set of punctuation - . _ ~ are
-			 * encoded.
-			 *
-			 * @param {string} string to encode
-			 * @returns {string} URL encoded string
-			 */
-			encode: makeEncoder(),
-
-			/*
-			* URL encode a URL
-			*
-			* All character permitted anywhere in a URL are left unencoded even
-			* if that character is not permitted in that portion of a URL.
-			*
-			* Note: This method is typically not what you want.
-			*
-			* @param {string} string to encode
-			* @returns {string} URL encoded string
-			*/
-			encodeURL: makeEncoder(charMap.url),
-
-			/*
-			 * URL encode the scheme portion of a URL
-			 *
-			 * @param {string} string to encode
-			 * @returns {string} URL encoded string
-			 */
-			encodeScheme: makeEncoder(charMap.scheme),
-
-			/*
-			 * URL encode the user info portion of a URL
-			 *
-			 * @param {string} string to encode
-			 * @returns {string} URL encoded string
-			 */
-			encodeUserInfo: makeEncoder(charMap.userinfo),
-
-			/*
-			 * URL encode the host portion of a URL
-			 *
-			 * @param {string} string to encode
-			 * @returns {string} URL encoded string
-			 */
-			encodeHost: makeEncoder(charMap.host),
-
-			/*
-			 * URL encode the port portion of a URL
-			 *
-			 * @param {string} string to encode
-			 * @returns {string} URL encoded string
-			 */
-			encodePort: makeEncoder(charMap.port),
-
-			/*
-			 * URL encode a path segment portion of a URL
-			 *
-			 * @param {string} string to encode
-			 * @returns {string} URL encoded string
-			 */
-			encodePathSegment: makeEncoder(charMap.segment),
-
-			/*
-			 * URL encode the path portion of a URL
-			 *
-			 * @param {string} string to encode
-			 * @returns {string} URL encoded string
-			 */
-			encodePath: makeEncoder(charMap.path),
-
-			/*
-			 * URL encode the query portion of a URL
-			 *
-			 * @param {string} string to encode
-			 * @returns {string} URL encoded string
-			 */
-			encodeQuery: makeEncoder(charMap.query),
-
-			/*
-			 * URL encode the fragment portion of a URL
-			 *
-			 * @param {string} string to encode
-			 * @returns {string} URL encoded string
-			 */
-			encodeFragment: makeEncoder(charMap.fragment)
-
-		};
-
-	});
-
-}(
-	typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); }
-	// Boilerplate for AMD and Node
-));
-
-},{}],217:[function(require,module,exports){
-/*
- * Copyright 2015 the original author or authors
- * @license MIT, see LICENSE.txt for details
- *
- * @author Scott Andrews
- */
-
-(function (define) {
-	'use strict';
-
-	var undef;
-
-	define(function (require) {
-
-		var uriEncoder, operations, prefixRE;
-
-		uriEncoder = require('./uriEncoder');
-
-		prefixRE = /^([^:]*):([0-9]+)$/;
-		operations = {
-			'':  { first: '',  separator: ',', named: false, empty: '',  encoder: uriEncoder.encode },
-			'+': { first: '',  separator: ',', named: false, empty: '',  encoder: uriEncoder.encodeURL },
-			'#': { first: '#', separator: ',', named: false, empty: '',  encoder: uriEncoder.encodeURL },
-			'.': { first: '.', separator: '.', named: false, empty: '',  encoder: uriEncoder.encode },
-			'/': { first: '/', separator: '/', named: false, empty: '',  encoder: uriEncoder.encode },
-			';': { first: ';', separator: ';', named: true,  empty: '',  encoder: uriEncoder.encode },
-			'?': { first: '?', separator: '&', named: true,  empty: '=', encoder: uriEncoder.encode },
-			'&': { first: '&', separator: '&', named: true,  empty: '=', encoder: uriEncoder.encode },
-			'=': { reserved: true },
-			',': { reserved: true },
-			'!': { reserved: true },
-			'@': { reserved: true },
-			'|': { reserved: true }
-		};
-
-		function apply(operation, expression, params) {
-			/*jshint maxcomplexity:11 */
-			return expression.split(',').reduce(function (result, variable) {
-				var opts, value;
-
-				opts = {};
-				if (variable.slice(-1) === '*') {
-					variable = variable.slice(0, -1);
-					opts.explode = true;
-				}
-				if (prefixRE.test(variable)) {
-					var prefix = prefixRE.exec(variable);
-					variable = prefix[1];
-					opts.maxLength = parseInt(prefix[2]);
-				}
-
-				variable = uriEncoder.decode(variable);
-				value = params[variable];
-
-				if (value === undef || value === null) {
-					return result;
-				}
-				if (Array.isArray(value)) {
-					result += value.reduce(function (result, value) {
-						if (result.length) {
-							result += opts.explode ? operation.separator : ',';
-							if (operation.named && opts.explode) {
-								result += operation.encoder(variable);
-								result += value.length ? '=' : operation.empty;
-							}
-						}
-						else {
-							result += operation.first;
-							if (operation.named) {
-								result += operation.encoder(variable);
-								result += value.length ? '=' : operation.empty;
-							}
-						}
-						result += operation.encoder(value);
-						return result;
-					}, '');
-				}
-				else if (typeof value === 'object') {
-					result += Object.keys(value).reduce(function (result, name) {
-						if (result.length) {
-							result += opts.explode ? operation.separator : ',';
-						}
-						else {
-							result += operation.first;
-							if (operation.named && !opts.explode) {
-								result += operation.encoder(variable);
-								result += value[name].length ? '=' : operation.empty;
-							}
-						}
-						result += operation.encoder(name);
-						result += opts.explode ? '=' : ',';
-						result += operation.encoder(value[name]);
-						return result;
-					}, '');
-				}
-				else {
-					value = String(value);
-					if (opts.maxLength) {
-						value = value.slice(0, opts.maxLength);
-					}
-					result += result.length ? operation.separator : operation.first;
-					if (operation.named) {
-						result += operation.encoder(variable);
-						result += value.length ? '=' : operation.empty;
-					}
-					result += operation.encoder(value);
-				}
-
-				return result;
-			}, '');
-		}
-
-		function expandExpression(expression, params) {
-			var operation;
-
-			operation = operations[expression.slice(0,1)];
-			if (operation) {
-				expression = expression.slice(1);
-			}
-			else {
-				operation = operations[''];
-			}
-
-			if (operation.reserved) {
-				throw new Error('Reserved expression operations are not supported');
-			}
-
-			return apply(operation, expression, params);
-		}
-
-		function expandTemplate(template, params) {
-			var start, end, uri;
-
-			uri = '';
-			end = 0;
-			while (true) {
-				start = template.indexOf('{', end);
-				if (start === -1) {
-					// no more expressions
-					uri += template.slice(end);
-					break;
-				}
-				uri += template.slice(end, start);
-				end = template.indexOf('}', start) + 1;
-				uri += expandExpression(template.slice(start + 1, end - 1), params);
-			}
-
-			return uri;
-		}
-
-		return {
-
-			/**
-			 * Expand a URI Template with parameters to form a URI.
-			 *
-			 * Full implementation (level 4) of rfc6570.
-			 * @see https://tools.ietf.org/html/rfc6570
-			 *
-			 * @param {string} template URI template
-			 * @param {Object} [params] params to apply to the template durring expantion
-			 * @returns {string} expanded URI
-			 */
-			expand: expandTemplate
-
-		};
-
-	});
-
-}(
-	typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); }
-	// Boilerplate for AMD and Node
-));
-
-},{"./uriEncoder":216}],218:[function(require,module,exports){
+},{}],210:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -16984,7 +16256,7 @@ define(function (require) {
 });
 })(typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); });
 
-},{"./Scheduler":219,"./env":231,"./makePromise":233}],219:[function(require,module,exports){
+},{"./Scheduler":211,"./env":223,"./makePromise":225}],211:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -17066,7 +16338,7 @@ define(function() {
 });
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(); }));
 
-},{}],220:[function(require,module,exports){
+},{}],212:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -17094,7 +16366,7 @@ define(function() {
 	return TimeoutError;
 });
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(); }));
-},{}],221:[function(require,module,exports){
+},{}],213:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -17151,7 +16423,7 @@ define(function() {
 
 
 
-},{}],222:[function(require,module,exports){
+},{}],214:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -17442,7 +16714,7 @@ define(function(require) {
 });
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(require); }));
 
-},{"../apply":221,"../state":234}],223:[function(require,module,exports){
+},{"../apply":213,"../state":226}],215:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -17604,7 +16876,7 @@ define(function() {
 });
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(); }));
 
-},{}],224:[function(require,module,exports){
+},{}],216:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -17633,7 +16905,7 @@ define(function() {
 });
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(); }));
 
-},{}],225:[function(require,module,exports){
+},{}],217:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -17655,7 +16927,7 @@ define(function(require) {
 });
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(require); }));
 
-},{"../state":234}],226:[function(require,module,exports){
+},{"../state":226}],218:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -17722,7 +16994,7 @@ define(function() {
 });
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(); }));
 
-},{}],227:[function(require,module,exports){
+},{}],219:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -17748,7 +17020,7 @@ define(function() {
 });
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(); }));
 
-},{}],228:[function(require,module,exports){
+},{}],220:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -17828,7 +17100,7 @@ define(function(require) {
 });
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(require); }));
 
-},{"../TimeoutError":220,"../env":231}],229:[function(require,module,exports){
+},{"../TimeoutError":212,"../env":223}],221:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -17916,7 +17188,7 @@ define(function(require) {
 });
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(require); }));
 
-},{"../env":231,"../format":232}],230:[function(require,module,exports){
+},{"../env":223,"../format":224}],222:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -17956,7 +17228,7 @@ define(function() {
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(); }));
 
 
-},{}],231:[function(require,module,exports){
+},{}],223:[function(require,module,exports){
 (function (process){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
@@ -18033,7 +17305,7 @@ define(function(require) {
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(require); }));
 
 }).call(this,require('_process'))
-},{"_process":43}],232:[function(require,module,exports){
+},{"_process":2}],224:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -18091,7 +17363,7 @@ define(function() {
 });
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(); }));
 
-},{}],233:[function(require,module,exports){
+},{}],225:[function(require,module,exports){
 (function (process){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
@@ -19022,7 +18294,7 @@ define(function() {
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(); }));
 
 }).call(this,require('_process'))
-},{"_process":43}],234:[function(require,module,exports){
+},{"_process":2}],226:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 /** @author Brian Cavalier */
 /** @author John Hann */
@@ -19059,7 +18331,7 @@ define(function() {
 });
 }(typeof define === 'function' && define.amd ? define : function(factory) { module.exports = factory(); }));
 
-},{}],235:[function(require,module,exports){
+},{}],227:[function(require,module,exports){
 /** @license MIT License (c) copyright 2010-2014 original author or authors */
 
 /**
@@ -19289,7 +18561,695 @@ define(function (require) {
 });
 })(typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); });
 
-},{"./lib/Promise":218,"./lib/TimeoutError":220,"./lib/apply":221,"./lib/decorators/array":222,"./lib/decorators/flow":223,"./lib/decorators/fold":224,"./lib/decorators/inspect":225,"./lib/decorators/iterate":226,"./lib/decorators/progress":227,"./lib/decorators/timed":228,"./lib/decorators/unhandledRejection":229,"./lib/decorators/with":230}],236:[function(require,module,exports){
+},{"./lib/Promise":210,"./lib/TimeoutError":212,"./lib/apply":213,"./lib/decorators/array":214,"./lib/decorators/flow":215,"./lib/decorators/fold":216,"./lib/decorators/inspect":217,"./lib/decorators/iterate":218,"./lib/decorators/progress":219,"./lib/decorators/timed":220,"./lib/decorators/unhandledRejection":221,"./lib/decorators/with":222}],228:[function(require,module,exports){
+/*
+ * Copyright 2013 the original author or authors
+ * @license MIT, see LICENSE.txt for details
+ *
+ * @author Scott Andrews
+ */
+
+(function (define) {
+	'use strict';
+
+	define(function (/* require */) {
+
+		return {
+
+			/**
+			 * Find objects within a graph the contain a property of a certain name.
+			 *
+			 * NOTE: this method will not discover object graph cycles.
+			 *
+			 * @param {*} obj object to search on
+			 * @param {string} prop name of the property to search for
+			 * @param {Function} callback function to receive the found properties and their parent
+			 */
+			findProperties: function findProperties(obj, prop, callback) {
+				if (typeof obj !== 'object' || obj === null) { return; }
+				if (prop in obj) {
+					callback(obj[prop], obj, prop);
+				}
+				Object.keys(obj).forEach(function (key) {
+					findProperties(obj[key], prop, callback);
+				});
+			}
+
+		};
+
+	});
+
+}(
+	typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); }
+	// Boilerplate for AMD and Node
+));
+
+},{}],229:[function(require,module,exports){
+/*
+ * Copyright 2013 the original author or authors
+ * @license MIT, see LICENSE.txt for details
+ *
+ * @author Scott Andrews
+ */
+
+(function (define) {
+	'use strict';
+
+	define(function (require) {
+
+		var when;
+
+		when = require('when');
+
+		/**
+		 * Create a promise whose work is started only when a handler is registered.
+		 *
+		 * The work function will be invoked at most once. Thrown values will result
+		 * in promise rejection.
+		 *
+		 * @param {Function} work function whose ouput is used to resolve the
+		 *   returned promise.
+		 * @returns {Promise} a lazy promise
+		 */
+		function lazyPromise(work) {
+			var defer, started, resolver, promise, then;
+
+			defer = when.defer();
+			started = false;
+
+			resolver = defer.resolver;
+			promise = defer.promise;
+			then = promise.then;
+
+			promise.then = function () {
+				if (!started) {
+					started = true;
+					when.attempt(work).then(resolver.resolve, resolver.reject);
+				}
+				return then.apply(promise, arguments);
+			};
+
+			return promise;
+		}
+
+		return lazyPromise;
+
+	});
+
+}(
+	typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); }
+	// Boilerplate for AMD and Node
+));
+
+},{"when":227}],230:[function(require,module,exports){
+/*
+ * Copyright 2012-2013 the original author or authors
+ * @license MIT, see LICENSE.txt for details
+ *
+ * @author Scott Andrews
+ */
+
+(function (define) {
+	'use strict';
+
+	// derived from dojo.mixin
+	define(function (/* require */) {
+
+		var empty = {};
+
+		/**
+		 * Mix the properties from the source object into the destination object.
+		 * When the same property occurs in more then one object, the right most
+		 * value wins.
+		 *
+		 * @param {Object} dest the object to copy properties to
+		 * @param {Object} sources the objects to copy properties from.  May be 1 to N arguments, but not an Array.
+		 * @return {Object} the destination object
+		 */
+		function mixin(dest /*, sources... */) {
+			var i, l, source, name;
+
+			if (!dest) { dest = {}; }
+			for (i = 1, l = arguments.length; i < l; i += 1) {
+				source = arguments[i];
+				for (name in source) {
+					if (!(name in dest) || (dest[name] !== source[name] && (!(name in empty) || empty[name] !== source[name]))) {
+						dest[name] = source[name];
+					}
+				}
+			}
+
+			return dest; // Object
+		}
+
+		return mixin;
+
+	});
+
+}(
+	typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); }
+	// Boilerplate for AMD and Node
+));
+
+},{}],231:[function(require,module,exports){
+/*
+ * Copyright 2012 the original author or authors
+ * @license MIT, see LICENSE.txt for details
+ *
+ * @author Scott Andrews
+ */
+
+(function (define) {
+	'use strict';
+
+	define(function (/* require */) {
+
+		/**
+		 * Normalize HTTP header names using the pseudo camel case.
+		 *
+		 * For example:
+		 *   content-type         -> Content-Type
+		 *   accepts              -> Accepts
+		 *   x-custom-header-name -> X-Custom-Header-Name
+		 *
+		 * @param {string} name the raw header name
+		 * @return {string} the normalized header name
+		 */
+		function normalizeHeaderName(name) {
+			return name.toLowerCase()
+				.split('-')
+				.map(function (chunk) { return chunk.charAt(0).toUpperCase() + chunk.slice(1); })
+				.join('-');
+		}
+
+		return normalizeHeaderName;
+
+	});
+
+}(
+	typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); }
+	// Boilerplate for AMD and Node
+));
+
+},{}],232:[function(require,module,exports){
+/*
+ * Copyright 2014-2015 the original author or authors
+ * @license MIT, see LICENSE.txt for details
+ *
+ * @author Scott Andrews
+ */
+
+(function (define) {
+	'use strict';
+
+	define(function (require) {
+
+		var when = require('when'),
+			normalizeHeaderName = require('./normalizeHeaderName');
+
+		function property(promise, name) {
+			return promise.then(
+				function (value) {
+					return value && value[name];
+				},
+				function (value) {
+					return when.reject(value && value[name]);
+				}
+			);
+		}
+
+		/**
+		 * Obtain the response entity
+		 *
+		 * @returns {Promise} for the response entity
+		 */
+		function entity() {
+			/*jshint validthis:true */
+			return property(this, 'entity');
+		}
+
+		/**
+		 * Obtain the response status
+		 *
+		 * @returns {Promise} for the response status
+		 */
+		function status() {
+			/*jshint validthis:true */
+			return property(property(this, 'status'), 'code');
+		}
+
+		/**
+		 * Obtain the response headers map
+		 *
+		 * @returns {Promise} for the response headers map
+		 */
+		function headers() {
+			/*jshint validthis:true */
+			return property(this, 'headers');
+		}
+
+		/**
+		 * Obtain a specific response header
+		 *
+		 * @param {String} headerName the header to retrieve
+		 * @returns {Promise} for the response header's value
+		 */
+		function header(headerName) {
+			/*jshint validthis:true */
+			headerName = normalizeHeaderName(headerName);
+			return property(this.headers(), headerName);
+		}
+
+		/**
+		 * Follow a related resource
+		 *
+		 * The relationship to follow may be define as a plain string, an object
+		 * with the rel and params, or an array containing one or more entries
+		 * with the previous forms.
+		 *
+		 * Examples:
+		 *   response.follow('next')
+		 *
+		 *   response.follow({ rel: 'next', params: { pageSize: 100 } })
+		 *
+		 *   response.follow([
+		 *       { rel: 'items', params: { projection: 'noImages' } },
+		 *       'search',
+		 *       { rel: 'findByGalleryIsNull', params: { projection: 'noImages' } },
+		 *       'items'
+		 *   ])
+		 *
+		 * @param {String|Object|Array} rels one, or more, relationships to follow
+		 * @returns ResponsePromise<Response> related resource
+		 */
+		function follow(rels) {
+			/*jshint validthis:true */
+			rels = [].concat(rels);
+			return make(when.reduce(rels, function (response, rel) {
+				if (typeof rel === 'string') {
+					rel = { rel: rel };
+				}
+				if (typeof response.entity.clientFor !== 'function') {
+					throw new Error('Hypermedia response expected');
+				}
+				var client = response.entity.clientFor(rel.rel);
+				return client({ params: rel.params });
+			}, this));
+		}
+
+		/**
+		 * Wrap a Promise as an ResponsePromise
+		 *
+		 * @param {Promise<Response>} promise the promise for an HTTP Response
+		 * @returns {ResponsePromise<Response>} wrapped promise for Response with additional helper methods
+		 */
+		function make(promise) {
+			promise.status = status;
+			promise.headers = headers;
+			promise.header = header;
+			promise.entity = entity;
+			promise.follow = follow;
+			return promise;
+		}
+
+		function responsePromise() {
+			return make(when.apply(when, arguments));
+		}
+
+		responsePromise.make = make;
+		responsePromise.reject = function (val) {
+			return make(when.reject(val));
+		};
+		responsePromise.promise = function (func) {
+			return make(when.promise(func));
+		};
+
+		return responsePromise;
+
+	});
+
+}(
+	typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); }
+	// Boilerplate for AMD and Node
+));
+
+},{"./normalizeHeaderName":231,"when":227}],233:[function(require,module,exports){
+/*
+ * Copyright 2015 the original author or authors
+ * @license MIT, see LICENSE.txt for details
+ *
+ * @author Scott Andrews
+ */
+
+(function (define) {
+	'use strict';
+
+	define(function (/* require */) {
+
+		var charMap;
+
+		charMap = (function () {
+			var strings = {
+				alpha: 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz',
+				digit: '0123456789'
+			};
+
+			strings.genDelims = ':/?#[]@';
+			strings.subDelims = '!$&\'()*+,;=';
+			strings.reserved = strings.genDelims + strings.subDelims;
+			strings.unreserved = strings.alpha + strings.digit + '-._~';
+			strings.url = strings.reserved + strings.unreserved;
+			strings.scheme = strings.alpha + strings.digit + '+-.';
+			strings.userinfo = strings.unreserved + strings.subDelims + ':';
+			strings.host = strings.unreserved + strings.subDelims;
+			strings.port = strings.digit;
+			strings.pchar = strings.unreserved + strings.subDelims + ':@';
+			strings.segment = strings.pchar;
+			strings.path = strings.segment + '/';
+			strings.query = strings.pchar + '/?';
+			strings.fragment = strings.pchar + '/?';
+
+			return Object.keys(strings).reduce(function (charMap, set) {
+				charMap[set] = strings[set].split('').reduce(function (chars, myChar) {
+					chars[myChar] = true;
+					return chars;
+				}, {});
+				return charMap;
+			}, {});
+		}());
+
+		function encode(str, allowed) {
+			if (typeof str !== 'string') {
+				throw new Error('String required for URL encoding');
+			}
+			return str.split('').map(function (myChar) {
+				if (allowed.hasOwnProperty(myChar)) {
+					return myChar;
+				}
+				var code = myChar.charCodeAt(0);
+				if (code <= 127) {
+					var encoded = code.toString(16).toUpperCase();
+					return '%' + (encoded.length % 2 === 1 ? '0' : '') + encoded;
+				}
+				else {
+					return encodeURIComponent(myChar).toUpperCase();
+				}
+			}).join('');
+		}
+
+		function makeEncoder(allowed) {
+			allowed = allowed || charMap.unreserved;
+			return function (str) {
+				return encode(str, allowed);
+			};
+		}
+
+		function decode(str) {
+			return decodeURIComponent(str);
+		}
+
+		return {
+
+			/*
+			 * Decode URL encoded strings
+			 *
+			 * @param {string} URL encoded string
+			 * @returns {string} URL decoded string
+			 */
+			decode: decode,
+
+			/*
+			 * URL encode a string
+			 *
+			 * All but alpha-numerics and a very limited set of punctuation - . _ ~ are
+			 * encoded.
+			 *
+			 * @param {string} string to encode
+			 * @returns {string} URL encoded string
+			 */
+			encode: makeEncoder(),
+
+			/*
+			* URL encode a URL
+			*
+			* All character permitted anywhere in a URL are left unencoded even
+			* if that character is not permitted in that portion of a URL.
+			*
+			* Note: This method is typically not what you want.
+			*
+			* @param {string} string to encode
+			* @returns {string} URL encoded string
+			*/
+			encodeURL: makeEncoder(charMap.url),
+
+			/*
+			 * URL encode the scheme portion of a URL
+			 *
+			 * @param {string} string to encode
+			 * @returns {string} URL encoded string
+			 */
+			encodeScheme: makeEncoder(charMap.scheme),
+
+			/*
+			 * URL encode the user info portion of a URL
+			 *
+			 * @param {string} string to encode
+			 * @returns {string} URL encoded string
+			 */
+			encodeUserInfo: makeEncoder(charMap.userinfo),
+
+			/*
+			 * URL encode the host portion of a URL
+			 *
+			 * @param {string} string to encode
+			 * @returns {string} URL encoded string
+			 */
+			encodeHost: makeEncoder(charMap.host),
+
+			/*
+			 * URL encode the port portion of a URL
+			 *
+			 * @param {string} string to encode
+			 * @returns {string} URL encoded string
+			 */
+			encodePort: makeEncoder(charMap.port),
+
+			/*
+			 * URL encode a path segment portion of a URL
+			 *
+			 * @param {string} string to encode
+			 * @returns {string} URL encoded string
+			 */
+			encodePathSegment: makeEncoder(charMap.segment),
+
+			/*
+			 * URL encode the path portion of a URL
+			 *
+			 * @param {string} string to encode
+			 * @returns {string} URL encoded string
+			 */
+			encodePath: makeEncoder(charMap.path),
+
+			/*
+			 * URL encode the query portion of a URL
+			 *
+			 * @param {string} string to encode
+			 * @returns {string} URL encoded string
+			 */
+			encodeQuery: makeEncoder(charMap.query),
+
+			/*
+			 * URL encode the fragment portion of a URL
+			 *
+			 * @param {string} string to encode
+			 * @returns {string} URL encoded string
+			 */
+			encodeFragment: makeEncoder(charMap.fragment)
+
+		};
+
+	});
+
+}(
+	typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); }
+	// Boilerplate for AMD and Node
+));
+
+},{}],234:[function(require,module,exports){
+/*
+ * Copyright 2015 the original author or authors
+ * @license MIT, see LICENSE.txt for details
+ *
+ * @author Scott Andrews
+ */
+
+(function (define) {
+	'use strict';
+
+	var undef;
+
+	define(function (require) {
+
+		var uriEncoder, operations, prefixRE;
+
+		uriEncoder = require('./uriEncoder');
+
+		prefixRE = /^([^:]*):([0-9]+)$/;
+		operations = {
+			'':  { first: '',  separator: ',', named: false, empty: '',  encoder: uriEncoder.encode },
+			'+': { first: '',  separator: ',', named: false, empty: '',  encoder: uriEncoder.encodeURL },
+			'#': { first: '#', separator: ',', named: false, empty: '',  encoder: uriEncoder.encodeURL },
+			'.': { first: '.', separator: '.', named: false, empty: '',  encoder: uriEncoder.encode },
+			'/': { first: '/', separator: '/', named: false, empty: '',  encoder: uriEncoder.encode },
+			';': { first: ';', separator: ';', named: true,  empty: '',  encoder: uriEncoder.encode },
+			'?': { first: '?', separator: '&', named: true,  empty: '=', encoder: uriEncoder.encode },
+			'&': { first: '&', separator: '&', named: true,  empty: '=', encoder: uriEncoder.encode },
+			'=': { reserved: true },
+			',': { reserved: true },
+			'!': { reserved: true },
+			'@': { reserved: true },
+			'|': { reserved: true }
+		};
+
+		function apply(operation, expression, params) {
+			/*jshint maxcomplexity:11 */
+			return expression.split(',').reduce(function (result, variable) {
+				var opts, value;
+
+				opts = {};
+				if (variable.slice(-1) === '*') {
+					variable = variable.slice(0, -1);
+					opts.explode = true;
+				}
+				if (prefixRE.test(variable)) {
+					var prefix = prefixRE.exec(variable);
+					variable = prefix[1];
+					opts.maxLength = parseInt(prefix[2]);
+				}
+
+				variable = uriEncoder.decode(variable);
+				value = params[variable];
+
+				if (value === undef || value === null) {
+					return result;
+				}
+				if (Array.isArray(value)) {
+					result += value.reduce(function (result, value) {
+						if (result.length) {
+							result += opts.explode ? operation.separator : ',';
+							if (operation.named && opts.explode) {
+								result += operation.encoder(variable);
+								result += value.length ? '=' : operation.empty;
+							}
+						}
+						else {
+							result += operation.first;
+							if (operation.named) {
+								result += operation.encoder(variable);
+								result += value.length ? '=' : operation.empty;
+							}
+						}
+						result += operation.encoder(value);
+						return result;
+					}, '');
+				}
+				else if (typeof value === 'object') {
+					result += Object.keys(value).reduce(function (result, name) {
+						if (result.length) {
+							result += opts.explode ? operation.separator : ',';
+						}
+						else {
+							result += operation.first;
+							if (operation.named && !opts.explode) {
+								result += operation.encoder(variable);
+								result += value[name].length ? '=' : operation.empty;
+							}
+						}
+						result += operation.encoder(name);
+						result += opts.explode ? '=' : ',';
+						result += operation.encoder(value[name]);
+						return result;
+					}, '');
+				}
+				else {
+					value = String(value);
+					if (opts.maxLength) {
+						value = value.slice(0, opts.maxLength);
+					}
+					result += result.length ? operation.separator : operation.first;
+					if (operation.named) {
+						result += operation.encoder(variable);
+						result += value.length ? '=' : operation.empty;
+					}
+					result += operation.encoder(value);
+				}
+
+				return result;
+			}, '');
+		}
+
+		function expandExpression(expression, params) {
+			var operation;
+
+			operation = operations[expression.slice(0,1)];
+			if (operation) {
+				expression = expression.slice(1);
+			}
+			else {
+				operation = operations[''];
+			}
+
+			if (operation.reserved) {
+				throw new Error('Reserved expression operations are not supported');
+			}
+
+			return apply(operation, expression, params);
+		}
+
+		function expandTemplate(template, params) {
+			var start, end, uri;
+
+			uri = '';
+			end = 0;
+			while (true) {
+				start = template.indexOf('{', end);
+				if (start === -1) {
+					// no more expressions
+					uri += template.slice(end);
+					break;
+				}
+				uri += template.slice(end, start);
+				end = template.indexOf('}', start) + 1;
+				uri += expandExpression(template.slice(start + 1, end - 1), params);
+			}
+
+			return uri;
+		}
+
+		return {
+
+			/**
+			 * Expand a URI Template with parameters to form a URI.
+			 *
+			 * Full implementation (level 4) of rfc6570.
+			 * @see https://tools.ietf.org/html/rfc6570
+			 *
+			 * @param {string} template URI template
+			 * @param {Object} [params] params to apply to the template durring expantion
+			 * @returns {string} expanded URI
+			 */
+			expand: expandTemplate
+
+		};
+
+	});
+
+}(
+	typeof define === 'function' && define.amd ? define : function (factory) { module.exports = factory(require); }
+	// Boilerplate for AMD and Node
+));
+
+},{"./uriEncoder":233}],235:[function(require,module,exports){
 var AppDispatcher = require('../dispatcher/AppDispatcher');
 var ModalConstants = require('../constants/ModalConstants');
 
@@ -19309,7 +19269,7 @@ var ModalActions = {
 
 module.exports = ModalActions;
 
-},{"../constants/ModalConstants":260,"../dispatcher/AppDispatcher":261}],237:[function(require,module,exports){
+},{"../constants/ModalConstants":261,"../dispatcher/AppDispatcher":262}],236:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19326,7 +19286,7 @@ var Link = ReactRouter.Link;
 var AboutusCarouselPanel = React.createClass({displayName: "AboutusCarouselPanel",
 
     mixins : [ReactRouter.Navigation],
-    
+
     handleClick: function(){
         console.log('handleClick');
         // this.transitionTo('home');
@@ -19336,7 +19296,7 @@ var AboutusCarouselPanel = React.createClass({displayName: "AboutusCarouselPanel
 
         return (
             React.createElement("section", {id: "aboutusIntro"}, 
-                React.createElement(Carousel, {id: "aboutusCarousel", interval: 3000}, 
+                React.createElement(Carousel, {id: "aboutusCarousel", interval: 7000}, 
                     React.createElement(CarouselItem, null, 
                         React.createElement("div", {className: "container"}, 
                             React.createElement("p", null, "Hay muchas razones por las que NO se ", React.createElement("em", null, "comparan"), " con nosotros")
@@ -19344,12 +19304,12 @@ var AboutusCarouselPanel = React.createClass({displayName: "AboutusCarouselPanel
                     ), 
                     React.createElement(CarouselItem, null, 
                         React.createElement("div", {className: "container"}, 
-                            React.createElement("p", null, "Hay muchas razones por las que NO se ", React.createElement("em", null, "comparan"), " con nosotros")
+                            React.createElement("p", null, "6 meses sin intereses con BBVA Bancomer, Banamex Y American Express")
                         )
                     ), 
                     React.createElement(CarouselItem, null, 
                         React.createElement("div", {className: "container"}, 
-                            React.createElement("p", null, "Hay muchas razones por las que NO se ", React.createElement("em", null, "comparan"), " con nosotros")
+                            React.createElement("p", null, "Aceptamos tarjetas visa, Master Card y American Express")
                         )
                     )
                 )
@@ -19360,7 +19320,7 @@ var AboutusCarouselPanel = React.createClass({displayName: "AboutusCarouselPanel
 
 module.exports = AboutusCarouselPanel;
 
-},{"react-bootstrap":112,"react-router":175}],238:[function(require,module,exports){
+},{"react-bootstrap":76,"react-router":173}],237:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19403,7 +19363,7 @@ var WhoAreWePanel = React.createClass({displayName: "WhoAreWePanel",
 
 module.exports = WhoAreWePanel;
 
-},{"react-bootstrap":112,"react-router":175}],239:[function(require,module,exports){
+},{"react-bootstrap":76,"react-router":173}],238:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19417,7 +19377,7 @@ var Button = rb.Button;
 var WhyUsPanel = React.createClass({displayName: "WhyUsPanel",
 
     mixins : [ReactRouter.Navigation],
-    
+
     handleClick: function(){
         console.log('handleClick');
         // this.transitionTo('home');
@@ -19425,25 +19385,29 @@ var WhyUsPanel = React.createClass({displayName: "WhyUsPanel",
 
     render: function() {
 
-        return ( 
+        return (
             React.createElement("section", {id: "whyus"}, 
                 React.createElement("div", {className: "container"}, 
                     React.createElement("h1", null, "¿Por qué comprar a través de ", React.createElement("span", {className: "logo"}, "Quetal™"), "?"), 
                     React.createElement("ol", {className: "row"}, 
-                        React.createElement("li", {className: "col-xs-12 col-sm-4"}, 
+                        React.createElement("li", {className: "col-xs-12 col-sm-3"}, 
                             React.createElement("div", {className: "wrap"}, 
-                                "Te ofrecemos el seguro de auto más barato", 
-                                React.createElement("span", {className: "notes"}, "*En comparación con otros portales de venta de seguros por internet.")
+                                "QUETAL es agente persona moral autorizado por la CNSF (logo)"
                             )
                         ), 
-                        React.createElement("li", {className: "col-xs-12 col-sm-4"}, 
+                        React.createElement("li", {className: "col-xs-12 col-sm-3"}, 
                             React.createElement("div", {className: "wrap"}, 
-                                "Contamos con el respaldo de ", React.createElement("span", {id: "insuranceLogoColor"}, "General de seguros")
+                                "Contamos con el respaldo de ", React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("span", {id: "insuranceLogoColor"}, "General de seguros"))
                             )
                         ), 
-                        React.createElement("li", {className: "col-xs-12 col-sm-4"}, 
+                        React.createElement("li", {className: "col-xs-12 col-sm-3"}, 
                             React.createElement("div", {className: "wrap"}, 
-                                "Por nuestro compromiso y profesionalismo." 
+                                "Somos el único Agente autorizado para venta en línea de GS"
+                            )
+                        ), 
+                        React.createElement("li", {className: "col-xs-12 col-sm-3"}, 
+                            React.createElement("div", {className: "wrap"}, 
+                                "Porque te otorgamos el máximo descuento autorizado por GS"
                             )
                         )
                     )
@@ -19455,7 +19419,7 @@ var WhyUsPanel = React.createClass({displayName: "WhyUsPanel",
 
 module.exports = WhyUsPanel;
 
-},{"react-bootstrap":112,"react-router":175}],240:[function(require,module,exports){
+},{"react-bootstrap":76,"react-router":173}],239:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19496,13 +19460,13 @@ var ContactForm = React.createClass({displayName: "ContactForm",
                 ), 
                 React.createElement("div", {className: "formGroup"}, 
                     React.createElement("label", {id: "lab_tel"}, "Teléfono*"), 
-                    React.createElement("input", {type: "tel", id: "tel", name: "tel", placeholder: "Teléfono", onChange: this.onChangeHandler.bind(this, 'tel'), value: this.state.formData.tel.value})
+                    React.createElement("input", {type: "tel", id: "tel", name: "tel", placeholder: "Teléfono (10 dígitos)", onChange: this.onChangeHandler.bind(this, 'tel'), value: this.state.formData.tel.value})
                 ), 
-                React.createElement("textarea", {id: "message", name: "message", placeholder: "Mensaje", onChange: this.onChangeHandler.bind(this, 'message'), value: this.state.formData.message.value}), 
+                React.createElement("textarea", {id: "message", name: "message", placeholder: "Mensaje (255 carácteres)", onChange: this.onChangeHandler.bind(this, 'message'), value: this.state.formData.message.value, maxlength: "255"}), 
                 React.createElement("span", {id: "msg"}), 
 
                  this.state.showLoading ? React.createElement("span", {id: "loader"}, "Cargando") : null, 
-                
+
                 React.createElement("button", {id: "submitButton", onClick: this.submitFormHandler}, React.createElement("span", null, "Enviar"))
             )
         )
@@ -19511,7 +19475,7 @@ var ContactForm = React.createClass({displayName: "ContactForm",
     onChangeHandler: function(property, event){
         var formData = this.state.formData;
         formData[property].value = event.target.value;
-            
+
         this.setState({
             formData: formData
         });
@@ -19539,7 +19503,7 @@ var ContactForm = React.createClass({displayName: "ContactForm",
                 subject: 'Forma de Contacto Web',
                 html: html
             };
-            
+
             RestClient({
                 path: '/api/send_email',
                 method: 'POST',
@@ -19553,7 +19517,7 @@ var ContactForm = React.createClass({displayName: "ContactForm",
                 }
                 _this.setState(state);
                 msgElement.className = response.entity.status ? _this.state.successCSSClass : _this.state.errorCSSClass;
-                msgElement.innerHTML = response.entity.status ? 
+                msgElement.innerHTML = response.entity.status ?
                     'Tu información ha sido enviada de manera exitosa. Gracias.':
                     'Lo sentimos, el mensaje no pudo ser enviado, intenta más tarde.';
             });
@@ -19583,10 +19547,10 @@ var ContactForm = React.createClass({displayName: "ContactForm",
                     response = false;
                 }
                 labelElement.className = this.state.errorCSSClass;
-            } 
+            }
             else{
                 labelElement.className = '';
-            }  
+            }
         }
         return response;
     },
@@ -19626,7 +19590,7 @@ var ContactForm = React.createClass({displayName: "ContactForm",
 
 module.exports = ContactForm;
 
-},{"../../lib/rest-client":263,"react-bootstrap":112,"react-router":175}],241:[function(require,module,exports){
+},{"../../lib/rest-client":264,"react-bootstrap":76,"react-router":173}],240:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19660,7 +19624,7 @@ var HelloPanel = React.createClass({displayName: "HelloPanel",
 
 module.exports = HelloPanel;
 
-},{"react-bootstrap":112,"react-router":175}],242:[function(require,module,exports){
+},{"react-bootstrap":76,"react-router":173}],241:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19722,7 +19686,95 @@ var HelloPanel = React.createClass({displayName: "HelloPanel",
 
 module.exports = HelloPanel;
 
-},{"./form":240,"react-bootstrap":112,"react-router":175}],243:[function(require,module,exports){
+},{"./form":239,"react-bootstrap":76,"react-router":173}],242:[function(require,module,exports){
+module.exports = [{
+  title: 'Daños Materiales Pérdida Parcial',
+  amplia: '5%',
+  limitada: 'NO AMPARADA',
+  basica: 'NO AMPARADA',
+}, {
+  title: 'Daños Materiales Pérdida Total',
+  amplia: '5%',
+  limitada: 'NO AMPARADA',
+  basica: 'NO AMPARADA',
+}, {
+  title: 'Robo Total',
+  amplia: '10%',
+  limitada: '10%',
+  basica: 'NO AMPARADA',
+}, {
+  title: 'Responsabilidad Civil por Daños a Terceros (LUC)',
+  amplia: '1,000,000',
+  limitada: '1,000,000',
+  basica: '1,000,000',
+}, {
+  title: 'Responsabilidad Civil por Fallecimiento',
+  amplia: '2,000,000',
+  limitada: '2,000,000',
+  basica: '2,000,000',
+}, {
+  title: 'Gastos Médicos',
+  amplia: '200,000',
+  limitada: '200,000',
+  basica: '200,000',
+}, {
+  title: 'Asistencia Jurídica GS',
+  amplia: 'AMPARADA',
+  limitada: 'AMPARADA',
+  basica: 'AMPARADA',
+}, {
+  title: 'Asistencia Vial y en Viajes GS',
+  amplia: 'AMPARADA',
+  limitada: 'AMPARADA',
+  basica: 'AMPARADA',
+}, {
+  title: 'GS Sigue',
+  amplia: 'NO AMPARADA',
+  limitada: 'NO AMPARADA',
+  basica: 'NO AMPARADA',
+}, {
+  title: 'Asistencia en Estados Unidos GS',
+  amplia: 'AMPARADA',
+  limitada: 'NO AMPARADA',
+  basica: 'NO AMPARADA',
+}, {
+  title: 'Daños al Vehículo por Tercero sin Seguro',
+  amplia: 'NO AMPARADA',
+  limitada: 'NO AMPARADA',
+  basica: 'NO AMPARADA',
+}, {
+  title: 'Protección GS Asalto',
+  amplia: 'NO AMPARADA',
+  limitada: 'NO AMPARADA',
+  basica: 'NO AMPARADA',
+}, {
+  title: 'Protección GS Objetos Personales',
+  amplia: 'NO AMPARADA',
+  limitada: 'NO AMPARADA',
+  basica: 'NO AMPARADA',
+}, {
+  title: 'Robo Parcial',
+  amplia: 'NO AMPARADA',
+  limitada: 'NO AMPARADA',
+  basica: 'NO AMPARADA',
+}, {
+  title: 'Protección GS Extensión de Responsabilidad Civil',
+  amplia: 'AMPARADA',
+  limitada: 'NO AMPARADA',
+  basica: 'NO AMPARADA',
+}, {
+  title: 'Responsabilidad Civil Ocupantes',
+  amplia: 'NO AMPARADA',
+  limitada: 'NO AMPARADA',
+  basica: 'NO AMPARADA',
+}, {
+  title: 'Muerte Accidental',
+  amplia: 'NO AMPARADA',
+  limitada: 'NO AMPARADA',
+  basica: 'NO AMPARADA',
+}];
+
+},{}],243:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19734,26 +19786,24 @@ var Col = rb.Col;
 var Button = rb.Button;
 
 var ModalActions = require('../../actions/ModalActions');
+var servicesData = require('./data');
 
 var coverageTable = React.createClass({displayName: "coverageTable",
 
     mixins : [ReactRouter.Navigation],
 
     render: function() {
-
+        var servicesEl = this.renderServices(servicesData)
         return (
             React.createElement("section", null, 
                 React.createElement("div", {className: "container"}, 
                     React.createElement("h1", null, "Coberturas y Beneficios"), 
                     React.createElement("div", {id: "benefitsTable"}, 
                         React.createElement(Row, null, 
-                            React.createElement(Col, {xs: 12, sm: 5}
+                            React.createElement(Col, {xs: 12, sm: 6}
                             ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
+                            React.createElement(Col, {xs: 12, sm: 6}, 
                                 React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h5", {onClick: this.handleClick.bind(this, 'prestigio')}, "Prestigio")
-                                    ), 
                                     React.createElement(Col, {xs: 6, sm: 3}, 
                                         React.createElement("h5", {onClick: this.handleClick.bind(this, 'amplia')}, "Confort Amplia")
                                     ), 
@@ -19766,457 +19816,7 @@ var coverageTable = React.createClass({displayName: "coverageTable",
                                 )
                             )
                         ), 
-                        React.createElement(Row, null, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Asistencia Vial y en Viajes GS²")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, null, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Asistentcia Jurídica GS")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, null, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Gastos Médicos")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, {className: "longRow"}, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Responsabilidad Civil por Fallecimiento¹")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, {className: "longRow"}, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Responsabilidad Civil por Daños a Terceros (L.U.C.)*")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, null, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Robo Total")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", null, "*N/A")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, {className: "longRow"}, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Daños Materiales Pérdida Total")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", null, "*N/A")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", null, "*N/A")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, {className: "longRow"}, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Daños Materiales Pérdida Parcial")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", null, "*N/A")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", null, "*N/A")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, {className: "longRow"}, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Protección GS Extensión de Responsabilidad Civil")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", null, "Opcional")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", null, "Opcional")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", null, "Opcional")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, {className: "longRow"}, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Responsabilidad Civil Daños Ocupantes")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", null, "Opcional")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", null, "*N/A")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", null, "*N/A")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, null, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Cero Deducible Robo Total")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", null, "Opcional")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", null, "Opcional")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", null, "*N/A")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", null, "*N/A")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, null, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Protección GS Asalto")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", null, "Opcional")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", null, "*N/A")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", null, "*N/A")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, {className: "longRow"}, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Protección GS Objetos Personales")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", null, "Opcional")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", null, "*N/A")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", null, "*N/A")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, null, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Robo Parcial")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", null, "Opcional")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", null, "*N/A")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", null, "*N/A")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, {className: "longRow"}, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Cero Deducible Daños Materiales Pérdida Total")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", null, "Opcional")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", null, "Opcional")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", null, "*N/A")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", null, "*N/A")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, {className: "longRow"}, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Daños al Vehículo por Tercero sin Seguro")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", null, "Opcional")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", null, "*N/A")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", null, "*N/A")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, null, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Muerte Accidental al Conductor")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", {className: "checked"}, "Checked")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", null, "*N/A")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", null, "*N/A")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", null, "*N/A")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement(Row, {className: "longRow"}, 
-                            React.createElement(Col, {xs: 12, sm: 5}, 
-                                React.createElement("p", null, "Extensión de Gastos Médicos para el Titular")
-                            ), 
-                            React.createElement(Col, {xs: 12, sm: 7}, 
-                                React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Prestigio"), 
-                                        React.createElement("p", null, "Opcional")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Amplia"), 
-                                        React.createElement("p", null, "Opcional")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Limitada"), 
-                                        React.createElement("p", null, "Opcional")
-                                    ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
-                                        React.createElement("h6", null, "Confort Básica"), 
-                                        React.createElement("p", null, "Opcional")
-                                    )
-                                )
-                            )
-                        ), 
-                        React.createElement("p", {className: "notes"}, "*No Amparado")
+                        servicesEl
                     )
                 ), 
                 React.createElement("div", {className: "smallContainer"}, 
@@ -20238,12 +19838,35 @@ var coverageTable = React.createClass({displayName: "coverageTable",
 
   handleClick: function(coverage){
         ModalActions.openModal(coverage);
-    }
+    },
+
+  renderServices: function(data) {
+    return data.map(function(item) {
+      return (React.createElement(Row, null, 
+          React.createElement(Col, {xs: 12, sm: 6}, 
+              React.createElement("p", null, item.title)
+          ), 
+          React.createElement(Col, {xs: 12, sm: 6}, 
+              React.createElement(Row, null, 
+                  React.createElement(Col, {xs: 6, sm: 3}, 
+                      item.amplia
+                  ), 
+                  React.createElement(Col, {xs: 6, sm: 3}, 
+                      item.limitada
+                  ), 
+                  React.createElement(Col, {xs: 6, sm: 3}, 
+                      item.basica
+                  )
+              )
+          )
+      ));
+    });
+  }
 });
 
 module.exports = coverageTable;
 
-},{"../../actions/ModalActions":236,"react-bootstrap":112,"react-router":175}],244:[function(require,module,exports){
+},{"../../actions/ModalActions":235,"./data":242,"react-bootstrap":76,"react-router":173}],244:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20258,22 +19881,22 @@ var Link = ReactRouter.Link;
 var NeedHelp = React.createClass({displayName: "NeedHelp",
 
     mixins : [ReactRouter.Navigation],
-    
+
     handleClick: function(){
         console.log('handleClick');
     },
 
     render: function() {
 
-        return ( 
+        return (
             React.createElement("section", {id: "needHelp"}, 
                 React.createElement("div", {className: "container"}, 
                     React.createElement(Row, null, 
                         React.createElement(Col, {xs: 12, sm: 7}, 
-                            React.createElement("p", null, "¿Necesitas ayuda en tu compra? Llámanos al ", React.createElement("a", {href: "tel:6646588993", title: "¡Llámanos para cualquier duda!"}, "664 658 8993"))
+                            React.createElement("p", null, "¿Necesitas ayuda en tu compra? Llámanos al ", React.createElement("a", {href: "tel:6649766363", title: "¡Llámanos para cualquier duda!"}, "664.976.6363"))
                         ), 
                         React.createElement(Col, {xs: 12, sm: 5}, 
-                            React.createElement("a", {href: "tel:6646588993", title: "¡Llámanos para cualquier duda!", className: "greenButton"}, "Llámanos")
+                            React.createElement("a", {href: "tel:6649766363", title: "¡Llámanos para cualquier duda!", className: "greenButton"}, "Llámanos")
                         )
                     )
                 )
@@ -20284,7 +19907,7 @@ var NeedHelp = React.createClass({displayName: "NeedHelp",
 
 module.exports = NeedHelp;
 
-},{"react-bootstrap":112,"react-router":175}],245:[function(require,module,exports){
+},{"react-bootstrap":76,"react-router":173}],245:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20310,8 +19933,8 @@ var savingsBlock = React.createClass({displayName: "savingsBlock",
             React.createElement("div", {id: "savingsCallToAction", className: "smallContainer"}, 
                 React.createElement(Row, null, 
                     React.createElement(Col, {xs: 12, sm: 6}, 
-                        React.createElement("p", null, "Ahorra desde un 20% en tu Seguro de Auto comprando a través de ", React.createElement("span", {className: "logo"}, "Quetal")), 
-                        React.createElement("p", {className: "notes"}, "*En comparación con otros portales de venta de Seguros por internet.")
+                        React.createElement("p", null, "Ahorra 35% en tu Seguro de Auto comprando a través de ", React.createElement("span", {className: "logo"}, "Quetal")), 
+                        React.createElement("p", {className: "notes"}, "*Máximo descuento que otorga GS.")
                     ), 
                     React.createElement(Col, {xs: 12, sm: 6}, 
                         React.createElement("a", {href: this.props.data.cotizaLink, title: "Cotiza tu Seguro", className: "blueButton", target: "_blank"}, "Cotiza tu Seguro")
@@ -20324,7 +19947,7 @@ var savingsBlock = React.createClass({displayName: "savingsBlock",
 
 module.exports = savingsBlock;
 
-},{"react-bootstrap":112,"react-router":175}],246:[function(require,module,exports){
+},{"react-bootstrap":76,"react-router":173}],246:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20366,7 +19989,7 @@ var WhatToDo = React.createClass({displayName: "WhatToDo",
 
 module.exports = WhatToDo;
 
-},{"react-bootstrap":112,"react-router":175}],247:[function(require,module,exports){
+},{"react-bootstrap":76,"react-router":173}],247:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20383,7 +20006,7 @@ var Link = ReactRouter.Link;
 var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
 
     mixins : [ReactRouter.Navigation],
-    
+
     handleClick: function(){
         console.log('handleClick');
         // this.transitionTo('home');
@@ -20402,7 +20025,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                         React.createElement("span", null, "Hola, Quetal"), " un Seguro de auto a tu alcance"
                                     ), 
                                     React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
-                                    React.createElement("span", {className: "general-logo"}, "General de seguros")
+                                    React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("span", {className: "general-logo"}, "General de seguros"))
                                 ), 
                                 React.createElement(Col, {xs: 12, sm: 6}, 
                                     React.createElement("blockquote", null, React.createElement("span", null, "Justo lo que necesito, "), React.createElement("span", null, " y al precio "), React.createElement("span", null, "más barato "))
@@ -20416,12 +20039,11 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                             React.createElement(Row, null, 
                                 React.createElement(Col, {xs: 12, sm: 7}, 
                                     React.createElement("p", {className: "bigPhrase narrow"}, 
-                                        React.createElement("span", null, "Ahorra"), " desde un 20% en tu Seguro de Auto"
+                                        React.createElement("span", null, "Ahorra"), " 35% en tu Seguro de Auto"
                                     ), 
-                                    React.createElement("p", {className: "restrictions"}, "*En comparación con otros portales de venta" + ' ' +
-"de seguros por internet."), 
+                                    React.createElement("p", {className: "restrictions"}, "*Máximo descuento que otorga GS."), 
                                     React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
-                                    React.createElement("span", {className: "general-logo"}, "General de seguros")
+                                    React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("span", {className: "general-logo"}, "General de seguros"))
                                 ), 
                                 React.createElement(Col, {xs: 12, sm: 5}
                                 )
@@ -20438,7 +20060,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                     ), 
                                     React.createElement("p", null, "Conoce nuestras Coberturas contra Daños a Terceros y Daños a tu Automóvil."), 
                                     React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
-                                    React.createElement("span", {className: "general-logo"}, "General de seguros")
+                                    React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("span", {className: "general-logo"}, "General de seguros"))
                                 ), 
                                 React.createElement(Col, {xs: 12, sm: 6}, 
                                     React.createElement("blockquote", null, React.createElement("span", null, "Mejor lo aseguro "), React.createElement("span", null, "rápido y fácil con "), React.createElement("span", null, "una compañía "), React.createElement("span", null, "de confianza "))
@@ -20455,7 +20077,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
 
 module.exports = HomeCarouselPanel;
 
-},{"react-bootstrap":112,"react-router":175}],248:[function(require,module,exports){
+},{"react-bootstrap":76,"react-router":173}],248:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20478,45 +20100,37 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
             React.createElement("section", {id: "otherServices"}, 
                 React.createElement("div", {className: "container"}, 
                     React.createElement(Row, null, 
-                        React.createElement(Col, {xs: 12, sm: 12}, 
+                        React.createElement(Col, {xs: 12, sm: 6}, 
                           React.createElement("div", {className: "otherServices-block"}, 
                               React.createElement("div", {style: {minHeight: '200px'}}, 
-                                React.createElement("div", {className: "col-sm-8 col-xs-12"}, 
+                                React.createElement("div", {className: "col-sm-12 col-xs-12"}, 
                                   React.createElement("h3", null, "RC Obligatoria ", React.createElement("br", null), "Federal"), 
                                   React.createElement("p", null, 
                                     React.createElement("span", {id: "civilResponsibilityIcon"})
-                                  ), 
-                                  React.createElement("p", null, 
-                                    React.createElement("a", {onClick: this.handleClick.bind(this, 'federal'), className: "arrowLink pull-left", style: {marginTop: '10px'}}, "Ver detalles")
                                   )
                                 ), 
-                                React.createElement("div", {className: "col-sm-3 col-xs-12"}, 
-                                  React.createElement("a", {href: this.props.data.rcObligatorioLink, target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza Aquí")
+                                React.createElement("div", {className: "col-sm-12 col-xs-12"}, 
+                                  React.createElement("a", {href: this.props.data.rcObligatorioLink, target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza Aquí"), 
+                                  React.createElement("a", {onClick: this.handleClick.bind(this, 'federal'), className: "arrowLink pull-right", style: {marginTop: '25px'}}, "Ver detalles")
                                 )
                               )
                           )
-                        )
-                    )
-                ), 
-                React.createElement("div", {className: "smallContainer"}, 
-                    React.createElement(Row, null, 
-                        React.createElement(Col, {xs: 12, sm: 5}, 
-                            React.createElement("p", {id: "substituteCar"}, React.createElement("span", null, "Automóvil Sustituto"))
                         ), 
-                        React.createElement(Col, {xs: 12, sm: 7}, 
-                            React.createElement("p", null, "General de Seguros te ofrece un auto sustituto mientras reparamos tu auto por colisión o te pagamos tu automóvil por perdida total o robo total. "), 
-                            React.createElement("p", null, "Al contratar tu Seguro:"), 
-                            React.createElement(Row, {id: "substituteCar-ParticipantInsurance"}, 
-                                React.createElement(Col, {xs: 12, sm: 4}, 
-                                    React.createElement("p", null, React.createElement("span", null, "GS Autos "), " Amplia")
+                        React.createElement(Col, {xs: 12, sm: 6}, 
+                          React.createElement("div", {className: "otherServices-block"}, 
+                              React.createElement("div", {style: {minHeight: '200px'}}, 
+                                React.createElement("div", {className: "col-sm-12 col-xs-12"}, 
+                                  React.createElement("h3", null, "Autos Fronterizos y Legalizados"), 
+                                  React.createElement("p", null, 
+                                    React.createElement("span", {id: "civilResponsibilityIcon"})
+                                  )
                                 ), 
-                                React.createElement(Col, {xs: 12, sm: 2}, 
-                                    React.createElement("p", null, "o")
-                                ), 
-                                React.createElement(Col, {xs: 12, sm: 4}, 
-                                    React.createElement("p", null, React.createElement("span", null, "GS Autos "), " Prestigio")
+                                React.createElement("div", {className: "col-sm-12 col-xs-12"}, 
+                                  React.createElement("a", {href: "tel:6649766363", target: "_blank", title: "Cotiza", className: "blueButton"}, "664.976.6363"), 
+                                  React.createElement("a", {onClick: this.handleClick.bind(this, 'fronterizo'), className: "arrowLink pull-right", style: {marginTop: '25px'}}, "Ver detalles")
                                 )
-                            )
+                              )
+                          )
                         )
                     )
                 )
@@ -20531,7 +20145,7 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
 
 module.exports = HomeOtherServicesPanel;
 
-},{"../../actions/ModalActions":236,"react-bootstrap":112,"react-router":175}],249:[function(require,module,exports){
+},{"../../actions/ModalActions":235,"react-bootstrap":76,"react-router":173}],249:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20565,25 +20179,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                 ), 
                 React.createElement("div", {className: "container"}, 
                     React.createElement(Row, {id: "servicesList"}, 
-                        React.createElement(Col, {xs: 12, sm: 3}, 
-                            React.createElement("div", {className: "servicesList-wrap"}, 
-                                React.createElement("h3", null, React.createElement("span", {className: "wrap"}, "¿Qué tal si tienes un auto del año*? "), React.createElement("span", {id: "prestigeIcon"})), 
-                                React.createElement("div", {className: "servicesList-details"}, 
-                                    React.createElement("h2", null, "Cobertura Prestigio"), 
-                                    React.createElement("ul", {className: "checklist"}, 
-                                        React.createElement("li", null, "Protección extendida"), 
-                                        React.createElement("li", null, "Daños a tu vehículo"), 
-                                        React.createElement("li", null, "Robo"), 
-                                        React.createElement("li", null, "Daños a terceros1")
-                                    ), 
-                                    React.createElement("p", {className: "notes"}, "*Vehículos último modelo" + ' ' +
-"y modelos recientes.")
-                                ), 
-                                React.createElement("a", {href: this.props.data.cotizaLink, target: "_blank", title: "Cotiza", className: "blueButton"}, "Cotiza")
-                            ), 
-                            React.createElement("a", {onClick: this.handleClick.bind(this, 'prestigio'), className: "arrowLink"}, "Ver detalles")
-                        ), 
-                        React.createElement(Col, {xs: 12, sm: 3, className: "featured"}, 
+                        React.createElement(Col, {xs: 12, sm: 4, className: "featured"}, 
                             React.createElement("div", {className: "servicesList-wrap"}, 
                                 React.createElement("h3", null, React.createElement("span", {className: "wrap"}, "¿Qué tal si te cuidamos bien? "), React.createElement("span", {id: "comfortIcon"})), 
                                 React.createElement("div", {className: "servicesList-details"}, 
@@ -20598,7 +20194,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                             ), 
                             React.createElement("a", {onClick: this.handleClick.bind(this, 'amplia'), className: "arrowLink"}, "Ver detalles")
                         ), 
-                        React.createElement(Col, {xs: 12, sm: 3}, 
+                        React.createElement(Col, {xs: 12, sm: 4}, 
                             React.createElement("div", {className: "servicesList-wrap"}, 
                                 React.createElement("h3", null, React.createElement("span", {className: "wrap"}, "¿Qué tal si tú pones los límites? "), React.createElement("span", {id: "limitedComfortIcon"})), 
                                 React.createElement("div", {className: "servicesList-details"}, 
@@ -20612,7 +20208,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                             ), 
                             React.createElement("a", {onClick: this.handleClick.bind(this, 'limitada'), className: "arrowLink"}, "Ver detalles")
                         ), 
-                        React.createElement(Col, {xs: 12, sm: 3}, 
+                        React.createElement(Col, {xs: 12, sm: 4}, 
                             React.createElement("div", {className: "servicesList-wrap"}, 
                                 React.createElement("h3", null, React.createElement("span", {className: "wrap"}, "¿Qué tal si quieres un Seguro como tú lo necesitas?"), React.createElement("span", {id: "basicComfortIcon"})), 
                                 React.createElement("div", {className: "servicesList-details"}, 
@@ -20638,7 +20234,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
 
 module.exports = HomeServicesPanel;
 
-},{"../../actions/ModalActions":236,"react-bootstrap":112,"react-router":175}],250:[function(require,module,exports){
+},{"../../actions/ModalActions":235,"react-bootstrap":76,"react-router":173}],250:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20670,7 +20266,7 @@ var Layout = React.createClass({displayName: "Layout",
 
   render: function() {
     var data = {
-      cotizaLink: 'https://gswas.com.mx/AutosVentaDirecta/cotizacion.xhtml?u=5144&ori=0&neg=2',
+      cotizaLink: 'https://gswas.com.mx/AutosVentaDirecta/cotizacion.xhtml?u=5144&ori=0&neg=15&neg2=28',
       rcObligatorioLink: 'https://gswas.com.mx/AutosVentaDirecta/rcobligatorio.xhtml?u=5144',
     };
     return (
@@ -20700,7 +20296,7 @@ var Layout = React.createClass({displayName: "Layout",
 
 module.exports = Layout;
 
-},{"./layout/footer":251,"./layout/header":252,"./widgets/modal-widget":258,"react-router":175}],251:[function(require,module,exports){
+},{"./layout/footer":251,"./layout/header":252,"./widgets/modal-widget":259,"react-router":173}],251:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20718,6 +20314,7 @@ var SocialWidget = require('../widgets/social-link-widget');
 var FooterSection = React.createClass({displayName: "FooterSection",
 
   render: function() {
+    var date = new Date();
     return (
         React.createElement("div", null, 
             React.createElement("div", {className: "container"}, 
@@ -20736,9 +20333,6 @@ var FooterSection = React.createClass({displayName: "FooterSection",
                                         ), 
                                         React.createElement("li", null, 
                                             React.createElement("a", {onClick: this.handleClick.bind(this, 'amplia')}, "Amplia")
-                                        ), 
-                                        React.createElement("li", null, 
-                                            React.createElement("a", {onClick: this.handleClick.bind(this, 'prestigio')}, "Prestigio")
                                         ), 
                                         React.createElement("li", null, 
                                             React.createElement("a", {onClick: this.handleClick.bind(this, 'fronterizo')}, "Autos Fronterizos")
@@ -20768,7 +20362,7 @@ var FooterSection = React.createClass({displayName: "FooterSection",
                     React.createElement(Col, {xs: 12, sm: 5}, 
                         React.createElement("span", {id: "brand-footer"}, "Quetal - Mi seguro de auto"), 
                         React.createElement("p", null, "Con el respaldo de:"), 
-                        React.createElement("span", {className: "general-logo"}, "General de seguros"), 
+                        React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("span", {className: "general-logo"}, "General de seguros")), 
                         React.createElement(SocialWidget, null)
                     )
                 )
@@ -20777,7 +20371,8 @@ var FooterSection = React.createClass({displayName: "FooterSection",
                 React.createElement("div", {className: "container"}, 
                     React.createElement(Row, null, 
                         React.createElement(Col, {xs: 12, sm: 5}, 
-                            React.createElement("p", null, "Todos los derechos reservados Quetal Seguro de auto   2015 ")
+                            React.createElement("p", null, "Todos los derechos reservados Quetal Seguro de auto  ", date.getFullYear()), 
+                            React.createElement("p", null, React.createElement(Link, {to: "privacy", title: "Quiénes somos"}, "AVISO DE PRIVACIDAD"))
                         ), 
                         React.createElement(Col, {xs: 12, sm: 4}, 
                             React.createElement("p", {id: "credit"}, React.createElement("span", null, "Un proyecto de: ", React.createElement("a", {href: "http://somospool.com/", title: "Visita Branding POOL", target: "_blank"}, "POOL")), "Código por: ", React.createElement("a", {href: "http://mintitmedia.com/", title: "Mint IT Media - Diseño y desarrollo web", target: "_blank"}, "MINT"))
@@ -20799,7 +20394,7 @@ var FooterSection = React.createClass({displayName: "FooterSection",
 
 module.exports = FooterSection;
 
-},{"../../actions/ModalActions":236,"../widgets/social-link-widget":259,"react-bootstrap":112,"react-router":175}],252:[function(require,module,exports){
+},{"../../actions/ModalActions":235,"../widgets/social-link-widget":260,"react-bootstrap":76,"react-router":173}],252:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20851,7 +20446,142 @@ var HeaderSection = React.createClass({displayName: "HeaderSection",
 
 module.exports = HeaderSection;
 
-},{"./../widgets/social-link-widget":259,"react-bootstrap":112,"react-router":175}],253:[function(require,module,exports){
+},{"./../widgets/social-link-widget":260,"react-bootstrap":76,"react-router":173}],253:[function(require,module,exports){
+'use strict';
+
+var React = window.React;
+var ReactRouter = require('react-router');
+
+
+var PrivacySection = React.createClass({displayName: "PrivacySection",
+
+    mixins : [ReactRouter.Navigation],
+
+    render: function() {
+
+        return (
+            React.createElement("section", {id: "mainContent"}, 
+                React.createElement("div", {className: "container"}, 
+                    React.createElement("div", {className: "row"}, 
+                        React.createElement("div", {className: "col-xs-12"}, 
+                            React.createElement("h3", null, "DATOS SENSIBLES"), 
+                            React.createElement("p", null, 
+                              "En Quetal Seguro de Auto.com, Agente de Seguros S.A. de C.V., nos comprometemos a proteger su privacidad durante el procesamiento de sus datos personales identificables y sensibles; por lo tanto, esta Compañía se obliga a hacer uso correcto de sus datos personales de conformidad con las leyes, la buena fe, el orden público y el presente Aviso."
+                            ), 
+                            React.createElement("br", null), 
+                            React.createElement("h4", null, "I.-IDENTIDAD Y DOMICILIO DEL RESPONSABLE:"), 
+                            React.createElement("p", null, 
+                              "Quetal Seguro de Auto.com, Agente de Seguros S.A. de C.V., con domicilio en Emiliano Zapata, Número 7232, Zona Centro, Código Postal 22000, Tijuana, Baja California."
+                            ), 
+                            React.createElement("br", null), 
+                            React.createElement("h4", null, "II.-LOS DATOS PERSONALES QUE SERÁN SOMETIDOS A TRATAMIENTO:"), 
+                            React.createElement("p", null, 
+                              "Los datos que Quetal Seguro de Auto.com, Agente de Seguros S.A. de C.V. recabe de usted a través de la solicitud de seguro y/o a través de los formatos institucionales, y/o medios físicos y/o medios electrónicos, serán utilizados para todos los fines de la relación jurídica derivada del contrato de seguro. Los datos personales que serán ser sometidos a tratamiento son los siguientes:"
+                            ), 
+                            React.createElement("br", null), 
+                            React.createElement("h5", null, "CATEGORÍAS DE DATOS PERSONALES:"), 
+                            React.createElement("p", null, 
+                              "Datos de identificación: Nombre, Estado Civil, firma autógrafa y en su caso electrónica, Registro Federal de Contribuyentes," + ' ' +
+                              "Clave Única de Registro de Población, número de cartilla militar, lugar y fecha de nacimiento, nacionalidad y edad." + ' ' +
+                              "Datos de contacto: Domicilio, correo electrónico, teléfono fijo y teléfono celular." + ' ' +
+                              "Datos patrimoniales o financieros: Bienes, derechos, cargas u obligaciones susceptibles de valoración económica, como son: bienes muebles e inmuebles, seguros y fianzas."
+                            ), 
+                            React.createElement("br", null), 
+                            React.createElement("h5", null, "CATEGORÍAS DE DATOS PERSONALES SENSIBLES:"), 
+                            React.createElement("p", null, 
+                              "Datos de salud: Lo relativo a la valoración, preservación, cuidado, mejoramiento y recuperación de su estado de salud físico o mental, presente, pasado o futuro. ", React.createElement("br", null), 
+
+                              "Asimismo, también se considera como datos sensibles los aspectos que refieran al origen racial, étnico, información genética, creencias religiosas, filosóficas y morales, afiliación sindical, opiniones políticas y preferencia sexual. ", React.createElement("br", null), 
+
+                              "Los datos personales sensibles y financieros que usted proporcione, serán tratados y resguardados con un alto estándar de seguridad y estricta confidencialidad y serán utilizados únicamente para los fines de la relación jurídica en total apego a lo dispuesto en este Aviso de Privacidad y en la legislación aplicable."
+                            ), 
+                            React.createElement("br", null), 
+                            React.createElement("h4", null, "III.-LAS FINALIDADES DEL TRATAMIENTO:"), 
+                            React.createElement("p", null, 
+                              "La finalidad de la obtención, uso y almacenamiento de sus datos personales, se desglosa de la siguiente manera: ", React.createElement("br", null), 
+                              "A. Para la valuación de solicitudes de seguro, selección de riesgos, y en su caso, la emisión del contrato de seguro, renovaciones del mismo y trámite de reclamaciones para el pago de siniestros. ", React.createElement("br", null), 
+                              "B. Para regular los derechos y obligaciones que surgen entre las partes por la celebración del Contrato de Seguro. ", React.createElement("br", null), 
+                              "C. Para la emisión y rehabilitación de sus Pólizas de Seguro. ", React.createElement("br", null), 
+                              "D. Para los Visitantes y Asegurados: Todos los datos que le sean solicitados, así como la videograbación que se realice,  se utilizaran para todos los fines vinculados con el acceso, control y seguridad dentro de las instalaciones de la empresa. ", React.createElement("br", null), 
+                              "E. Proveedores o prestadores de bienes y/o servicios, incluso agentes de seguros: Para todos los fines vinculados con la relación jurídica y contractual que celebremos con usted. ", React.createElement("br", null), 
+                              "F. Para integrar expedientes conforme a las políticas emitidas por la Comisión Nacional de Seguros y Fianzas, para combatir el lavado de dinero y terrorismo. ", React.createElement("br", null), 
+                              "G. Para investigar y combatir la comisión de los delitos patrimoniales, como son Fraude, de tipo genérico y específico, y otros de semejante naturaleza. ", React.createElement("br", null), 
+                              "H. Para la promoción de nuestros productos y servicios que se hagan a través de Quetal Seguro de Auto.com, Agente de Seguros S.A. de C.V., y de sus empresas filiales. ", React.createElement("br", null), 
+                              "I. Para fines de mercadotecnia, publicidad y prospección comercial. ", React.createElement("br", null), " ", React.createElement("br", null), 
+
+                              "Las finalidades consistentes en los incisos A),  B), C), D), E), F) G) son necesarias para la existencia, mantenimiento y cumplimiento de la relación jurídica entre Usted y Quetalsegurosdeauto.com, Agente de Seguros S.A. de C.V. ", React.createElement("br", null), 
+
+                              "Las finalidades consistentes en los incisos H) y I), no son necesarias para la existencia, mantenimiento y cumplimiento de la relación jurídica, ya que las mismas son únicamente para fines publicitarios. ", React.createElement("br", null), 
+
+                              "Marque con una cruz la casilla correspondiente para señalar si está de acuerdo con las finalidades de mercadotecnia, publicidad, prospección judicial de productos y servicios de Quetal seguros de auto.com, Agente de Seguros S.A. de C.V. ", React.createElement("br", null), 
+
+                              "Asimismo, tendrá un plazo de cinco días hábiles para que, de ser el caso, manifieste su negativa para el tratamiento de sus datos personales con respecto de las finalidades que no son necesarias, ni dieron origen a la relación con la Compañía Aseguradora."
+                            ), 
+                            React.createElement("br", null), 
+                            React.createElement("h4", null, "IV.-TRANSFERENCIA DE DATOS PERSONALES:"), 
+                            React.createElement("p", null, 
+                              "Los datos sujetos a tratamiento podrán ser transferidos a: ", React.createElement("br", null), 
+                              "• General de Seguros, SAB empresa con la cual Quetal Seguro de Auto.com, Agente de Seguros, SA de CV tiene contrato mercantil, con la finalidad de ofrecerle otros productos y servicios. ", React.createElement("br", null), 
+                              "• Autoridades financieras, mexicanas y extranjeras, con la finalidad de dar cumplimiento a nuestras obligaciones derivadas de leyes o tratados internacionales como institución de seguros, obligaciones tributarias, así como para el cumplimiento de notificaciones o requerimientos oficiales. ", React.createElement("br", null), 
+                              "• Autoridades judiciales, mexicanas y extranjeras, con la finalidad de dar cumplimiento a la ley, notificaciones, requerimientos u oficios de carácter judicial. ", React.createElement("br", null), 
+                              "• Instituciones, organizaciones o entidades del sector asegurador que pertenezcan a la Asociación Mexicana de Instituciones de Seguros para fines de prevención de fraude y selección de riesgos. ", React.createElement("br", null), " ", React.createElement("br", null), 
+
+                              "Cuando Quetal Seguro de Auto.com, Agente de Seguros S.A. de C.V. pretenda transferir los datos personales a terceros nacionales o extranjeros, comunicará a estos el contenido del presente aviso de privacidad y las finalidades a las que el titular autorizó para estar sujeto a tratamiento. Cuando la transferencia sea precisa para el mantenimiento o cumplimiento de un Contrato de Seguro celebrado entre el responsable y el Titular de los datos personales, no será necesario el consentimiento del Titular."
+                            ), 
+                            React.createElement("br", null), 
+                            React.createElement("h4", null, "V.-PROCEDIMIENTO PARA EJERCER DERECHOS ARCO Y REVOCACIÓN DEL CONSENTIMIENTO:"), 
+                            React.createElement("p", null, 
+                              "El Titular o su representante legal, podrán solicitar a Quetal Seguro de Auto.com.com, Agente de Seguros S.A. de C.V., en cualquier momento el acceso, la rectificación, la cancelación u oposición respecto a los datos personales que le conciernen, para ello bastará que lo solicite por escrito en formato libre dirigido al área responsable del manejo de los datos personales ubicado en Emiliano Zapata, Número 7232, Zona Centro, Código Postal 22000, Tijuana, Baja California, o bien, en la sección disponible a través de nuestra página WEB www.quetalsegurosdeauto.com" + ' ' +
+                              "Para el ejercicio de este derecho, Usted como Titular de los Datos Personales, deberá de identificar en su solicitud de acceso, rectificación, cancelación u oposición, los siguientes datos: ", React.createElement("br", null), 
+
+                              "1.-Nombre y Domicilio del titular, o medio electrónico a donde pueda enviarse la respuesta a su solicitud. ", React.createElement("br", null), 
+                              "2.-La descripción clara y precisa de los datos personales de los que busca ejercer alguno de los derechos antes mencionados. ", React.createElement("br", null), 
+                              "3.-En el caso de las solicitudes de rectificación de sus datos personales el Titular deberá de indicar el dato que es erróneo y la corrección que debe de realizarse al respecto. ", React.createElement("br", null), 
+                              "4.-Los datos, documentos o registros que faciliten la localización de datos personales. ", React.createElement("br", null), 
+                              "5.-El plazo para dar respuesta no excederá del término de diez días hábiles. ", React.createElement("br", null)
+                            ), 
+                            React.createElement("br", null), 
+                            React.createElement("h4", null, "VI.-PROCEDIMIENTO PARA REVOCACIÓN DEL CONSENTIMIENTO:"), 
+                            React.createElement("p", null, 
+                              "El Titular o su representante legal, podrán solicitar a Quetal Seguro de Auto.com, Agente de Seguros S.A. de C.V., en cualquier momento la revocación de sus datos personales, para ello bastará que lo solicite por escrito en formato libre dirigido al área responsable del manejo de los datos personales ubicado en Emiliano Zapata, Número 7232, Zona Centro, Código Postal 22000, Tijuana, Baja California, o bien, en la sección disponible a través de nuestra página WEB" + ' ' +
+                              "www.quetalsegurodeauto.com" + ' ' +
+                              "Para el ejercicio de este derecho, Usted como Titular de los Datos Personales, deberá de identificar en el escrito de revocación al tratamiento de sus datos personales los siguientes datos: ", React.createElement("br", null), 
+
+                              "1.-Nombre y Domicilio del titular, o medio electrónico a donde pueda enviarse la respuesta a su solicitud. ", React.createElement("br", null), 
+                              "2.-La descripción clara y precisa de los datos personales que desea revocar. ", React.createElement("br", null), 
+                              "3.-Los datos, documentos o registros que faciliten la localización de datos personales. ", React.createElement("br", null), 
+                              "5.-El plazo para dar respuesta no excederá del término de diez días hábiles. ", React.createElement("br", null)
+                            ), 
+                            React.createElement("br", null), 
+                            React.createElement("h4", null, "VII.-OPCIONES Y MEDIOS PARA LIMITAR EL USO O DIVULGACIÓN DE LOS DATOS PERSONALES:"), 
+                            React.createElement("p", null, 
+                              "Usted tendrá el derecho de manifestar su negativa de seguir recibiendo comunicados o promociones por parte de la responsable, relacionados con las promociones, productos  y servicios que se ofrezca, solicitud que podrá realizar a través de nuestra página web www.quetalsegurosdeauto.com."
+                            ), 
+                            React.createElement("br", null), 
+                            React.createElement("h4", null, "VIII.-USO DE COOKIES"), 
+                            React.createElement("p", null, 
+                              "Una cookie es una breve información que el portal de Internet envía a su computadora, la cual queda almacenada en el disco duro. La próxima vez que ingrese a nuestro portal, podremos usar la información almacenada en la cookie para facilitarle el uso de nuestro sitio de Internet. Por ejemplo, podemos usar su cookie para almacenar una contraseña para que no tenga que ingresarla de nuevo cada vez que se traslade a una sección diferente de nuestro portal de Internet. Una cookie no nos permite conocer su identidad personal a menos que expresamente elija proporcionárnosla. La mayoría de las cookies expiran después de un periodo determinado de tiempo, o bien usted puede borrarla en el momento en que lo desee de su explorador. Asimismo, puede hacer que su navegador le avise cuando recibe una cookie de manera que pueda aceptarla o rechazarla."
+                            ), 
+                            React.createElement("br", null), 
+                            React.createElement("h4", null, "IX.-MEDIOS POR LOS CUALES EL RESPONSABLE COMUNICARÁ A LOS TITULARES DE CAMBIOS AL AVISO DE PRIVACIDAD:"), 
+                            React.createElement("p", null, 
+                              "Si se producen cambios en los Avisos de Privacidad, Quetal Seguro de Auto.com, Agente de Seguros S.A. de C.V., comunicará los cambios por los siguientes medios: ", React.createElement("br", null), 
+                              "1.-A través del correo electrónico que haya proporcionado el Titular. ", React.createElement("br", null), 
+                              "2.-Accediendo a la página web http://quetalsegurodeauto.com/aviso_privacidad ", React.createElement("br", null)
+                            ), 
+                            React.createElement("br", null), 
+                            React.createElement("br", null)
+                        )
+                    )
+                )
+            )
+        );
+    }
+});
+
+module.exports = PrivacySection;
+
+},{"react-router":173}],254:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20891,7 +20621,7 @@ var AboutusPanel = React.createClass({displayName: "AboutusPanel",
 
 module.exports = AboutusPanel;
 
-},{"./aboutus/carousel":237,"./aboutus/whoarewe":238,"./aboutus/whyus":239,"./custom/savings":245,"react-bootstrap":112,"react-router":175}],254:[function(require,module,exports){
+},{"./aboutus/carousel":236,"./aboutus/whoarewe":237,"./aboutus/whyus":238,"./custom/savings":245,"react-bootstrap":76,"react-router":173}],255:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20935,7 +20665,7 @@ var ContactPanel = React.createClass({displayName: "ContactPanel",
 
 module.exports = ContactPanel;
 
-},{"./contactus/hello":241,"./contactus/info":242,"./custom/needhelp":244,"react-bootstrap":112,"react-router":175}],255:[function(require,module,exports){
+},{"./contactus/hello":240,"./contactus/info":241,"./custom/needhelp":244,"react-bootstrap":76,"react-router":173}],256:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20975,7 +20705,7 @@ var CoveragePanel = React.createClass({displayName: "CoveragePanel",
 
 module.exports = CoveragePanel;
 
-},{"./coverage/table":243,"./custom/savings":245,"react-bootstrap":112,"react-router":175}],256:[function(require,module,exports){
+},{"./coverage/table":243,"./custom/savings":245,"react-bootstrap":76,"react-router":173}],257:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -21018,7 +20748,7 @@ var HomeSection = React.createClass({displayName: "HomeSection",
 
 module.exports = HomeSection;
 
-},{"./custom/whattodo":246,"./home/carousel":247,"./home/otherservices":248,"./home/services":249,"react-bootstrap":112,"react-router":175}],257:[function(require,module,exports){
+},{"./custom/whattodo":246,"./home/carousel":247,"./home/otherservices":248,"./home/services":249,"react-bootstrap":76,"react-router":173}],258:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -21122,7 +20852,7 @@ var CoverageTemplate = React.createClass({displayName: "CoverageTemplate",
 });
 
 module.exports = CoverageTemplate;
-},{"../../lib/db":262,"react-bootstrap":112,"react-router":175}],258:[function(require,module,exports){
+},{"../../lib/db":263,"react-bootstrap":76,"react-router":173}],259:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -21177,7 +20907,7 @@ var ModalWidget = React.createClass({displayName: "ModalWidget",
 });
 
 module.exports = ModalWidget;
-},{"../../stores/ModalStore":265,"../templates/coverage-template":257,"react-bootstrap":112}],259:[function(require,module,exports){
+},{"../../stores/ModalStore":266,"../templates/coverage-template":258,"react-bootstrap":76}],260:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -21204,7 +20934,7 @@ var SocialElement = React.createClass({displayName: "SocialElement",
 
 module.exports = SocialElement;
 
-},{"react-router":175}],260:[function(require,module,exports){
+},{"react-router":173}],261:[function(require,module,exports){
 /*
  * Copyright (c) 2014-2015, Facebook, Inc.
  * All rights reserved.
@@ -21222,73 +20952,15 @@ module.exports = keyMirror({
   OPEN_MODAL: null
 });
 
-},{"keymirror":41}],261:[function(require,module,exports){
+},{"keymirror":6}],262:[function(require,module,exports){
 var Dispatcher = require('flux').Dispatcher;
 
 module.exports = new Dispatcher();
 
-},{"flux":38}],262:[function(require,module,exports){
+},{"flux":3}],263:[function(require,module,exports){
 'use strict';
 
 var CoverageInfo = {
-    prestigio: {
-        title: 'Prestigio',
-        subtitle: 'La Cobertura más completa para el Conductor y su vehículo último modelo o modelos recientes.',
-        leftTitle: 'Para tu Auto',
-        leftContent: [
-           {
-                title:'Por los Daños que sufra',
-                content: 'Te protegemos por los daños que sufra tu vehículo ante cualquier eventualidad.' 
-            },
-            {
-                 title:'En caso de Robo',
-                 content: 'Tienes el respaldo y la seguridad de estar protegido en caso que seas víctima de Robo de tu Automóvil.<br /><br /> No te preocupes, con Prestigio los interiores manufacturados de agencia están amparados en caso de Robo Parcial<sup>1</sup>.' 
-            },
-            {
-                 title:'Daños a Terceros',
-                 content: 'Te protegemos por los Daños que pudieras ocasionar a terceros en sus bienes o en sus personas.' 
-            },
-            {
-                 title:'Protección Extendida',
-                 content: 'Ahora al conducir otro vehículo de las mismas características te protegemos por los daños que pudieras ocasionar a terceros.' 
-            },
-            {
-                 title:'Conduce Seguro',
-                 content: 'Porque al conducir tu Vehículo estás expuesto a Asaltos, te protegemos por el uso indebido que puedan hacer de tus Tarjetas de Crédito o Débito a consecuencia del Asalto.' 
-            },
-            {
-                 title:'Tus Pertenencias Seguras',
-                 content: 'Tus Objetos Personales y los de tu familia están cubiertos en caso de que seas víctima del robo de tu Vehículo.' 
-            }
-        ],
-        leftNotes: '<sup>1</sup> Esta Cobertura debe de estar incluida en la Carátula de la Póliza.',
-        
-
-        rightTitle: 'Para Ti y los Tuyos',
-        rightContent: [
-           {
-                title:'Si necesitas Atención Médica',
-                content: 'Están cubiertos los Gastos Médicos que los ocupantes del vehículo requieran en caso de accidente.<br /><br /> También, en caso de accidente te protegemos al conducir<sup>1</sup>otro vehículo de las mismas características al que tienes asegurado.' 
-            },
-            {
-                 title:'Más Protección al Conductor',
-                 content: 'Pensando en tu familia, te protegemos en caso de muerte accidental<sup>1</sup>.' 
-            },
-            {
-                 title:'Si requieres Asistencia Legal',
-                 content: 'Cuentas con un Abogado para enfrentar los Trámites Jurídicos provocados por el accidente.', 
-            },
-            {
-                 title:'Durante tu Viaje',
-                 content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.'
-            },
-            {
-                 title:'Para que sigas tu camino',
-                 content: 'Te ofrecemos un Automóvil Sustituto para que sigas tu camino mientras te pagamos o reparamos el tuyo.' 
-            },
-        ],
-        rightNotes: '<sup>1</sup> Esta Cobertura debe de estar incluida en la Carátula de la Póliza.',
-    },
     amplia: {
         title: 'Confort Amplia',
         subtitle: 'Porque sabemos de los riesgos del camino a los que están  expuestos Tú, Tu Familia y Tu Auto.',
@@ -21296,36 +20968,32 @@ var CoverageInfo = {
         leftContent: [
            {
                 title:'Por los Daños que sufra',
-                content: 'Te protegemos por los daños que sufra tu vehículo ante cualquier eventualidad.' 
+                content: 'Te protegemos por los daños que sufra tu vehículo ante cualquier eventualidad.'
             },
             {
                  title:'En caso de Robo',
-                 content: 'Tienes el respaldo y la seguridad de estar protegido en caso que seas víctima de Robo de tu Automóvil.' 
+                 content: 'Tienes el respaldo y la seguridad de estar protegido en caso que seas víctima de Robo de tu Automóvil.'
             },
             {
                  title:'Daños a Terceros',
-                 content: 'Te protegemos por los Daños que pudieras ocasionar a terceros en sus bienes o en sus personas.' 
+                 content: 'Te protegemos por los Daños que pudieras ocasionar a terceros en sus bienes o en sus personas.'
             },
-          
+
         ],
 
         rightTitle: 'Para Ti y los Tuyos',
         rightContent: [
            {
                 title:'Si necesitas Atención Médica',
-                content: 'Están cubiertos los Gastos Médicos que los ocupantes del vehículo requieran en caso de accidente.' 
+                content: 'Están cubiertos los Gastos Médicos que los ocupantes del vehículo requieran en caso de accidente.'
             },
             {
                  title:'Si requieres Asistencia Legal',
-                 content: 'Cuentas con un Abogado para enfrentar los Trámites Jurídicos provocados por el accidente.' 
+                 content: 'Cuentas con un Abogado para enfrentar los Trámites Jurídicos provocados por el accidente.'
             },
             {
                  title:'Durante tu Viaje',
-                 content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.', 
-            },
-            {
-                 title:'Para que sigas tu camino',
-                 content: 'Te ofrecemos un Automóvil Sustituto para que sigas tu camino mientras te pagamos o reparamos el tuyo.'
+                 content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.',
             }
         ],
     },
@@ -21336,7 +21004,7 @@ var CoverageInfo = {
         leftContent: [
            {
                 title:'Responsabilidad Civil por Daños a Terceros',
-                content: 'Te protegemos por los Daños que puedas ocasionar con tu Automóvil a terceras personas en sus bienes o en sus personas.' 
+                content: 'Te protegemos por los Daños que puedas ocasionar con tu Automóvil a terceras personas en sus bienes o en sus personas.'
             },
         ],
 
@@ -21344,15 +21012,15 @@ var CoverageInfo = {
         rightContent: [
            {
                 title:'Si necesitas Atención Médica',
-                content: 'Están cubiertos los Gastos Médicos que los ocupantes del vehículo requieran en caso de accidente.' 
+                content: 'Están cubiertos los Gastos Médicos que los ocupantes del vehículo requieran en caso de accidente.'
             },
             {
                  title:'Si requieres Asistencia Legal',
-                 content: 'Cuentas con un Abogado para enfrentar los Trámites Jurídicos provocados por el accidente.' 
+                 content: 'Cuentas con un Abogado para enfrentar los Trámites Jurídicos provocados por el accidente.'
             },
             {
                  title:'Durante tu Viaje',
-                 content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.', 
+                 content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.',
             },
         ],
     },
@@ -21363,28 +21031,28 @@ var CoverageInfo = {
         leftContent: [
             {
                  title:'En caso de Robo',
-                 content: 'Tienes el respaldo y la seguridad de estar protegido en caso que seas víctima de Robo de tu Automóvil.' 
+                 content: 'Tienes el respaldo y la seguridad de estar protegido en caso que seas víctima de Robo de tu Automóvil.'
             },
             {
                  title:'Daños a Terceros',
-                 content: 'Te protegemos por los Daños que pudieras ocasionar a terceros en sus bienes o en sus personas.' 
+                 content: 'Te protegemos por los Daños que pudieras ocasionar a terceros en sus bienes o en sus personas.'
             },
-          
+
         ],
 
         rightTitle: 'Para Ti y los Tuyos',
         rightContent: [
            {
                 title:'Si necesitas Atención Médica',
-                content: 'Están cubiertos los Gastos Médicos que los ocupantes del vehículo requieran en caso de accidente.' 
+                content: 'Están cubiertos los Gastos Médicos que los ocupantes del vehículo requieran en caso de accidente.'
             },
             {
                  title:'Si requieres Asistencia Legal',
-                 content: 'Cuentas con un Abogado para enfrentar los Trámites Jurídicos provocados por el accidente.' 
+                 content: 'Cuentas con un Abogado para enfrentar los Trámites Jurídicos provocados por el accidente.'
             },
             {
                  title:'Durante tu Viaje',
-                 content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.', 
+                 content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.',
             },
         ],
     },
@@ -21395,7 +21063,7 @@ var CoverageInfo = {
         leftContent: [
             {
                  title:'El producto de Fronterizos y Legalizados ofrece',
-                 content: 'Flexibilidad de poder cotizar el paquete que mejor se adapte a las necesidades de cada cliente, ya que se pueden elegir sólo las coberturas que desee. Además de que sólo se necesita contar con el número de serie del vehículo para conocer las características del vehículo a asegurar”.' 
+                 content: 'Flexibilidad de poder cotizar el paquete que mejor se adapte a las necesidades de cada cliente, ya que se pueden elegir sólo las coberturas que desee. Además de que sólo se necesita contar con el número de serie del vehículo para conocer las características del vehículo a asegurar”.'
             },
         ],
     },
@@ -21406,19 +21074,19 @@ var CoverageInfo = {
         leftContent: [
             {
                  title:'Responsabilidad Civil por Daños a Terceros en sus Personas',
-                 content: 'Te protegemos por los Daños que puedas ocasionar con tu Automóvil a terceras personas (lesiones y muerte).<br /><br /> Obligatorio para todos los Automóviles y Pick up´s de hasta 3.5 toneladas que circulen en Vías, Caminos y Puentes Federales.' 
+                 content: 'Te protegemos por los Daños que puedas ocasionar con tu Automóvil a terceras personas (lesiones y muerte).<br /><br /> Obligatorio para todos los Automóviles y Pick up´s de hasta 3.5 toneladas que circulen en Vías, Caminos y Puentes Federales.'
             },
-          
+
         ],
         leftNotes: 'El límite máximo de responsabilidad de la Aseguradora se establece en la carátula de la Póliza.',
         rightContent: [
            {
                 title:'Cobertura por Daños a Terceros',
-                content: 'Responsabilidad civil por el tránsito de vehículos en territorio nacional que cause a Terceros: <ul><li>Lesiones corporales</li><li>Incapacidades temporales y/o permanentes o la muerte que considera la responsabilidad civil a que se refiere el artículo 63 Bis de la Ley de Caminos, Puentes y Autotransporte Federal.</li></ul>' 
+                content: 'Responsabilidad civil por el tránsito de vehículos en territorio nacional que cause a Terceros: <ul><li>Lesiones corporales</li><li>Incapacidades temporales y/o permanentes o la muerte que considera la responsabilidad civil a que se refiere el artículo 63 Bis de la Ley de Caminos, Puentes y Autotransporte Federal.</li></ul>'
             },
             {
                  title:'Dentro del límite máximo de responsabilidad contratado',
-                 content: 'La Cobertura ampara los gastos y costos a que fuere condenado a pagar el Asegurado, o cualquier persona que, bajo su consentimiento tácito o explícito, use o posea el Vehículo Asegurado. <br /><br /> En caso de juicio civil seguido en su contra con motivo de la responsabilidad civil amparada por esta cobertura de acuerdo con los Artículos 145 y 146 de la Ley sobre el Contrato de Seguro.' 
+                 content: 'La Cobertura ampara los gastos y costos a que fuere condenado a pagar el Asegurado, o cualquier persona que, bajo su consentimiento tácito o explícito, use o posea el Vehículo Asegurado. <br /><br /> En caso de juicio civil seguido en su contra con motivo de la responsabilidad civil amparada por esta cobertura de acuerdo con los Artículos 145 y 146 de la Ley sobre el Contrato de Seguro.'
             },
         ],
         rightNotes:'El límite máximo de responsabilidad de la Aseguradora se establece en la carátula de la Póliza.'
@@ -21426,7 +21094,8 @@ var CoverageInfo = {
 };
 
 module.exports = CoverageInfo;
-},{}],263:[function(require,module,exports){
+
+},{}],264:[function(require,module,exports){
 'use strict';
 
 var rest = require('rest');
@@ -21438,7 +21107,7 @@ var client = rest
   .wrap(errorCode, { code: 300 });
 
 module.exports = client;
-},{"rest":195,"rest/interceptor/errorCode":200,"rest/interceptor/mime":201}],264:[function(require,module,exports){
+},{"rest":194,"rest/interceptor/errorCode":199,"rest/interceptor/mime":200}],265:[function(require,module,exports){
 var React = window.React;
 var ReactRouter = require('react-router');
 var Route = ReactRouter.Route;
@@ -21449,6 +21118,7 @@ var HomeSection = require('./components/section-home');
 var CoverageSection = require('./components/section-coverage');
 var AboutusSection = require('./components/section-aboutus');
 var ContactUsSection = require('./components/section-contactus');
+var PrivacySection = require('./components/privacy');
 
 var routes = (
 	React.createElement(Route, {path: "/", handler: Layout}, 
@@ -21456,19 +21126,22 @@ var routes = (
 		React.createElement(Route, {name: "homepage", path: "/inicio", handler: HomeSection}), 
 
 		React.createElement(Route, {name: "coverage", path: "/coberturas", handler: CoverageSection}), 
-		
+
 		React.createElement(Route, {name: "aboutus", path: "/nosotros", handler: AboutusSection}), 
 		React.createElement(Route, {name: "whyus", path: "/nosotros/por-que-nosotros", handler: AboutusSection}), 
 		React.createElement(Route, {name: "whoarewe", path: "/nosotros/quienes-somos", handler: AboutusSection}), 
 
 		React.createElement(Route, {name: "contact", path: "/contacto", handler: ContactUsSection}), 
 		React.createElement(Route, {name: "disaster", path: "/contacto/siniestro", handler: ContactUsSection}), 
-		React.createElement(Route, {name: "contactform", path: "/contacto/forma", handler: ContactUsSection})
+		React.createElement(Route, {name: "contactform", path: "/contacto/forma", handler: ContactUsSection}), 
+
+		React.createElement(Route, {name: "privacy", path: "/aviso-privacidad", handler: PrivacySection})
 	)
 );
 
 module.exports = routes;
-},{"./components/layout":250,"./components/section-aboutus":253,"./components/section-contactus":254,"./components/section-coverage":255,"./components/section-home":256,"react-router":175}],265:[function(require,module,exports){
+
+},{"./components/layout":250,"./components/privacy":253,"./components/section-aboutus":254,"./components/section-contactus":255,"./components/section-coverage":256,"./components/section-home":257,"react-router":173}],266:[function(require,module,exports){
 /*
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -21545,7 +21218,7 @@ AppDispatcher.register(function(action) {
 
 module.exports = ModalStore;
 
-},{"../constants/ModalConstants":260,"../dispatcher/AppDispatcher":261,"events":36,"object-assign":42}],"myApp":[function(require,module,exports){
+},{"../constants/ModalConstants":261,"../dispatcher/AppDispatcher":262,"events":1,"object-assign":7}],"myApp":[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -21556,4 +21229,4 @@ ReactRouter.run(routes, ReactRouter.HistoryLocation, function (Root) {
 	React.render(React.createElement(Root, null), document.getElementById('app'));
 });
 
-},{"./routes":264,"react-router":175}]},{},[]);
+},{"./routes":265,"react-router":173}]},{},[]);

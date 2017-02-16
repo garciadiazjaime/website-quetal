@@ -38,13 +38,13 @@ var ContactForm = React.createClass({displayName: "ContactForm",
                 ), 
                 React.createElement("div", {className: "formGroup"}, 
                     React.createElement("label", {id: "lab_tel"}, "Teléfono*"), 
-                    React.createElement("input", {type: "tel", id: "tel", name: "tel", placeholder: "Teléfono", onChange: this.onChangeHandler.bind(this, 'tel'), value: this.state.formData.tel.value})
+                    React.createElement("input", {type: "tel", id: "tel", name: "tel", placeholder: "Teléfono (10 dígitos)", onChange: this.onChangeHandler.bind(this, 'tel'), value: this.state.formData.tel.value})
                 ), 
-                React.createElement("textarea", {id: "message", name: "message", placeholder: "Mensaje", onChange: this.onChangeHandler.bind(this, 'message'), value: this.state.formData.message.value}), 
+                React.createElement("textarea", {id: "message", name: "message", placeholder: "Mensaje (255 carácteres)", onChange: this.onChangeHandler.bind(this, 'message'), value: this.state.formData.message.value, maxlength: "255"}), 
                 React.createElement("span", {id: "msg"}), 
 
                  this.state.showLoading ? React.createElement("span", {id: "loader"}, "Cargando") : null, 
-                
+
                 React.createElement("button", {id: "submitButton", onClick: this.submitFormHandler}, React.createElement("span", null, "Enviar"))
             )
         )
@@ -53,7 +53,7 @@ var ContactForm = React.createClass({displayName: "ContactForm",
     onChangeHandler: function(property, event){
         var formData = this.state.formData;
         formData[property].value = event.target.value;
-            
+
         this.setState({
             formData: formData
         });
@@ -81,7 +81,7 @@ var ContactForm = React.createClass({displayName: "ContactForm",
                 subject: 'Forma de Contacto Web',
                 html: html
             };
-            
+
             RestClient({
                 path: '/api/send_email',
                 method: 'POST',
@@ -95,7 +95,7 @@ var ContactForm = React.createClass({displayName: "ContactForm",
                 }
                 _this.setState(state);
                 msgElement.className = response.entity.status ? _this.state.successCSSClass : _this.state.errorCSSClass;
-                msgElement.innerHTML = response.entity.status ? 
+                msgElement.innerHTML = response.entity.status ?
                     'Tu información ha sido enviada de manera exitosa. Gracias.':
                     'Lo sentimos, el mensaje no pudo ser enviado, intenta más tarde.';
             });
@@ -125,10 +125,10 @@ var ContactForm = React.createClass({displayName: "ContactForm",
                     response = false;
                 }
                 labelElement.className = this.state.errorCSSClass;
-            } 
+            }
             else{
                 labelElement.className = '';
-            }  
+            }
         }
         return response;
     },

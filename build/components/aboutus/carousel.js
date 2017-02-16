@@ -14,7 +14,7 @@ var Link = ReactRouter.Link;
 var AboutusCarouselPanel = React.createClass({displayName: "AboutusCarouselPanel",
 
     mixins : [ReactRouter.Navigation],
-    
+
     handleClick: function(){
         console.log('handleClick');
         // this.transitionTo('home');
@@ -24,7 +24,7 @@ var AboutusCarouselPanel = React.createClass({displayName: "AboutusCarouselPanel
 
         return (
             React.createElement("section", {id: "aboutusIntro"}, 
-                React.createElement(Carousel, {id: "aboutusCarousel", interval: 3000}, 
+                React.createElement(Carousel, {id: "aboutusCarousel", interval: 7000}, 
                     React.createElement(CarouselItem, null, 
                         React.createElement("div", {className: "container"}, 
                             React.createElement("p", null, "Hay muchas razones por las que NO se ", React.createElement("em", null, "comparan"), " con nosotros")
@@ -32,12 +32,12 @@ var AboutusCarouselPanel = React.createClass({displayName: "AboutusCarouselPanel
                     ), 
                     React.createElement(CarouselItem, null, 
                         React.createElement("div", {className: "container"}, 
-                            React.createElement("p", null, "Hay muchas razones por las que NO se ", React.createElement("em", null, "comparan"), " con nosotros")
+                            React.createElement("p", null, "6 meses sin intereses con BBVA Bancomer, Banamex Y American Express")
                         )
                     ), 
                     React.createElement(CarouselItem, null, 
                         React.createElement("div", {className: "container"}, 
-                            React.createElement("p", null, "Hay muchas razones por las que NO se ", React.createElement("em", null, "comparan"), " con nosotros")
+                            React.createElement("p", null, "Aceptamos tarjetas visa, Master Card y American Express")
                         )
                     )
                 )

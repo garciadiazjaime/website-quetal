@@ -8,6 +8,7 @@ var HomeSection = require('./components/section-home');
 var CoverageSection = require('./components/section-coverage');
 var AboutusSection = require('./components/section-aboutus');
 var ContactUsSection = require('./components/section-contactus');
+var PrivacySection = require('./components/privacy');
 
 var routes = (
 	<Route path="/" handler={Layout}>
@@ -15,7 +16,7 @@ var routes = (
 		<Route name="homepage" path="/inicio"  handler={HomeSection} />
 
 		<Route name="coverage" path="/coberturas" handler={CoverageSection} />
-		
+
 		<Route name="aboutus" path="/nosotros" handler={AboutusSection} />
 		<Route name="whyus" path="/nosotros/por-que-nosotros" handler={AboutusSection} />
 		<Route name="whoarewe" path="/nosotros/quienes-somos" handler={AboutusSection} />
@@ -23,6 +24,8 @@ var routes = (
 		<Route name="contact" path="/contacto" handler={ContactUsSection} />
 		<Route name="disaster" path="/contacto/siniestro" handler={ContactUsSection} />
 		<Route name="contactform" path="/contacto/forma" handler={ContactUsSection} />
+
+		<Route name="privacy" path="/aviso-privacidad" handler={PrivacySection} />
 	</Route>
 );
 

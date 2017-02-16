@@ -31,25 +31,7 @@ Además, dispones de los servicios de Asistencia Legal y Asistencia en el Camino
                 </div>
                 <div className="container">
                     <Row id="servicesList">
-                        <Col xs={12} sm={3}>
-                            <div className="servicesList-wrap">
-                                <h3><span className="wrap">¿Qué tal si tienes un auto del año*? </span><span id="prestigeIcon"></span></h3>
-                                <div className="servicesList-details">
-                                    <h2>Cobertura Prestigio</h2>
-                                    <ul className="checklist">
-                                        <li>Protección extendida</li>
-                                        <li>Daños a tu vehículo</li>
-                                        <li>Robo</li>
-                                        <li>Daños a terceros1</li>
-                                    </ul>
-                                    <p className="notes">*Vehículos último modelo
-y modelos recientes.</p>
-                                </div>
-                                <a href={this.props.data.cotizaLink} target="_blank" title="Cotiza" className="blueButton">Cotiza</a>
-                            </div>
-                            <a onClick={this.handleClick.bind(this, 'prestigio')} className="arrowLink">Ver detalles</a>
-                        </Col>
-                        <Col xs={12} sm={3} className="featured">
+                        <Col xs={12} sm={4} className="featured">
                             <div className="servicesList-wrap">
                                 <h3><span className="wrap">¿Qué tal si te cuidamos bien? </span><span id="comfortIcon"></span></h3>
                                 <div className="servicesList-details">
@@ -64,7 +46,7 @@ y modelos recientes.</p>
                             </div>
                             <a onClick={this.handleClick.bind(this, 'amplia')} className="arrowLink">Ver detalles</a>
                         </Col>
-                        <Col xs={12} sm={3}>
+                        <Col xs={12} sm={4}>
                             <div className="servicesList-wrap">
                                 <h3><span className="wrap">¿Qué tal si tú pones los límites? </span><span id="limitedComfortIcon"></span></h3>
                                 <div className="servicesList-details">
@@ -78,7 +60,7 @@ y modelos recientes.</p>
                             </div>
                             <a onClick={this.handleClick.bind(this, 'limitada')} className="arrowLink">Ver detalles</a>
                         </Col>
-                        <Col xs={12} sm={3}>
+                        <Col xs={12} sm={4}>
                             <div className="servicesList-wrap">
                                 <h3><span className="wrap">¿Qué tal si quieres un Seguro como tú lo necesitas?</span><span id="basicComfortIcon"></span></h3>
                                 <div className="servicesList-details">

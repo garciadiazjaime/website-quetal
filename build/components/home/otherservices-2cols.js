@@ -45,28 +45,6 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
                             )
                         )
                     )
-                ), 
-                React.createElement("div", {className: "smallContainer"}, 
-                    React.createElement(Row, null, 
-                        React.createElement(Col, {xs: 12, sm: 5}, 
-                            React.createElement("p", {id: "substituteCar"}, React.createElement("span", null, "Automóvil Sustituto"))
-                        ), 
-                        React.createElement(Col, {xs: 12, sm: 7}, 
-                            React.createElement("p", null, "General de Seguros te ofrece un auto sustituto mientras reparamos tu auto por colisión o te pagamos tu automóvil por perdida total o robo total. "), 
-                            React.createElement("p", null, "Al contratar tu Seguro:"), 
-                            React.createElement(Row, {id: "substituteCar-ParticipantInsurance"}, 
-                                React.createElement(Col, {xs: 12, sm: 4}, 
-                                    React.createElement("p", null, React.createElement("span", null, "GS Autos "), " Amplia")
-                                ), 
-                                React.createElement(Col, {xs: 12, sm: 2}, 
-                                    React.createElement("p", null, "o")
-                                ), 
-                                React.createElement(Col, {xs: 12, sm: 4}, 
-                                    React.createElement("p", null, React.createElement("span", null, "GS Autos "), " Prestigio")
-                                )
-                            )
-                        )
-                    )
                 )
             )
         );

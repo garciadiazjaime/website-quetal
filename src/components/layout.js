@@ -29,7 +29,7 @@ var Layout = React.createClass({
 
   render: function() {
     var data = {
-      cotizaLink: 'https://gswas.com.mx/AutosVentaDirecta/cotizacion.xhtml?u=5144&ori=0&neg=2',
+      cotizaLink: 'https://gswas.com.mx/AutosVentaDirecta/cotizacion.xhtml?u=5144&ori=0&neg=15&neg2=28',
       rcObligatorioLink: 'https://gswas.com.mx/AutosVentaDirecta/rcobligatorio.xhtml?u=5144',
     };
     return (

@@ -15,6 +15,7 @@ var SocialWidget = require('../widgets/social-link-widget');
 var FooterSection = React.createClass({displayName: "FooterSection",
 
   render: function() {
+    var date = new Date();
     return (
         React.createElement("div", null, 
             React.createElement("div", {className: "container"}, 
@@ -33,9 +34,6 @@ var FooterSection = React.createClass({displayName: "FooterSection",
                                         ), 
                                         React.createElement("li", null, 
                                             React.createElement("a", {onClick: this.handleClick.bind(this, 'amplia')}, "Amplia")
-                                        ), 
-                                        React.createElement("li", null, 
-                                            React.createElement("a", {onClick: this.handleClick.bind(this, 'prestigio')}, "Prestigio")
                                         ), 
                                         React.createElement("li", null, 
                                             React.createElement("a", {onClick: this.handleClick.bind(this, 'fronterizo')}, "Autos Fronterizos")
@@ -65,7 +63,7 @@ var FooterSection = React.createClass({displayName: "FooterSection",
                     React.createElement(Col, {xs: 12, sm: 5}, 
                         React.createElement("span", {id: "brand-footer"}, "Quetal - Mi seguro de auto"), 
                         React.createElement("p", null, "Con el respaldo de:"), 
-                        React.createElement("span", {className: "general-logo"}, "General de seguros"), 
+                        React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("span", {className: "general-logo"}, "General de seguros")), 
                         React.createElement(SocialWidget, null)
                     )
                 )
@@ -74,7 +72,8 @@ var FooterSection = React.createClass({displayName: "FooterSection",
                 React.createElement("div", {className: "container"}, 
                     React.createElement(Row, null, 
                         React.createElement(Col, {xs: 12, sm: 5}, 
-                            React.createElement("p", null, "Todos los derechos reservados Quetal Seguro de auto   2015 ")
+                            React.createElement("p", null, "Todos los derechos reservados Quetal Seguro de auto  ", date.getFullYear()), 
+                            React.createElement("p", null, React.createElement(Link, {to: "privacy", title: "Quiénes somos"}, "AVISO DE PRIVACIDAD"))
                         ), 
                         React.createElement(Col, {xs: 12, sm: 4}, 
                             React.createElement("p", {id: "credit"}, React.createElement("span", null, "Un proyecto de: ", React.createElement("a", {href: "http://somospool.com/", title: "Visita Branding POOL", target: "_blank"}, "POOL")), "Código por: ", React.createElement("a", {href: "http://mintitmedia.com/", title: "Mint IT Media - Diseño y desarrollo web", target: "_blank"}, "MINT"))

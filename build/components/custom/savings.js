@@ -23,8 +23,8 @@ var savingsBlock = React.createClass({displayName: "savingsBlock",
             React.createElement("div", {id: "savingsCallToAction", className: "smallContainer"}, 
                 React.createElement(Row, null, 
                     React.createElement(Col, {xs: 12, sm: 6}, 
-                        React.createElement("p", null, "Ahorra desde un 20% en tu Seguro de Auto comprando a través de ", React.createElement("span", {className: "logo"}, "Quetal")), 
-                        React.createElement("p", {className: "notes"}, "*En comparación con otros portales de venta de Seguros por internet.")
+                        React.createElement("p", null, "Ahorra 35% en tu Seguro de Auto comprando a través de ", React.createElement("span", {className: "logo"}, "Quetal")), 
+                        React.createElement("p", {className: "notes"}, "*Máximo descuento que otorga GS.")
                     ), 
                     React.createElement(Col, {xs: 12, sm: 6}, 
                         React.createElement("a", {href: this.props.data.cotizaLink, title: "Cotiza tu Seguro", className: "blueButton", target: "_blank"}, "Cotiza tu Seguro")
