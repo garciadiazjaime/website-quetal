@@ -24,7 +24,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
 
         return (
             React.createElement("section", {id: "homeIntro"}, 
-                React.createElement(Carousel, {id: "homeCarousel", interval: 3000}, 
+                React.createElement(Carousel, {id: "homeCarousel", interval: 7000}, 
                     React.createElement(CarouselItem, null, 
                         React.createElement("div", {className: "container"}, 
                             React.createElement(Row, null, 
@@ -75,6 +75,23 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                 )
                             ), 
                             React.createElement("span", {id: "carImage"})
+                        )
+                    ), 
+                    React.createElement(CarouselItem, null, 
+                        React.createElement("div", {className: "container"}, 
+                            React.createElement(Row, null, 
+                                React.createElement(Col, {xs: 12, sm: 7}, 
+                                    React.createElement("p", {className: "bigPhrase narrow"}, 
+                                        React.createElement("span", null, "35% de descuento"), " + 6 meses sin intereses"
+                                    ), 
+                                    React.createElement("p", {className: "restrictions"}, "*con BBVA Bancomer, Banamex y American Express."), 
+                                    React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
+                                    React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("span", {className: "general-logo"}, "General de seguros"))
+                                ), 
+                                React.createElement(Col, {xs: 12, sm: 5}
+                                )
+                            ), 
+                            React.createElement("span", {id: "womanImage"})
                         )
                     )
                 )

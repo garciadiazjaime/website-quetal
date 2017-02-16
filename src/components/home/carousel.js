@@ -24,7 +24,7 @@ var HomeCarouselPanel = React.createClass({
 
         return (
             <section id="homeIntro">
-                <Carousel id="homeCarousel" interval={3000}>
+                <Carousel id="homeCarousel" interval={7000}>
                     <CarouselItem>
                         <div className="container">
                             <Row>
@@ -75,6 +75,23 @@ var HomeCarouselPanel = React.createClass({
                                 </Col>
                             </Row>
                             <span id="carImage"></span>
+                        </div>
+                    </CarouselItem>
+                    <CarouselItem>
+                        <div className="container">
+                            <Row>
+                                <Col xs={12} sm={7}>
+                                    <p className="bigPhrase narrow">
+                                        <span>35% de descuento</span> + 6 meses sin intereses
+                                    </p>
+                                    <p className="restrictions">*con BBVA Bancomer, Banamex y American Express.</p>
+                                    <Link to="coverage" title="Ver Coberturas" className="yellowButton">Ver Coberturas</Link>
+                                    <a href="http://www.generaldeseguros.mx/" target="_blank"><span className="general-logo">General de seguros</span></a>
+                                </Col>
+                                <Col xs={12} sm={5}>
+                                </Col>
+                            </Row>
+                            <span id="womanImage"></span>
                         </div>
                     </CarouselItem>
                 </Carousel>
