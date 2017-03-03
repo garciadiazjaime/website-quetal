@@ -49,7 +49,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                             React.createElement(Row, null, 
                                 React.createElement(Col, {xs: 12, sm: 7}, 
                                     React.createElement("p", {className: "bigPhrase narrow"}, 
-                                        React.createElement("span", null, "Ahorra"), " 20% en tu Seguro de Auto"
+                                        React.createElement("span", null, "Ahorra"), " desde 20% en tu Seguro de Auto"
                                     ), 
                                     React.createElement("p", {className: "restrictions"}, "*Máximo descuento que otorga GS."), 
                                     React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
