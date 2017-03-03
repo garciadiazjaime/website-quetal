@@ -63,7 +63,10 @@ var FooterSection = React.createClass({
                     <Col xs={12} sm={5}>
                         <span id="brand-footer">Quetal - Mi seguro de auto</span>
                         <p>Con el respaldo de:</p>
-                        <a href="http://www.generaldeseguros.mx/" target="_blank"><span className="general-logo">General de seguros</span></a>
+                        <br />
+                        <a href="http://www.generaldeseguros.mx/" target="_blank">
+                          <img src="/img/aboutus/logo_general_white.png" alt="General de seguros" width="164px" />
+                        </a>
                         <SocialWidget />
                     </Col>
                 </Row>

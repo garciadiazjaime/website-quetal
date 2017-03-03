@@ -149,6 +149,12 @@ blockquote
 	background: sprite($banner-icons, carousel-car)
 	@include sprite-dimensions($banner-icons, carousel-car)
 
+#creditImage
+	@extend .img
+	@extend .carouselImage
+	background: sprite($banner-icons, carousel-creditcard)
+	@include sprite-dimensions($banner-icons, carousel-creditcard)
+
 /* ----------- Services ----------- */
 
 #homeServices
@@ -216,6 +222,9 @@ blockquote
 
 			.servicesList-wrap
 				padding-right: 0
+
+				.last-service
+					min-height: 222px
 
 	.blueButton
 		display: block

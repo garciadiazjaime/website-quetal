@@ -23,7 +23,7 @@ var savingsBlock = React.createClass({displayName: "savingsBlock",
             React.createElement("div", {id: "savingsCallToAction", className: "smallContainer"}, 
                 React.createElement(Row, null, 
                     React.createElement(Col, {xs: 12, sm: 6}, 
-                        React.createElement("p", null, "Ahorra 35% en tu Seguro de Auto comprando a través de ", React.createElement("span", {className: "logo"}, "Quetal")), 
+                        React.createElement("p", null, "Ahorra desde 20% en tu Seguro de Auto comprando a través de ", React.createElement("span", {className: "logo"}, "Quetal")), 
                         React.createElement("p", {className: "notes"}, "*Máximo descuento que otorga GS.")
                     ), 
                     React.createElement(Col, {xs: 12, sm: 6}, 

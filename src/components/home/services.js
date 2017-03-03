@@ -63,7 +63,7 @@ Además, dispones de los servicios de Asistencia Legal y Asistencia en el Camino
                         <Col xs={12} sm={4}>
                             <div className="servicesList-wrap">
                                 <h3><span className="wrap">¿Qué tal si quieres un Seguro como tú lo necesitas?</span><span id="basicComfortIcon"></span></h3>
-                                <div className="servicesList-details">
+                                <div className="servicesList-details last-service">
                                     <h2>Cobertura Confort Básica</h2>
                                     <ul className="checklist">
                                         <li>Daños a terceros</li>

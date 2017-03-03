@@ -26,12 +26,14 @@ var WhyUsPanel = React.createClass({
                     <ol className="row">
                         <li className="col-xs-12 col-sm-3">
                             <div className="wrap">
-                                QUETAL es agente persona moral autorizado por la CNSF (logo)
+                              QUETAL es agente persona moral autorizado por la CNSF <br />
+                              <img src="/img/aboutus/logo_cnsf.png" alt="General de seguros" width="200px" />
                             </div>
                         </li>
                         <li className="col-xs-12 col-sm-3">
                             <div className="wrap">
-                                Contamos con el respaldo de <a href="http://www.generaldeseguros.mx/" target="_blank"><span id="insuranceLogoColor">General de seguros</span></a>
+                              Contamos con el respaldo de <br /><br />
+                              <a href="http://www.generaldeseguros.mx/" target="_blank"><img src="/img/aboutus/logo_general.png" alt="General de seguros" width="200px" /></a>
                             </div>
                         </li>
                         <li className="col-xs-12 col-sm-3">

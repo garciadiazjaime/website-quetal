@@ -13,7 +13,7 @@ var ContactForm = require('./form');
 var HelloPanel = React.createClass({
 
     mixins : [ReactRouter.Navigation],
-    
+
     handleClick: function(){
         console.log('handleClick');
         // this.transitionTo('home');
@@ -35,7 +35,7 @@ var HelloPanel = React.createClass({
                             <ul>
                                 <li>
                                     En el Distrito Federal
-                                    <a href="tel:52708888" className="tel" tel="Llámanos desde el D.F.">5270.8888</a>
+                                    <a href="tel:5552708888" className="tel" tel="Llámanos desde el D.F.">555270.8888</a>
                                 </li>
                                 <li>
                                     Del Interior de la República
@@ -48,7 +48,7 @@ var HelloPanel = React.createClass({
                             </ul>
                         </Col>
                         <Col xs={12} sm={6} id="contactform">
-                            <ContactForm />   
+                            <ContactForm />
                         </Col>
                     </Row>
                 </div>

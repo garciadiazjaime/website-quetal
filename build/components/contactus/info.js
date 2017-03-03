@@ -13,7 +13,7 @@ var ContactForm = require('./form');
 var HelloPanel = React.createClass({displayName: "HelloPanel",
 
     mixins : [ReactRouter.Navigation],
-    
+
     handleClick: function(){
         console.log('handleClick');
         // this.transitionTo('home');
@@ -35,7 +35,7 @@ var HelloPanel = React.createClass({displayName: "HelloPanel",
                             React.createElement("ul", null, 
                                 React.createElement("li", null, 
                                     "En el Distrito Federal", 
-                                    React.createElement("a", {href: "tel:52708888", className: "tel", tel: "Llámanos desde el D.F."}, "5270.8888")
+                                    React.createElement("a", {href: "tel:5552708888", className: "tel", tel: "Llámanos desde el D.F."}, "555270.8888")
                                 ), 
                                 React.createElement("li", null, 
                                     "Del Interior de la República", 

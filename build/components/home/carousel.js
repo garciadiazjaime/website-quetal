@@ -33,7 +33,9 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                         React.createElement("span", null, "Hola, Quetal"), " un Seguro de auto a tu alcance"
                                     ), 
                                     React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
-                                    React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("span", {className: "general-logo"}, "General de seguros"))
+                                    React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, 
+                                      React.createElement("img", {src: "/img/aboutus/logo_general_white.png", alt: "General de seguros", width: "164px"})
+                                    )
                                 ), 
                                 React.createElement(Col, {xs: 12, sm: 6}, 
                                     React.createElement("blockquote", null, React.createElement("span", null, "Justo lo que necesito, "), React.createElement("span", null, " y al precio "), React.createElement("span", null, "más barato "))
@@ -47,11 +49,13 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                             React.createElement(Row, null, 
                                 React.createElement(Col, {xs: 12, sm: 7}, 
                                     React.createElement("p", {className: "bigPhrase narrow"}, 
-                                        React.createElement("span", null, "Ahorra"), " 35% en tu Seguro de Auto"
+                                        React.createElement("span", null, "Ahorra"), " 20% en tu Seguro de Auto"
                                     ), 
                                     React.createElement("p", {className: "restrictions"}, "*Máximo descuento que otorga GS."), 
                                     React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
-                                    React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("span", {className: "general-logo"}, "General de seguros"))
+                                    React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, 
+                                      React.createElement("img", {src: "/img/aboutus/logo_general_white.png", alt: "General de seguros", width: "164px"})
+                                    )
                                 ), 
                                 React.createElement(Col, {xs: 12, sm: 5}
                                 )
@@ -68,7 +72,9 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                     ), 
                                     React.createElement("p", null, "Conoce nuestras Coberturas contra Daños a Terceros y Daños a tu Automóvil."), 
                                     React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
-                                    React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("span", {className: "general-logo"}, "General de seguros"))
+                                    React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, 
+                                      React.createElement("img", {src: "/img/aboutus/logo_general_white.png", alt: "General de seguros", width: "164px"})
+                                    )
                                 ), 
                                 React.createElement(Col, {xs: 12, sm: 6}, 
                                     React.createElement("blockquote", null, React.createElement("span", null, "Mejor lo aseguro "), React.createElement("span", null, "rápido y fácil con "), React.createElement("span", null, "una compañía "), React.createElement("span", null, "de confianza "))
@@ -86,12 +92,14 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                     ), 
                                     React.createElement("p", {className: "restrictions"}, "*con BBVA Bancomer, Banamex y American Express."), 
                                     React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
-                                    React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("span", {className: "general-logo"}, "General de seguros"))
+                                    React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, 
+                                      React.createElement("img", {src: "/img/aboutus/logo_general_white.png", alt: "General de seguros", width: "164px"})
+                                    )
                                 ), 
                                 React.createElement(Col, {xs: 12, sm: 5}
                                 )
                             ), 
-                            React.createElement("span", {id: "womanImage"})
+                            React.createElement("span", {id: "creditImage"})
                         )
                     )
                 )

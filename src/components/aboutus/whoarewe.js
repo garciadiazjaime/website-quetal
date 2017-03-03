@@ -11,7 +11,7 @@ var Button = rb.Button;
 var WhoAreWePanel = React.createClass({
 
     mixins : [ReactRouter.Navigation],
-    
+
     handleClick: function(){
         console.log('handleClick');
         // this.transitionTo('home');
@@ -19,7 +19,7 @@ var WhoAreWePanel = React.createClass({
 
     render: function() {
 
-        return ( 
+        return (
             <section id="whoarewe">
                 <div className="container">
                     <Row>
@@ -29,7 +29,7 @@ var WhoAreWePanel = React.createClass({
                         <Col xs={12} sm={6}>
                             <p>A través de Quetal™ puedes encontrar el paquete de seguro de Auto más barato del mercado, ya que somos intermediarios exclusivos de General de Seguros S.A.B.</p>
                             <p>Con Quetal™ cuentas con el respaldo de General de Seguros  S.A.B. una compañía con más de 40 años de experiencia en el sector asegurador, 100% mexicana y con cobertura a nivel Nacional. </p>
-                            <p>Si buscas el mejor paquete de seguro y sin complicaciones somos tu solución, sólo elige la cobertura que necesitas, cotiza, compra e imprime tu póliza. </p>
+                            <p>Si buscas el mejor paquete de seguro y sin complicaciones somos tu solución, sólo elige la cobertura por paquete que necesitas, cotiza, compra e imprime tu póliza.</p>
                         </Col>
                     </Row>
                 </div>

@@ -32,12 +32,12 @@ var AboutusCarouselPanel = React.createClass({
                     </CarouselItem>
                     <CarouselItem>
                         <div className="container">
-                            <p>6 meses sin intereses con BBVA Bancomer, Banamex Y American Express</p>
+                            <p>6 meses sin intereses con Banamex Y American Express</p>
                         </div>
                     </CarouselItem>
                     <CarouselItem>
                         <div className="container">
-                            <p>Aceptamos tarjetas visa, Master Card y American Express</p>
+                            <p>Aceptamos tarjetas VISA, MasterCard y American Express</p>
                         </div>
                     </CarouselItem>
                 </Carousel>

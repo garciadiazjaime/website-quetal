@@ -63,7 +63,10 @@ var FooterSection = React.createClass({displayName: "FooterSection",
                     React.createElement(Col, {xs: 12, sm: 5}, 
                         React.createElement("span", {id: "brand-footer"}, "Quetal - Mi seguro de auto"), 
                         React.createElement("p", null, "Con el respaldo de:"), 
-                        React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("span", {className: "general-logo"}, "General de seguros")), 
+                        React.createElement("br", null), 
+                        React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, 
+                          React.createElement("img", {src: "/img/aboutus/logo_general_white.png", alt: "General de seguros", width: "164px"})
+                        ), 
                         React.createElement(SocialWidget, null)
                     )
                 )

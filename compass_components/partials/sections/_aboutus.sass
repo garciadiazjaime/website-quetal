@@ -80,11 +80,17 @@
 				background: sprite($aboutus-icons, bullet-two)
 				@include sprite-dimensions($aboutus-icons, bullet-two)
 
-	li:last-child
+	li:nth-child(3)
 		.wrap
 			&:before
 				background: sprite($aboutus-icons, bullet-three)
 				@include sprite-dimensions($aboutus-icons, bullet-three)
+
+	li:last-child
+		.wrap
+			&:before
+				background: sprite($aboutus-icons, bullet-four)
+				@include sprite-dimensions($aboutus-icons, bullet-four)
 
 	.notes
 		color: $light-gray
