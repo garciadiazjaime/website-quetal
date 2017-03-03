@@ -33,7 +33,9 @@ var HomeCarouselPanel = React.createClass({
                                         <span>Hola, Quetal</span> un Seguro de auto a tu alcance
                                     </p>
                                     <Link to="coverage" title="Ver Coberturas" className="yellowButton">Ver Coberturas</Link>
-                                    <a href="http://www.generaldeseguros.mx/" target="_blank"><span className="general-logo">General de seguros</span></a>
+                                    <a href="http://www.generaldeseguros.mx/" target="_blank">
+                                      <img src="/img/aboutus/logo_general_white.png" alt="General de seguros" width="164px" />
+                                    </a>
                                 </Col>
                                 <Col xs={12} sm={6}>
                                     <blockquote><span>Justo lo que necesito, </span><span> y al precio </span><span>más barato </span></blockquote>
@@ -47,11 +49,13 @@ var HomeCarouselPanel = React.createClass({
                             <Row>
                                 <Col xs={12} sm={7}>
                                     <p className="bigPhrase narrow">
-                                        <span>Ahorra</span> 35% en tu Seguro de Auto
+                                        <span>Ahorra</span> 20% en tu Seguro de Auto
                                     </p>
                                     <p className="restrictions">*Máximo descuento que otorga GS.</p>
                                     <Link to="coverage" title="Ver Coberturas" className="yellowButton">Ver Coberturas</Link>
-                                    <a href="http://www.generaldeseguros.mx/" target="_blank"><span className="general-logo">General de seguros</span></a>
+                                    <a href="http://www.generaldeseguros.mx/" target="_blank">
+                                      <img src="/img/aboutus/logo_general_white.png" alt="General de seguros" width="164px" />
+                                    </a>
                                 </Col>
                                 <Col xs={12} sm={5}>
                                 </Col>
@@ -68,7 +72,9 @@ var HomeCarouselPanel = React.createClass({
                                     </p>
                                     <p>Conoce nuestras Coberturas contra Daños a Terceros y Daños a tu Automóvil.</p>
                                     <Link to="coverage" title="Ver Coberturas" className="yellowButton">Ver Coberturas</Link>
-                                    <a href="http://www.generaldeseguros.mx/" target="_blank"><span className="general-logo">General de seguros</span></a>
+                                    <a href="http://www.generaldeseguros.mx/" target="_blank">
+                                      <img src="/img/aboutus/logo_general_white.png" alt="General de seguros" width="164px" />
+                                    </a>
                                 </Col>
                                 <Col xs={12} sm={6}>
                                     <blockquote><span>Mejor lo aseguro </span><span>rápido y fácil con </span><span>una compañía </span><span>de confianza </span></blockquote>
@@ -86,12 +92,14 @@ var HomeCarouselPanel = React.createClass({
                                     </p>
                                     <p className="restrictions">*con BBVA Bancomer, Banamex y American Express.</p>
                                     <Link to="coverage" title="Ver Coberturas" className="yellowButton">Ver Coberturas</Link>
-                                    <a href="http://www.generaldeseguros.mx/" target="_blank"><span className="general-logo">General de seguros</span></a>
+                                    <a href="http://www.generaldeseguros.mx/" target="_blank">
+                                      <img src="/img/aboutus/logo_general_white.png" alt="General de seguros" width="164px" />
+                                    </a>
                                 </Col>
                                 <Col xs={12} sm={5}>
                                 </Col>
                             </Row>
-                            <span id="womanImage"></span>
+                            <span id="creditImage"></span>
                         </div>
                     </CarouselItem>
                 </Carousel>

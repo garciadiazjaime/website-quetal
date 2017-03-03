@@ -6,7 +6,7 @@ var config = convict({
     email: {
       doc: 'default contact email',
       format: String,
-      default: 'info@mintitmedia.com'
+      default: 'contacto@quetalsegurodeauto.com'
     },
     ipaddress: {
         doc: 'IP the application runs on',

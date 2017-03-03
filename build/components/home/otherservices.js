@@ -2,6 +2,7 @@
 
 var React = require('react');
 var ReactRouter = require('react-router');
+var Link = ReactRouter.Link;
 var rb = require('react-bootstrap');
 
 var Row = rb.Row;
@@ -46,7 +47,9 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
                                   )
                                 ), 
                                 React.createElement("div", {className: "col-sm-12 col-xs-12"}, 
-                                  React.createElement("a", {href: "tel:6649766363", target: "_blank", title: "Cotiza", className: "blueButton"}, "664.976.6363"), 
+                                  React.createElement(Link, {to: "contact", title: "Cotiza", className: "blueButton"}, 
+                                    "664.976.6363"
+                                  ), 
                                   React.createElement("a", {onClick: this.handleClick.bind(this, 'fronterizo'), className: "arrowLink pull-right", style: {marginTop: '25px'}}, "Ver detalles")
                                 )
                               )

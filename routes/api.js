@@ -26,6 +26,8 @@ router.post('/send_email', function(req, res) {
         if (err) {
             console.error(err);
             response = false;
+        } else {
+          console.log('email sent', err, json);
         }
         res.send({
             status: response

@@ -26,12 +26,14 @@ var WhyUsPanel = React.createClass({displayName: "WhyUsPanel",
                     React.createElement("ol", {className: "row"}, 
                         React.createElement("li", {className: "col-xs-12 col-sm-3"}, 
                             React.createElement("div", {className: "wrap"}, 
-                                "QUETAL es agente persona moral autorizado por la CNSF (logo)"
+                              "QUETAL es agente persona moral autorizado por la CNSF ", React.createElement("br", null), 
+                              React.createElement("img", {src: "/img/aboutus/logo_cnsf.png", alt: "General de seguros", width: "200px"})
                             )
                         ), 
                         React.createElement("li", {className: "col-xs-12 col-sm-3"}, 
                             React.createElement("div", {className: "wrap"}, 
-                                "Contamos con el respaldo de ", React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("span", {id: "insuranceLogoColor"}, "General de seguros"))
+                              "Contamos con el respaldo de ", React.createElement("br", null), React.createElement("br", null), 
+                              React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("img", {src: "/img/aboutus/logo_general.png", alt: "General de seguros", width: "200px"}))
                             )
                         ), 
                         React.createElement("li", {className: "col-xs-12 col-sm-3"}, 

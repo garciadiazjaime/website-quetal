@@ -23,7 +23,7 @@ var savingsBlock = React.createClass({
             <div id="savingsCallToAction" className="smallContainer">
                 <Row>
                     <Col xs={12} sm={6}>
-                        <p>Ahorra 35% en tu Seguro de Auto comprando a través de <span className="logo">Quetal</span></p>
+                        <p>Ahorra desde 20% en tu Seguro de Auto comprando a través de <span className="logo">Quetal</span></p>
                         <p className="notes">*Máximo descuento que otorga GS.</p>
                     </Col>
                     <Col xs={12} sm={6}>

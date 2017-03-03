@@ -24,10 +24,10 @@ var NeedHelp = React.createClass({
                 <div className="container">
                     <Row>
                         <Col xs={12} sm={7}>
-                            <p>¿Necesitas ayuda en tu compra? Llámanos al <a href="tel:6649766363" title="¡Llámanos para cualquier duda!">664.976.6363</a></p>
+                            <p>¿Necesitas ayuda en tu compra? Llámanos al <a href="tel:6646140404" title="¡Llámanos para cualquier duda!">664.614.0404</a></p>
                         </Col>
                         <Col xs={12} sm={5}>
-                            <a href="tel:6649766363" title="¡Llámanos para cualquier duda!" className="greenButton">Llámanos</a>
+                            <a href="tel:6646140404" title="¡Llámanos para cualquier duda!" className="greenButton">Llámanos</a>
                         </Col>
                     </Row>
                 </div>
