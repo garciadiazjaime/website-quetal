@@ -48,7 +48,7 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
                                 ), 
                                 React.createElement("div", {className: "col-sm-12 col-xs-12"}, 
                                   React.createElement(Link, {to: "contact", title: "Cotiza", className: "blueButton"}, 
-                                    "664.976.6363"
+                                    "Contáctanos"
                                   ), 
                                   React.createElement("a", {onClick: this.handleClick.bind(this, 'fronterizo'), className: "arrowLink pull-right", style: {marginTop: '25px'}}, "Ver detalles")
                                 )
