@@ -48,7 +48,7 @@ var HomeOtherServicesPanel = React.createClass({
                                 </div>
                                 <div className="col-sm-12 col-xs-12">
                                   <Link to="contact" title="Cotiza" className="blueButton">
-                                    664.976.6363
+                                    Contáctanos
                                   </Link>
                                   <a onClick={this.handleClick.bind(this, 'fronterizo')} className="arrowLink pull-right" style={{marginTop: '25px'}}>Ver detalles</a>
                                 </div>

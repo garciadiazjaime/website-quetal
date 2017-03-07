@@ -20043,7 +20043,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                             React.createElement(Row, null, 
                                 React.createElement(Col, {xs: 12, sm: 7}, 
                                     React.createElement("p", {className: "bigPhrase narrow"}, 
-                                        React.createElement("span", null, "Ahorra"), " desde 20% en tu Seguro de Auto"
+                                        React.createElement("span", null, "Ahorra"), " DESDE 20% en tu Seguro de Auto"
                                     ), 
                                     React.createElement("p", {className: "restrictions"}, "*Máximo descuento que otorga GS."), 
                                     React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
@@ -20084,7 +20084,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                     React.createElement("p", {className: "bigPhrase narrow"}, 
                                         React.createElement("span", null, "35% de descuento"), " + 6 meses sin intereses"
                                     ), 
-                                    React.createElement("p", {className: "restrictions"}, "*con BBVA Bancomer, Banamex y American Express."), 
+                                    React.createElement("p", {className: "restrictions"}, "*con Banamex y American Express."), 
                                     React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
                                     React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, 
                                       React.createElement("img", {src: "/img/aboutus/logo_general_white.png", alt: "General de seguros", width: "164px"})
@@ -20155,7 +20155,7 @@ var HomeOtherServicesPanel = React.createClass({displayName: "HomeOtherServicesP
                                 ), 
                                 React.createElement("div", {className: "col-sm-12 col-xs-12"}, 
                                   React.createElement(Link, {to: "contact", title: "Cotiza", className: "blueButton"}, 
-                                    "664.976.6363"
+                                    "Contáctanos"
                                   ), 
                                   React.createElement("a", {onClick: this.handleClick.bind(this, 'fronterizo'), className: "arrowLink pull-right", style: {marginTop: '25px'}}, "Ver detalles")
                                 )
@@ -20240,7 +20240,7 @@ var HomeServicesPanel = React.createClass({displayName: "HomeServicesPanel",
                         ), 
                         React.createElement(Col, {xs: 12, sm: 4}, 
                             React.createElement("div", {className: "servicesList-wrap"}, 
-                                React.createElement("h3", null, React.createElement("span", {className: "wrap"}, "¿Qué tal si quieres un Seguro como tú lo necesitas?"), React.createElement("span", {id: "basicComfortIcon"})), 
+                                React.createElement("h3", null, React.createElement("span", {className: "wrap"}, "¿Qué tal si quieres ", React.createElement("br", null), "un Seguro como tú lo necesitas?"), React.createElement("span", {id: "basicComfortIcon"})), 
                                 React.createElement("div", {className: "servicesList-details last-service"}, 
                                     React.createElement("h2", null, "Cobertura Confort Básica"), 
                                     React.createElement("ul", {className: "checklist"}, 
