@@ -27,7 +27,9 @@ var WhyUsPanel = React.createClass({
                         <li className="col-xs-12 col-sm-3">
                             <div className="wrap">
                               QUETAL es agente persona moral autorizado por la CNSF <br />
-                              <img src="/img/aboutus/logo_cnsf.png" alt="General de seguros" width="200px" />
+                              <a href="https://www.gob.mx/cnsf" title="COMISION NACIONAL DE SEGUROS Y FIANZAS" target="_blank">
+                                <img src="/img/aboutus/logo_cnsf.png" alt="COMISION NACIONAL DE SEGUROS Y FIANZAS" width="200px" />
+                              </a>
                             </div>
                         </li>
                         <li className="col-xs-12 col-sm-3">

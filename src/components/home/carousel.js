@@ -49,9 +49,9 @@ var HomeCarouselPanel = React.createClass({
                             <Row>
                                 <Col xs={12} sm={7}>
                                     <p className="bigPhrase narrow">
-                                        <span>Ahorra</span> DESDE 20% en tu Seguro de Auto
+                                        <span>35% de descuento</span> + 6 meses sin intereses
                                     </p>
-                                    <p className="restrictions">*Máximo descuento que otorga GS.</p>
+                                    <p className="restrictions">*con Banamex y American Express.</p>
                                     <Link to="coverage" title="Ver Coberturas" className="yellowButton">Ver Coberturas</Link>
                                     <a href="http://www.generaldeseguros.mx/" target="_blank">
                                       <img src="/img/aboutus/logo_general_white.png" alt="General de seguros" width="164px" />
@@ -60,7 +60,7 @@ var HomeCarouselPanel = React.createClass({
                                 <Col xs={12} sm={5}>
                                 </Col>
                             </Row>
-                            <span id="womanImage"></span>
+                            <span id="creditImage"></span>
                         </div>
                     </CarouselItem>
                     <CarouselItem>
@@ -88,9 +88,9 @@ var HomeCarouselPanel = React.createClass({
                             <Row>
                                 <Col xs={12} sm={7}>
                                     <p className="bigPhrase narrow">
-                                        <span>35% de descuento</span> + 6 meses sin intereses
+                                        <span>Ahorra</span> DESDE 20% en tu Seguro de Auto
                                     </p>
-                                    <p className="restrictions">*con Banamex y American Express.</p>
+                                    <p className="restrictions">*Máximo descuento que otorga GS.</p>
                                     <Link to="coverage" title="Ver Coberturas" className="yellowButton">Ver Coberturas</Link>
                                     <a href="http://www.generaldeseguros.mx/" target="_blank">
                                       <img src="/img/aboutus/logo_general_white.png" alt="General de seguros" width="164px" />
@@ -99,7 +99,7 @@ var HomeCarouselPanel = React.createClass({
                                 <Col xs={12} sm={5}>
                                 </Col>
                             </Row>
-                            <span id="creditImage"></span>
+                            <span id="womanImage"></span>
                         </div>
                     </CarouselItem>
                 </Carousel>

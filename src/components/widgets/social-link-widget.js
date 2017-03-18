@@ -6,7 +6,7 @@ var ReactRouter = require('react-router');
 var SocialElement = React.createClass({
 
     mixins : [ReactRouter.Navigation],
-    
+
     handleClick: function(){
         console.log('handleClick');
         // this.transitionTo('home');
@@ -16,7 +16,7 @@ var SocialElement = React.createClass({
 
         return (
             <ul className="social">
-                <li><a href="#" title="Síguenos en facebooks" target="_blank"><span>Facebook</span></a></li>
+                <li><a href="https://www.facebook.com/QuetalSeguroDeAuto" title="Síguenos en facebooks" target="_blank"><span>Facebook</span></a></li>
             </ul>
         );
     }

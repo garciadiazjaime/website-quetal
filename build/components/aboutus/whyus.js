@@ -27,7 +27,9 @@ var WhyUsPanel = React.createClass({displayName: "WhyUsPanel",
                         React.createElement("li", {className: "col-xs-12 col-sm-3"}, 
                             React.createElement("div", {className: "wrap"}, 
                               "QUETAL es agente persona moral autorizado por la CNSF ", React.createElement("br", null), 
-                              React.createElement("img", {src: "/img/aboutus/logo_cnsf.png", alt: "General de seguros", width: "200px"})
+                              React.createElement("a", {href: "https://www.gob.mx/cnsf", title: "COMISION NACIONAL DE SEGUROS Y FIANZAS", target: "_blank"}, 
+                                React.createElement("img", {src: "/img/aboutus/logo_cnsf.png", alt: "COMISION NACIONAL DE SEGUROS Y FIANZAS", width: "200px"})
+                              )
                             )
                         ), 
                         React.createElement("li", {className: "col-xs-12 col-sm-3"}, 

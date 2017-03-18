@@ -49,9 +49,9 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                             React.createElement(Row, null, 
                                 React.createElement(Col, {xs: 12, sm: 7}, 
                                     React.createElement("p", {className: "bigPhrase narrow"}, 
-                                        React.createElement("span", null, "Ahorra"), " DESDE 20% en tu Seguro de Auto"
+                                        React.createElement("span", null, "35% de descuento"), " + 6 meses sin intereses"
                                     ), 
-                                    React.createElement("p", {className: "restrictions"}, "*Máximo descuento que otorga GS."), 
+                                    React.createElement("p", {className: "restrictions"}, "*con Banamex y American Express."), 
                                     React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
                                     React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, 
                                       React.createElement("img", {src: "/img/aboutus/logo_general_white.png", alt: "General de seguros", width: "164px"})
@@ -60,7 +60,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                 React.createElement(Col, {xs: 12, sm: 5}
                                 )
                             ), 
-                            React.createElement("span", {id: "womanImage"})
+                            React.createElement("span", {id: "creditImage"})
                         )
                     ), 
                     React.createElement(CarouselItem, null, 
@@ -88,9 +88,9 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                             React.createElement(Row, null, 
                                 React.createElement(Col, {xs: 12, sm: 7}, 
                                     React.createElement("p", {className: "bigPhrase narrow"}, 
-                                        React.createElement("span", null, "35% de descuento"), " + 6 meses sin intereses"
+                                        React.createElement("span", null, "Ahorra"), " DESDE 20% en tu Seguro de Auto"
                                     ), 
-                                    React.createElement("p", {className: "restrictions"}, "*con Banamex y American Express."), 
+                                    React.createElement("p", {className: "restrictions"}, "*Máximo descuento que otorga GS."), 
                                     React.createElement(Link, {to: "coverage", title: "Ver Coberturas", className: "yellowButton"}, "Ver Coberturas"), 
                                     React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, 
                                       React.createElement("img", {src: "/img/aboutus/logo_general_white.png", alt: "General de seguros", width: "164px"})
@@ -99,7 +99,7 @@ var HomeCarouselPanel = React.createClass({displayName: "HomeCarouselPanel",
                                 React.createElement(Col, {xs: 12, sm: 5}
                                 )
                             ), 
-                            React.createElement("span", {id: "creditImage"})
+                            React.createElement("span", {id: "womanImage"})
                         )
                     )
                 )
