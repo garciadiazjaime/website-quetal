@@ -20,7 +20,6 @@ var CoverageTemplate = React.createClass({displayName: "CoverageTemplate",
 
     var data = db[this.props.coverage];
     if(data){
-      console.log(data);
       return (
         React.createElement("div", null, 
           React.createElement(Row, null, 
@@ -49,11 +48,11 @@ var CoverageTemplate = React.createClass({displayName: "CoverageTemplate",
               
             ), 
             
-              data.rightContent ? 
+              data.rightContent ?
               React.createElement(Col, {xs: 12, sm: 6}, 
 
                 
-                  data.rightTitle ? 
+                  data.rightTitle ?
                   React.createElement("h3", null, React.createElement("span", {className: "hidden"}, "Tipo de protección "), data.rightTitle)
                   : null, 
                 
@@ -72,7 +71,7 @@ var CoverageTemplate = React.createClass({displayName: "CoverageTemplate",
             
           ), 
           React.createElement(Link, {to: "coverage", title: "Compara nuestras Coberturas", className: "greenButton"}, "Compara nuestras Coberturas"), 
-          React.createElement("a", {href: "#", title: "Cotiza tu Seguro", className: "blueButton", target: "_blank"}, "Cotiza tu Seguro")
+          React.createElement("a", {href: data.quoteUrl, title: "Cotiza tu Seguro", className: "blueButton", target: "_blank"}, "Cotiza tu Seguro")
         )
       );
     }
@@ -83,7 +82,7 @@ var CoverageTemplate = React.createClass({displayName: "CoverageTemplate",
 
   getColumnContent: function(data){
     var response = null;
-    
+
     if(data && data.length){
       response = data.map(function(item, i){
         return (

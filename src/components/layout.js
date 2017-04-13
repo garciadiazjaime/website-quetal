@@ -6,6 +6,7 @@ var RouteHandler = Router.RouteHandler;
 var HeaderSection = require('./layout/header');
 var FooterSection = require('./layout/footer');
 var ModalWidget = require('./widgets/modal-widget');
+var constantUrl = require('../constants/url');
 
 var Layout = React.createClass({
 
@@ -29,8 +30,8 @@ var Layout = React.createClass({
 
   render: function() {
     var data = {
-      cotizaLink: 'https://gswas.com.mx/AutosVentaDirecta/cotizacion.xhtml?u=5144&ori=0&neg=15&neg2=28',
-      rcObligatorioLink: 'https://gswas.com.mx/AutosVentaDirecta/rcobligatorio.xhtml?u=5144',
+      cotizaLink: constantUrl.cotizaLink,
+      rcObligatorioLink: constantUrl.rcObligatorioLink,
     };
     return (
         <div>

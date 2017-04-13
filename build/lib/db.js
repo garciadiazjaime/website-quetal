@@ -1,4 +1,5 @@
 'use strict';
+var constantUrl = require('../constants/url');
 
 var CoverageInfo = {
     amplia: {
@@ -36,6 +37,7 @@ var CoverageInfo = {
                  content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.',
             }
         ],
+        quoteUrl: constantUrl.cotizaLink,
     },
     basica: {
         title: 'Confort Básica',
@@ -63,6 +65,7 @@ var CoverageInfo = {
                  content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.',
             },
         ],
+        quoteUrl: constantUrl.cotizaLink,
     },
     limitada: {
         title: 'Confort Limitada',
@@ -95,6 +98,7 @@ var CoverageInfo = {
                  content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.',
             },
         ],
+        quoteUrl: constantUrl.cotizaLink,
     },
     fronterizo: {
         title: 'Fronterizos o Legalizados',
@@ -106,6 +110,7 @@ var CoverageInfo = {
                  content: 'Flexibilidad de poder cotizar el paquete que mejor se adapte a las necesidades de cada cliente, ya que se pueden elegir sólo las coberturas que desee. Además de que sólo se necesita contar con el número de serie del vehículo para conocer las características del vehículo a asegurar”.'
             },
         ],
+        quoteUrl: constantUrl.cotizaLink,
     },
     federal: {
         title: 'RC Obligatoria Federal / Estatal',
@@ -129,7 +134,8 @@ var CoverageInfo = {
                  content: 'La Cobertura ampara los gastos y costos a que fuere condenado a pagar el Asegurado, o cualquier persona que, bajo su consentimiento tácito o explícito, use o posea el Vehículo Asegurado. <br /><br /> En caso de juicio civil seguido en su contra con motivo de la responsabilidad civil amparada por esta cobertura de acuerdo con los Artículos 145 y 146 de la Ley sobre el Contrato de Seguro.'
             },
         ],
-        rightNotes:'El límite máximo de responsabilidad de la Aseguradora se establece en la carátula de la Póliza.'
+        rightNotes:'El límite máximo de responsabilidad de la Aseguradora se establece en la carátula de la Póliza.',
+        quoteUrl: constantUrl.rcObligatorioLink,
     },
 };
 

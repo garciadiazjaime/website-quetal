@@ -20,7 +20,7 @@ router.post('/send_email', function(req, res) {
         bcc: ['info@mintitmedia.com'],
         html: html
     });
-
+    console.log('sending email', email);
     sendgrid.send(email, function(err, json) {
         var response = true;
         if (err) {
