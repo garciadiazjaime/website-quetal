@@ -78,7 +78,7 @@ var ContactForm = React.createClass({displayName: "ContactForm",
             var data = {
                 fromname: formData.name.value,
                 replyto: formData.email.value,
-                subject: 'Forma de Contacto Web',
+                subject: 'Quetal | Forma de Contacto Web',
                 html: html
             };
 

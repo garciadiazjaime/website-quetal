@@ -20,7 +20,6 @@ var CoverageTemplate = React.createClass({
 
     var data = db[this.props.coverage];
     if(data){
-      console.log(data);
       return (
         <div>
           <Row>
@@ -45,15 +44,15 @@ var CoverageTemplate = React.createClass({
                 <p className="notes">
                   <span dangerouslySetInnerHTML={{__html: data.leftNotes}} />
                 </p>
-                : null  
+                : null
               }
             </Col>
             {
-              data.rightContent ? 
+              data.rightContent ?
               <Col xs={12} sm={6}>
 
                 {
-                  data.rightTitle ? 
+                  data.rightTitle ?
                   <h3><span className="hidden">Tipo de protección </span>{data.rightTitle}</h3>
                   : null
                 }
@@ -70,9 +69,9 @@ var CoverageTemplate = React.createClass({
               </Col>
               : null
             }
-          </Row> 
+          </Row>
           <Link to="coverage" title="Compara nuestras Coberturas" className="greenButton">Compara nuestras Coberturas</Link>
-          <a href="#" title="Cotiza tu Seguro" className="blueButton" target="_blank">Cotiza tu Seguro</a>
+          <a href={data.quoteUrl} title="Cotiza tu Seguro" className="blueButton" target="_blank">Cotiza tu Seguro</a>
         </div>
       );
     }
@@ -83,7 +82,7 @@ var CoverageTemplate = React.createClass({
 
   getColumnContent: function(data){
     var response = null;
-    
+
     if(data && data.length){
       response = data.map(function(item, i){
         return (

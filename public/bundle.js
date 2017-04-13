@@ -19269,7 +19269,7 @@ var ModalActions = {
 
 module.exports = ModalActions;
 
-},{"../constants/ModalConstants":261,"../dispatcher/AppDispatcher":262}],236:[function(require,module,exports){
+},{"../constants/ModalConstants":261,"../dispatcher/AppDispatcher":263}],236:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -19504,7 +19504,7 @@ var ContactForm = React.createClass({displayName: "ContactForm",
             var data = {
                 fromname: formData.name.value,
                 replyto: formData.email.value,
-                subject: 'Forma de Contacto Web',
+                subject: 'Quetal | Forma de Contacto Web',
                 html: html
             };
 
@@ -19594,7 +19594,7 @@ var ContactForm = React.createClass({displayName: "ContactForm",
 
 module.exports = ContactForm;
 
-},{"../../lib/rest-client":264,"react-bootstrap":76,"react-router":173}],240:[function(require,module,exports){
+},{"../../lib/rest-client":265,"react-bootstrap":76,"react-router":173}],240:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20275,6 +20275,7 @@ var RouteHandler = Router.RouteHandler;
 var HeaderSection = require('./layout/header');
 var FooterSection = require('./layout/footer');
 var ModalWidget = require('./widgets/modal-widget');
+var constantUrl = require('../constants/url');
 
 var Layout = React.createClass({displayName: "Layout",
 
@@ -20298,8 +20299,8 @@ var Layout = React.createClass({displayName: "Layout",
 
   render: function() {
     var data = {
-      cotizaLink: 'https://gswas.com.mx/AutosVentaDirecta/cotizacion.xhtml?u=5144&ori=0&neg=15&neg2=28',
-      rcObligatorioLink: 'https://gswas.com.mx/AutosVentaDirecta/rcobligatorio.xhtml?u=5144',
+      cotizaLink: constantUrl.cotizaLink,
+      rcObligatorioLink: constantUrl.rcObligatorioLink,
     };
     return (
         React.createElement("div", null, 
@@ -20328,7 +20329,7 @@ var Layout = React.createClass({displayName: "Layout",
 
 module.exports = Layout;
 
-},{"./layout/footer":251,"./layout/header":252,"./widgets/modal-widget":259,"react-router":173}],251:[function(require,module,exports){
+},{"../constants/url":262,"./layout/footer":251,"./layout/header":252,"./widgets/modal-widget":259,"react-router":173}],251:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20806,7 +20807,6 @@ var CoverageTemplate = React.createClass({displayName: "CoverageTemplate",
 
     var data = db[this.props.coverage];
     if(data){
-      console.log(data);
       return (
         React.createElement("div", null, 
           React.createElement(Row, null, 
@@ -20835,11 +20835,11 @@ var CoverageTemplate = React.createClass({displayName: "CoverageTemplate",
               
             ), 
             
-              data.rightContent ? 
+              data.rightContent ?
               React.createElement(Col, {xs: 12, sm: 6}, 
 
                 
-                  data.rightTitle ? 
+                  data.rightTitle ?
                   React.createElement("h3", null, React.createElement("span", {className: "hidden"}, "Tipo de protección "), data.rightTitle)
                   : null, 
                 
@@ -20858,7 +20858,7 @@ var CoverageTemplate = React.createClass({displayName: "CoverageTemplate",
             
           ), 
           React.createElement(Link, {to: "coverage", title: "Compara nuestras Coberturas", className: "greenButton"}, "Compara nuestras Coberturas"), 
-          React.createElement("a", {href: "#", title: "Cotiza tu Seguro", className: "blueButton", target: "_blank"}, "Cotiza tu Seguro")
+          React.createElement("a", {href: data.quoteUrl, title: "Cotiza tu Seguro", className: "blueButton", target: "_blank"}, "Cotiza tu Seguro")
         )
       );
     }
@@ -20869,7 +20869,7 @@ var CoverageTemplate = React.createClass({displayName: "CoverageTemplate",
 
   getColumnContent: function(data){
     var response = null;
-    
+
     if(data && data.length){
       response = data.map(function(item, i){
         return (
@@ -20887,7 +20887,8 @@ var CoverageTemplate = React.createClass({displayName: "CoverageTemplate",
 });
 
 module.exports = CoverageTemplate;
-},{"../../lib/db":263,"react-bootstrap":76,"react-router":173}],259:[function(require,module,exports){
+
+},{"../../lib/db":264,"react-bootstrap":76,"react-router":173}],259:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20942,7 +20943,7 @@ var ModalWidget = React.createClass({displayName: "ModalWidget",
 });
 
 module.exports = ModalWidget;
-},{"../../stores/ModalStore":266,"../templates/coverage-template":258,"react-bootstrap":76}],260:[function(require,module,exports){
+},{"../../stores/ModalStore":267,"../templates/coverage-template":258,"react-bootstrap":76}],260:[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -20988,12 +20989,20 @@ module.exports = keyMirror({
 });
 
 },{"keymirror":6}],262:[function(require,module,exports){
+
+module.exports = {
+  cotizaLink: 'http://bit.ly/2oZw1gq',
+  rcObligatorioLink: 'http://bit.ly/2oua0Fl',
+};
+
+},{}],263:[function(require,module,exports){
 var Dispatcher = require('flux').Dispatcher;
 
 module.exports = new Dispatcher();
 
-},{"flux":3}],263:[function(require,module,exports){
+},{"flux":3}],264:[function(require,module,exports){
 'use strict';
+var constantUrl = require('../constants/url');
 
 var CoverageInfo = {
     amplia: {
@@ -21031,6 +21040,7 @@ var CoverageInfo = {
                  content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.',
             }
         ],
+        quoteUrl: constantUrl.cotizaLink,
     },
     basica: {
         title: 'Confort Básica',
@@ -21058,6 +21068,7 @@ var CoverageInfo = {
                  content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.',
             },
         ],
+        quoteUrl: constantUrl.cotizaLink,
     },
     limitada: {
         title: 'Confort Limitada',
@@ -21090,6 +21101,7 @@ var CoverageInfo = {
                  content: 'No estarás sólo en el camino. Te acompañamos para que tengas un Viaje Seguro con nuestros servicios de Asistencia en Viaje.',
             },
         ],
+        quoteUrl: constantUrl.cotizaLink,
     },
     fronterizo: {
         title: 'Fronterizos o Legalizados',
@@ -21101,6 +21113,7 @@ var CoverageInfo = {
                  content: 'Flexibilidad de poder cotizar el paquete que mejor se adapte a las necesidades de cada cliente, ya que se pueden elegir sólo las coberturas que desee. Además de que sólo se necesita contar con el número de serie del vehículo para conocer las características del vehículo a asegurar”.'
             },
         ],
+        quoteUrl: constantUrl.cotizaLink,
     },
     federal: {
         title: 'RC Obligatoria Federal / Estatal',
@@ -21124,13 +21137,14 @@ var CoverageInfo = {
                  content: 'La Cobertura ampara los gastos y costos a que fuere condenado a pagar el Asegurado, o cualquier persona que, bajo su consentimiento tácito o explícito, use o posea el Vehículo Asegurado. <br /><br /> En caso de juicio civil seguido en su contra con motivo de la responsabilidad civil amparada por esta cobertura de acuerdo con los Artículos 145 y 146 de la Ley sobre el Contrato de Seguro.'
             },
         ],
-        rightNotes:'El límite máximo de responsabilidad de la Aseguradora se establece en la carátula de la Póliza.'
+        rightNotes:'El límite máximo de responsabilidad de la Aseguradora se establece en la carátula de la Póliza.',
+        quoteUrl: constantUrl.rcObligatorioLink,
     },
 };
 
 module.exports = CoverageInfo;
 
-},{}],264:[function(require,module,exports){
+},{"../constants/url":262}],265:[function(require,module,exports){
 'use strict';
 
 var rest = require('rest');
@@ -21142,7 +21156,7 @@ var client = rest
   .wrap(errorCode, { code: 300 });
 
 module.exports = client;
-},{"rest":194,"rest/interceptor/errorCode":199,"rest/interceptor/mime":200}],265:[function(require,module,exports){
+},{"rest":194,"rest/interceptor/errorCode":199,"rest/interceptor/mime":200}],266:[function(require,module,exports){
 var React = window.React;
 var ReactRouter = require('react-router');
 var Route = ReactRouter.Route;
@@ -21176,7 +21190,7 @@ var routes = (
 
 module.exports = routes;
 
-},{"./components/layout":250,"./components/privacy":253,"./components/section-aboutus":254,"./components/section-contactus":255,"./components/section-coverage":256,"./components/section-home":257,"react-router":173}],266:[function(require,module,exports){
+},{"./components/layout":250,"./components/privacy":253,"./components/section-aboutus":254,"./components/section-contactus":255,"./components/section-coverage":256,"./components/section-home":257,"react-router":173}],267:[function(require,module,exports){
 /*
  * Copyright (c) 2014, Facebook, Inc.
  * All rights reserved.
@@ -21253,7 +21267,7 @@ AppDispatcher.register(function(action) {
 
 module.exports = ModalStore;
 
-},{"../constants/ModalConstants":261,"../dispatcher/AppDispatcher":262,"events":1,"object-assign":7}],"myApp":[function(require,module,exports){
+},{"../constants/ModalConstants":261,"../dispatcher/AppDispatcher":263,"events":1,"object-assign":7}],"myApp":[function(require,module,exports){
 'use strict';
 
 var React = window.React;
@@ -21264,4 +21278,4 @@ ReactRouter.run(routes, ReactRouter.HistoryLocation, function (Root) {
 	React.render(React.createElement(Root, null), document.getElementById('app'));
 });
 
-},{"./routes":265,"react-router":173}]},{},[]);
+},{"./routes":266,"react-router":173}]},{},[]);
