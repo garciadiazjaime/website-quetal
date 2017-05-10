@@ -14,11 +14,6 @@ var HelloPanel = React.createClass({
 
     mixins : [ReactRouter.Navigation],
 
-    handleClick: function(){
-        console.log('handleClick');
-        // this.transitionTo('home');
-    },
-
     render: function() {
 
         return (
@@ -46,6 +41,19 @@ var HelloPanel = React.createClass({
                                     <a href="tel:018004729832" className="tel" tel="Llámanos para asistencia desde el interior del país">01800.GS.AYUDA <span className="telMeaning">47.29832</span></a>
                                 </li>
                             </ul>
+                            <p className="instructionsParagraph">
+                              <em>Horario de atención</em>
+                              Lunes a Viernes <br />
+                              09:00am a 17:00pm <br />
+                              Zona Horaria del Pacífico
+                            </p>
+                            <br />
+                            <p className="instructionsParagraph">
+                              <em>Domicilio</em>
+                              Defensores de Baja California 150-C <br />
+                              Colonia Ruiz Cortinez <br />
+                              Tijuana BC CP 22406
+                            </p>
                         </Col>
                         <Col xs={12} sm={6} id="contactform">
                             <ContactForm />

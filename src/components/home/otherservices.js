@@ -47,9 +47,9 @@ var HomeOtherServicesPanel = React.createClass({
                                   </p>
                                 </div>
                                 <div className="col-sm-12 col-xs-12">
-                                  <Link to="contact" title="Cotiza" className="blueButton">
+                                  <a href={"tel:" + this.props.data.tel.number} title="Cotiza" className="blueButton">
                                     Contáctanos
-                                  </Link>
+                                  </a>
                                   <a onClick={this.handleClick.bind(this, 'fronterizo')} className="arrowLink pull-right" style={{marginTop: '25px'}}>Ver detalles</a>
                                 </div>
                               </div>

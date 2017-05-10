@@ -20,25 +20,16 @@ var HeaderSection = React.createClass({
 
     mixins : [ReactRouter.Navigation],
 
-
-    handleClick: function(){
-        console.log('handleClick');
-        this.transitionTo('inicio');
-        this.transitionTo('coberturas');
-        this.transitionTo('nosotros');
-        this.transitionTo('contacto');
-    },
-
     render: function() {
         return (
             <Navbar brand={<Link to="home" className='navbar-brand' title="Quetal | Volver a inicio">Quetal | Volver a inicio</Link>} toggleNavKey={0}  className="navbar-static-top">
                 <CollapsibleNav eventKey={0}> {/* This is the eventKey referenced */}
                   <Nav navbar>
-                    <NavItem eventKey={1} href='/inicio' onClick={this.handleClick.bind(this, 'home')}>Inicio</NavItem>
-                    <NavItem eventKey={2} href='/coberturas' onClick={this.handleClick.bind(this, 'coverage')}>Coberturas</NavItem>
-                    <NavItem eventKey={3} href='/nosotros' onClick={this.handleClick.bind(this, 'aboutus')}>Nosotros</NavItem>
-                    <NavItem eventKey={4} href='/contacto' onClick={this.handleClick.bind(this, 'contact')}>Contacto</NavItem>
-                    <NavItem eventKey={5} href={this.props.data.cotizaLink} target="_blank" className="external">Cotiza</NavItem>
+                    <li><Link to="homepage">Inicio</Link></li>
+                    <li><Link to="coverage">Coberturas</Link></li>
+                    <li><Link to="aboutus">Nosotros</Link></li>
+                    <li><Link to="contact">Contacto</Link></li>
+                    <li><a href={this.props.data.cotizaLink} target="_blank" className="external">Cotiza</a></li>
                   </Nav>
                 </CollapsibleNav>
                 <SocialWidget />

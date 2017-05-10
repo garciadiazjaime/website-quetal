@@ -14,11 +14,6 @@ var HelloPanel = React.createClass({displayName: "HelloPanel",
 
     mixins : [ReactRouter.Navigation],
 
-    handleClick: function(){
-        console.log('handleClick');
-        // this.transitionTo('home');
-    },
-
     render: function() {
 
         return (
@@ -45,6 +40,19 @@ var HelloPanel = React.createClass({displayName: "HelloPanel",
                                     "Asistencia en Viajes y Auxilio Vial en el Distrito Federal e Interior del País, marque sin costo", 
                                     React.createElement("a", {href: "tel:018004729832", className: "tel", tel: "Llámanos para asistencia desde el interior del país"}, "01800.GS.AYUDA ", React.createElement("span", {className: "telMeaning"}, "47.29832"))
                                 )
+                            ), 
+                            React.createElement("p", {className: "instructionsParagraph"}, 
+                              React.createElement("em", null, "Horario de atención"), 
+                              "Lunes a Viernes ", React.createElement("br", null), 
+                              "09:00am a 17:00pm ", React.createElement("br", null), 
+                              "Zona Horaria del Pacífico"
+                            ), 
+                            React.createElement("br", null), 
+                            React.createElement("p", {className: "instructionsParagraph"}, 
+                              React.createElement("em", null, "Domicilio"), 
+                              "Defensores de Baja California 150-C ", React.createElement("br", null), 
+                              "Colonia Ruiz Cortinez ", React.createElement("br", null), 
+                              "Tijuana BC CP 22406"
                             )
                         ), 
                         React.createElement(Col, {xs: 12, sm: 6, id: "contactform"}, 

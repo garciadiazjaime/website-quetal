@@ -110,7 +110,7 @@ var CoverageInfo = {
                  content: 'Flexibilidad de poder cotizar el paquete que mejor se adapte a las necesidades de cada cliente, ya que se pueden elegir sólo las coberturas que desee. Además de que sólo se necesita contar con el número de serie del vehículo para conocer las características del vehículo a asegurar”.'
             },
         ],
-        quoteUrl: constantUrl.cotizaLink,
+        quoteUrl: 'tel:' + constantUrl.tel.number,
     },
     federal: {
         title: 'RC Obligatoria Federal / Estatal',

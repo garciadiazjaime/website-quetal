@@ -32,7 +32,7 @@ var AboutusCarouselPanel = React.createClass({
                     </CarouselItem>
                     <CarouselItem>
                         <div className="container">
-                            <p>6 meses sin intereses con Banamex Y American Express</p>
+                            <p>6 meses sin intereses con Banamex y American Express</p>
                         </div>
                     </CarouselItem>
                     <CarouselItem>

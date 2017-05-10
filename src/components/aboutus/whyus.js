@@ -18,7 +18,9 @@ var WhyUsPanel = React.createClass({
     },
 
     render: function() {
-
+      const gsLogo = (<a href="http://www.generaldeseguros.mx/" target="_blank" title="generaldeseguros">
+        <img src="/img/aboutus/logo_general.png" alt="General de seguros" width="200px" />
+      </a>);
         return (
             <section id="whyus">
                 <div className="container">
@@ -35,17 +37,19 @@ var WhyUsPanel = React.createClass({
                         <li className="col-xs-12 col-sm-3">
                             <div className="wrap">
                               Contamos con el respaldo de <br /><br />
-                              <a href="http://www.generaldeseguros.mx/" target="_blank"><img src="/img/aboutus/logo_general.png" alt="General de seguros" width="200px" /></a>
+                              {gsLogo}
                             </div>
                         </li>
                         <li className="col-xs-12 col-sm-3">
                             <div className="wrap">
-                                Somos el único Agente autorizado para venta en línea de GS
+                                Somos el único Agente autorizado para venta en línea de <br /><br />
+                                {gsLogo}
                             </div>
                         </li>
                         <li className="col-xs-12 col-sm-3">
                             <div className="wrap">
-                                Porque te otorgamos el máximo descuento autorizado por GS
+                                Porque te otorgamos el máximo descuento autorizado por <br /><br />
+                                {gsLogo}
                             </div>
                         </li>
                     </ol>

@@ -24,10 +24,10 @@ var NeedHelp = React.createClass({displayName: "NeedHelp",
                 React.createElement("div", {className: "container"}, 
                     React.createElement(Row, null, 
                         React.createElement(Col, {xs: 12, sm: 7}, 
-                            React.createElement("p", null, "¿Necesitas ayuda en tu compra? Llámanos al ", React.createElement("a", {href: "tel:6646140404", title: "¡Llámanos para cualquier duda!"}, "664.614.0404"))
+                            React.createElement("p", null, "¿Necesitas ayuda en tu compra? Llámanos al ", React.createElement("a", {href: "tel:6649766363", title: "¡Llámanos para cualquier duda!"}, "664.976.6363"))
                         ), 
                         React.createElement(Col, {xs: 12, sm: 5}, 
-                            React.createElement("a", {href: "tel:6646140404", title: "¡Llámanos para cualquier duda!", className: "greenButton"}, "Llámanos")
+                            React.createElement("a", {href: "tel:6649766363", title: "¡Llámanos para cualquier duda!", className: "greenButton"}, "Llámanos")
                         )
                     )
                 )

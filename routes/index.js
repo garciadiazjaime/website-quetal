@@ -20,6 +20,7 @@ router.get('*', function(req, res) {
 });
 
 function getHTML(data) {
+	var chat = "<script type=\"text/javascript\" async> ;(function(o,l,a,r,k,y){if(o.olark)return; r=\"script\";y=l.createElement(r);r=l.getElementsByTagName(r)[0]; y.async=1;y.src=\"//\"+a;r.parentNode.insertBefore(y,r); y=o.olark=function(){k.s.push(arguments);k.t.push(+new Date)}; y.extend=function(i,j){y(\"extend\",i,j)}; y.identify=function(i){y(\"identify\",k.i=i)}; y.configure=function(i,j){y(\"configure\",i,j);k.c[i]=j}; k=y._={s:[],t:[+new Date],c:{},l:a}; })(window,document,\"static.olark.com/jsclient/loader.js\");olark.identify('4073-215-10-6468');</script>;";
 	return '<!doctype html>' +
         '<html>' +
         '<head>' +
@@ -40,8 +41,9 @@ function getHTML(data) {
         '<div id="app">' + data + '</div>' +
         '<script src=/vendor.js></script>' +
         '<script src=/bundle.js></script>' +
-        '<script> var MyApp = React.createFactory(require("myApp")); </script>'+
-        '<script>(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,\'script\',\'https://www.google-analytics.com/analytics.js\',\'ga\');ga(\'create\', \'UA-93202829-1\', \'auto\');ga(\'send\', \'pageview\');</script>'
+        '<script> var MyApp = React.createFactory(require("myApp")); </script>' +
+        '<script>(function(i,s,o,g,r,a,m){i[\'GoogleAnalyticsObject\']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,\'script\',\'https://www.google-analytics.com/analytics.js\',\'ga\');ga(\'create\', \'UA-93202829-1\', \'auto\');ga(\'send\', \'pageview\');</script>' +
+				chat +
         '</body>' +
         '</html>';
 }
