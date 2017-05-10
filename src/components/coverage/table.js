@@ -27,13 +27,13 @@ var coverageTable = React.createClass({
                             </Col>
                             <Col xs={12} sm={6}>
                                 <Row>
-                                    <Col xs={6} sm={3}>
+                                    <Col xs={4} sm={3}>
                                         <h5 onClick={this.handleClick.bind(this, 'amplia')}>Confort Amplia</h5>
                                     </Col>
-                                    <Col xs={6} sm={3}>
+                                    <Col xs={4} sm={3}>
                                         <h5 onClick={this.handleClick.bind(this, 'limitada')}>Confort Limitada</h5>
                                     </Col>
-                                    <Col xs={6} sm={3}>
+                                    <Col xs={4} sm={3}>
                                         <h5 onClick={this.handleClick.bind(this, 'basica')}>Confort Básica</h5>
                                     </Col>
                                 </Row>
@@ -71,13 +71,13 @@ var coverageTable = React.createClass({
           </Col>
           <Col xs={12} sm={6}>
               <Row>
-                  <Col xs={6} sm={3}>
+                  <Col xs={4} sm={3}>
                       {item.amplia}
                   </Col>
-                  <Col xs={6} sm={3}>
+                  <Col xs={4} sm={3}>
                       {item.limitada}
                   </Col>
-                  <Col xs={6} sm={3}>
+                  <Col xs={4} sm={3}>
                       {item.basica}
                   </Col>
               </Row>

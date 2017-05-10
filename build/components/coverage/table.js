@@ -27,13 +27,13 @@ var coverageTable = React.createClass({displayName: "coverageTable",
                             ), 
                             React.createElement(Col, {xs: 12, sm: 6}, 
                                 React.createElement(Row, null, 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                    React.createElement(Col, {xs: 4, sm: 3}, 
                                         React.createElement("h5", {onClick: this.handleClick.bind(this, 'amplia')}, "Confort Amplia")
                                     ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                    React.createElement(Col, {xs: 4, sm: 3}, 
                                         React.createElement("h5", {onClick: this.handleClick.bind(this, 'limitada')}, "Confort Limitada")
                                     ), 
-                                    React.createElement(Col, {xs: 6, sm: 3}, 
+                                    React.createElement(Col, {xs: 4, sm: 3}, 
                                         React.createElement("h5", {onClick: this.handleClick.bind(this, 'basica')}, "Confort Básica")
                                     )
                                 )
@@ -71,13 +71,13 @@ var coverageTable = React.createClass({displayName: "coverageTable",
           ), 
           React.createElement(Col, {xs: 12, sm: 6}, 
               React.createElement(Row, null, 
-                  React.createElement(Col, {xs: 6, sm: 3}, 
+                  React.createElement(Col, {xs: 4, sm: 3}, 
                       item.amplia
                   ), 
-                  React.createElement(Col, {xs: 6, sm: 3}, 
+                  React.createElement(Col, {xs: 4, sm: 3}, 
                       item.limitada
                   ), 
-                  React.createElement(Col, {xs: 6, sm: 3}, 
+                  React.createElement(Col, {xs: 4, sm: 3}, 
                       item.basica
                   )
               )

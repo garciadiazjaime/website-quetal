@@ -18,7 +18,9 @@ var WhyUsPanel = React.createClass({displayName: "WhyUsPanel",
     },
 
     render: function() {
-
+      const gsLogo = (React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank", title: "generaldeseguros"}, 
+        React.createElement("img", {src: "/img/aboutus/logo_general.png", alt: "General de seguros", width: "200px"})
+      ));
         return (
             React.createElement("section", {id: "whyus"}, 
                 React.createElement("div", {className: "container"}, 
@@ -35,17 +37,19 @@ var WhyUsPanel = React.createClass({displayName: "WhyUsPanel",
                         React.createElement("li", {className: "col-xs-12 col-sm-3"}, 
                             React.createElement("div", {className: "wrap"}, 
                               "Contamos con el respaldo de ", React.createElement("br", null), React.createElement("br", null), 
-                              React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank"}, React.createElement("img", {src: "/img/aboutus/logo_general.png", alt: "General de seguros", width: "200px"}))
+                              gsLogo
                             )
                         ), 
                         React.createElement("li", {className: "col-xs-12 col-sm-3"}, 
                             React.createElement("div", {className: "wrap"}, 
-                                "Somos el único Agente autorizado para venta en línea de GS"
+                                "Somos el único Agente autorizado para venta en línea de ", React.createElement("br", null), React.createElement("br", null), 
+                                gsLogo
                             )
                         ), 
                         React.createElement("li", {className: "col-xs-12 col-sm-3"}, 
                             React.createElement("div", {className: "wrap"}, 
-                                "Porque te otorgamos el máximo descuento autorizado por GS"
+                                "Porque te otorgamos el máximo descuento autorizado por ", React.createElement("br", null), React.createElement("br", null), 
+                                gsLogo
                             )
                         )
                     )

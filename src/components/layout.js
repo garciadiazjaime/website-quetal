@@ -32,6 +32,7 @@ var Layout = React.createClass({
     var data = {
       cotizaLink: constantUrl.cotizaLink,
       rcObligatorioLink: constantUrl.rcObligatorioLink,
+      tel: constantUrl.tel, 
     };
     return (
         <div>
