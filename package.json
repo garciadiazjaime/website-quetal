@@ -1,6 +1,6 @@
 {
   "name": "quetal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Seguros quetal",
   "main": "server.js",
   "keywords": [
@@ -38,8 +38,6 @@
     "dev": "nodemon server.js",
     "build:js": "gulp jsx && gulp reactify",
     "watch:js": "gulp watch:js",
-    "update": "git checkout prod && git pull openshift master",
-    "deploy": "git add . && git commit -am 'update' && git push openshift HEAD:master",
     "watch": "./node_modules/.bin/gulp watch"
   },
   "browserify": {

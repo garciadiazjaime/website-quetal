@@ -18,7 +18,7 @@ var WhyUsPanel = React.createClass({displayName: "WhyUsPanel",
     },
 
     render: function() {
-      const gsLogo = (React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank", title: "generaldeseguros"}, 
+      var gsLogo = (React.createElement("a", {href: "http://www.generaldeseguros.mx/", target: "_blank", title: "generaldeseguros"}, 
         React.createElement("img", {src: "/img/aboutus/logo_general.png", alt: "General de seguros", width: "200px"})
       ));
         return (
